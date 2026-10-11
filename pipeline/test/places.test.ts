@@ -151,3 +151,19 @@ describe("collectCnctr", () => {
     await expect(collectCnctr({ candidates: [], cfg: { dailyCap: 1 }, get, dataDir, now })).rejects.toThrow("비어 있음");
   });
 });
+
+describe("TourAPI 후보 코드 정규화", () => {
+  it("세종처럼 시·도 코드가 5자리로 오면 2자리 + 시·군·구 3자리로 나눈다 (2026-10-12 첫 실행 0건 원인)", async () => {
+    const { fetchCandidates } = await import("../src/collect/tour.js");
+    const { DailyUsage } = await import("../src/lib/usage.js");
+    const usage = await DailyUsage.load(await mkdtemp(join(tmpdir(), "hansan-tour-")), "tour", "2026-10-12", 10);
+    const seen: Record<string, string>[] = [];
+    const get: DgGet = async (_p, params) => {
+      seen.push(params);
+      return { totalCount: 1, items: [{ contentid: 1, contenttypeid: 12, title: "국립세종수목원", lDongRegnCd: "36110", lDongSignguCd: "", mapx: "127", mapy: "36" }] };
+    };
+    const [c] = await fetchCandidates(get, usage, "36110", [{ contentTypeId: "12" }]);
+    expect(seen[0].lDongRegnCd).toBe("36110");
+    expect(c).toMatchObject({ lDongRegnCd: "36", lDongSignguCd: "110" });
+  });
+});

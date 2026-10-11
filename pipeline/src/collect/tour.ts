@@ -48,20 +48,24 @@ export async function fetchSigungu(get: DgGet, usage: DailyUsage, provinces: str
   return out;
 }
 
-const pick = (i: any): Candidate => ({
+// 세종처럼 시·도 코드가 5자리(36110)로 오면 시·도 2자리 + 시·군·구 3자리로 나눠 다른 시·도와 같은 형식으로 맞춘다
+const pick = (i: any): Candidate => {
+  const regn = String(i.lDongRegnCd ?? "");
+  return {
   contentid: String(i.contentid),
   contenttypeid: String(i.contenttypeid),
   title: i.title,
   addr1: i.addr1 ?? "",
   mapx: Number(i.mapx),
   mapy: Number(i.mapy),
-  lDongRegnCd: String(i.lDongRegnCd ?? ""),
-  lDongSignguCd: String(i.lDongSignguCd ?? ""),
+  lDongRegnCd: regn.slice(0, 2),
+  lDongSignguCd: regn.length === 5 ? regn.slice(2) : String(i.lDongSignguCd ?? ""),
   lclsSystm1: i.lclsSystm1 ?? "",
   lclsSystm2: i.lclsSystm2 ?? "",
   lclsSystm3: i.lclsSystm3 ?? "",
   modifiedtime: i.modifiedtime ?? "",
-});
+  };
+};
 
 // 시·도 × 콘텐츠 유형별 후보를 페이지 끝까지 받는다. keepLcls2 가 있으면 그 신분류(중분류)만 남긴다
 export async function fetchCandidates(
@@ -77,7 +81,7 @@ export async function fetchCandidates(
         numOfRows: String(PAGE),
         pageNo: String(page),
         arrange: "C",
-        lDongRegnCd: regn.slice(0, 2),
+        lDongRegnCd: regn,
         contentTypeId: t.contentTypeId,
       });
       for (const i of r.items) {
@@ -105,8 +109,15 @@ export async function collectTour(input: {
   const failPath = join(dataDir, "state", "failures", `${t.yyyy}-${t.mm}.jsonl`);
   const result = { sigungu: 0, provincesOk: 0, provincesFailed: 0, candidates: 0 };
 
+  // 세종처럼 시·도 자체가 5자리 코드인 곳은 그 코드로 후보를 조회한다
+  const regnParam = new Map<string, string>();
   try {
     const sigungu = await fetchSigungu(get, usage, provinces);
+    for (const p of provinces) {
+      const own = sigungu.filter((s) => s.code.startsWith(p));
+      // 시·군·구가 하나뿐인 시·도(세종 36110)는 그 코드로 조회한다
+      regnParam.set(p, own.length === 1 ? own[0].code : p);
+    }
     await writeJson(join(dataDir, "sources", "regions", "sigungu.json"), { fetchedAt: at, source: "TourAPI ldongCode2", sigungu });
     result.sigungu = sigungu.length;
   } catch (e) {
@@ -115,7 +126,7 @@ export async function collectTour(input: {
 
   for (const regn of provinces) {
     try {
-      const candidates = await fetchCandidates(get, usage, regn, types);
+      const candidates = await fetchCandidates(get, usage, regnParam.get(regn) ?? regn, types);
       await writeJson(join(dataDir, "sources", "tour", "candidates", `${regn.slice(0, 2)}.json`), { fetchedAt: at, source: "TourAPI areaBasedList2", candidates });
       result.provincesOk++;
       result.candidates += candidates.length;

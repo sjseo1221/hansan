@@ -2814,9 +2814,9 @@
   "shrinkBlocked": false,
   "warnings": [],
   "tour": {
-    "sigungu": 147,
-    "provincesOk": 8,
-    "provincesFailed": 0,
-    "candidates": 10951
+    "sigungu": 0,
+    "provincesOk": 0,
+    "provincesFailed": 8,
+    "candidates": 0
   }
 }

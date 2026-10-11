@@ -114,3 +114,12 @@
 {"at":"2026-10-12T05:23:56.260+09:00","source":"naver_trend","placeId":"kto-880738","code":"EMPTY","message":"요청 실패"}
 {"at":"2026-10-12T05:23:56.260+09:00","source":"naver_trend","placeId":"kto-946216","code":"EMPTY","message":"요청 실패"}
 {"at":"2026-10-12T05:23:56.260+09:00","source":"naver_trend","placeId":"kto-946272","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-12T08:13:54.013+09:00","source":"tour_ldong","code":"TypeError","message":"요청 실패"}
+{"at":"2026-10-12T08:13:54.013+09:00","source":"tour","regn":"11","code":"TypeError","message":"요청 실패"}
+{"at":"2026-10-12T08:13:54.013+09:00","source":"tour","regn":"28","code":"TypeError","message":"요청 실패"}
+{"at":"2026-10-12T08:13:54.013+09:00","source":"tour","regn":"41","code":"TypeError","message":"요청 실패"}
+{"at":"2026-10-12T08:13:54.013+09:00","source":"tour","regn":"51","code":"TypeError","message":"요청 실패"}
+{"at":"2026-10-12T08:13:54.013+09:00","source":"tour","regn":"43","code":"TypeError","message":"요청 실패"}
+{"at":"2026-10-12T08:13:54.013+09:00","source":"tour","regn":"44","code":"TypeError","message":"요청 실패"}
+{"at":"2026-10-12T08:13:54.013+09:00","source":"tour","regn":"30","code":"TypeError","message":"요청 실패"}
+{"at":"2026-10-12T08:13:54.013+09:00","source":"tour","regn":"36","code":"TypeError","message":"요청 실패"}

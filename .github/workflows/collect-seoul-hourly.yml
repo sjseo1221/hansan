@@ -1,0 +1,46 @@
+# 서울 실시간 인구 매시간 수집 (FR-DATA-04). 4주 누적이 시간대 패턴의 전제이므로 멈추지 않게 유지한다.
+# 예약 실행은 지연·누락될 수 있어 정각을 피해 17분에 돈다.
+name: collect-seoul-hourly
+
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# 데이터 커밋끼리 겹치지 않게 한다 (다른 수집 워크플로도 같은 그룹을 쓴다)
+concurrency:
+  group: data-commit
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Collect
+        run: npm run collect:seoul
+        env:
+          SEOUL_OPENAPI_KEY: ${{ secrets.SEOUL_OPENAPI_KEY }}
+      # 수집이 실패로 끝나도 실패 기록·호출량은 커밋한다
+      - name: Commit data
+        if: always()
+        run: |
+          git config user.name "hansan-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data
+          git diff --cached --quiet && exit 0
+          git commit -m "data: seoul citydata $(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M') KST"
+          for i in 1 2 3; do
+            git pull --rebase --quiet && git push && exit 0
+            sleep $((i * 5))
+          done
+          exit 1

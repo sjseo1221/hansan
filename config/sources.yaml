@@ -1,0 +1,12 @@
+# 출처별 호출 설정 (FR-DATA-10). 값을 바꾸면 다음 실행부터 적용된다.
+# dailyCap: 하루(KST) 최대 호출 수. 닿으면 남은 장소는 다음 실행으로 넘긴다.
+
+seoul_citydata:
+  # 서울 열린데이터광장 실시간 인구 (OA-21778). https 미지원 — http 만 동작 (2026-10-11 실호출 확인)
+  baseUrl: http://openapi.seoul.go.kr:8088
+  service: citydata_ppltn
+  # 미등록 인증키의 하루 한도는 아직 공식 확인 전. 확인되면 그 90% 로 맞춘다.
+  # 121곳 × 24회 = 2,904건이 필요하다.
+  dailyCap: 3000
+  timeoutMs: 10000
+  concurrency: 4

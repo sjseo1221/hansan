@@ -1,0 +1,22 @@
+# 점수 계산·유형 판정 등 자동 시험을 변경이 올라올 때마다 실행한다 (NFR-MAINT-01)
+name: test
+
+on:
+  push:
+    paths-ignore:
+      - "data/**"
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test

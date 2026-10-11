@@ -17,7 +17,7 @@
 
 | 워크플로 | 시각(KST) | 내용 |
 |---|---|---|
-| collect-seoul-hourly | 매시 17분 | 서울 121곳 실시간 인구 → `data/raw/seoul_citydata/YYYY-MM/DD.jsonl`, 장소별 최신값 `data/latest/seoul_citydata.json` |
+| collect-seoul-hourly | 매시 17분 (Cloudflare Worker `hansan-cron` 이 실행, GitHub 예약은 보조. 같은 시간대 중복 실행은 건너뜀, 강제 수집은 `FORCE=1`) | 서울 121곳 실시간 인구 → `data/raw/seoul_citydata/YYYY-MM/DD.jsonl`, 장소별 최신값 `data/latest/seoul_citydata.json` |
 | collect-naver-weekly | 월 03:23 | 장소별 블로그 게시글 수·최근 게시일 → `data/raw/naver_blog/`, 검색어 트렌드(기준 키워드 대비 비율, 첫 회 2016년부터 월 단위 백필) → `data/raw/naver_trend/`. 장소 목록(`data/places/places.json`)이 없으면 건너뜀. 블로그 제목·요약은 저장하지 않음 |
 | test | push 시 | 타입 검사, 자동 시험 |
 

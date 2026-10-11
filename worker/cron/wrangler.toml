@@ -1,0 +1,14 @@
+# 서울 실시간 인구 매시간 수집 트리거 (Cloudflare Workers 무료 플랜 Cron Trigger)
+name = "hansan-cron"
+main = "index.js"
+compatibility_date = "2026-10-01"
+
+# 외부에서 호출할 주소를 열지 않는다 — 예약 실행만 쓴다
+workers_dev = false
+
+[triggers]
+crons = ["17 * * * *"]
+
+[vars]
+REPO = "sjseo1221/hansan"
+WORKFLOW = "collect-seoul-hourly.yml"

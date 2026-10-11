@@ -2810,7 +2810,24 @@
     "adminDong": 0,
     "operation": 0
   },
-  "keywordChanged": [],
+  "keywordChanged": [
+    "kto-126509",
+    "kto-127683",
+    "kto-128162",
+    "kto-129502",
+    "kto-1622775",
+    "kto-1622872",
+    "kto-1623687",
+    "kto-1623927",
+    "kto-250299",
+    "kto-264311",
+    "kto-2662682",
+    "kto-2762842",
+    "kto-2786012",
+    "kto-298208",
+    "kto-3080289",
+    "kto-316266"
+  ],
   "shrinkBlocked": false,
   "warnings": [],
   "tour": {

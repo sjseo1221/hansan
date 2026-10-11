@@ -18304,7 +18304,7 @@
       "category": "heritage",
       "indoor": "outdoor",
       "operation": null,
-      "keyword": "중 덕수궁",
+      "keyword": "중구 덕수궁",
       "external": {
         "tour": {
           "contentId": "126509",
@@ -30317,7 +30317,7 @@
       "category": "walking_trail",
       "indoor": "outdoor",
       "operation": null,
-      "keyword": "서 구봉산",
+      "keyword": "서구 구봉산",
       "external": {
         "tour": {
           "contentId": "127683",
@@ -35450,7 +35450,7 @@
       "category": "heritage",
       "indoor": "outdoor",
       "operation": null,
-      "keyword": "중 숭례문",
+      "keyword": "중구 숭례문",
       "external": {
         "tour": {
           "contentId": "128162",
@@ -42102,7 +42102,7 @@
       "category": "heritage",
       "indoor": "outdoor",
       "operation": null,
-      "keyword": "중 광희문",
+      "keyword": "중구 광희문",
       "external": {
         "tour": {
           "contentId": "129502",
@@ -53695,7 +53695,7 @@
       "category": "heritage",
       "indoor": "outdoor",
       "operation": null,
-      "keyword": "동 삼매당",
+      "keyword": "동구 삼매당",
       "external": {
         "tour": {
           "contentId": "1622775",
@@ -53809,7 +53809,7 @@
       "category": "heritage",
       "indoor": "outdoor",
       "operation": null,
-      "keyword": "동 문충사",
+      "keyword": "동구 문충사",
       "external": {
         "tour": {
           "contentId": "1622872",
@@ -53923,7 +53923,7 @@
       "category": "heritage",
       "indoor": "outdoor",
       "operation": null,
-      "keyword": "서 용화사",
+      "keyword": "서구 용화사",
       "external": {
         "tour": {
           "contentId": "1623687",
@@ -54075,7 +54075,7 @@
       "category": "heritage",
       "indoor": "outdoor",
       "operation": null,
-      "keyword": "중 봉소루",
+      "keyword": "중구 봉소루",
       "external": {
         "tour": {
           "contentId": "1623927",
@@ -71063,7 +71063,7 @@
       "category": "heritage",
       "indoor": "outdoor",
       "operation": null,
-      "keyword": "중 환구단",
+      "keyword": "중구 환구단",
       "external": {
         "tour": {
           "contentId": "250299",
@@ -81590,7 +81590,7 @@
       "category": "theme_park",
       "indoor": "mixed",
       "operation": null,
-      "keyword": "중 명동",
+      "keyword": "중구 명동",
       "external": {
         "tour": {
           "contentId": "264311",
@@ -84023,7 +84023,7 @@
       "category": "theme_park",
       "indoor": "mixed",
       "operation": null,
-      "keyword": "동 소제동",
+      "keyword": "동구 소제동",
       "external": {
         "tour": {
           "contentId": "2662682",
@@ -110738,7 +110738,7 @@
       "category": "exhibition",
       "indoor": "indoor",
       "operation": null,
-      "keyword": "중 피크닉",
+      "keyword": "중구 피크닉",
       "external": {
         "tour": {
           "contentId": "2762842",
@@ -122100,7 +122100,7 @@
       "category": "walking_trail",
       "indoor": "outdoor",
       "operation": null,
-      "keyword": "동 노고산",
+      "keyword": "동구 노고산",
       "external": {
         "tour": {
           "contentId": "2786012",
@@ -124874,7 +124874,7 @@
       "category": "heritage",
       "indoor": "outdoor",
       "operation": null,
-      "keyword": "서 내원사",
+      "keyword": "서구 내원사",
       "external": {
         "tour": {
           "contentId": "298208",
@@ -125976,7 +125976,7 @@
       "category": "walking_trail",
       "indoor": "outdoor",
       "operation": null,
-      "keyword": "중 보문산",
+      "keyword": "중구 보문산",
       "external": {
         "tour": {
           "contentId": "3080289",
@@ -126774,7 +126774,7 @@
       "category": "heritage",
       "indoor": "outdoor",
       "operation": null,
-      "keyword": "중 복전암",
+      "keyword": "중구 복전암",
       "external": {
         "tour": {
           "contentId": "316266",

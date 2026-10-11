@@ -18,8 +18,21 @@
 | 워크플로 | 시각(KST) | 내용 |
 |---|---|---|
 | collect-seoul-hourly | 매시 17분 (Cloudflare Worker `hansan-cron` 이 실행, GitHub 예약은 보조. 같은 시간대에 이미 '시도'했으면 성공 여부와 무관하게 건너뜀 — 강제 재수집은 `FORCE=1`) | 서울 121곳 실시간 인구 → `data/raw/seoul_citydata/YYYY-MM/DD.jsonl`, 장소별 최신값 `data/latest/seoul_citydata.json` |
-| collect-naver-weekly | 월 03:23 | 장소별 블로그 게시글 수·최근 게시일 → `data/raw/naver_blog/`, 검색어 트렌드(기준 키워드 대비 비율, 첫 회 2016년부터 월 단위 백필) → `data/raw/naver_trend/`. 장소 목록(`data/places/places.json`)이 없으면 건너뜀. 블로그 제목·요약은 저장하지 않음 |
+| collect-cnctr-daily | 매일 04:30 | 관광지 집중률 30일 예측(시·군·구 단위) → 최신 `data/latest/cnctr.json`(덮어씀), 오늘 날짜 값만 `data/raw/cnctr_history/` 누적, 관광지 이름 목록 `data/sources/cnctr/attractions.json`. 응답 없는 시·군·구 코드는 비활성으로 기록하고 월요일에 다시 확인 |
+| build-places-weekly | 월 04:50 | TourAPI 시·군·구 목록·후보 → 집중률 관광지와 이름 매칭 → `data/places/places.json`, 지표 `data/places/report.json`. 보이는 장소가 직전보다 30% 넘게 줄면 목록을 바꾸지 않고 실패 |
+| collect-naver-weekly | 월 05:23 | 장소별 블로그 게시글 수·최근 게시일 → `data/raw/naver_blog/`, 검색어 트렌드(기준 키워드 대비 비율, 첫 회 2016년부터 월 단위 백필) → `data/raw/naver_trend/`. 장소 목록(`data/places/places.json`)이 없으면 건너뜀. 블로그 제목·요약은 저장하지 않음 |
 | test | push 시 | 타입 검사, 자동 시험 |
+
+## 장소 추가·숨김·수정 (FR-OPS-05)
+
+`data/places/places.json` 은 매주 다시 만드는 생성 파일이라 직접 고치지 않는다. **`data/places/overrides.yaml` 만 고친다.**
+
+- 숨김: `places.<placeId>.hidden: true` — 다음 주기 작업부터 추천·수집에서 빠진다(FR-DATA-13)
+- 이름·분류·실내외·네이버 검색어 보정: `places.<placeId>` 아래 같은 이름의 값
+- 자동 매칭 실패·오매칭 교정: `matches` 에 `{ signguCd, tAtsNm, contentId }` (`contentId: null` 이면 연결 차단). 수동 매칭 대상은 `report.json` 의 `unmatched.list`
+- 집중률에 없는 장소 추가: `add` (SRS 9절 필드 전부)
+
+고친 뒤 커밋하면 다음 `build-places-weekly` 에 반영된다. 바로 반영하려면 Actions 에서 수동 실행한다.
 
 ## 설정 파일 (기준값 변경)
 

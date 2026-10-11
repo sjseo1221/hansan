@@ -1,0 +1,11 @@
+# 장소 목록 운영자 보정 (FR-OPS-05). places.json 은 생성 파일이라 직접 고치지 말고 여기만 고친다.
+# places:            # placeId 별 보정
+#   kto-126508:
+#     hidden: true   # 추천에서 제외 (FR-DATA-13) — 다음 주기 작업부터 반영
+#     keyword: 경복궁 궁궐   # 네이버 검색어 보정
+# matches:           # 집중률 관광지 이름 → TourAPI contentId 수동 연결. contentId: null 이면 자동 매칭 차단
+#   - { signguCd: "11110", tAtsNm: "가회민화박물관", contentId: "1234567" }
+# add:               # 수동 추가 (SRS 9절 필드 전부)
+places: {}
+matches: []
+add: []

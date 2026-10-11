@@ -36,3 +36,35 @@ seoulCategoryMap:
   인구밀집지역: street_market
   발달상권: street_market
   공원: nature_park
+
+# TourAPI 신분류(lclsSystm) → 분류 (2026-10-12 lclsSystmCode2 실측 코드). 중분류가 대분류보다 우선한다.
+# 여기 없는 신분류(숙박 AC · 음식 FD · 추천코스 C01 · 쇼핑 SH 중 시장 외)는 장소 목록에서 뺀다. D-4 초안 — 발주자 결정 대기
+lclsMap:
+  NA: nature_park        # 자연관광
+  NA01: walking_trail    # 자연경관(산)
+  HS: heritage           # 역사관광
+  EX: theme_park         # 체험관광
+  LS: leisure_sports     # 레저스포츠
+  EV: festival           # 축제/공연/행사
+  SH06: street_market    # 시장
+  VE01: street_market    # 랜드마크관광
+  VE02: theme_park       # 테마공원
+  VE03: nature_park      # 도시공원
+  VE04: street_market    # 도시·지역문화관광
+  VE05: theme_park       # 복합관광시설
+  VE06: exhibition       # 공연시설
+  VE07: exhibition       # 전시시설
+  VE08: festival         # 행사시설
+  VE09: exhibition       # 교육시설
+  VE10: leisure_sports   # 레저스포츠시설
+  VE12: street_market    # 기타문화관광지
+
+# 신분류가 비어 있을 때 콘텐츠 유형으로 대신 정한다
+typeFallback:
+  "12": nature_park
+  "14": exhibition
+  "28": leisure_sports
+  "15": festival
+
+# 같은 이름 후보가 여럿일 때 고르는 콘텐츠 유형 순서
+typePriority: ["12", "14", "28", "15", "38"]

@@ -1,0 +1,45 @@
+# 관광지 집중률 예측 매일 수집 (FR-DATA-02). 04:30 KST = 19:30 UTC
+# 예약 실행은 Cloudflare Worker hansan-cron 이 workflow_dispatch 로 실행한다(GitHub schedule 은 보조)
+name: collect-cnctr-daily
+
+on:
+  schedule:
+    - cron: "30 19 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data-daily
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Run
+        run: npm run collect:cnctr
+        env:
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+      - name: Commit data
+        if: always()
+        run: |
+          git config user.name "hansan-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data
+          git diff --cached --quiet && exit 0
+          git commit -m "data: collect-cnctr-daily $(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M') KST"
+          for i in 1 2 3; do
+            git pull --rebase --quiet && git push && exit 0
+            git rebase --abort 2>/dev/null || true
+            sleep $((i * 5))
+          done
+          exit 1

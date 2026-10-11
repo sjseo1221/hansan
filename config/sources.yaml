@@ -22,3 +22,18 @@ naver:
   recentWeeks: 13
   timeoutMs: 15000
   timeBudgetMs: 1200000   # 한 실행 최대 20분 — 넘으면 남은 호출을 멈추고 정상 커밋(job timeout 30분 전에)
+
+cnctr:
+  # 한국관광공사 관광지 집중률 예측 (FR-DATA-02). 개발계정 하루 1,000건 → 앱 상한 900. 시·군·구당 1호출(2026-10-12 확인)
+  dailyCap: 900
+
+tour:
+  # TourAPI v2(KorService2). 하루 한도는 공공데이터포털 마이페이지에서 확인 필요 — 확인 전 앱 상한 900
+  dailyCap: 900
+  # 장소 후보 콘텐츠 유형: 12 관광지 · 14 문화시설 · 28 레포츠 · 15 축제공연행사, 38 쇼핑은 신분류 SH06(시장)만
+  types:
+    - { contentTypeId: "12" }
+    - { contentTypeId: "14" }
+    - { contentTypeId: "28" }
+    - { contentTypeId: "15" }
+    - { contentTypeId: "38", keepLcls2: [SH06] }

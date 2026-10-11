@@ -9,8 +9,8 @@ workers_dev = true
 preview_urls = false
 
 [triggers]
-crons = ["17 * * * *"]
+# index.js 의 SCHEDULE 표와 같은 문자열 (UTC). 무료 플랜은 계정당 5개까지
+crons = ["17 * * * *", "30 19 * * *", "50 19 * * sun", "23 20 * * sun"]
 
 [vars]
 REPO = "sjseo1221/hansan"
-WORKFLOW = "collect-seoul-hourly.yml"

@@ -98,3 +98,14 @@ describe("collectTrend", () => {
     expect(http.calls[0].body.startDate).toBe("2026-07-13");
   });
 });
+
+describe("weekdayBucket", () => {
+  it("장소를 0~6 묶음에 고르게 나누고 같은 장소는 늘 같은 묶음이다", async () => {
+    const { weekdayBucket } = await import("../src/collect/naver.js");
+    const ids = Array.from({ length: 3700 }, (_, i) => `kto-${100000 + i * 37}`);
+    const counts = Array(7).fill(0);
+    for (const id of ids) counts[weekdayBucket(id)]++;
+    expect(Math.min(...counts)).toBeGreaterThan(3700 / 7 * 0.8);
+    expect(weekdayBucket("kto-126508")).toBe(weekdayBucket("kto-126508"));
+  });
+});

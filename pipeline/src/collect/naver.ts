@@ -12,6 +12,13 @@ const HOST = "https://naverapihub.apigw.ntruss.com";
 // 연속 실패가 이만큼 나면 남은 호출을 멈춘다(키 오류·장애 시 상한 소진과 긴 실행 방지)
 export const MAX_CONSECUTIVE_FAILURES = 10;
 
+// 장소를 요일별 7묶음으로 나눈다 — 매일 한 묶음씩 돌아 장소마다 주 1회 갱신하면서 하루 호출을 한도 안에 둔다
+export function weekdayBucket(placeId: string): number {
+  let h = 0;
+  for (const ch of placeId) h = (h * 31 + ch.charCodeAt(0)) >>> 0;
+  return h % 7;
+}
+
 export interface PlaceRef {
   placeId: string;
   name: string;

@@ -1,9 +1,9 @@
-# 네이버 검색어 트렌드·블로그 주 1회 수집 (FR-DATA-06·07). 월 05:23 KST = 일 20:23 UTC (장소 목록 생성 뒤)
+# 네이버 검색어 트렌드·블로그 수집 (FR-DATA-06·07). 매일 05:23 KST = 20:23 UTC, 장소를 요일별 7묶음으로 나눠 장소마다 주 1회 갱신
 name: collect-naver-weekly
 
 on:
   schedule:
-    - cron: "23 20 * * 0"
+    - cron: "23 20 * * *"
   workflow_dispatch:
 
 permissions:

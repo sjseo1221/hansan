@@ -7,7 +7,7 @@ export const SCHEDULE = {
   "17 * * * *": "collect-seoul-hourly.yml", // 매시 17분
   "30 19 * * *": "collect-cnctr-daily.yml", // 매일 04:30 KST
   "50 19 * * sun": "build-places-weekly.yml", // 월 04:50 KST
-  "23 20 * * sun": "collect-naver-weekly.yml", // 월 05:23 KST
+  "23 20 * * *": "collect-naver-weekly.yml", // 매일 05:23 KST (요일 묶음)
 };
 
 export default {

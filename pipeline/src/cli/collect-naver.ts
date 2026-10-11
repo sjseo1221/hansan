@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import { parse } from "yaml";
 import { readJson } from "../lib/store.js";
 import { exitCode } from "../lib/exit.js";
-import { collectBlog, collectTrend, type NaverConfig, type PlaceRef } from "../collect/naver.js";
+import { collectBlog, collectTrend, weekdayBucket, type NaverConfig, type PlaceRef } from "../collect/naver.js";
 
 if (existsSync(".env")) process.loadEnvFile(".env");
 
@@ -21,13 +21,17 @@ if (!existsSync(PLACES)) {
   process.exit(0);
 }
 // 숨김 장소는 다음 주기 작업부터 제외한다 (FR-DATA-13)
-const places = (await readJson<{ places: (PlaceRef & { hidden?: boolean })[] }>(PLACES, { places: [] })).places.filter((p) => !p.hidden);
+const all = (await readJson<{ places: (PlaceRef & { hidden?: boolean })[] }>(PLACES, { places: [] })).places.filter((p) => !p.hidden);
+// 오늘(KST 요일) 묶음만 수집한다. ALL=1 이면 전부(수동 점검용)
+const now = new Date();
+const today = new Date(now.getTime() + 9 * 3600_000).getUTCDay();
+const places = process.env.ALL === "1" ? all : all.filter((p) => weekdayBucket(p.placeId) === today);
 
 const cfg = (parse(await readFile("config/sources.yaml", "utf8")) as { naver: NaverConfig }).naver;
-const ctx = { places, cfg, auth: { id, secret }, dataDir: "data", now: new Date() };
+const ctx = { places, cfg, auth: { id, secret }, dataDir: "data", now };
 const blog = await collectBlog(ctx);
 const trend = await collectTrend(ctx);
-console.log(JSON.stringify({ blog, trend }));
+console.log(JSON.stringify({ bucket: today, places: places.length, of: all.length, blog, trend }));
 
 // 블로그와 트렌드를 각각 판정한다 — 한쪽만 죽어도 알림이 가게 (FR-OPS-04)
 process.exit(Math.max(exitCode(blog), exitCode(trend)));

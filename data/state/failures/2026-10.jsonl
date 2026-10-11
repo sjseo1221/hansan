@@ -8,3 +8,4 @@
 {"at":"2026-10-12T02:05:17.666+09:00","source":"naver_trend","placeId":"kto-2731193","code":"EMPTY","message":"요청 실패"}
 {"at":"2026-10-12T02:05:17.666+09:00","source":"naver_trend","placeId":"kto-298208","code":"EMPTY","message":"요청 실패"}
 {"at":"2026-10-12T02:05:17.666+09:00","source":"naver_trend","placeId":"kto-560981","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-12T04:18:05.527+09:00","source":"seoul_citydata","areaCd":"POI001","code":"INFO-000","message":"정상 처리되었습니다."}

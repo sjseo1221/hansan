@@ -1,0 +1,2966 @@
+{
+  "generatedAt": "2026-10-12",
+  "attractions": 4315,
+  "matched": {
+    "exact": 3370,
+    "normalized": 247,
+    "partial": 120,
+    "total": 3737,
+    "ambiguous": 2,
+    "duplicates": 21
+  },
+  "matchRate": 0.866,
+  "unmatched": {
+    "count": 578,
+    "list": [
+      {
+        "signguCd": "11110",
+        "signguNm": "종로구",
+        "tAtsNm": "경운동민병옥가옥"
+      },
+      {
+        "signguCd": "11110",
+        "signguNm": "종로구",
+        "tAtsNm": "구공업전습소본관"
+      },
+      {
+        "signguCd": "11110",
+        "signguNm": "종로구",
+        "tAtsNm": "그라운드시소 서촌"
+      },
+      {
+        "signguCd": "11110",
+        "signguNm": "종로구",
+        "tAtsNm": "돈의문박물관마을"
+      },
+      {
+        "signguCd": "11110",
+        "signguNm": "종로구",
+        "tAtsNm": "보안1942"
+      },
+      {
+        "signguCd": "11110",
+        "signguNm": "종로구",
+        "tAtsNm": "부엉이박물관"
+      },
+      {
+        "signguCd": "11110",
+        "signguNm": "종로구",
+        "tAtsNm": "쉼박물관"
+      },
+      {
+        "signguCd": "11110",
+        "signguNm": "종로구",
+        "tAtsNm": "올리바인 스파"
+      },
+      {
+        "signguCd": "11110",
+        "signguNm": "종로구",
+        "tAtsNm": "자생식물학습장"
+      },
+      {
+        "signguCd": "11110",
+        "signguNm": "종로구",
+        "tAtsNm": "종로6가 대학천 책방거리"
+      },
+      {
+        "signguCd": "11110",
+        "signguNm": "종로구",
+        "tAtsNm": "청와대"
+      },
+      {
+        "signguCd": "11110",
+        "signguNm": "종로구",
+        "tAtsNm": "축구전시관"
+      },
+      {
+        "signguCd": "11110",
+        "signguNm": "종로구",
+        "tAtsNm": "컬러풀뮤지엄(COLORPOOL MUSEUM)"
+      },
+      {
+        "signguCd": "11110",
+        "signguNm": "종로구",
+        "tAtsNm": "화정박물관"
+      },
+      {
+        "signguCd": "11140",
+        "signguNm": "중구",
+        "tAtsNm": "남산예술센터"
+      },
+      {
+        "signguCd": "11140",
+        "signguNm": "중구",
+        "tAtsNm": "박정희대통령가옥"
+      },
+      {
+        "signguCd": "11140",
+        "signguNm": "중구",
+        "tAtsNm": "서울특별시교육청 과학전시관 (남산분관)"
+      },
+      {
+        "signguCd": "11140",
+        "signguNm": "중구",
+        "tAtsNm": "시간을 담다"
+      },
+      {
+        "signguCd": "11140",
+        "signguNm": "중구",
+        "tAtsNm": "신당동 떡볶이 골목"
+      },
+      {
+        "signguCd": "11140",
+        "signguNm": "중구",
+        "tAtsNm": "유관순기념관(서울)"
+      },
+      {
+        "signguCd": "11140",
+        "signguNm": "중구",
+        "tAtsNm": "을지로 철제가구거리"
+      },
+      {
+        "signguCd": "11140",
+        "signguNm": "중구",
+        "tAtsNm": "을지로예술공장"
+      },
+      {
+        "signguCd": "11140",
+        "signguNm": "중구",
+        "tAtsNm": "초전섬유ㆍ퀼트박물관"
+      },
+      {
+        "signguCd": "11170",
+        "signguNm": "용산구",
+        "tAtsNm": "국립한글박물관"
+      },
+      {
+        "signguCd": "11170",
+        "signguNm": "용산구",
+        "tAtsNm": "민주인권기념관"
+      },
+      {
+        "signguCd": "11170",
+        "signguNm": "용산구",
+        "tAtsNm": "용산공예관"
+      },
+      {
+        "signguCd": "11170",
+        "signguNm": "용산구",
+        "tAtsNm": "용산공원 (옛 미군기지)"
+      },
+      {
+        "signguCd": "11170",
+        "signguNm": "용산구",
+        "tAtsNm": "용산성당"
+      },
+      {
+        "signguCd": "11170",
+        "signguNm": "용산구",
+        "tAtsNm": "충주 정토사지 홍법국사탑"
+      },
+      {
+        "signguCd": "11200",
+        "signguNm": "성동구",
+        "tAtsNm": "공간 와디즈"
+      },
+      {
+        "signguCd": "11200",
+        "signguNm": "성동구",
+        "tAtsNm": "달맞이봉공원"
+      },
+      {
+        "signguCd": "11200",
+        "signguNm": "성동구",
+        "tAtsNm": "뚝도시장"
+      },
+      {
+        "signguCd": "11200",
+        "signguNm": "성동구",
+        "tAtsNm": "성동4차산업혁명체험센터"
+      },
+      {
+        "signguCd": "11215",
+        "signguNm": "광진구",
+        "tAtsNm": "뚝섬 전망 문화 콤플렉스"
+      },
+      {
+        "signguCd": "11215",
+        "signguNm": "광진구",
+        "tAtsNm": "비스타 워커힐 웰니스 클럽"
+      },
+      {
+        "signguCd": "11215",
+        "signguNm": "광진구",
+        "tAtsNm": "중곡제일시장"
+      },
+      {
+        "signguCd": "11230",
+        "signguNm": "동대문구",
+        "tAtsNm": "답십리 고미술상가"
+      },
+      {
+        "signguCd": "11230",
+        "signguNm": "동대문구",
+        "tAtsNm": "이경시장"
+      },
+      {
+        "signguCd": "11230",
+        "signguNm": "동대문구",
+        "tAtsNm": "청계천 버들습지"
+      },
+      {
+        "signguCd": "11230",
+        "signguNm": "동대문구",
+        "tAtsNm": "홍릉숲"
+      },
+      {
+        "signguCd": "11260",
+        "signguNm": "중랑구",
+        "tAtsNm": "용마공원놀이동산(용마랜드)"
+      },
+      {
+        "signguCd": "11260",
+        "signguNm": "중랑구",
+        "tAtsNm": "충익공신경진묘역"
+      },
+      {
+        "signguCd": "11290",
+        "signguNm": "성북구",
+        "tAtsNm": "상허이태준가옥(수연산방)"
+      },
+      {
+        "signguCd": "11290",
+        "signguNm": "성북구",
+        "tAtsNm": "성락원(서울)"
+      },
+      {
+        "signguCd": "11290",
+        "signguNm": "성북구",
+        "tAtsNm": "아리랑골목시장(정릉 아리랑 골목시장)"
+      },
+      {
+        "signguCd": "11320",
+        "signguNm": "도봉구",
+        "tAtsNm": "법종사"
+      },
+      {
+        "signguCd": "11350",
+        "signguNm": "노원구",
+        "tAtsNm": "피노파밀리아"
+      },
+      {
+        "signguCd": "11380",
+        "signguNm": "은평구",
+        "tAtsNm": "서울혁신파크"
+      },
+      {
+        "signguCd": "11380",
+        "signguNm": "은평구",
+        "tAtsNm": "은평구생활체육광장"
+      },
+      {
+        "signguCd": "11410",
+        "signguNm": "서대문구",
+        "tAtsNm": "신촌 플레이버스"
+      },
+      {
+        "signguCd": "11410",
+        "signguNm": "서대문구",
+        "tAtsNm": "이화웰컴센터"
+      },
+      {
+        "signguCd": "11440",
+        "signguNm": "마포구",
+        "tAtsNm": "S-PLEX 센터"
+      },
+      {
+        "signguCd": "11440",
+        "signguNm": "마포구",
+        "tAtsNm": "공덕시장"
+      },
+      {
+        "signguCd": "11440",
+        "signguNm": "마포구",
+        "tAtsNm": "동진시장"
+      },
+      {
+        "signguCd": "11440",
+        "signguNm": "마포구",
+        "tAtsNm": "레치키치 스튜디오"
+      },
+      {
+        "signguCd": "11440",
+        "signguNm": "마포구",
+        "tAtsNm": "망원정지"
+      },
+      {
+        "signguCd": "11440",
+        "signguNm": "마포구",
+        "tAtsNm": "윤스칼라"
+      },
+      {
+        "signguCd": "11470",
+        "signguNm": "양천구",
+        "tAtsNm": "갈산근린공원"
+      },
+      {
+        "signguCd": "11470",
+        "signguNm": "양천구",
+        "tAtsNm": "계남공원(유아숲체험장, 우렁바위)"
+      },
+      {
+        "signguCd": "11470",
+        "signguNm": "양천구",
+        "tAtsNm": "목3동시장(목동깨비시장)"
+      },
+      {
+        "signguCd": "11470",
+        "signguNm": "양천구",
+        "tAtsNm": "무중력지대 양천"
+      },
+      {
+        "signguCd": "11470",
+        "signguNm": "양천구",
+        "tAtsNm": "재활용창작품상설전시관"
+      },
+      {
+        "signguCd": "11470",
+        "signguNm": "양천구",
+        "tAtsNm": "향림사"
+      },
+      {
+        "signguCd": "11500",
+        "signguNm": "강서구",
+        "tAtsNm": "구암공원"
+      },
+      {
+        "signguCd": "11500",
+        "signguNm": "강서구",
+        "tAtsNm": "메이필드호텔서울"
+      },
+      {
+        "signguCd": "11500",
+        "signguNm": "강서구",
+        "tAtsNm": "방신재래시장"
+      },
+      {
+        "signguCd": "11500",
+        "signguNm": "강서구",
+        "tAtsNm": "성심사"
+      },
+      {
+        "signguCd": "11500",
+        "signguNm": "강서구",
+        "tAtsNm": "충우곤충박물관"
+      },
+      {
+        "signguCd": "11500",
+        "signguNm": "강서구",
+        "tAtsNm": "홍원사"
+      },
+      {
+        "signguCd": "11530",
+        "signguNm": "구로구",
+        "tAtsNm": "구로리공원"
+      },
+      {
+        "signguCd": "11530",
+        "signguNm": "구로구",
+        "tAtsNm": "서울특별시교육청과학전시관 남부분관"
+      },
+      {
+        "signguCd": "11530",
+        "signguNm": "구로구",
+        "tAtsNm": "이씨레물리노공원(구로근린공원)"
+      },
+      {
+        "signguCd": "11560",
+        "signguNm": "영등포구",
+        "tAtsNm": "63스퀘어"
+      },
+      {
+        "signguCd": "11560",
+        "signguNm": "영등포구",
+        "tAtsNm": "아트리움"
+      },
+      {
+        "signguCd": "11560",
+        "signguNm": "영등포구",
+        "tAtsNm": "영등포근린공원"
+      },
+      {
+        "signguCd": "11620",
+        "signguNm": "관악구",
+        "tAtsNm": "만남의광장"
+      },
+      {
+        "signguCd": "11620",
+        "signguNm": "관악구",
+        "tAtsNm": "서울 남현동 요지"
+      },
+      {
+        "signguCd": "11620",
+        "signguNm": "관악구",
+        "tAtsNm": "서울특별시교육청 과학전시관"
+      },
+      {
+        "signguCd": "11620",
+        "signguNm": "관악구",
+        "tAtsNm": "정정공강사상묘역"
+      },
+      {
+        "signguCd": "11650",
+        "signguNm": "서초구",
+        "tAtsNm": "구룡사"
+      },
+      {
+        "signguCd": "11650",
+        "signguNm": "서초구",
+        "tAtsNm": "방배종합시장"
+      },
+      {
+        "signguCd": "11650",
+        "signguNm": "서초구",
+        "tAtsNm": "수안사"
+      },
+      {
+        "signguCd": "11650",
+        "signguNm": "서초구",
+        "tAtsNm": "양재 양곡도매시장"
+      },
+      {
+        "signguCd": "11650",
+        "signguNm": "서초구",
+        "tAtsNm": "양재천 생태공원"
+      },
+      {
+        "signguCd": "11650",
+        "signguNm": "서초구",
+        "tAtsNm": "한수공원"
+      },
+      {
+        "signguCd": "11680",
+        "signguNm": "강남구",
+        "tAtsNm": "M컨템포러리"
+      },
+      {
+        "signguCd": "11680",
+        "signguNm": "강남구",
+        "tAtsNm": "SPA 1899 동인비"
+      },
+      {
+        "signguCd": "11680",
+        "signguNm": "강남구",
+        "tAtsNm": "더스마티움"
+      },
+      {
+        "signguCd": "11680",
+        "signguNm": "강남구",
+        "tAtsNm": "불교총지종"
+      },
+      {
+        "signguCd": "11680",
+        "signguNm": "강남구",
+        "tAtsNm": "서울국가무형문화재전수회관"
+      },
+      {
+        "signguCd": "11680",
+        "signguNm": "강남구",
+        "tAtsNm": "설화수 플래그십 스토어"
+      },
+      {
+        "signguCd": "11680",
+        "signguNm": "강남구",
+        "tAtsNm": "식물관PH"
+      },
+      {
+        "signguCd": "11680",
+        "signguNm": "강남구",
+        "tAtsNm": "신사시장"
+      },
+      {
+        "signguCd": "11680",
+        "signguNm": "강남구",
+        "tAtsNm": "일원장미공원"
+      },
+      {
+        "signguCd": "11680",
+        "signguNm": "강남구",
+        "tAtsNm": "학동공원"
+      },
+      {
+        "signguCd": "11680",
+        "signguNm": "강남구",
+        "tAtsNm": "한국종합무역센터(코엑스)"
+      },
+      {
+        "signguCd": "11680",
+        "signguNm": "강남구",
+        "tAtsNm": "한솔공원"
+      },
+      {
+        "signguCd": "11680",
+        "signguNm": "강남구",
+        "tAtsNm": "호림아트센터(호림박물관 신사분관)"
+      },
+      {
+        "signguCd": "11710",
+        "signguNm": "송파구",
+        "tAtsNm": "몽촌역사관"
+      },
+      {
+        "signguCd": "11710",
+        "signguNm": "송파구",
+        "tAtsNm": "방이동 고분공원"
+      },
+      {
+        "signguCd": "11710",
+        "signguNm": "송파구",
+        "tAtsNm": "백제초기적석총"
+      },
+      {
+        "signguCd": "11710",
+        "signguNm": "송파구",
+        "tAtsNm": "불광사"
+      },
+      {
+        "signguCd": "11710",
+        "signguNm": "송파구",
+        "tAtsNm": "송파나루공원(석촌호수)"
+      },
+      {
+        "signguCd": "11710",
+        "signguNm": "송파구",
+        "tAtsNm": "송파어린이교통공원 교통안전교육장"
+      },
+      {
+        "signguCd": "11710",
+        "signguNm": "송파구",
+        "tAtsNm": "이랜드크루즈잠실선착장"
+      },
+      {
+        "signguCd": "11740",
+        "signguNm": "강동구",
+        "tAtsNm": "고덕동 생태경관 보전지역"
+      },
+      {
+        "signguCd": "11740",
+        "signguNm": "강동구",
+        "tAtsNm": "브이센터 (브이센터 더라이브뮤지엄)"
+      },
+      {
+        "signguCd": "11740",
+        "signguNm": "강동구",
+        "tAtsNm": "암사선사유적박물관"
+      },
+      {
+        "signguCd": "11740",
+        "signguNm": "강동구",
+        "tAtsNm": "일자산자연공원"
+      },
+      {
+        "signguCd": "28110",
+        "signguNm": "중구",
+        "tAtsNm": "선녀바위해수욕장"
+      },
+      {
+        "signguCd": "28110",
+        "signguNm": "중구",
+        "tAtsNm": "실미해수욕장"
+      },
+      {
+        "signguCd": "28110",
+        "signguNm": "중구",
+        "tAtsNm": "씨사이드파크하늘구름광장"
+      },
+      {
+        "signguCd": "28110",
+        "signguNm": "중구",
+        "tAtsNm": "씨사이드파크해수족욕장"
+      },
+      {
+        "signguCd": "28110",
+        "signguNm": "중구",
+        "tAtsNm": "용유도 마시안해변"
+      },
+      {
+        "signguCd": "28110",
+        "signguNm": "중구",
+        "tAtsNm": "월미테마파크"
+      },
+      {
+        "signguCd": "28110",
+        "signguNm": "중구",
+        "tAtsNm": "파라다이스 씨티 씨메르(인천)"
+      },
+      {
+        "signguCd": "28140",
+        "signguNm": "동구",
+        "tAtsNm": "수도국산달동네박물관"
+      },
+      {
+        "signguCd": "28185",
+        "signguNm": "연수구",
+        "tAtsNm": "케이슨24"
+      },
+      {
+        "signguCd": "28185",
+        "signguNm": "연수구",
+        "tAtsNm": "트라이볼"
+      },
+      {
+        "signguCd": "28200",
+        "signguNm": "남동구",
+        "tAtsNm": "애보박물관"
+      },
+      {
+        "signguCd": "28237",
+        "signguNm": "부평구",
+        "tAtsNm": "호명사"
+      },
+      {
+        "signguCd": "28260",
+        "signguNm": "서구",
+        "tAtsNm": "수도권매립지 야생화단지 드림파크"
+      },
+      {
+        "signguCd": "28260",
+        "signguNm": "서구",
+        "tAtsNm": "인천 검단선사박물관"
+      },
+      {
+        "signguCd": "28260",
+        "signguNm": "서구",
+        "tAtsNm": "인천로봇랜드"
+      },
+      {
+        "signguCd": "28710",
+        "signguNm": "강화군",
+        "tAtsNm": "강화자연휴양림"
+      },
+      {
+        "signguCd": "28710",
+        "signguNm": "강화군",
+        "tAtsNm": "도솔미술관"
+      },
+      {
+        "signguCd": "28710",
+        "signguNm": "강화군",
+        "tAtsNm": "삼랑성(정족산성)"
+      },
+      {
+        "signguCd": "28710",
+        "signguNm": "강화군",
+        "tAtsNm": "외포항 젓갈수산시장"
+      },
+      {
+        "signguCd": "28710",
+        "signguNm": "강화군",
+        "tAtsNm": "조양방직"
+      },
+      {
+        "signguCd": "28720",
+        "signguNm": "옹진군",
+        "tAtsNm": "노가리해수욕장"
+      },
+      {
+        "signguCd": "28720",
+        "signguNm": "옹진군",
+        "tAtsNm": "몽돌해수욕장(옹진군)"
+      },
+      {
+        "signguCd": "28720",
+        "signguNm": "옹진군",
+        "tAtsNm": "백령도 끝섬전망대"
+      },
+      {
+        "signguCd": "28720",
+        "signguNm": "옹진군",
+        "tAtsNm": "영흥에너지파크"
+      },
+      {
+        "signguCd": "28720",
+        "signguNm": "옹진군",
+        "tAtsNm": "인천 푸른벗말"
+      },
+      {
+        "signguCd": "28720",
+        "signguNm": "옹진군",
+        "tAtsNm": "작은풀안 해변"
+      },
+      {
+        "signguCd": "28720",
+        "signguNm": "옹진군",
+        "tAtsNm": "장봉도 진촌해변"
+      },
+      {
+        "signguCd": "28720",
+        "signguNm": "옹진군",
+        "tAtsNm": "큰풀안 해변"
+      },
+      {
+        "signguCd": "30110",
+        "signguNm": "동구",
+        "tAtsNm": "대전 계족산성"
+      },
+      {
+        "signguCd": "30110",
+        "signguNm": "동구",
+        "tAtsNm": "사우당"
+      },
+      {
+        "signguCd": "30110",
+        "signguNm": "동구",
+        "tAtsNm": "슬픈연가촬영지"
+      },
+      {
+        "signguCd": "30140",
+        "signguNm": "중구",
+        "tAtsNm": "대전 태평시장"
+      },
+      {
+        "signguCd": "30140",
+        "signguNm": "중구",
+        "tAtsNm": "문창시장"
+      },
+      {
+        "signguCd": "30170",
+        "signguNm": "서구",
+        "tAtsNm": "대전시청광장"
+      },
+      {
+        "signguCd": "30170",
+        "signguNm": "서구",
+        "tAtsNm": "엑스포시민광장"
+      },
+      {
+        "signguCd": "30200",
+        "signguNm": "유성구",
+        "tAtsNm": "노은농수산물시장"
+      },
+      {
+        "signguCd": "30200",
+        "signguNm": "유성구",
+        "tAtsNm": "대전어린이회관"
+      },
+      {
+        "signguCd": "30200",
+        "signguNm": "유성구",
+        "tAtsNm": "대전통일관"
+      },
+      {
+        "signguCd": "30200",
+        "signguNm": "유성구",
+        "tAtsNm": "봉명동 우산거리"
+      },
+      {
+        "signguCd": "30200",
+        "signguNm": "유성구",
+        "tAtsNm": "은구비역사공원"
+      },
+      {
+        "signguCd": "30200",
+        "signguNm": "유성구",
+        "tAtsNm": "티놀자 애니멀 파크"
+      },
+      {
+        "signguCd": "30230",
+        "signguNm": "대덕구",
+        "tAtsNm": "길치근린공원(가양비래근린공원)"
+      },
+      {
+        "signguCd": "30230",
+        "signguNm": "대덕구",
+        "tAtsNm": "송애당"
+      },
+      {
+        "signguCd": "30230",
+        "signguNm": "대덕구",
+        "tAtsNm": "쌍청당"
+      },
+      {
+        "signguCd": "36110",
+        "signguNm": "세종특별자치시",
+        "tAtsNm": "고복자연공원"
+      },
+      {
+        "signguCd": "36110",
+        "signguNm": "세종특별자치시",
+        "tAtsNm": "고운뜰공원"
+      },
+      {
+        "signguCd": "36110",
+        "signguNm": "세종특별자치시",
+        "tAtsNm": "국립세종수목원"
+      },
+      {
+        "signguCd": "36110",
+        "signguNm": "세종특별자치시",
+        "tAtsNm": "금강수변공원"
+      },
+      {
+        "signguCd": "36110",
+        "signguNm": "세종특별자치시",
+        "tAtsNm": "금강자연휴양림(금강수목원,산림박물관)"
+      },
+      {
+        "signguCd": "36110",
+        "signguNm": "세종특별자치시",
+        "tAtsNm": "김종서 장군 묘"
+      },
+      {
+        "signguCd": "36110",
+        "signguNm": "세종특별자치시",
+        "tAtsNm": "대통령기록전시관"
+      },
+      {
+        "signguCd": "36110",
+        "signguNm": "세종특별자치시",
+        "tAtsNm": "도토리숲키즈파크"
+      },
+      {
+        "signguCd": "36110",
+        "signguNm": "세종특별자치시",
+        "tAtsNm": "뒤웅박고을"
+      },
+      {
+        "signguCd": "36110",
+        "signguNm": "세종특별자치시",
+        "tAtsNm": "리틀파머스"
+      },
+      {
+        "signguCd": "36110",
+        "signguNm": "세종특별자치시",
+        "tAtsNm": "밀마루전망대"
+      },
+      {
+        "signguCd": "36110",
+        "signguNm": "세종특별자치시",
+        "tAtsNm": "바람재쉼터"
+      },
+      {
+        "signguCd": "36110",
+        "signguNm": "세종특별자치시",
+        "tAtsNm": "방축천 음악분수"
+      },
+      {
+        "signguCd": "36110",
+        "signguNm": "세종특별자치시",
+        "tAtsNm": "베어트리파크"
+      },
+      {
+        "signguCd": "36110",
+        "signguNm": "세종특별자치시",
+        "tAtsNm": "비암사(세종)"
+      },
+      {
+        "signguCd": "36110",
+        "signguNm": "세종특별자치시",
+        "tAtsNm": "세종시 무궁화공원"
+      },
+      {
+        "signguCd": "36110",
+        "signguNm": "세종특별자치시",
+        "tAtsNm": "세종시립민속박물관"
+      },
+      {
+        "signguCd": "36110",
+        "signguNm": "세종특별자치시",
+        "tAtsNm": "세종어린이천문대(세종미리내천문대)"
+      },
+      {
+        "signguCd": "36110",
+        "signguNm": "세종특별자치시",
+        "tAtsNm": "세종전통시장(조치원중앙시장)"
+      },
+      {
+        "signguCd": "36110",
+        "signguNm": "세종특별자치시",
+        "tAtsNm": "세종청사 옥상정원"
+      },
+      {
+        "signguCd": "36110",
+        "signguNm": "세종특별자치시",
+        "tAtsNm": "세종호수공원 일원"
+      },
+      {
+        "signguCd": "36110",
+        "signguNm": "세종특별자치시",
+        "tAtsNm": "숲뜰근린공원"
+      },
+      {
+        "signguCd": "36110",
+        "signguNm": "세종특별자치시",
+        "tAtsNm": "신광사(세종)"
+      },
+      {
+        "signguCd": "36110",
+        "signguNm": "세종특별자치시",
+        "tAtsNm": "연기대첩비공원"
+      },
+      {
+        "signguCd": "36110",
+        "signguNm": "세종특별자치시",
+        "tAtsNm": "연기향교"
+      },
+      {
+        "signguCd": "36110",
+        "signguNm": "세종특별자치시",
+        "tAtsNm": "연기향토박물관"
+      },
+      {
+        "signguCd": "36110",
+        "signguNm": "세종특별자치시",
+        "tAtsNm": "연동 합호서원"
+      },
+      {
+        "signguCd": "36110",
+        "signguNm": "세종특별자치시",
+        "tAtsNm": "연화사(세종)"
+      },
+      {
+        "signguCd": "36110",
+        "signguNm": "세종특별자치시",
+        "tAtsNm": "영평사"
+      },
+      {
+        "signguCd": "36110",
+        "signguNm": "세종특별자치시",
+        "tAtsNm": "운주산성"
+      },
+      {
+        "signguCd": "36110",
+        "signguNm": "세종특별자치시",
+        "tAtsNm": "원수산MTB공원"
+      },
+      {
+        "signguCd": "36110",
+        "signguNm": "세종특별자치시",
+        "tAtsNm": "원수산습지생태원"
+      },
+      {
+        "signguCd": "36110",
+        "signguNm": "세종특별자치시",
+        "tAtsNm": "전의향교"
+      },
+      {
+        "signguCd": "36110",
+        "signguNm": "세종특별자치시",
+        "tAtsNm": "조천연꽃공원"
+      },
+      {
+        "signguCd": "36110",
+        "signguNm": "세종특별자치시",
+        "tAtsNm": "청안사(세종)"
+      },
+      {
+        "signguCd": "36110",
+        "signguNm": "세종특별자치시",
+        "tAtsNm": "학림사(세종)"
+      },
+      {
+        "signguCd": "41113",
+        "signguNm": "수원시 권선구",
+        "tAtsNm": "권선11번가시장"
+      },
+      {
+        "signguCd": "41113",
+        "signguNm": "수원시 권선구",
+        "tAtsNm": "서울대 수원수목원"
+      },
+      {
+        "signguCd": "41115",
+        "signguNm": "수원시 팔달구",
+        "tAtsNm": "한옥기술전시관"
+      },
+      {
+        "signguCd": "41117",
+        "signguNm": "수원시 영통구",
+        "tAtsNm": "영통어린이교통공원"
+      },
+      {
+        "signguCd": "41133",
+        "signguNm": "성남시 중원구",
+        "tAtsNm": "사기막골공원"
+      },
+      {
+        "signguCd": "41135",
+        "signguNm": "성남시 분당구",
+        "tAtsNm": "골안사"
+      },
+      {
+        "signguCd": "41135",
+        "signguNm": "성남시 분당구",
+        "tAtsNm": "다시쓰는세상순환자원홍보관"
+      },
+      {
+        "signguCd": "41135",
+        "signguNm": "성남시 분당구",
+        "tAtsNm": "서현동 먹거리촌"
+      },
+      {
+        "signguCd": "41135",
+        "signguNm": "성남시 분당구",
+        "tAtsNm": "운중저수지"
+      },
+      {
+        "signguCd": "41135",
+        "signguNm": "성남시 분당구",
+        "tAtsNm": "원적정사"
+      },
+      {
+        "signguCd": "41135",
+        "signguNm": "성남시 분당구",
+        "tAtsNm": "판교환경생태학습원"
+      },
+      {
+        "signguCd": "41135",
+        "signguNm": "성남시 분당구",
+        "tAtsNm": "효자촌 먹거리촌"
+      },
+      {
+        "signguCd": "41150",
+        "signguNm": "의정부시",
+        "tAtsNm": "낙양물사랑공원"
+      },
+      {
+        "signguCd": "41150",
+        "signguNm": "의정부시",
+        "tAtsNm": "서계박세당 사랑채"
+      },
+      {
+        "signguCd": "41192",
+        "signguNm": "부천시 원미구",
+        "tAtsNm": "천화사"
+      },
+      {
+        "signguCd": "41194",
+        "signguNm": "부천시 소사구",
+        "tAtsNm": "성주산체육공원"
+      },
+      {
+        "signguCd": "41196",
+        "signguNm": "부천시 오정구",
+        "tAtsNm": "까치울 먹거리촌 (작동 먹거리촌)"
+      },
+      {
+        "signguCd": "41196",
+        "signguNm": "부천시 오정구",
+        "tAtsNm": "부천시박물관"
+      },
+      {
+        "signguCd": "41196",
+        "signguNm": "부천시 오정구",
+        "tAtsNm": "슈퍼팜"
+      },
+      {
+        "signguCd": "41210",
+        "signguNm": "광명시",
+        "tAtsNm": "가학동지석묘"
+      },
+      {
+        "signguCd": "41210",
+        "signguNm": "광명시",
+        "tAtsNm": "광명영회원"
+      },
+      {
+        "signguCd": "41220",
+        "signguNm": "평택시",
+        "tAtsNm": "동말근린공원"
+      },
+      {
+        "signguCd": "41220",
+        "signguNm": "평택시",
+        "tAtsNm": "모곡공원"
+      },
+      {
+        "signguCd": "41220",
+        "signguNm": "평택시",
+        "tAtsNm": "민세 안재홍 선생 생가"
+      },
+      {
+        "signguCd": "41220",
+        "signguNm": "평택시",
+        "tAtsNm": "부락산 산림체험장"
+      },
+      {
+        "signguCd": "41220",
+        "signguNm": "평택시",
+        "tAtsNm": "소풍"
+      },
+      {
+        "signguCd": "41220",
+        "signguNm": "평택시",
+        "tAtsNm": "정도전 사당"
+      },
+      {
+        "signguCd": "41220",
+        "signguNm": "평택시",
+        "tAtsNm": "평택역광장"
+      },
+      {
+        "signguCd": "41271",
+        "signguNm": "안산시 상록구",
+        "tAtsNm": "별빛마을포토랜드"
+      },
+      {
+        "signguCd": "41273",
+        "signguNm": "안산시 단원구",
+        "tAtsNm": "안산 시민시장"
+      },
+      {
+        "signguCd": "41281",
+        "signguNm": "고양시 덕양구",
+        "tAtsNm": "고려 공양왕릉"
+      },
+      {
+        "signguCd": "41281",
+        "signguNm": "고양시 덕양구",
+        "tAtsNm": "고양대덕생태공원"
+      },
+      {
+        "signguCd": "41281",
+        "signguNm": "고양시 덕양구",
+        "tAtsNm": "덕양서원(고양)"
+      },
+      {
+        "signguCd": "41281",
+        "signguNm": "고양시 덕양구",
+        "tAtsNm": "배다골테마파크"
+      },
+      {
+        "signguCd": "41281",
+        "signguNm": "고양시 덕양구",
+        "tAtsNm": "충장체육공원"
+      },
+      {
+        "signguCd": "41285",
+        "signguNm": "고양시 일산동구",
+        "tAtsNm": "용강서원"
+      },
+      {
+        "signguCd": "41287",
+        "signguNm": "고양시 일산서구",
+        "tAtsNm": "고양 구 일산역사"
+      },
+      {
+        "signguCd": "41287",
+        "signguNm": "고양시 일산서구",
+        "tAtsNm": "원각사(고양)"
+      },
+      {
+        "signguCd": "41290",
+        "signguNm": "과천시",
+        "tAtsNm": "선바위미술관"
+      },
+      {
+        "signguCd": "41290",
+        "signguNm": "과천시",
+        "tAtsNm": "주암체육소공원"
+      },
+      {
+        "signguCd": "41310",
+        "signguNm": "구리시",
+        "tAtsNm": "구리 명빈묘"
+      },
+      {
+        "signguCd": "41310",
+        "signguNm": "구리시",
+        "tAtsNm": "구리시민한강공원(코스모스공원)"
+      },
+      {
+        "signguCd": "41360",
+        "signguNm": "남양주시",
+        "tAtsNm": "경기 남양주 조안 [슬로시티]"
+      },
+      {
+        "signguCd": "41360",
+        "signguNm": "남양주시",
+        "tAtsNm": "광해군묘"
+      },
+      {
+        "signguCd": "41360",
+        "signguNm": "남양주시",
+        "tAtsNm": "남양주한강변시민공원"
+      },
+      {
+        "signguCd": "41360",
+        "signguNm": "남양주시",
+        "tAtsNm": "남양주한강체육공원(남양주 수석동 체육공원)"
+      },
+      {
+        "signguCd": "41360",
+        "signguNm": "남양주시",
+        "tAtsNm": "능내역 폐역"
+      },
+      {
+        "signguCd": "41360",
+        "signguNm": "남양주시",
+        "tAtsNm": "수동국민관광지"
+      },
+      {
+        "signguCd": "41360",
+        "signguNm": "남양주시",
+        "tAtsNm": "수진사(경기)"
+      },
+      {
+        "signguCd": "41360",
+        "signguNm": "남양주시",
+        "tAtsNm": "아라크노피아 생태수목원·주필거미박물관"
+      },
+      {
+        "signguCd": "41360",
+        "signguNm": "남양주시",
+        "tAtsNm": "청학밸리리조트"
+      },
+      {
+        "signguCd": "41370",
+        "signguNm": "오산시",
+        "tAtsNm": "서랑지"
+      },
+      {
+        "signguCd": "41370",
+        "signguNm": "오산시",
+        "tAtsNm": "어린이천문대 동탄관측소"
+      },
+      {
+        "signguCd": "41370",
+        "signguNm": "오산시",
+        "tAtsNm": "오산 고인돌역사공원"
+      },
+      {
+        "signguCd": "41390",
+        "signguNm": "시흥시",
+        "tAtsNm": "법련사"
+      },
+      {
+        "signguCd": "41390",
+        "signguNm": "시흥시",
+        "tAtsNm": "소전미술관"
+      },
+      {
+        "signguCd": "41390",
+        "signguNm": "시흥시",
+        "tAtsNm": "신세계사이먼 시흥 프리미엄 아울렛"
+      },
+      {
+        "signguCd": "41390",
+        "signguNm": "시흥시",
+        "tAtsNm": "정왕체육공원"
+      },
+      {
+        "signguCd": "41390",
+        "signguNm": "시흥시",
+        "tAtsNm": "진덕사"
+      },
+      {
+        "signguCd": "41410",
+        "signguNm": "군포시",
+        "tAtsNm": "산본시장"
+      },
+      {
+        "signguCd": "41410",
+        "signguNm": "군포시",
+        "tAtsNm": "수리산 상상마을"
+      },
+      {
+        "signguCd": "41430",
+        "signguNm": "의왕시",
+        "tAtsNm": "오봉정사"
+      },
+      {
+        "signguCd": "41461",
+        "signguNm": "용인시 처인구",
+        "tAtsNm": "마가미술관"
+      },
+      {
+        "signguCd": "41461",
+        "signguNm": "용인시 처인구",
+        "tAtsNm": "사암리선돌"
+      },
+      {
+        "signguCd": "41461",
+        "signguNm": "용인시 처인구",
+        "tAtsNm": "서울근교 찾아가는 양조장 술샘"
+      },
+      {
+        "signguCd": "41461",
+        "signguNm": "용인시 처인구",
+        "tAtsNm": "양지체육공원"
+      },
+      {
+        "signguCd": "41461",
+        "signguNm": "용인시 처인구",
+        "tAtsNm": "양지파인리조트 스키장"
+      },
+      {
+        "signguCd": "41461",
+        "signguNm": "용인시 처인구",
+        "tAtsNm": "용덕지"
+      },
+      {
+        "signguCd": "41461",
+        "signguNm": "용인시 처인구",
+        "tAtsNm": "용인축협자연체험스쿨 한우랜드"
+      },
+      {
+        "signguCd": "41461",
+        "signguNm": "용인시 처인구",
+        "tAtsNm": "한터 조랑말농장"
+      },
+      {
+        "signguCd": "41461",
+        "signguNm": "용인시 처인구",
+        "tAtsNm": "협동조합문화와함께 (구 문화누리 원삼)"
+      },
+      {
+        "signguCd": "41461",
+        "signguNm": "용인시 처인구",
+        "tAtsNm": "황새울관광농원"
+      },
+      {
+        "signguCd": "41463",
+        "signguNm": "용인시 기흥구",
+        "tAtsNm": "이영미술관"
+      },
+      {
+        "signguCd": "41465",
+        "signguNm": "용인시 수지구",
+        "tAtsNm": "다이노스타 (용인)"
+      },
+      {
+        "signguCd": "41465",
+        "signguNm": "용인시 수지구",
+        "tAtsNm": "죽현중앙공원"
+      },
+      {
+        "signguCd": "41480",
+        "signguNm": "파주시",
+        "tAtsNm": "고정아트"
+      },
+      {
+        "signguCd": "41480",
+        "signguNm": "파주시",
+        "tAtsNm": "반구정과 황희선생유적지"
+      },
+      {
+        "signguCd": "41480",
+        "signguNm": "파주시",
+        "tAtsNm": "소령원"
+      },
+      {
+        "signguCd": "41480",
+        "signguNm": "파주시",
+        "tAtsNm": "수길원"
+      },
+      {
+        "signguCd": "41480",
+        "signguNm": "파주시",
+        "tAtsNm": "심학산 산림공원"
+      },
+      {
+        "signguCd": "41480",
+        "signguNm": "파주시",
+        "tAtsNm": "자유의 다리(파주)"
+      },
+      {
+        "signguCd": "41480",
+        "signguNm": "파주시",
+        "tAtsNm": "장산전망대"
+      },
+      {
+        "signguCd": "41480",
+        "signguNm": "파주시",
+        "tAtsNm": "탄탄스토리하우스"
+      },
+      {
+        "signguCd": "41480",
+        "signguNm": "파주시",
+        "tAtsNm": "판문점"
+      },
+      {
+        "signguCd": "41480",
+        "signguNm": "파주시",
+        "tAtsNm": "하니랜드"
+      },
+      {
+        "signguCd": "41480",
+        "signguNm": "파주시",
+        "tAtsNm": "황희정승묘"
+      },
+      {
+        "signguCd": "41500",
+        "signguNm": "이천시",
+        "tAtsNm": "단내성지"
+      },
+      {
+        "signguCd": "41500",
+        "signguNm": "이천시",
+        "tAtsNm": "별빛정원우주"
+      },
+      {
+        "signguCd": "41500",
+        "signguNm": "이천시",
+        "tAtsNm": "스파플러스"
+      },
+      {
+        "signguCd": "41500",
+        "signguNm": "이천시",
+        "tAtsNm": "영보사"
+      },
+      {
+        "signguCd": "41500",
+        "signguNm": "이천시",
+        "tAtsNm": "예스파크"
+      },
+      {
+        "signguCd": "41500",
+        "signguNm": "이천시",
+        "tAtsNm": "이천관광농원"
+      },
+      {
+        "signguCd": "41500",
+        "signguNm": "이천시",
+        "tAtsNm": "피아뜰(돼지보러오면돼지)"
+      },
+      {
+        "signguCd": "41500",
+        "signguNm": "이천시",
+        "tAtsNm": "해강도자미술관"
+      },
+      {
+        "signguCd": "41550",
+        "signguNm": "안성시",
+        "tAtsNm": "금광관광농원"
+      },
+      {
+        "signguCd": "41550",
+        "signguNm": "안성시",
+        "tAtsNm": "대안미술공간 소나무"
+      },
+      {
+        "signguCd": "41550",
+        "signguNm": "안성시",
+        "tAtsNm": "망이산성"
+      },
+      {
+        "signguCd": "41550",
+        "signguNm": "안성시",
+        "tAtsNm": "목금토 크래프트"
+      },
+      {
+        "signguCd": "41550",
+        "signguNm": "안성시",
+        "tAtsNm": "보개바람"
+      },
+      {
+        "signguCd": "41550",
+        "signguNm": "안성시",
+        "tAtsNm": "스몹 안성"
+      },
+      {
+        "signguCd": "41550",
+        "signguNm": "안성시",
+        "tAtsNm": "안성 건강나라"
+      },
+      {
+        "signguCd": "41550",
+        "signguNm": "안성시",
+        "tAtsNm": "안성 구포동성당"
+      },
+      {
+        "signguCd": "41550",
+        "signguNm": "안성시",
+        "tAtsNm": "안성맞춤 먹거리타운"
+      },
+      {
+        "signguCd": "41550",
+        "signguNm": "안성시",
+        "tAtsNm": "칠곡저수지"
+      },
+      {
+        "signguCd": "41550",
+        "signguNm": "안성시",
+        "tAtsNm": "태평무 전수관"
+      },
+      {
+        "signguCd": "41570",
+        "signguNm": "김포시",
+        "tAtsNm": "경인아라뱃길유람선 현대크루즈호"
+      },
+      {
+        "signguCd": "41570",
+        "signguNm": "김포시",
+        "tAtsNm": "김포독립운동기념관"
+      },
+      {
+        "signguCd": "41570",
+        "signguNm": "김포시",
+        "tAtsNm": "나인블럭아트스페이스"
+      },
+      {
+        "signguCd": "41570",
+        "signguNm": "김포시",
+        "tAtsNm": "서암체육공원"
+      },
+      {
+        "signguCd": "41590",
+        "signguNm": "화성시",
+        "tAtsNm": "궁평유원지"
+      },
+      {
+        "signguCd": "41590",
+        "signguNm": "화성시",
+        "tAtsNm": "궁평캠프 승마장"
+      },
+      {
+        "signguCd": "41590",
+        "signguNm": "화성시",
+        "tAtsNm": "또나따목장"
+      },
+      {
+        "signguCd": "41590",
+        "signguNm": "화성시",
+        "tAtsNm": "라바팜스토리"
+      },
+      {
+        "signguCd": "41590",
+        "signguNm": "화성시",
+        "tAtsNm": "라비돌리조트"
+      },
+      {
+        "signguCd": "41590",
+        "signguNm": "화성시",
+        "tAtsNm": "만의사(화성)"
+      },
+      {
+        "signguCd": "41590",
+        "signguNm": "화성시",
+        "tAtsNm": "송교리 횟타운"
+      },
+      {
+        "signguCd": "41590",
+        "signguNm": "화성시",
+        "tAtsNm": "애니랜드"
+      },
+      {
+        "signguCd": "41590",
+        "signguNm": "화성시",
+        "tAtsNm": "장지리저수지"
+      },
+      {
+        "signguCd": "41590",
+        "signguNm": "화성시",
+        "tAtsNm": "제암리 3.1운동 순국기념관"
+      },
+      {
+        "signguCd": "41590",
+        "signguNm": "화성시",
+        "tAtsNm": "큰재봉공원"
+      },
+      {
+        "signguCd": "41590",
+        "signguNm": "화성시",
+        "tAtsNm": "탄도인공습지공원"
+      },
+      {
+        "signguCd": "41590",
+        "signguNm": "화성시",
+        "tAtsNm": "하늘누리항공"
+      },
+      {
+        "signguCd": "41590",
+        "signguNm": "화성시",
+        "tAtsNm": "형도"
+      },
+      {
+        "signguCd": "41590",
+        "signguNm": "화성시",
+        "tAtsNm": "화산체육공원"
+      },
+      {
+        "signguCd": "41590",
+        "signguNm": "화성시",
+        "tAtsNm": "화성 백미리마을"
+      },
+      {
+        "signguCd": "41590",
+        "signguNm": "화성시",
+        "tAtsNm": "화성 우리꽃식물원"
+      },
+      {
+        "signguCd": "41590",
+        "signguNm": "화성시",
+        "tAtsNm": "화성남양리신빈김씨묘역"
+      },
+      {
+        "signguCd": "41610",
+        "signguNm": "광주시",
+        "tAtsNm": "곤지암생활체육공원"
+      },
+      {
+        "signguCd": "41610",
+        "signguNm": "광주시",
+        "tAtsNm": "백향꽃누르미갤러리"
+      },
+      {
+        "signguCd": "41610",
+        "signguNm": "광주시",
+        "tAtsNm": "악티바"
+      },
+      {
+        "signguCd": "41610",
+        "signguNm": "광주시",
+        "tAtsNm": "일본군위안부역사관"
+      },
+      {
+        "signguCd": "41610",
+        "signguNm": "광주시",
+        "tAtsNm": "현절사"
+      },
+      {
+        "signguCd": "41630",
+        "signguNm": "양주시",
+        "tAtsNm": "리틀빅아이 자유숲놀이터"
+      },
+      {
+        "signguCd": "41630",
+        "signguNm": "양주시",
+        "tAtsNm": "신흥레저타운"
+      },
+      {
+        "signguCd": "41630",
+        "signguNm": "양주시",
+        "tAtsNm": "양주골 한우마을"
+      },
+      {
+        "signguCd": "41630",
+        "signguNm": "양주시",
+        "tAtsNm": "장욱진미술관"
+      },
+      {
+        "signguCd": "41630",
+        "signguNm": "양주시",
+        "tAtsNm": "조소양선생기념관"
+      },
+      {
+        "signguCd": "41650",
+        "signguNm": "포천시",
+        "tAtsNm": "계류리 예술창고"
+      },
+      {
+        "signguCd": "41650",
+        "signguNm": "포천시",
+        "tAtsNm": "더 파크 아프리카뮤지엄"
+      },
+      {
+        "signguCd": "41650",
+        "signguNm": "포천시",
+        "tAtsNm": "백로주유원지"
+      },
+      {
+        "signguCd": "41650",
+        "signguNm": "포천시",
+        "tAtsNm": "신북 오리촌"
+      },
+      {
+        "signguCd": "41650",
+        "signguNm": "포천시",
+        "tAtsNm": "신북리조트 스프링폴"
+      },
+      {
+        "signguCd": "41650",
+        "signguNm": "포천시",
+        "tAtsNm": "우둠지"
+      },
+      {
+        "signguCd": "41650",
+        "signguNm": "포천시",
+        "tAtsNm": "청계저수지 (청계호수)"
+      },
+      {
+        "signguCd": "41650",
+        "signguNm": "포천시",
+        "tAtsNm": "평강식물원"
+      },
+      {
+        "signguCd": "41650",
+        "signguNm": "포천시",
+        "tAtsNm": "포천향교"
+      },
+      {
+        "signguCd": "41650",
+        "signguNm": "포천시",
+        "tAtsNm": "풍혈산유원지"
+      },
+      {
+        "signguCd": "41650",
+        "signguNm": "포천시",
+        "tAtsNm": "한화리조트 산정호수 안시 온천사우나"
+      },
+      {
+        "signguCd": "41670",
+        "signguNm": "여주시",
+        "tAtsNm": "세종천문대"
+      },
+      {
+        "signguCd": "41670",
+        "signguNm": "여주시",
+        "tAtsNm": "여주 영릉(英陵)세종대왕)과 영릉(寧陵)효종,인선왕후) [유네스코 세계유산]"
+      },
+      {
+        "signguCd": "41670",
+        "signguNm": "여주시",
+        "tAtsNm": "여주온천"
+      },
+      {
+        "signguCd": "41670",
+        "signguNm": "여주시",
+        "tAtsNm": "장흥리 산촌생태마을"
+      },
+      {
+        "signguCd": "41670",
+        "signguNm": "여주시",
+        "tAtsNm": "죽포미술관"
+      },
+      {
+        "signguCd": "41670",
+        "signguNm": "여주시",
+        "tAtsNm": "한얼테마과학·박물관"
+      },
+      {
+        "signguCd": "41800",
+        "signguNm": "연천군",
+        "tAtsNm": "당포성 (한탄강 유네스코 세계지질공원)"
+      },
+      {
+        "signguCd": "41800",
+        "signguNm": "연천군",
+        "tAtsNm": "신탄리역"
+      },
+      {
+        "signguCd": "41800",
+        "signguNm": "연천군",
+        "tAtsNm": "연강갤러리"
+      },
+      {
+        "signguCd": "41800",
+        "signguNm": "연천군",
+        "tAtsNm": "전곡역"
+      },
+      {
+        "signguCd": "41820",
+        "signguNm": "가평군",
+        "tAtsNm": "가일미술관"
+      },
+      {
+        "signguCd": "41820",
+        "signguNm": "가평군",
+        "tAtsNm": "가평사계절썰매장"
+      },
+      {
+        "signguCd": "41820",
+        "signguNm": "가평군",
+        "tAtsNm": "가평현암농경유물박물관"
+      },
+      {
+        "signguCd": "41820",
+        "signguNm": "가평군",
+        "tAtsNm": "강촌레일파크(가평역)"
+      },
+      {
+        "signguCd": "41820",
+        "signguNm": "가평군",
+        "tAtsNm": "설곡옻샘마을"
+      },
+      {
+        "signguCd": "41820",
+        "signguNm": "가평군",
+        "tAtsNm": "용소폭포"
+      },
+      {
+        "signguCd": "41820",
+        "signguNm": "가평군",
+        "tAtsNm": "용추폭포(가평)"
+      },
+      {
+        "signguCd": "41820",
+        "signguNm": "가평군",
+        "tAtsNm": "인터렉티브아트뮤지엄"
+      },
+      {
+        "signguCd": "41820",
+        "signguNm": "가평군",
+        "tAtsNm": "조종암"
+      },
+      {
+        "signguCd": "41820",
+        "signguNm": "가평군",
+        "tAtsNm": "취옹예술관"
+      },
+      {
+        "signguCd": "41820",
+        "signguNm": "가평군",
+        "tAtsNm": "현대도예문화원"
+      },
+      {
+        "signguCd": "41820",
+        "signguNm": "가평군",
+        "tAtsNm": "화악산"
+      },
+      {
+        "signguCd": "41820",
+        "signguNm": "가평군",
+        "tAtsNm": "화악터널쌈지공원"
+      },
+      {
+        "signguCd": "41830",
+        "signguNm": "양평군",
+        "tAtsNm": "강하수변공원"
+      },
+      {
+        "signguCd": "41830",
+        "signguNm": "양평군",
+        "tAtsNm": "김명희 조형 스튜디오"
+      },
+      {
+        "signguCd": "41830",
+        "signguNm": "양평군",
+        "tAtsNm": "두메향기"
+      },
+      {
+        "signguCd": "41830",
+        "signguNm": "양평군",
+        "tAtsNm": "불곡리미륵불"
+      },
+      {
+        "signguCd": "41830",
+        "signguNm": "양평군",
+        "tAtsNm": "스튜디오 R401"
+      },
+      {
+        "signguCd": "41830",
+        "signguNm": "양평군",
+        "tAtsNm": "양평 구둔역"
+      },
+      {
+        "signguCd": "41830",
+        "signguNm": "양평군",
+        "tAtsNm": "양평 들꽃수목원"
+      },
+      {
+        "signguCd": "41830",
+        "signguNm": "양평군",
+        "tAtsNm": "양평 민물고기 생태학습관"
+      },
+      {
+        "signguCd": "41830",
+        "signguNm": "양평군",
+        "tAtsNm": "양평군 함왕성지"
+      },
+      {
+        "signguCd": "41830",
+        "signguNm": "양평군",
+        "tAtsNm": "오르다온"
+      },
+      {
+        "signguCd": "41830",
+        "signguNm": "양평군",
+        "tAtsNm": "풀향기 허브나라&토이전시관"
+      },
+      {
+        "signguCd": "43111",
+        "signguNm": "청주시 상당구",
+        "tAtsNm": "공군박물관"
+      },
+      {
+        "signguCd": "43112",
+        "signguNm": "청주시 서원구",
+        "tAtsNm": "노산리 솔밭 자연유원지"
+      },
+      {
+        "signguCd": "43113",
+        "signguNm": "청주시 흥덕구",
+        "tAtsNm": "평동전통떡마을"
+      },
+      {
+        "signguCd": "43114",
+        "signguNm": "청주시 청원구",
+        "tAtsNm": "보현사(청주)"
+      },
+      {
+        "signguCd": "43130",
+        "signguNm": "충주시",
+        "tAtsNm": "고미술거리"
+      },
+      {
+        "signguCd": "43130",
+        "signguNm": "충주시",
+        "tAtsNm": "누암리 고분군"
+      },
+      {
+        "signguCd": "43130",
+        "signguNm": "충주시",
+        "tAtsNm": "비내섬(비내길)"
+      },
+      {
+        "signguCd": "43130",
+        "signguNm": "충주시",
+        "tAtsNm": "충주 활옥동굴"
+      },
+      {
+        "signguCd": "43130",
+        "signguNm": "충주시",
+        "tAtsNm": "하방 인공습지(비점오염저감시설)"
+      },
+      {
+        "signguCd": "43150",
+        "signguNm": "제천시",
+        "tAtsNm": "리솜포레스트(제천)"
+      },
+      {
+        "signguCd": "43150",
+        "signguNm": "제천시",
+        "tAtsNm": "명암산채건강마을"
+      },
+      {
+        "signguCd": "43150",
+        "signguNm": "제천시",
+        "tAtsNm": "우드트레인"
+      },
+      {
+        "signguCd": "43150",
+        "signguNm": "제천시",
+        "tAtsNm": "청풍문화재단지"
+      },
+      {
+        "signguCd": "43720",
+        "signguNm": "보은군",
+        "tAtsNm": "로드넘버원촬영지"
+      },
+      {
+        "signguCd": "43720",
+        "signguNm": "보은군",
+        "tAtsNm": "보은 분저실마을"
+      },
+      {
+        "signguCd": "43730",
+        "signguNm": "옥천군",
+        "tAtsNm": "금암친수공원"
+      },
+      {
+        "signguCd": "43730",
+        "signguNm": "옥천군",
+        "tAtsNm": "옥천전통문화체험관"
+      },
+      {
+        "signguCd": "43730",
+        "signguNm": "옥천군",
+        "tAtsNm": "홍차가게 소정"
+      },
+      {
+        "signguCd": "43740",
+        "signguNm": "영동군",
+        "tAtsNm": "난계국악기체험전수관"
+      },
+      {
+        "signguCd": "43740",
+        "signguNm": "영동군",
+        "tAtsNm": "심천역(영동)"
+      },
+      {
+        "signguCd": "43740",
+        "signguNm": "영동군",
+        "tAtsNm": "천태산"
+      },
+      {
+        "signguCd": "43745",
+        "signguNm": "증평군",
+        "tAtsNm": "농심테마파크(농업기술센터)"
+      },
+      {
+        "signguCd": "43745",
+        "signguNm": "증평군",
+        "tAtsNm": "정후사(금당서원)"
+      },
+      {
+        "signguCd": "43750",
+        "signguNm": "진천군",
+        "tAtsNm": "마차박물관"
+      },
+      {
+        "signguCd": "43760",
+        "signguNm": "괴산군",
+        "tAtsNm": "낙영산"
+      },
+      {
+        "signguCd": "43760",
+        "signguNm": "괴산군",
+        "tAtsNm": "뭐하농 하우스(농업회사법인 ㈜뭐하농)"
+      },
+      {
+        "signguCd": "43760",
+        "signguNm": "괴산군",
+        "tAtsNm": "우암 송시열묘"
+      },
+      {
+        "signguCd": "43760",
+        "signguNm": "괴산군",
+        "tAtsNm": "조령민속공예촌"
+      },
+      {
+        "signguCd": "43760",
+        "signguNm": "괴산군",
+        "tAtsNm": "후평숲유원지"
+      },
+      {
+        "signguCd": "43770",
+        "signguNm": "음성군",
+        "tAtsNm": "음성 하당골녹색체험마을"
+      },
+      {
+        "signguCd": "43800",
+        "signguNm": "단양군",
+        "tAtsNm": "소노문 단양 오션플레이"
+      },
+      {
+        "signguCd": "43800",
+        "signguNm": "단양군",
+        "tAtsNm": "수운정(단양)"
+      },
+      {
+        "signguCd": "43800",
+        "signguNm": "단양군",
+        "tAtsNm": "황정산미륵대흥선사"
+      },
+      {
+        "signguCd": "44131",
+        "signguNm": "천안시 동남구",
+        "tAtsNm": "천안예술의전당 미술관"
+      },
+      {
+        "signguCd": "44133",
+        "signguNm": "천안시 서북구",
+        "tAtsNm": "업성지"
+      },
+      {
+        "signguCd": "44150",
+        "signguNm": "공주시",
+        "tAtsNm": "계룡산도예촌"
+      },
+      {
+        "signguCd": "44150",
+        "signguNm": "공주시",
+        "tAtsNm": "공주역사영상관"
+      },
+      {
+        "signguCd": "44150",
+        "signguNm": "공주시",
+        "tAtsNm": "공주제일교회"
+      },
+      {
+        "signguCd": "44150",
+        "signguNm": "공주시",
+        "tAtsNm": "로보카폴리안전체험공원"
+      },
+      {
+        "signguCd": "44150",
+        "signguNm": "공주시",
+        "tAtsNm": "성곡사"
+      },
+      {
+        "signguCd": "44180",
+        "signguNm": "보령시",
+        "tAtsNm": "JFK 대천 워터파크"
+      },
+      {
+        "signguCd": "44180",
+        "signguNm": "보령시",
+        "tAtsNm": "보령 청소역"
+      },
+      {
+        "signguCd": "44180",
+        "signguNm": "보령시",
+        "tAtsNm": "보령머드박물관"
+      },
+      {
+        "signguCd": "44180",
+        "signguNm": "보령시",
+        "tAtsNm": "보령성곽&보령관아문"
+      },
+      {
+        "signguCd": "44180",
+        "signguNm": "보령시",
+        "tAtsNm": "천북폐목장 청보리밭"
+      },
+      {
+        "signguCd": "44200",
+        "signguNm": "아산시",
+        "tAtsNm": "복합문화공간 모나무르"
+      },
+      {
+        "signguCd": "44200",
+        "signguNm": "아산시",
+        "tAtsNm": "신정호생활체육공원(신정호공원)"
+      },
+      {
+        "signguCd": "44200",
+        "signguNm": "아산시",
+        "tAtsNm": "아산 영인산자연휴양림 숲속야영장"
+      },
+      {
+        "signguCd": "44210",
+        "signguNm": "서산시",
+        "tAtsNm": "남양여관"
+      },
+      {
+        "signguCd": "44210",
+        "signguNm": "서산시",
+        "tAtsNm": "서산관광농원"
+      },
+      {
+        "signguCd": "44210",
+        "signguNm": "서산시",
+        "tAtsNm": "해미순교성지(여숫골)"
+      },
+      {
+        "signguCd": "44250",
+        "signguNm": "계룡시",
+        "tAtsNm": "이심원충신정려현판"
+      },
+      {
+        "signguCd": "44270",
+        "signguNm": "당진시",
+        "tAtsNm": "당진항만관광공사 (삽교호 함상공원)"
+      },
+      {
+        "signguCd": "44270",
+        "signguNm": "당진시",
+        "tAtsNm": "왜목해수욕장"
+      },
+      {
+        "signguCd": "44270",
+        "signguNm": "당진시",
+        "tAtsNm": "허브관광농원 차브민"
+      },
+      {
+        "signguCd": "44710",
+        "signguNm": "금산군",
+        "tAtsNm": "금산 천내리/용화리 고인돌"
+      },
+      {
+        "signguCd": "44710",
+        "signguNm": "금산군",
+        "tAtsNm": "금산민속박물관"
+      },
+      {
+        "signguCd": "44710",
+        "signguNm": "금산군",
+        "tAtsNm": "남이자연휴양림(금산산림문화타운)"
+      },
+      {
+        "signguCd": "44710",
+        "signguNm": "금산군",
+        "tAtsNm": "용강서원(금산)"
+      },
+      {
+        "signguCd": "44760",
+        "signguNm": "부여군",
+        "tAtsNm": "고란사(고란약수)"
+      },
+      {
+        "signguCd": "44760",
+        "signguNm": "부여군",
+        "tAtsNm": "구드래나루터선착장"
+      },
+      {
+        "signguCd": "44760",
+        "signguNm": "부여군",
+        "tAtsNm": "롯데부여리조트"
+      },
+      {
+        "signguCd": "44760",
+        "signguNm": "부여군",
+        "tAtsNm": "백제보(금강문화관)"
+      },
+      {
+        "signguCd": "44760",
+        "signguNm": "부여군",
+        "tAtsNm": "부여시장(야시장)"
+      },
+      {
+        "signguCd": "44760",
+        "signguNm": "부여군",
+        "tAtsNm": "사비도성 가상체험관"
+      },
+      {
+        "signguCd": "44760",
+        "signguNm": "부여군",
+        "tAtsNm": "수북로1945"
+      },
+      {
+        "signguCd": "44770",
+        "signguNm": "서천군",
+        "tAtsNm": "무형문화재복합전수관(서천)"
+      },
+      {
+        "signguCd": "44770",
+        "signguNm": "서천군",
+        "tAtsNm": "비인해수욕장"
+      },
+      {
+        "signguCd": "44770",
+        "signguNm": "서천군",
+        "tAtsNm": "이상재선생 생가지"
+      },
+      {
+        "signguCd": "44770",
+        "signguNm": "서천군",
+        "tAtsNm": "장항송림산림욕장 (장항 솔숲)"
+      },
+      {
+        "signguCd": "44790",
+        "signguNm": "청양군",
+        "tAtsNm": "칠갑산휴양랜드"
+      },
+      {
+        "signguCd": "44800",
+        "signguNm": "홍성군",
+        "tAtsNm": "결성농요내포농사박물관"
+      },
+      {
+        "signguCd": "44800",
+        "signguNm": "홍성군",
+        "tAtsNm": "광천 토굴새우젓시장"
+      },
+      {
+        "signguCd": "44800",
+        "signguNm": "홍성군",
+        "tAtsNm": "홍성조류탐사과학관"
+      },
+      {
+        "signguCd": "44810",
+        "signguNm": "예산군",
+        "tAtsNm": "내포보부상촌"
+      },
+      {
+        "signguCd": "44810",
+        "signguNm": "예산군",
+        "tAtsNm": "덕산세계인형박물관"
+      },
+      {
+        "signguCd": "44810",
+        "signguNm": "예산군",
+        "tAtsNm": "이응로선생사적지(수덕여관)"
+      },
+      {
+        "signguCd": "44810",
+        "signguNm": "예산군",
+        "tAtsNm": "추사고택"
+      },
+      {
+        "signguCd": "44810",
+        "signguNm": "예산군",
+        "tAtsNm": "충남 예산 대흥면 [슬로시티]"
+      },
+      {
+        "signguCd": "44810",
+        "signguNm": "예산군",
+        "tAtsNm": "한국고건축박물관"
+      },
+      {
+        "signguCd": "44825",
+        "signguNm": "태안군",
+        "tAtsNm": "곰섬해수욕장"
+      },
+      {
+        "signguCd": "44825",
+        "signguNm": "태안군",
+        "tAtsNm": "대야도항"
+      },
+      {
+        "signguCd": "44825",
+        "signguNm": "태안군",
+        "tAtsNm": "안흥성"
+      },
+      {
+        "signguCd": "44825",
+        "signguNm": "태안군",
+        "tAtsNm": "일루글루"
+      },
+      {
+        "signguCd": "44825",
+        "signguNm": "태안군",
+        "tAtsNm": "태안 동문리 마애삼존불입상"
+      },
+      {
+        "signguCd": "44825",
+        "signguNm": "태안군",
+        "tAtsNm": "해옥공예"
+      },
+      {
+        "signguCd": "51110",
+        "signguNm": "춘천시",
+        "tAtsNm": "강촌레일바이크(경강역)"
+      },
+      {
+        "signguCd": "51110",
+        "signguNm": "춘천시",
+        "tAtsNm": "강촌환경생태연못"
+      },
+      {
+        "signguCd": "51110",
+        "signguNm": "춘천시",
+        "tAtsNm": "김유정역 폐역"
+      },
+      {
+        "signguCd": "51110",
+        "signguNm": "춘천시",
+        "tAtsNm": "백양리역 폐역"
+      },
+      {
+        "signguCd": "51110",
+        "signguNm": "춘천시",
+        "tAtsNm": "왕터리조트"
+      },
+      {
+        "signguCd": "51110",
+        "signguNm": "춘천시",
+        "tAtsNm": "장절공신숭겸장군묘역"
+      },
+      {
+        "signguCd": "51110",
+        "signguNm": "춘천시",
+        "tAtsNm": "춘천옥동굴체험장(옥산가)&달아실"
+      },
+      {
+        "signguCd": "51110",
+        "signguNm": "춘천시",
+        "tAtsNm": "춘천평화생태공원꿈자람물정원"
+      },
+      {
+        "signguCd": "51130",
+        "signguNm": "원주시",
+        "tAtsNm": "국형사계곡"
+      },
+      {
+        "signguCd": "51130",
+        "signguNm": "원주시",
+        "tAtsNm": "돼지문화원"
+      },
+      {
+        "signguCd": "51130",
+        "signguNm": "원주시",
+        "tAtsNm": "매산관광농원"
+      },
+      {
+        "signguCd": "51130",
+        "signguNm": "원주시",
+        "tAtsNm": "매화산(강원)"
+      },
+      {
+        "signguCd": "51130",
+        "signguNm": "원주시",
+        "tAtsNm": "원주 소금산 출렁다리"
+      },
+      {
+        "signguCd": "51130",
+        "signguNm": "원주시",
+        "tAtsNm": "원주역사박물관"
+      },
+      {
+        "signguCd": "51130",
+        "signguNm": "원주시",
+        "tAtsNm": "원주자연생태원"
+      },
+      {
+        "signguCd": "51130",
+        "signguNm": "원주시",
+        "tAtsNm": "토지문화관"
+      },
+      {
+        "signguCd": "51150",
+        "signguNm": "강릉시",
+        "tAtsNm": "강릉컬링센터(강릉실내빙상장)"
+      },
+      {
+        "signguCd": "51150",
+        "signguNm": "강릉시",
+        "tAtsNm": "대굴령마을"
+      },
+      {
+        "signguCd": "51150",
+        "signguNm": "강릉시",
+        "tAtsNm": "동양자수박물관"
+      },
+      {
+        "signguCd": "51150",
+        "signguNm": "강릉시",
+        "tAtsNm": "르꼬따쥬"
+      },
+      {
+        "signguCd": "51150",
+        "signguNm": "강릉시",
+        "tAtsNm": "보헤미안 박이추커피"
+      },
+      {
+        "signguCd": "51150",
+        "signguNm": "강릉시",
+        "tAtsNm": "브릭캠퍼스 강릉"
+      },
+      {
+        "signguCd": "51150",
+        "signguNm": "강릉시",
+        "tAtsNm": "엄마꿈박물관"
+      },
+      {
+        "signguCd": "51150",
+        "signguNm": "강릉시",
+        "tAtsNm": "연곡 솔향기캠핌장"
+      },
+      {
+        "signguCd": "51150",
+        "signguNm": "강릉시",
+        "tAtsNm": "참소리축음기&에디슨과학박물관"
+      },
+      {
+        "signguCd": "51150",
+        "signguNm": "강릉시",
+        "tAtsNm": "초당두부마을"
+      },
+      {
+        "signguCd": "51170",
+        "signguNm": "동해시",
+        "tAtsNm": "동해보양온천컨벤션호텔"
+      },
+      {
+        "signguCd": "51190",
+        "signguNm": "태백시",
+        "tAtsNm": "매봉산풍력발전단지(바람의 언덕)"
+      },
+      {
+        "signguCd": "51210",
+        "signguNm": "속초시",
+        "tAtsNm": "금호리조트㈜ 설악"
+      },
+      {
+        "signguCd": "51210",
+        "signguNm": "속초시",
+        "tAtsNm": "더케이설악산 가족호텔"
+      },
+      {
+        "signguCd": "51210",
+        "signguNm": "속초시",
+        "tAtsNm": "등대해변"
+      },
+      {
+        "signguCd": "51210",
+        "signguNm": "속초시",
+        "tAtsNm": "롯데리조트 속초"
+      },
+      {
+        "signguCd": "51210",
+        "signguNm": "속초시",
+        "tAtsNm": "마레몬스 호텔"
+      },
+      {
+        "signguCd": "51210",
+        "signguNm": "속초시",
+        "tAtsNm": "베니키아 산과바다(대포항)"
+      },
+      {
+        "signguCd": "51210",
+        "signguNm": "속초시",
+        "tAtsNm": "부엉이전시관(해피아울하우스)"
+      },
+      {
+        "signguCd": "51210",
+        "signguNm": "속초시",
+        "tAtsNm": "숲박물관"
+      },
+      {
+        "signguCd": "51210",
+        "signguNm": "속초시",
+        "tAtsNm": "연호콘도미니엄"
+      },
+      {
+        "signguCd": "51210",
+        "signguNm": "속초시",
+        "tAtsNm": "척산온천지구"
+      },
+      {
+        "signguCd": "51210",
+        "signguNm": "속초시",
+        "tAtsNm": "켄싱턴호텔 설악"
+      },
+      {
+        "signguCd": "51210",
+        "signguNm": "속초시",
+        "tAtsNm": "현대수콘도미니엄"
+      },
+      {
+        "signguCd": "51230",
+        "signguNm": "삼척시",
+        "tAtsNm": "검봉산자연휴양림"
+      },
+      {
+        "signguCd": "51230",
+        "signguNm": "삼척시",
+        "tAtsNm": "도경리역(삼척)"
+      },
+      {
+        "signguCd": "51230",
+        "signguNm": "삼척시",
+        "tAtsNm": "사직번개시장 (삼척 번개시장)"
+      },
+      {
+        "signguCd": "51230",
+        "signguNm": "삼척시",
+        "tAtsNm": "삼척 동굴신비관"
+      },
+      {
+        "signguCd": "51230",
+        "signguNm": "삼척시",
+        "tAtsNm": "장호해수욕장(장호항, 장호해변)"
+      },
+      {
+        "signguCd": "51230",
+        "signguNm": "삼척시",
+        "tAtsNm": "재동 마을관리휴양지"
+      },
+      {
+        "signguCd": "51230",
+        "signguNm": "삼척시",
+        "tAtsNm": "해양레일바이크 궁촌정거장(삼척)"
+      },
+      {
+        "signguCd": "51720",
+        "signguNm": "홍천군",
+        "tAtsNm": "홍천한우 늘푸름"
+      },
+      {
+        "signguCd": "51720",
+        "signguNm": "홍천군",
+        "tAtsNm": "힐리언스 선마을[한국관광 품질인증/Korea Quality]"
+      },
+      {
+        "signguCd": "51730",
+        "signguNm": "횡성군",
+        "tAtsNm": "새말관광농원"
+      },
+      {
+        "signguCd": "51730",
+        "signguNm": "횡성군",
+        "tAtsNm": "올챙이추억전시관"
+      },
+      {
+        "signguCd": "51730",
+        "signguNm": "횡성군",
+        "tAtsNm": "주천강자연휴양림"
+      },
+      {
+        "signguCd": "51730",
+        "signguNm": "횡성군",
+        "tAtsNm": "한국통나무학교"
+      },
+      {
+        "signguCd": "51730",
+        "signguNm": "횡성군",
+        "tAtsNm": "횡성 풍수원천주교회(풍수원성당)"
+      },
+      {
+        "signguCd": "51750",
+        "signguNm": "영월군",
+        "tAtsNm": "강원도 탄광문화촌"
+      },
+      {
+        "signguCd": "51750",
+        "signguNm": "영월군",
+        "tAtsNm": "만봉사"
+      },
+      {
+        "signguCd": "51750",
+        "signguNm": "영월군",
+        "tAtsNm": "석항트레인스테이"
+      },
+      {
+        "signguCd": "51750",
+        "signguNm": "영월군",
+        "tAtsNm": "영월음향역사박물관"
+      },
+      {
+        "signguCd": "51750",
+        "signguNm": "영월군",
+        "tAtsNm": "청령포 (강원고생대 국가지질공원)"
+      },
+      {
+        "signguCd": "51760",
+        "signguNm": "평창군",
+        "tAtsNm": "강원 신재생에너지전시관"
+      },
+      {
+        "signguCd": "51760",
+        "signguNm": "평창군",
+        "tAtsNm": "대관령알프스양떼목장"
+      },
+      {
+        "signguCd": "51760",
+        "signguNm": "평창군",
+        "tAtsNm": "대화 전통시장"
+      },
+      {
+        "signguCd": "51760",
+        "signguNm": "평창군",
+        "tAtsNm": "물레방아(이효석길)"
+      },
+      {
+        "signguCd": "51760",
+        "signguNm": "평창군",
+        "tAtsNm": "석조보살좌상"
+      },
+      {
+        "signguCd": "51760",
+        "signguNm": "평창군",
+        "tAtsNm": "솔내음 평창 먹을거리촌"
+      },
+      {
+        "signguCd": "51760",
+        "signguNm": "평창군",
+        "tAtsNm": "알펜시아 리조트"
+      },
+      {
+        "signguCd": "51760",
+        "signguNm": "평창군",
+        "tAtsNm": "오대산 월정사 전나무숲길"
+      },
+      {
+        "signguCd": "51760",
+        "signguNm": "평창군",
+        "tAtsNm": "오대산명상마을 옴뷔"
+      },
+      {
+        "signguCd": "51760",
+        "signguNm": "평창군",
+        "tAtsNm": "용평 계방산 오토캠핑장"
+      },
+      {
+        "signguCd": "51760",
+        "signguNm": "평창군",
+        "tAtsNm": "장암산 활공장"
+      },
+      {
+        "signguCd": "51760",
+        "signguNm": "평창군",
+        "tAtsNm": "한국전통음식문화체험관(정강원)"
+      },
+      {
+        "signguCd": "51770",
+        "signguNm": "정선군",
+        "tAtsNm": "동강생태체험학습장"
+      },
+      {
+        "signguCd": "51770",
+        "signguNm": "정선군",
+        "tAtsNm": "아리랑브루어리"
+      },
+      {
+        "signguCd": "51770",
+        "signguNm": "정선군",
+        "tAtsNm": "아리힐스-스카이워크"
+      },
+      {
+        "signguCd": "51770",
+        "signguNm": "정선군",
+        "tAtsNm": "억새전시관"
+      },
+      {
+        "signguCd": "51770",
+        "signguNm": "정선군",
+        "tAtsNm": "정선 추억의박물관"
+      },
+      {
+        "signguCd": "51770",
+        "signguNm": "정선군",
+        "tAtsNm": "정선507미술관"
+      },
+      {
+        "signguCd": "51770",
+        "signguNm": "정선군",
+        "tAtsNm": "정선아라리한과농원 영농조합법인"
+      },
+      {
+        "signguCd": "51770",
+        "signguNm": "정선군",
+        "tAtsNm": "카페나전역(나전카니발농업회사법인주식회사)"
+      },
+      {
+        "signguCd": "51770",
+        "signguNm": "정선군",
+        "tAtsNm": "파크로쉬 리조드 앤 웰니스"
+      },
+      {
+        "signguCd": "51770",
+        "signguNm": "정선군",
+        "tAtsNm": "하이원리조트"
+      },
+      {
+        "signguCd": "51780",
+        "signguNm": "철원군",
+        "tAtsNm": "경원선 철도중단점 (백마고지역)"
+      },
+      {
+        "signguCd": "51780",
+        "signguNm": "철원군",
+        "tAtsNm": "금연저수지"
+      },
+      {
+        "signguCd": "51780",
+        "signguNm": "철원군",
+        "tAtsNm": "동송저수지"
+      },
+      {
+        "signguCd": "51780",
+        "signguNm": "철원군",
+        "tAtsNm": "철원평화마을 유곡리캠핑장"
+      },
+      {
+        "signguCd": "51780",
+        "signguNm": "철원군",
+        "tAtsNm": "철원평화문화광장"
+      },
+      {
+        "signguCd": "51790",
+        "signguNm": "화천군",
+        "tAtsNm": "88공원(화천)"
+      },
+      {
+        "signguCd": "51790",
+        "signguNm": "화천군",
+        "tAtsNm": "감성마을 이외수 문학관"
+      },
+      {
+        "signguCd": "51790",
+        "signguNm": "화천군",
+        "tAtsNm": "딴산유원지"
+      },
+      {
+        "signguCd": "51790",
+        "signguNm": "화천군",
+        "tAtsNm": "산타우체국"
+      },
+      {
+        "signguCd": "51790",
+        "signguNm": "화천군",
+        "tAtsNm": "에어링화천"
+      },
+      {
+        "signguCd": "51790",
+        "signguNm": "화천군",
+        "tAtsNm": "월하이태극문학관"
+      },
+      {
+        "signguCd": "51790",
+        "signguNm": "화천군",
+        "tAtsNm": "화천 구운리 산천어마을"
+      },
+      {
+        "signguCd": "51790",
+        "signguNm": "화천군",
+        "tAtsNm": "화천 반지교&아를테마수목공원"
+      },
+      {
+        "signguCd": "51790",
+        "signguNm": "화천군",
+        "tAtsNm": "화천민속박물관"
+      },
+      {
+        "signguCd": "51800",
+        "signguNm": "양구군",
+        "tAtsNm": "DMZ산림두드림센터"
+      },
+      {
+        "signguCd": "51800",
+        "signguNm": "양구군",
+        "tAtsNm": "두무리산촌생태마을"
+      },
+      {
+        "signguCd": "51800",
+        "signguNm": "양구군",
+        "tAtsNm": "양구근현대사박물관"
+      },
+      {
+        "signguCd": "51800",
+        "signguNm": "양구군",
+        "tAtsNm": "양구선사박물관"
+      },
+      {
+        "signguCd": "51800",
+        "signguNm": "양구군",
+        "tAtsNm": "양구팔랑민속관"
+      },
+      {
+        "signguCd": "51810",
+        "signguNm": "인제군",
+        "tAtsNm": "마의태자권역"
+      },
+      {
+        "signguCd": "51810",
+        "signguNm": "인제군",
+        "tAtsNm": "인제 하추마을"
+      },
+      {
+        "signguCd": "51810",
+        "signguNm": "인제군",
+        "tAtsNm": "인제스피디움리조트 서킷"
+      },
+      {
+        "signguCd": "51820",
+        "signguNm": "고성군",
+        "tAtsNm": "델피노호텔&리조트 오션플레이"
+      },
+      {
+        "signguCd": "51820",
+        "signguNm": "고성군",
+        "tAtsNm": "울산바위촬영휴게소"
+      },
+      {
+        "signguCd": "51830",
+        "signguNm": "양양군",
+        "tAtsNm": "남애3리해수욕장"
+      },
+      {
+        "signguCd": "51830",
+        "signguNm": "양양군",
+        "tAtsNm": "남애해변(남애1, 3리)"
+      },
+      {
+        "signguCd": "51830",
+        "signguNm": "양양군",
+        "tAtsNm": "남애해수욕장"
+      },
+      {
+        "signguCd": "51830",
+        "signguNm": "양양군",
+        "tAtsNm": "내수면 생명 자원센터"
+      },
+      {
+        "signguCd": "51830",
+        "signguNm": "양양군",
+        "tAtsNm": "동산포해변"
+      },
+      {
+        "signguCd": "51830",
+        "signguNm": "양양군",
+        "tAtsNm": "설악해변"
+      },
+      {
+        "signguCd": "51830",
+        "signguNm": "양양군",
+        "tAtsNm": "설해원"
+      },
+      {
+        "signguCd": "51830",
+        "signguNm": "양양군",
+        "tAtsNm": "쏠비치 호텔&리조트 양양"
+      },
+      {
+        "signguCd": "51830",
+        "signguNm": "양양군",
+        "tAtsNm": "양양국제공항"
+      },
+      {
+        "signguCd": "51830",
+        "signguNm": "양양군",
+        "tAtsNm": "양양시장"
+      },
+      {
+        "signguCd": "51830",
+        "signguNm": "양양군",
+        "tAtsNm": "원포해변"
+      },
+      {
+        "signguCd": "51830",
+        "signguNm": "양양군",
+        "tAtsNm": "일현미술관"
+      },
+      {
+        "signguCd": "51830",
+        "signguNm": "양양군",
+        "tAtsNm": "잔교해변"
+      },
+      {
+        "signguCd": "51830",
+        "signguNm": "양양군",
+        "tAtsNm": "점봉산"
+      },
+      {
+        "signguCd": "51830",
+        "signguNm": "양양군",
+        "tAtsNm": "죽도정&죽도 전망대"
+      },
+      {
+        "signguCd": "51830",
+        "signguNm": "양양군",
+        "tAtsNm": "중광정해변"
+      }
+    ]
+  },
+  "excludedByCategory": [
+    "내리계곡솔밭캠핑장(AC05)",
+    "대천오토캠핑장(AC05)",
+    "덕산국민여가캠핑장(AC05)",
+    "동강오토캠핑장(AC05)",
+    "맹방비치캠핑장(AC05)",
+    "영월별마로캠핑장(AC05)",
+    "인천국제공항(VE11)",
+    "장호비치캠핑장(AC05)",
+    "진동리 국민여가캠핑장(AC05)",
+    "진천명품 휴미락캠핑장(AC05)",
+    "춘천숲자연휴양림(AC05)",
+    "회동솔향캠핑장(AC05)",
+    "금은모래캠핑장(AC05)",
+    "박사마을 어린이 글램핑장(AC05)",
+    "성동힐링센터 휴영월캠프(AC05)",
+    "팔랑골캠핑장(AC05)",
+    "화암약수 야영장(AC05)",
+    "양주 감악산 캠핑장(AC05)"
+  ],
+  "places": {
+    "total": 3698,
+    "visible": 3698,
+    "hidden": 0,
+    "byProvince": {
+      "11": 562,
+      "28": 257,
+      "30": 99,
+      "41": 1059,
+      "43": 400,
+      "44": 603,
+      "51": 718
+    },
+    "byCategory": {
+      "nature_park": 1174,
+      "street_market": 387,
+      "theme_park": 357,
+      "exhibition": 457,
+      "heritage": 1038,
+      "walking_trail": 252,
+      "leisure_sports": 33
+    },
+    "seoulLinked": 32
+  },
+  "completeness": {
+    "requiredFields": 1,
+    "adminDong": 0,
+    "operation": 0
+  },
+  "keywordChanged": [],
+  "shrinkBlocked": false,
+  "warnings": [],
+  "tour": {
+    "sigungu": 147,
+    "provincesOk": 8,
+    "provincesFailed": 0,
+    "candidates": 10864
+  }
+}

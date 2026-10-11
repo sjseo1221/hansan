@@ -10,7 +10,8 @@
   "scripts": {
     "collect:seoul": "tsx pipeline/src/cli/collect-seoul.ts",
     "test": "vitest run",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "collect:naver": "tsx pipeline/src/cli/collect-naver.ts"
   },
   "dependencies": {
     "yaml": "^2.5.0"

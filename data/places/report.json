@@ -2,16 +2,16 @@
   "generatedAt": "2026-10-12",
   "attractions": 4315,
   "matched": {
-    "exact": 3370,
-    "normalized": 247,
-    "partial": 120,
-    "total": 3737,
+    "exact": 3398,
+    "normalized": 249,
+    "partial": 121,
+    "total": 3768,
     "ambiguous": 2,
     "duplicates": 21
   },
-  "matchRate": 0.866,
+  "matchRate": 0.873,
   "unmatched": {
-    "count": 578,
+    "count": 547,
     "list": [
       {
         "signguCd": "11110",
@@ -781,47 +781,7 @@
       {
         "signguCd": "36110",
         "signguNm": "세종특별자치시",
-        "tAtsNm": "고복자연공원"
-      },
-      {
-        "signguCd": "36110",
-        "signguNm": "세종특별자치시",
-        "tAtsNm": "고운뜰공원"
-      },
-      {
-        "signguCd": "36110",
-        "signguNm": "세종특별자치시",
-        "tAtsNm": "국립세종수목원"
-      },
-      {
-        "signguCd": "36110",
-        "signguNm": "세종특별자치시",
-        "tAtsNm": "금강수변공원"
-      },
-      {
-        "signguCd": "36110",
-        "signguNm": "세종특별자치시",
         "tAtsNm": "금강자연휴양림(금강수목원,산림박물관)"
-      },
-      {
-        "signguCd": "36110",
-        "signguNm": "세종특별자치시",
-        "tAtsNm": "김종서 장군 묘"
-      },
-      {
-        "signguCd": "36110",
-        "signguNm": "세종특별자치시",
-        "tAtsNm": "대통령기록전시관"
-      },
-      {
-        "signguCd": "36110",
-        "signguNm": "세종특별자치시",
-        "tAtsNm": "도토리숲키즈파크"
-      },
-      {
-        "signguCd": "36110",
-        "signguNm": "세종특별자치시",
-        "tAtsNm": "뒤웅박고을"
       },
       {
         "signguCd": "36110",
@@ -831,47 +791,7 @@
       {
         "signguCd": "36110",
         "signguNm": "세종특별자치시",
-        "tAtsNm": "밀마루전망대"
-      },
-      {
-        "signguCd": "36110",
-        "signguNm": "세종특별자치시",
-        "tAtsNm": "바람재쉼터"
-      },
-      {
-        "signguCd": "36110",
-        "signguNm": "세종특별자치시",
-        "tAtsNm": "방축천 음악분수"
-      },
-      {
-        "signguCd": "36110",
-        "signguNm": "세종특별자치시",
-        "tAtsNm": "베어트리파크"
-      },
-      {
-        "signguCd": "36110",
-        "signguNm": "세종특별자치시",
-        "tAtsNm": "비암사(세종)"
-      },
-      {
-        "signguCd": "36110",
-        "signguNm": "세종특별자치시",
         "tAtsNm": "세종시 무궁화공원"
-      },
-      {
-        "signguCd": "36110",
-        "signguNm": "세종특별자치시",
-        "tAtsNm": "세종시립민속박물관"
-      },
-      {
-        "signguCd": "36110",
-        "signguNm": "세종특별자치시",
-        "tAtsNm": "세종어린이천문대(세종미리내천문대)"
-      },
-      {
-        "signguCd": "36110",
-        "signguNm": "세종특별자치시",
-        "tAtsNm": "세종전통시장(조치원중앙시장)"
       },
       {
         "signguCd": "36110",
@@ -881,82 +801,7 @@
       {
         "signguCd": "36110",
         "signguNm": "세종특별자치시",
-        "tAtsNm": "세종호수공원 일원"
-      },
-      {
-        "signguCd": "36110",
-        "signguNm": "세종특별자치시",
-        "tAtsNm": "숲뜰근린공원"
-      },
-      {
-        "signguCd": "36110",
-        "signguNm": "세종특별자치시",
-        "tAtsNm": "신광사(세종)"
-      },
-      {
-        "signguCd": "36110",
-        "signguNm": "세종특별자치시",
-        "tAtsNm": "연기대첩비공원"
-      },
-      {
-        "signguCd": "36110",
-        "signguNm": "세종특별자치시",
-        "tAtsNm": "연기향교"
-      },
-      {
-        "signguCd": "36110",
-        "signguNm": "세종특별자치시",
-        "tAtsNm": "연기향토박물관"
-      },
-      {
-        "signguCd": "36110",
-        "signguNm": "세종특별자치시",
         "tAtsNm": "연동 합호서원"
-      },
-      {
-        "signguCd": "36110",
-        "signguNm": "세종특별자치시",
-        "tAtsNm": "연화사(세종)"
-      },
-      {
-        "signguCd": "36110",
-        "signguNm": "세종특별자치시",
-        "tAtsNm": "영평사"
-      },
-      {
-        "signguCd": "36110",
-        "signguNm": "세종특별자치시",
-        "tAtsNm": "운주산성"
-      },
-      {
-        "signguCd": "36110",
-        "signguNm": "세종특별자치시",
-        "tAtsNm": "원수산MTB공원"
-      },
-      {
-        "signguCd": "36110",
-        "signguNm": "세종특별자치시",
-        "tAtsNm": "원수산습지생태원"
-      },
-      {
-        "signguCd": "36110",
-        "signguNm": "세종특별자치시",
-        "tAtsNm": "전의향교"
-      },
-      {
-        "signguCd": "36110",
-        "signguNm": "세종특별자치시",
-        "tAtsNm": "조천연꽃공원"
-      },
-      {
-        "signguCd": "36110",
-        "signguNm": "세종특별자치시",
-        "tAtsNm": "청안사(세종)"
-      },
-      {
-        "signguCd": "36110",
-        "signguNm": "세종특별자치시",
-        "tAtsNm": "학림사(세종)"
       },
       {
         "signguCd": "41113",
@@ -2926,24 +2771,25 @@
     "양주 감악산 캠핑장(AC05)"
   ],
   "places": {
-    "total": 3698,
-    "visible": 3698,
+    "total": 3729,
+    "visible": 3729,
     "hidden": 0,
     "byProvince": {
       "11": 562,
       "28": 257,
       "30": 99,
+      "36": 31,
       "41": 1059,
       "43": 400,
       "44": 603,
       "51": 718
     },
     "byCategory": {
-      "nature_park": 1174,
-      "street_market": 387,
-      "theme_park": 357,
-      "exhibition": 457,
-      "heritage": 1038,
+      "nature_park": 1186,
+      "street_market": 390,
+      "theme_park": 359,
+      "exhibition": 460,
+      "heritage": 1049,
       "walking_trail": 252,
       "leisure_sports": 33
     },
@@ -2961,6 +2807,6 @@
     "sigungu": 147,
     "provincesOk": 8,
     "provincesFailed": 0,
-    "candidates": 10864
+    "candidates": 10951
   }
 }

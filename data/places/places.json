@@ -13918,6 +13918,44 @@
       ]
     },
     {
+      "placeId": "kto-125875",
+      "name": "고복자연공원",
+      "address": "세종특별자치시 연서면 도신고복로 586",
+      "region": {
+        "provinceCd": "36",
+        "signguCd": "36110",
+        "signgu": "세종특별자치시",
+        "adminDong": null
+      },
+      "lat": 36.5999630333627,
+      "lng": 127.227466075211,
+      "category": "nature_park",
+      "indoor": "outdoor",
+      "operation": null,
+      "keyword": "고복자연공원",
+      "external": {
+        "tour": {
+          "contentId": "125875",
+          "contentTypeId": "12",
+          "lclsSystm3": "NA040500"
+        },
+        "cnctr": {
+          "signguCd": "36110",
+          "tAtsNm": "고복자연공원"
+        }
+      },
+      "match": {
+        "method": "exact",
+        "confidence": "high"
+      },
+      "hidden": false,
+      "lastSeenAt": "2026-10-12",
+      "sources": [
+        "tour",
+        "cnctr"
+      ]
+    },
+    {
       "placeId": "kto-125876",
       "name": "정방사",
       "address": "충청북도 제천시 수산면 옥순봉로12길 165",
@@ -14778,6 +14816,82 @@
         "cnctr": {
           "signguCd": "44800",
           "tAtsNm": "고산사(홍성)"
+        }
+      },
+      "match": {
+        "method": "exact",
+        "confidence": "high"
+      },
+      "hidden": false,
+      "lastSeenAt": "2026-10-12",
+      "sources": [
+        "tour",
+        "cnctr"
+      ]
+    },
+    {
+      "placeId": "kto-125902",
+      "name": "비암사(세종)",
+      "address": "세종특별자치시 전의면 비암사길 137",
+      "region": {
+        "provinceCd": "36",
+        "signguCd": "36110",
+        "signgu": "세종특별자치시",
+        "adminDong": null
+      },
+      "lat": 36.6113554712,
+      "lng": 127.1920358367,
+      "category": "heritage",
+      "indoor": "outdoor",
+      "operation": null,
+      "keyword": "세종 비암사",
+      "external": {
+        "tour": {
+          "contentId": "125902",
+          "contentTypeId": "12",
+          "lclsSystm3": "HS030100"
+        },
+        "cnctr": {
+          "signguCd": "36110",
+          "tAtsNm": "비암사(세종)"
+        }
+      },
+      "match": {
+        "method": "exact",
+        "confidence": "high"
+      },
+      "hidden": false,
+      "lastSeenAt": "2026-10-12",
+      "sources": [
+        "tour",
+        "cnctr"
+      ]
+    },
+    {
+      "placeId": "kto-125903",
+      "name": "연화사(세종)",
+      "address": "세종특별자치시 연서면 연화사길 28-1",
+      "region": {
+        "provinceCd": "36",
+        "signguCd": "36110",
+        "signgu": "세종특별자치시",
+        "adminDong": null
+      },
+      "lat": 36.592605443,
+      "lng": 127.2793875653,
+      "category": "heritage",
+      "indoor": "outdoor",
+      "operation": null,
+      "keyword": "세종 연화사",
+      "external": {
+        "tour": {
+          "contentId": "125903",
+          "contentTypeId": "12",
+          "lclsSystm3": "HS030100"
+        },
+        "cnctr": {
+          "signguCd": "36110",
+          "tAtsNm": "연화사(세종)"
         }
       },
       "match": {
@@ -16454,6 +16568,44 @@
       },
       "match": {
         "method": "normalized",
+        "confidence": "high"
+      },
+      "hidden": false,
+      "lastSeenAt": "2026-10-12",
+      "sources": [
+        "tour",
+        "cnctr"
+      ]
+    },
+    {
+      "placeId": "kto-125981",
+      "name": "운주산성",
+      "address": "세종특별자치시 전동면 청송리",
+      "region": {
+        "provinceCd": "36",
+        "signguCd": "36110",
+        "signgu": "세종특별자치시",
+        "adminDong": null
+      },
+      "lat": 36.681964,
+      "lng": 127.241549,
+      "category": "heritage",
+      "indoor": "outdoor",
+      "operation": null,
+      "keyword": "운주산성",
+      "external": {
+        "tour": {
+          "contentId": "125981",
+          "contentTypeId": "12",
+          "lclsSystm3": "HS010200"
+        },
+        "cnctr": {
+          "signguCd": "36110",
+          "tAtsNm": "운주산성"
+        }
+      },
+      "match": {
+        "method": "exact",
         "confidence": "high"
       },
       "hidden": false,
@@ -38288,6 +38440,44 @@
       ]
     },
     {
+      "placeId": "kto-128876",
+      "name": "영평사",
+      "address": "세종특별자치시 장군면 영평사길 124",
+      "region": {
+        "provinceCd": "36",
+        "signguCd": "36110",
+        "signgu": "세종특별자치시",
+        "adminDong": null
+      },
+      "lat": 36.47363277798934,
+      "lng": 127.22783403083773,
+      "category": "heritage",
+      "indoor": "outdoor",
+      "operation": null,
+      "keyword": "세종 영평사",
+      "external": {
+        "tour": {
+          "contentId": "128876",
+          "contentTypeId": "12",
+          "lclsSystm3": "HS030100"
+        },
+        "cnctr": {
+          "signguCd": "36110",
+          "tAtsNm": "영평사"
+        }
+      },
+      "match": {
+        "method": "exact",
+        "confidence": "high"
+      },
+      "hidden": false,
+      "lastSeenAt": "2026-10-12",
+      "sources": [
+        "tour",
+        "cnctr"
+      ]
+    },
+    {
       "placeId": "kto-128878",
       "name": "자광사(대전)",
       "address": "대전광역시 유성구 학하동로63번길 50-8 (학하동)",
@@ -45699,6 +45889,44 @@
       ]
     },
     {
+      "placeId": "kto-130269",
+      "name": "연기향토박물관",
+      "address": "세종특별자치시 연서면 양대길 34-4",
+      "region": {
+        "provinceCd": "36",
+        "signguCd": "36110",
+        "signgu": "세종특별자치시",
+        "adminDong": null
+      },
+      "lat": 36.5955159951437,
+      "lng": 127.207770869413,
+      "category": "exhibition",
+      "indoor": "indoor",
+      "operation": null,
+      "keyword": "연기향토박물관",
+      "external": {
+        "tour": {
+          "contentId": "130269",
+          "contentTypeId": "14",
+          "lclsSystm3": "VE070100"
+        },
+        "cnctr": {
+          "signguCd": "36110",
+          "tAtsNm": "연기향토박물관"
+        }
+      },
+      "match": {
+        "method": "exact",
+        "confidence": "high"
+      },
+      "hidden": false,
+      "lastSeenAt": "2026-10-12",
+      "sources": [
+        "tour",
+        "cnctr"
+      ]
+    },
+    {
       "placeId": "kto-130270",
       "name": "임립미술관",
       "address": "충청남도 공주시 계룡면 봉곡길 77-13",
@@ -51401,6 +51629,44 @@
       ]
     },
     {
+      "placeId": "kto-1433722",
+      "name": "세종전통시장(4, 9일)",
+      "address": "세종특별자치시 조치원읍 조치원8길 42",
+      "region": {
+        "provinceCd": "36",
+        "signguCd": "36110",
+        "signgu": "세종특별자치시",
+        "adminDong": null
+      },
+      "lat": 36.5997227052195,
+      "lng": 127.300572941722,
+      "category": "street_market",
+      "indoor": "outdoor",
+      "operation": null,
+      "keyword": "세종전통시장",
+      "external": {
+        "tour": {
+          "contentId": "1433722",
+          "contentTypeId": "38",
+          "lclsSystm3": "SH060100"
+        },
+        "cnctr": {
+          "signguCd": "36110",
+          "tAtsNm": "세종전통시장(조치원중앙시장)"
+        }
+      },
+      "match": {
+        "method": "normalized",
+        "confidence": "high"
+      },
+      "hidden": false,
+      "lastSeenAt": "2026-10-12",
+      "sources": [
+        "tour",
+        "cnctr"
+      ]
+    },
+    {
       "placeId": "kto-1434477",
       "name": "대전 중앙시장",
       "address": "대전광역시 동구 대전로 783",
@@ -55719,6 +55985,44 @@
         "cnctr": {
           "signguCd": "44200",
           "tAtsNm": "온주아문 및 동헌"
+        }
+      },
+      "match": {
+        "method": "exact",
+        "confidence": "high"
+      },
+      "hidden": false,
+      "lastSeenAt": "2026-10-12",
+      "sources": [
+        "tour",
+        "cnctr"
+      ]
+    },
+    {
+      "placeId": "kto-1626777",
+      "name": "전의향교",
+      "address": "세종특별자치시 전의면 북촌1길 5-18",
+      "region": {
+        "provinceCd": "36",
+        "signguCd": "36110",
+        "signgu": "세종특별자치시",
+        "adminDong": null
+      },
+      "lat": 36.6805106171,
+      "lng": 127.2007894471,
+      "category": "heritage",
+      "indoor": "outdoor",
+      "operation": null,
+      "keyword": "전의향교",
+      "external": {
+        "tour": {
+          "contentId": "1626777",
+          "contentTypeId": "12",
+          "lclsSystm3": "HS010900"
+        },
+        "cnctr": {
+          "signguCd": "36110",
+          "tAtsNm": "전의향교"
         }
       },
       "match": {
@@ -60408,6 +60712,44 @@
       ]
     },
     {
+      "placeId": "kto-1928731",
+      "name": "뒤웅박고을",
+      "address": "세종특별자치시 전동면 배일길 90-43",
+      "region": {
+        "provinceCd": "36",
+        "signguCd": "36110",
+        "signgu": "세종특별자치시",
+        "adminDong": null
+      },
+      "lat": 36.6758877790044,
+      "lng": 127.259155377155,
+      "category": "heritage",
+      "indoor": "outdoor",
+      "operation": null,
+      "keyword": "뒤웅박고을",
+      "external": {
+        "tour": {
+          "contentId": "1928731",
+          "contentTypeId": "12",
+          "lclsSystm3": "HS010600"
+        },
+        "cnctr": {
+          "signguCd": "36110",
+          "tAtsNm": "뒤웅박고을"
+        }
+      },
+      "match": {
+        "method": "exact",
+        "confidence": "high"
+      },
+      "hidden": false,
+      "lastSeenAt": "2026-10-12",
+      "sources": [
+        "tour",
+        "cnctr"
+      ]
+    },
+    {
       "placeId": "kto-1931699",
       "name": "짜장면박물관",
       "address": "인천광역시 제물포구 차이나타운로 56-14",
@@ -61776,6 +62118,44 @@
       ]
     },
     {
+      "placeId": "kto-1946955",
+      "name": "세종호수공원",
+      "address": "세종특별자치시 다솜로 216 (세종동)",
+      "region": {
+        "provinceCd": "36",
+        "signguCd": "36110",
+        "signgu": "세종특별자치시",
+        "adminDong": null
+      },
+      "lat": 36.4989993515,
+      "lng": 127.2701992755,
+      "category": "nature_park",
+      "indoor": "outdoor",
+      "operation": null,
+      "keyword": "세종호수공원",
+      "external": {
+        "tour": {
+          "contentId": "1946955",
+          "contentTypeId": "12",
+          "lclsSystm3": "VE030500"
+        },
+        "cnctr": {
+          "signguCd": "36110",
+          "tAtsNm": "세종호수공원 일원"
+        }
+      },
+      "match": {
+        "method": "partial",
+        "confidence": "low"
+      },
+      "hidden": false,
+      "lastSeenAt": "2026-10-12",
+      "sources": [
+        "tour",
+        "cnctr"
+      ]
+    },
+    {
       "placeId": "kto-1947163",
       "name": "청목화랑 전통낙화연구소",
       "address": "충청북도 보은군 보은읍 보청대로 1471",
@@ -61838,6 +62218,158 @@
         "cnctr": {
           "signguCd": "51760",
           "tAtsNm": "대관령 하늘목장"
+        }
+      },
+      "match": {
+        "method": "exact",
+        "confidence": "high"
+      },
+      "hidden": false,
+      "lastSeenAt": "2026-10-12",
+      "sources": [
+        "tour",
+        "cnctr"
+      ]
+    },
+    {
+      "placeId": "kto-1951612",
+      "name": "밀마루전망대",
+      "address": "세종특별자치시 도움3로 58",
+      "region": {
+        "provinceCd": "36",
+        "signguCd": "36110",
+        "signgu": "세종특별자치시",
+        "adminDong": null
+      },
+      "lat": 36.5054483572,
+      "lng": 127.2558420543,
+      "category": "street_market",
+      "indoor": "outdoor",
+      "operation": null,
+      "keyword": "밀마루전망대",
+      "external": {
+        "tour": {
+          "contentId": "1951612",
+          "contentTypeId": "12",
+          "lclsSystm3": "VE010200"
+        },
+        "cnctr": {
+          "signguCd": "36110",
+          "tAtsNm": "밀마루전망대"
+        }
+      },
+      "match": {
+        "method": "exact",
+        "confidence": "high"
+      },
+      "hidden": false,
+      "lastSeenAt": "2026-10-12",
+      "sources": [
+        "tour",
+        "cnctr"
+      ]
+    },
+    {
+      "placeId": "kto-1951646",
+      "name": "세종시립민속박물관",
+      "address": "세종특별자치시 전의면 금사길 75",
+      "region": {
+        "provinceCd": "36",
+        "signguCd": "36110",
+        "signgu": "세종특별자치시",
+        "adminDong": null
+      },
+      "lat": 36.6085720872,
+      "lng": 127.1703963285,
+      "category": "exhibition",
+      "indoor": "indoor",
+      "operation": null,
+      "keyword": "세종시립민속박물관",
+      "external": {
+        "tour": {
+          "contentId": "1951646",
+          "contentTypeId": "14",
+          "lclsSystm3": "VE070100"
+        },
+        "cnctr": {
+          "signguCd": "36110",
+          "tAtsNm": "세종시립민속박물관"
+        }
+      },
+      "match": {
+        "method": "exact",
+        "confidence": "high"
+      },
+      "hidden": false,
+      "lastSeenAt": "2026-10-12",
+      "sources": [
+        "tour",
+        "cnctr"
+      ]
+    },
+    {
+      "placeId": "kto-1951651",
+      "name": "김종서 장군 묘",
+      "address": "세종특별자치시 장군면 대교리",
+      "region": {
+        "provinceCd": "36",
+        "signguCd": "36110",
+        "signgu": "세종특별자치시",
+        "adminDong": null
+      },
+      "lat": 36.5225638182979,
+      "lng": 127.21584987164,
+      "category": "heritage",
+      "indoor": "outdoor",
+      "operation": null,
+      "keyword": "김종서 장군 묘",
+      "external": {
+        "tour": {
+          "contentId": "1951651",
+          "contentTypeId": "12",
+          "lclsSystm3": "HS010800"
+        },
+        "cnctr": {
+          "signguCd": "36110",
+          "tAtsNm": "김종서 장군 묘"
+        }
+      },
+      "match": {
+        "method": "exact",
+        "confidence": "high"
+      },
+      "hidden": false,
+      "lastSeenAt": "2026-10-12",
+      "sources": [
+        "tour",
+        "cnctr"
+      ]
+    },
+    {
+      "placeId": "kto-1951653",
+      "name": "연기대첩비공원",
+      "address": "세종특별자치시 연서면 도신고복로 586",
+      "region": {
+        "provinceCd": "36",
+        "signguCd": "36110",
+        "signgu": "세종특별자치시",
+        "adminDong": null
+      },
+      "lat": 36.5999074841553,
+      "lng": 127.227446634164,
+      "category": "nature_park",
+      "indoor": "outdoor",
+      "operation": null,
+      "keyword": "연기대첩비공원",
+      "external": {
+        "tour": {
+          "contentId": "1951653",
+          "contentTypeId": "12",
+          "lclsSystm3": "VE030500"
+        },
+        "cnctr": {
+          "signguCd": "36110",
+          "tAtsNm": "연기대첩비공원"
         }
       },
       "match": {
@@ -63054,6 +63586,44 @@
         "cnctr": {
           "signguCd": "44800",
           "tAtsNm": "홍주향교"
+        }
+      },
+      "match": {
+        "method": "exact",
+        "confidence": "high"
+      },
+      "hidden": false,
+      "lastSeenAt": "2026-10-12",
+      "sources": [
+        "tour",
+        "cnctr"
+      ]
+    },
+    {
+      "placeId": "kto-1954976",
+      "name": "연기향교",
+      "address": "세종특별자치시 연기면 교촌3길 13",
+      "region": {
+        "provinceCd": "36",
+        "signguCd": "36110",
+        "signgu": "세종특별자치시",
+        "adminDong": null
+      },
+      "lat": 36.5433916769,
+      "lng": 127.2811665273,
+      "category": "heritage",
+      "indoor": "outdoor",
+      "operation": null,
+      "keyword": "연기향교",
+      "external": {
+        "tour": {
+          "contentId": "1954976",
+          "contentTypeId": "12",
+          "lclsSystm3": "HS010900"
+        },
+        "cnctr": {
+          "signguCd": "36110",
+          "tAtsNm": "연기향교"
         }
       },
       "match": {
@@ -83135,6 +83705,44 @@
       ]
     },
     {
+      "placeId": "kto-2661528",
+      "name": "조천연꽃공원",
+      "address": "세종특별자치시 조치원읍 번암리 226",
+      "region": {
+        "provinceCd": "36",
+        "signguCd": "36110",
+        "signgu": "세종특별자치시",
+        "adminDong": null
+      },
+      "lat": 36.5852633384906,
+      "lng": 127.300687218499,
+      "category": "nature_park",
+      "indoor": "outdoor",
+      "operation": null,
+      "keyword": "조천연꽃공원",
+      "external": {
+        "tour": {
+          "contentId": "2661528",
+          "contentTypeId": "12",
+          "lclsSystm3": "VE030100"
+        },
+        "cnctr": {
+          "signguCd": "36110",
+          "tAtsNm": "조천연꽃공원"
+        }
+      },
+      "match": {
+        "method": "exact",
+        "confidence": "high"
+      },
+      "hidden": false,
+      "lastSeenAt": "2026-10-12",
+      "sources": [
+        "tour",
+        "cnctr"
+      ]
+    },
+    {
       "placeId": "kto-2661533",
       "name": "맨삽지(학성리 공룡발자국화석)",
       "address": "충남 보령시 천북면 학성리 산45",
@@ -84641,6 +85249,44 @@
         "cnctr": {
           "signguCd": "28710",
           "tAtsNm": "석모도 칠면초 군락지"
+        }
+      },
+      "match": {
+        "method": "exact",
+        "confidence": "high"
+      },
+      "hidden": false,
+      "lastSeenAt": "2026-10-12",
+      "sources": [
+        "tour",
+        "cnctr"
+      ]
+    },
+    {
+      "placeId": "kto-2675068",
+      "name": "국립세종수목원",
+      "address": "세종특별자치시 수목원로 136 (세종동)",
+      "region": {
+        "provinceCd": "36",
+        "signguCd": "36110",
+        "signgu": "세종특별자치시",
+        "adminDong": null
+      },
+      "lat": 36.498610856,
+      "lng": 127.2856916313,
+      "category": "nature_park",
+      "indoor": "outdoor",
+      "operation": null,
+      "keyword": "국립세종수목원",
+      "external": {
+        "tour": {
+          "contentId": "2675068",
+          "contentTypeId": "12",
+          "lclsSystm3": "NA040700"
+        },
+        "cnctr": {
+          "signguCd": "36110",
+          "tAtsNm": "국립세종수목원"
         }
       },
       "match": {
@@ -86697,6 +87343,44 @@
       },
       "match": {
         "method": "normalized",
+        "confidence": "high"
+      },
+      "hidden": false,
+      "lastSeenAt": "2026-10-12",
+      "sources": [
+        "tour",
+        "cnctr"
+      ]
+    },
+    {
+      "placeId": "kto-2709995",
+      "name": "대통령기록전시관",
+      "address": "세종특별자치시 다솜로 250 (어진동)",
+      "region": {
+        "provinceCd": "36",
+        "signguCd": "36110",
+        "signgu": "세종특별자치시",
+        "adminDong": null
+      },
+      "lat": 36.50165620168188,
+      "lng": 127.27324978669455,
+      "category": "exhibition",
+      "indoor": "indoor",
+      "operation": null,
+      "keyword": "대통령기록전시관",
+      "external": {
+        "tour": {
+          "contentId": "2709995",
+          "contentTypeId": "14",
+          "lclsSystm3": "VE070300"
+        },
+        "cnctr": {
+          "signguCd": "36110",
+          "tAtsNm": "대통령기록전시관"
+        }
+      },
+      "match": {
+        "method": "exact",
         "confidence": "high"
       },
       "hidden": false,
@@ -105594,6 +106278,44 @@
       ]
     },
     {
+      "placeId": "kto-2758040",
+      "name": "숲뜰근린공원",
+      "address": "세종특별자치시 대평동 580-3",
+      "region": {
+        "provinceCd": "36",
+        "signguCd": "36110",
+        "signgu": "세종특별자치시",
+        "adminDong": null
+      },
+      "lat": 36.4674500965,
+      "lng": 127.2649144954,
+      "category": "nature_park",
+      "indoor": "outdoor",
+      "operation": null,
+      "keyword": "숲뜰근린공원",
+      "external": {
+        "tour": {
+          "contentId": "2758040",
+          "contentTypeId": "12",
+          "lclsSystm3": "VE030400"
+        },
+        "cnctr": {
+          "signguCd": "36110",
+          "tAtsNm": "숲뜰근린공원"
+        }
+      },
+      "match": {
+        "method": "exact",
+        "confidence": "high"
+      },
+      "hidden": false,
+      "lastSeenAt": "2026-10-12",
+      "sources": [
+        "tour",
+        "cnctr"
+      ]
+    },
+    {
       "placeId": "kto-2758125",
       "name": "왜고개",
       "address": "서울특별시 용산구 한강대로40길 46 (용산동5가)",
@@ -106696,6 +107418,120 @@
       ]
     },
     {
+      "placeId": "kto-2758467",
+      "name": "고운뜰공원",
+      "address": "세종특별자치시 만남로 151 (고운동)",
+      "region": {
+        "provinceCd": "36",
+        "signguCd": "36110",
+        "signgu": "세종특별자치시",
+        "adminDong": null
+      },
+      "lat": 36.5125528023,
+      "lng": 127.2391322492,
+      "category": "nature_park",
+      "indoor": "outdoor",
+      "operation": null,
+      "keyword": "고운뜰공원",
+      "external": {
+        "tour": {
+          "contentId": "2758467",
+          "contentTypeId": "12",
+          "lclsSystm3": "VE030100"
+        },
+        "cnctr": {
+          "signguCd": "36110",
+          "tAtsNm": "고운뜰공원"
+        }
+      },
+      "match": {
+        "method": "exact",
+        "confidence": "high"
+      },
+      "hidden": false,
+      "lastSeenAt": "2026-10-12",
+      "sources": [
+        "tour",
+        "cnctr"
+      ]
+    },
+    {
+      "placeId": "kto-2758470",
+      "name": "금강수변공원",
+      "address": "세종특별자치시 보람동",
+      "region": {
+        "provinceCd": "36",
+        "signguCd": "36110",
+        "signgu": "세종특별자치시",
+        "adminDong": null
+      },
+      "lat": 36.483,
+      "lng": 127.292,
+      "category": "nature_park",
+      "indoor": "outdoor",
+      "operation": null,
+      "keyword": "금강수변공원",
+      "external": {
+        "tour": {
+          "contentId": "2758470",
+          "contentTypeId": "12",
+          "lclsSystm3": "VE030500"
+        },
+        "cnctr": {
+          "signguCd": "36110",
+          "tAtsNm": "금강수변공원"
+        }
+      },
+      "match": {
+        "method": "exact",
+        "confidence": "high"
+      },
+      "hidden": false,
+      "lastSeenAt": "2026-10-12",
+      "sources": [
+        "tour",
+        "cnctr"
+      ]
+    },
+    {
+      "placeId": "kto-2758472",
+      "name": "원수산습지생태원",
+      "address": "세종특별자치시 연기면 세종리 734-4",
+      "region": {
+        "provinceCd": "36",
+        "signguCd": "36110",
+        "signgu": "세종특별자치시",
+        "adminDong": null
+      },
+      "lat": 36.5158823229357,
+      "lng": 127.273697275807,
+      "category": "nature_park",
+      "indoor": "outdoor",
+      "operation": null,
+      "keyword": "원수산습지생태원",
+      "external": {
+        "tour": {
+          "contentId": "2758472",
+          "contentTypeId": "12",
+          "lclsSystm3": "NA040500"
+        },
+        "cnctr": {
+          "signguCd": "36110",
+          "tAtsNm": "원수산습지생태원"
+        }
+      },
+      "match": {
+        "method": "exact",
+        "confidence": "high"
+      },
+      "hidden": false,
+      "lastSeenAt": "2026-10-12",
+      "sources": [
+        "tour",
+        "cnctr"
+      ]
+    },
+    {
       "placeId": "kto-2758500",
       "name": "불당동 유적공원 (선사유적지 공원)",
       "address": "충청남도 천안시 서북구 불당11로 85 (불당동)",
@@ -106872,6 +107708,44 @@
         "cnctr": {
           "signguCd": "30140",
           "tAtsNm": "대전아쿠아리움"
+        }
+      },
+      "match": {
+        "method": "exact",
+        "confidence": "high"
+      },
+      "hidden": false,
+      "lastSeenAt": "2026-10-12",
+      "sources": [
+        "tour",
+        "cnctr"
+      ]
+    },
+    {
+      "placeId": "kto-2758638",
+      "name": "방축천 음악분수",
+      "address": "세종특별자치시 어진동",
+      "region": {
+        "provinceCd": "36",
+        "signguCd": "36110",
+        "signgu": "세종특별자치시",
+        "adminDong": null
+      },
+      "lat": 36.4971,
+      "lng": 127.2542,
+      "category": "street_market",
+      "indoor": "outdoor",
+      "operation": null,
+      "keyword": "방축천 음악분수",
+      "external": {
+        "tour": {
+          "contentId": "2758638",
+          "contentTypeId": "12",
+          "lclsSystm3": "VE010400"
+        },
+        "cnctr": {
+          "signguCd": "36110",
+          "tAtsNm": "방축천 음악분수"
         }
       },
       "match": {
@@ -108824,6 +109698,44 @@
       ]
     },
     {
+      "placeId": "kto-2761431",
+      "name": "바람재쉼터",
+      "address": "세종특별자치시 금남면 영대리",
+      "region": {
+        "provinceCd": "36",
+        "signguCd": "36110",
+        "signgu": "세종특별자치시",
+        "adminDong": null
+      },
+      "lat": 36.4476478693,
+      "lng": 127.3247180074,
+      "category": "nature_park",
+      "indoor": "outdoor",
+      "operation": null,
+      "keyword": "바람재쉼터",
+      "external": {
+        "tour": {
+          "contentId": "2761431",
+          "contentTypeId": "12",
+          "lclsSystm3": "VE030100"
+        },
+        "cnctr": {
+          "signguCd": "36110",
+          "tAtsNm": "바람재쉼터"
+        }
+      },
+      "match": {
+        "method": "exact",
+        "confidence": "high"
+      },
+      "hidden": false,
+      "lastSeenAt": "2026-10-12",
+      "sources": [
+        "tour",
+        "cnctr"
+      ]
+    },
+    {
       "placeId": "kto-2761440",
       "name": "안산농수산물도매시장",
       "address": "경기도 안산시 상록구 충장로 312 (이동)",
@@ -109266,6 +110178,44 @@
         "cnctr": {
           "signguCd": "41273",
           "tAtsNm": "안산 어린이 천문대"
+        }
+      },
+      "match": {
+        "method": "exact",
+        "confidence": "high"
+      },
+      "hidden": false,
+      "lastSeenAt": "2026-10-12",
+      "sources": [
+        "tour",
+        "cnctr"
+      ]
+    },
+    {
+      "placeId": "kto-2761645",
+      "name": "원수산MTB공원",
+      "address": "세종특별자치시 세종동",
+      "region": {
+        "provinceCd": "36",
+        "signguCd": "36110",
+        "signgu": "세종특별자치시",
+        "adminDong": null
+      },
+      "lat": 36.522946561,
+      "lng": 127.2677155135,
+      "category": "nature_park",
+      "indoor": "outdoor",
+      "operation": null,
+      "keyword": "원수산MTB공원",
+      "external": {
+        "tour": {
+          "contentId": "2761645",
+          "contentTypeId": "12",
+          "lclsSystm3": "NA040500"
+        },
+        "cnctr": {
+          "signguCd": "36110",
+          "tAtsNm": "원수산MTB공원"
         }
       },
       "match": {
@@ -115046,6 +115996,82 @@
       },
       "match": {
         "method": "exact",
+        "confidence": "high"
+      },
+      "hidden": false,
+      "lastSeenAt": "2026-10-12",
+      "sources": [
+        "tour",
+        "cnctr"
+      ]
+    },
+    {
+      "placeId": "kto-2770375",
+      "name": "도토리숲키즈파크",
+      "address": "세종특별자치시 장군면 영평사길 34",
+      "region": {
+        "provinceCd": "36",
+        "signguCd": "36110",
+        "signgu": "세종특별자치시",
+        "adminDong": null
+      },
+      "lat": 36.475910781247116,
+      "lng": 127.2360309738394,
+      "category": "theme_park",
+      "indoor": "mixed",
+      "operation": null,
+      "keyword": "도토리숲키즈파크",
+      "external": {
+        "tour": {
+          "contentId": "2770375",
+          "contentTypeId": "12",
+          "lclsSystm3": "VE020100"
+        },
+        "cnctr": {
+          "signguCd": "36110",
+          "tAtsNm": "도토리숲키즈파크"
+        }
+      },
+      "match": {
+        "method": "exact",
+        "confidence": "high"
+      },
+      "hidden": false,
+      "lastSeenAt": "2026-10-12",
+      "sources": [
+        "tour",
+        "cnctr"
+      ]
+    },
+    {
+      "placeId": "kto-2770378",
+      "name": "세종어린이천문대",
+      "address": "세종특별자치시 장군면 금송로 293",
+      "region": {
+        "provinceCd": "36",
+        "signguCd": "36110",
+        "signgu": "세종특별자치시",
+        "adminDong": null
+      },
+      "lat": 36.4448017513,
+      "lng": 127.2242577734,
+      "category": "theme_park",
+      "indoor": "mixed",
+      "operation": null,
+      "keyword": "세종어린이천문대",
+      "external": {
+        "tour": {
+          "contentId": "2770378",
+          "contentTypeId": "12",
+          "lclsSystm3": "VE020500"
+        },
+        "cnctr": {
+          "signguCd": "36110",
+          "tAtsNm": "세종어린이천문대(세종미리내천문대)"
+        }
+      },
+      "match": {
+        "method": "normalized",
         "confidence": "high"
       },
       "hidden": false,
@@ -126760,6 +127786,44 @@
       ]
     },
     {
+      "placeId": "kto-319721",
+      "name": "신광사(세종)",
+      "address": "세종특별자치시 조치원읍 토골고개길 24",
+      "region": {
+        "provinceCd": "36",
+        "signguCd": "36110",
+        "signgu": "세종특별자치시",
+        "adminDong": null
+      },
+      "lat": 36.6235770632,
+      "lng": 127.2892524995,
+      "category": "heritage",
+      "indoor": "outdoor",
+      "operation": null,
+      "keyword": "세종 신광사",
+      "external": {
+        "tour": {
+          "contentId": "319721",
+          "contentTypeId": "12",
+          "lclsSystm3": "HS030100"
+        },
+        "cnctr": {
+          "signguCd": "36110",
+          "tAtsNm": "신광사(세종)"
+        }
+      },
+      "match": {
+        "method": "exact",
+        "confidence": "high"
+      },
+      "hidden": false,
+      "lastSeenAt": "2026-10-12",
+      "sources": [
+        "tour",
+        "cnctr"
+      ]
+    },
+    {
       "placeId": "kto-322813",
       "name": "신륵사(제천)",
       "address": "충청북도 제천시 덕산면 월악산로4길 180",
@@ -129838,6 +130902,44 @@
       ]
     },
     {
+      "placeId": "kto-482169",
+      "name": "청안사(세종)",
+      "address": "세종특별자치시 전의면 가느실길 128-23",
+      "region": {
+        "provinceCd": "36",
+        "signguCd": "36110",
+        "signgu": "세종특별자치시",
+        "adminDong": null
+      },
+      "lat": 36.6405039409,
+      "lng": 127.191627475,
+      "category": "heritage",
+      "indoor": "outdoor",
+      "operation": null,
+      "keyword": "세종 청안사",
+      "external": {
+        "tour": {
+          "contentId": "482169",
+          "contentTypeId": "12",
+          "lclsSystm3": "HS030100"
+        },
+        "cnctr": {
+          "signguCd": "36110",
+          "tAtsNm": "청안사(세종)"
+        }
+      },
+      "match": {
+        "method": "exact",
+        "confidence": "high"
+      },
+      "hidden": false,
+      "lastSeenAt": "2026-10-12",
+      "sources": [
+        "tour",
+        "cnctr"
+      ]
+    },
+    {
       "placeId": "kto-482195",
       "name": "탈골암(충북)",
       "address": "충청북도 보은군 속리산면 법주사로 569-72",
@@ -129938,6 +131040,44 @@
         "cnctr": {
           "signguCd": "11350",
           "tAtsNm": "학도암(서울)"
+        }
+      },
+      "match": {
+        "method": "exact",
+        "confidence": "high"
+      },
+      "hidden": false,
+      "lastSeenAt": "2026-10-12",
+      "sources": [
+        "tour",
+        "cnctr"
+      ]
+    },
+    {
+      "placeId": "kto-485687",
+      "name": "학림사(세종)",
+      "address": "세종특별자치시 연서면 와룡로 353",
+      "region": {
+        "provinceCd": "36",
+        "signguCd": "36110",
+        "signgu": "세종특별자치시",
+        "adminDong": null
+      },
+      "lat": 36.5843096995,
+      "lng": 127.2462008154,
+      "category": "heritage",
+      "indoor": "outdoor",
+      "operation": null,
+      "keyword": "세종 학림사",
+      "external": {
+        "tour": {
+          "contentId": "485687",
+          "contentTypeId": "12",
+          "lclsSystm3": "HS030100"
+        },
+        "cnctr": {
+          "signguCd": "36110",
+          "tAtsNm": "학림사(세종)"
         }
       },
       "match": {
@@ -134080,6 +135220,44 @@
         "cnctr": {
           "signguCd": "11380",
           "tAtsNm": "응암동 감자국 거리"
+        }
+      },
+      "match": {
+        "method": "exact",
+        "confidence": "high"
+      },
+      "hidden": false,
+      "lastSeenAt": "2026-10-12",
+      "sources": [
+        "tour",
+        "cnctr"
+      ]
+    },
+    {
+      "placeId": "kto-730441",
+      "name": "베어트리파크",
+      "address": "세종특별자치시 전동면 신송로 217",
+      "region": {
+        "provinceCd": "36",
+        "signguCd": "36110",
+        "signgu": "세종특별자치시",
+        "adminDong": null
+      },
+      "lat": 36.6727747299,
+      "lng": 127.2101387847,
+      "category": "nature_park",
+      "indoor": "outdoor",
+      "operation": null,
+      "keyword": "베어트리파크",
+      "external": {
+        "tour": {
+          "contentId": "730441",
+          "contentTypeId": "12",
+          "lclsSystm3": "NA040700"
+        },
+        "cnctr": {
+          "signguCd": "36110",
+          "tAtsNm": "베어트리파크"
         }
       },
       "match": {

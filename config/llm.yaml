@@ -1,0 +1,23 @@
+# OpenAI 사용 설정 (FR-LLM, FR-CHAT, NFR-COST-03) — 모델·예산은 2026-10-11 발주자 승인
+model: gpt-6-luna
+
+budget:
+  monthlyUsd: 20      # OpenAI 계정에도 같은 한도를 설정한다
+  appCutoffUsd: 15    # 앱 누적 비용이 이 값에 닿으면 대화만 닫는다(피드·상세는 계속)
+
+reason:               # 근거 문장 (FR-LLM-01)
+  maxSentences: 2
+  maxChars: 100
+
+review:               # 후기 판정 (FR-LLM-03)
+  minReviews: 5       # 미만이면 판단 보류
+
+retry:
+  invalidJson: 1      # 형식 오류 시 1회 재시도 후 비움 (FR-LLM-06)
+
+chat:
+  perUserDaily: 20    # FR-CHAT-08
+  serviceDaily: 500   # FR-CHAT-09 서비스 전체 상한 — 착수 계획서 가정값
+  maxInputChars: 200  # FR-CHAT-10
+  timeoutSec: 10      # FR-CHAT-12
+  maxCards: 5         # FR-CHAT-04

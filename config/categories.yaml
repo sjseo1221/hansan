@@ -1,0 +1,38 @@
+# 장소 분류 체계 (FR-FLT-03 · SRS 10절 미결 — 착수 계획서 D-4 초안, 발주자 결정 대기)
+# indoor: 실내외 기본값(장소 목록에서 장소별로 덮어쓴다) — indoor | outdoor | mixed
+# 원천 분류(TourAPI 콘텐츠 유형·분류 코드)와의 매핑은 TourAPI 키 수령 후 실제 응답으로 채운다.
+
+categories:
+  - id: nature_park
+    label: 자연·공원
+    indoor: outdoor
+  - id: heritage
+    label: 역사·유적
+    indoor: outdoor
+  - id: exhibition
+    label: 전시·박물관
+    indoor: indoor
+  - id: theme_park
+    label: 테마파크·체험
+    indoor: mixed
+  - id: festival
+    label: 축제·행사
+    indoor: outdoor
+  - id: leisure_sports
+    label: 레저·스포츠
+    indoor: mixed
+  - id: street_market
+    label: 거리·시장
+    indoor: outdoor
+  - id: walking_trail
+    label: 산책·둘레길
+    indoor: outdoor
+
+# 서울 실시간 인구 장소 카테고리 → 분류 (FR-SCORE-07 분류별 표준 시간대 패턴용)
+# 원천: data/sources/seoul/places.json 의 category 5종. 장소별 예외는 장소 목록에서 덮어쓴다.
+seoulCategoryMap:
+  관광특구: street_market
+  고궁·문화유산: heritage
+  인구밀집지역: street_market
+  발달상권: street_market
+  공원: nature_park

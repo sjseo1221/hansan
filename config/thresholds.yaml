@@ -1,0 +1,60 @@
+# 유형 판정·한산 가능성·피드 기준값 (FR-TYPE-10: 모든 기준값은 이 파일에서 바꾼다)
+# 값은 요구사항명세서의 초기값이다. 2단계 확보율 검증 후 조정한다.
+# 점수는 모두 0~100, 변화율은 비율(1.0 = +100%).
+
+types:
+  moderate_hotspot:          # 적당한 핫플 (FR-TYPE-01)
+    popularityMin: 70
+    congestionMin: 40
+    congestionMax: 60
+  timing_game:               # 눈치게임 (FR-TYPE-02)
+    usualCongestionMin: 70   # 해당 요일 평소 혼잡
+    dropFromUsualMin: 20     # 해당일 예측이 평소보다 이만큼 이상 낮음
+  early_hotspot:             # 얼리 핫플 (FR-TYPE-03) — 베타 표시
+    trendMin: 1.0            # 최근 4주 / 직전 8주 변화율 +100% 이상
+    popularityMax: 70        # 미만
+    congestionMax: 50        # 미만
+    beta: true
+  time_slot:                 # 시간대 공략 (FR-TYPE-04)
+    popularityMin: 70
+    quietToPeakRatioMax: 0.5 # 가장 한산한 시간대 혼잡 ≤ 가장 붐비는 시간대의 50%
+  hidden_classic:            # 숨은 클래식 (FR-TYPE-05)
+    longTermChangeMax: -0.3  # 최근 12개월 / 3년 전 같은 기간 -30% 이하
+    congestionMax: 40        # 미만
+    reviewVerdict: worth_visiting
+
+# 여러 유형에 해당할 때 대표 유형 순서 (FR-TYPE-07) — 착수 계획서 D-3 제안, 발주자 미결
+representativePriority:
+  - timing_game
+  - moderate_hotspot
+  - time_slot
+  - hidden_classic
+  - early_hotspot
+
+# 한산 가능성 등급 (FR-TYPE-06). 시간대 공략은 추천 시간대의 혼잡을 기준으로 한다
+quietLikelihood:
+  highMax: 40     # 40 이하 = 높음
+  mediumMax: 60   # 41~60 = 보통, 61 이상 = 낮음
+
+# 같은 장소 연속 상위 노출 제한 (FR-TYPE-09, 권장)
+exposure:
+  maxConsecutiveWeeksInTop: 2   # 3주 연속 상위 3위 금지 → 2주까지 허용
+  topN: 3
+
+feed:
+  maxPerType: 10        # FR-FEED-04
+  dateRangeDays: 14     # FR-FLT-01
+
+freshness:
+  staleAfterDays: 3     # NFR-REL-02 자료 갱신 지연 안내
+
+# 인기도 = 검색 관심도 백분위·블로그 게시글 수 백분위의 가중합 (FR-SCORE-01)
+# 가중치는 착수 계획서 D-2 가정 초기값, 발주자 미결
+popularity:
+  searchWeight: 0.6
+  blogWeight: 0.4
+
+# 평소 혼잡 산출 기간 (FR-SCORE-03). 8주가 차기 전에는 minWeeks 이상이면 '임시'로 계산 (착수 계획서 B-5)
+usualCongestion:
+  weeks: 8
+  minWeeks: 2

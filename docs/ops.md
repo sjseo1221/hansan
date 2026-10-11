@@ -20,6 +20,19 @@
 | collect-seoul-hourly | 매시 17분 | 서울 121곳 실시간 인구 → `data/raw/seoul_citydata/YYYY-MM/DD.jsonl`, 장소별 최신값 `data/latest/seoul_citydata.json` |
 | test | push 시 | 타입 검사, 자동 시험 |
 
+## 설정 파일 (기준값 변경)
+
+값을 바꾸고 커밋하면 다음 주기 작업부터 적용된다. push 하면 `test` 워크플로가 파일끼리 어긋나지 않는지 검사한다.
+
+| 파일 | 내용 |
+|---|---|
+| `config/thresholds.yaml` | 유형 판정 기준값, 대표 유형 순서, 한산 가능성 구간, 피드 표시 수, 인기도 가중치 |
+| `config/categories.yaml` | 장소 분류 8종, 서울 장소 카테고리 → 분류 연결 |
+| `config/companions.yaml` | 동행 유형 5종 × 분류 적합 표 |
+| `config/regions.yaml` | 대상 시·도, 이동 시간 어림 계수 |
+| `config/llm.yaml` | OpenAI 모델·월 예산·대화 상한 |
+| `config/sources.yaml` | 출처별 하루 호출 상한 |
+
 ## 호출 상한
 
 `config/sources.yaml` 의 `dailyCap` 이 출처별 하루 상한이다. 닿으면 남은 장소는 다음 실행으로 넘어간다. 하루 사용량은 `data/state/usage/<출처>/<날짜>.json`.

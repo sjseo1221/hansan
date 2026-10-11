@@ -1,0 +1,19 @@
+# 동행 유형 × 장소 분류 적합 표 (FR-FLT-03) — 착수 계획서 D-4 초안, 발주자 결정 대기
+# 필터에서 동행 유형을 고르면 suitable 에 든 분류만 남긴다. 값은 운영자가 이 파일로 바꾼다.
+
+companions:
+  - id: kids
+    label: 아이 동반
+    suitable: [nature_park, exhibition, theme_park, festival, walking_trail]
+  - id: couple
+    label: 커플
+    suitable: [nature_park, heritage, exhibition, theme_park, festival, leisure_sports, street_market, walking_trail]
+  - id: parents
+    label: 부모님 동반
+    suitable: [nature_park, heritage, exhibition, festival, street_market, walking_trail]
+  - id: friends
+    label: 친구
+    suitable: [nature_park, heritage, exhibition, theme_park, festival, leisure_sports, street_market, walking_trail]
+  - id: solo
+    label: 혼자
+    suitable: [nature_park, heritage, exhibition, street_market, walking_trail]

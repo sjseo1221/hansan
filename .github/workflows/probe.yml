@@ -19,3 +19,9 @@ jobs:
         run: npx tsx pipeline/src/cli/probe-datagokr.ts
         env:
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+      - name: naver
+        if: always()
+        run: npx tsx pipeline/src/cli/probe-naver.ts
+        env:
+          NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
+          NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}

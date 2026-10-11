@@ -1,0 +1,21 @@
+# 외부 API 실호출 확인 (수동 실행 전용). 응답 구조만 출력하고 인증키는 출력하지 않는다.
+name: probe
+
+on:
+  workflow_dispatch:
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: data.go.kr
+        run: npx tsx pipeline/src/cli/probe-datagokr.ts
+        env:
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}

@@ -123864,7 +123864,7 @@
         "method": "partial",
         "confidence": "low"
       },
-      "hidden": false,
+      "hidden": true,
       "lastSeenAt": "2026-10-12",
       "sources": [
         "tour",
@@ -129526,7 +129526,7 @@
         "method": "partial",
         "confidence": "low"
       },
-      "hidden": false,
+      "hidden": true,
       "lastSeenAt": "2026-10-12",
       "sources": [
         "tour",

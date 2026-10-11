@@ -4,14 +4,14 @@
   "matched": {
     "exact": 3398,
     "normalized": 249,
-    "partial": 121,
-    "total": 3768,
+    "partial": 119,
+    "total": 3766,
     "ambiguous": 2,
     "duplicates": 21
   },
   "matchRate": 0.873,
   "unmatched": {
-    "count": 547,
+    "count": 549,
     "list": [
       {
         "signguCd": "11110",
@@ -2266,6 +2266,11 @@
       {
         "signguCd": "51150",
         "signguNm": "강릉시",
+        "tAtsNm": "정동진핸드레일바이크"
+      },
+      {
+        "signguCd": "51150",
+        "signguNm": "강릉시",
         "tAtsNm": "참소리축음기&에디슨과학박물관"
       },
       {
@@ -2362,6 +2367,11 @@
         "signguCd": "51230",
         "signguNm": "삼척시",
         "tAtsNm": "삼척 동굴신비관"
+      },
+      {
+        "signguCd": "51230",
+        "signguNm": "삼척시",
+        "tAtsNm": "삼척항"
       },
       {
         "signguCd": "51230",
@@ -2772,8 +2782,8 @@
   ],
   "places": {
     "total": 3729,
-    "visible": 3729,
-    "hidden": 0,
+    "visible": 3727,
+    "hidden": 2,
     "byProvince": {
       "11": 562,
       "28": 257,

@@ -3,7 +3,8 @@ name = "hansan-cron"
 main = "index.js"
 compatibility_date = "2026-10-01"
 
-# workers_dev=false 면 배포 대상이 없어 Cron 이 돌지 않았다(2026-10-12 확인). fetch 처리기가 없어 주소로 호출해도 동작하지 않는다
+# workers_dev=true: 첫 배포(false)에서 "No targets deployed" 가 나와 켰다. false 에서 Cron 이 안 도는지는 확인하지 않았다.
+# fetch 처리기가 없어 주소로 호출해도 동작하지 않는다(500). Cron 설정 변경은 반영까지 최대 15분 걸린다
 workers_dev = true
 preview_urls = false
 

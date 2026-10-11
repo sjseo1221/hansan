@@ -33,7 +33,10 @@ export type FetchText = (url: string, timeoutMs: number) => Promise<string>;
 
 export const fetchText: FetchText = async (url, timeoutMs) => {
   const res = await fetch(url, { signal: AbortSignal.timeout(timeoutMs) });
-  return res.text();
+  const body = await res.text();
+  // 서울 API 오류는 본문 <CODE> 로 온다. 그것도 없는 HTTP 오류(429·5xx 등)는 상태 코드로 구분해 남긴다
+  if (!res.ok && !/<CODE>/.test(body)) throw Object.assign(new Error(`HTTP ${res.status}`), { name: `HTTP_${res.status}` });
+  return body;
 };
 
 export function parseResponse(body: string): Parsed {
@@ -77,6 +80,18 @@ export interface CollectResult {
   ok: number;
   failed: number;
   skipped: number;
+  aborted: number;
+}
+
+// 연속 실패가 이만큼 나면 남은 장소 호출을 멈춘다(키 오류·장애 시 하루 상한 소진 방지)
+export const MAX_CONSECUTIVE_FAILURES = 10;
+
+const attemptPath = (dataDir: string) => join(dataDir, "state", "attempt", `${SOURCE}.json`);
+
+// 같은 KST 시간대에 이미 시도했으면 건너뛴다 — 성공 여부와 무관하게 시도 기준(장애 중 중복 호출로 상한이 소진되지 않게)
+export async function attemptedThisHour(dataDir: string, now: Date): Promise<boolean> {
+  const last = await readJson<{ hour?: string }>(attemptPath(dataDir), {});
+  return last.hour === kstIso(now).slice(0, 13);
 }
 
 export async function collectSeoul(input: CollectInput): Promise<CollectResult> {
@@ -84,6 +99,9 @@ export async function collectSeoul(input: CollectInput): Promise<CollectResult> 
   const get = input.fetchText ?? fetchText;
   const t = kstParts(now);
   const fetchedAt = kstIso(now);
+
+  if (places.length === 0) throw new Error("서울 장소 목록이 비어 있음");
+  await writeJson(attemptPath(dataDir), { hour: fetchedAt.slice(0, 13), at: fetchedAt });
 
   const usage = await DailyUsage.load(dataDir, SOURCE, t.date, cfg.dailyCap);
   const cursorPath = join(dataDir, "state", "cursor", `${SOURCE}.json`);
@@ -96,6 +114,8 @@ export async function collectSeoul(input: CollectInput): Promise<CollectResult> 
     if (!usage.tryConsume()) break;
     batch.push(p);
   }
+  // 호출 전에 사용량을 먼저 저장한다 — 중간에 중단돼도 과소 집계되지 않게(보수적으로 과대 집계)
+  await usage.save();
 
   const records: SeoulRecord[] = [];
   const failures: { at: string; source: string; areaCd: string; code: string; message: string }[] = [];
@@ -103,9 +123,17 @@ export async function collectSeoul(input: CollectInput): Promise<CollectResult> 
     failures.push({ at: fetchedAt, source: SOURCE, areaCd, code, message });
 
   let i = 0;
+  let streak = 0;
+  let aborted = 0;
   const worker = async () => {
     while (i < batch.length) {
+      if (streak >= MAX_CONSECUTIVE_FAILURES) {
+        aborted = batch.length - i;
+        i = batch.length;
+        break;
+      }
       const place = batch[i++];
+      const before = failures.length;
       const url = `${cfg.baseUrl}/${encodeURIComponent(key)}/json/${cfg.service}/1/5/${place.areaCd}`;
       try {
         const parsed = parseResponse(await get(url, cfg.timeoutMs));
@@ -116,6 +144,7 @@ export async function collectSeoul(input: CollectInput): Promise<CollectResult> 
         // 오류 메시지에 인증키가 든 URL 을 남기지 않는다 (NFR-SEC-01)
         fail(place.areaCd, (e as Error).name || "FETCH_ERROR", "요청 실패 또는 시간 초과");
       }
+      streak = failures.length > before ? streak + 1 : 0;
     }
   };
   await Promise.all(Array.from({ length: Math.max(1, cfg.concurrency) }, worker));
@@ -134,7 +163,6 @@ export async function collectSeoul(input: CollectInput): Promise<CollectResult> 
   await appendJsonl(join(dataDir, "state", "failures", `${t.yyyy}-${t.mm}.jsonl`), failures);
 
   await writeJson(cursorPath, { next: (start + batch.length) % places.length });
-  await usage.save();
 
-  return { attempted: batch.length, ok: records.length, failed: failures.length, skipped: places.length - batch.length };
+  return { attempted: batch.length - aborted, ok: records.length, failed: failures.length, skipped: places.length - batch.length, aborted };
 }

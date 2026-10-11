@@ -4,3 +4,5 @@ node_modules/
 !.env.example
 *.log
 .DS_Store
+# 비정상 종료로 남은 원자적 쓰기 임시 파일
+data/**/*.tmp

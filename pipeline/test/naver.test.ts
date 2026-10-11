@@ -12,6 +12,7 @@ const cfg: NaverConfig = {
   backfillStart: "2016-01-01",
   recentWeeks: 13,
   timeoutMs: 1000,
+  timeBudgetMs: 60_000,
 };
 const auth = { id: "ID-SECRET-1", secret: "SECRET-XYZ" };
 const now = new Date("2026-10-12T03:00:00Z");
@@ -49,7 +50,7 @@ describe("collectBlog", () => {
   it("게시글 수와 최근 게시일만 저장하고 제목·요약은 남기지 않는다", async () => {
     const dataDir = await tmp();
     const res = await collectBlog({ places, cfg, auth, dataDir, now, http: fake() });
-    expect(res).toEqual({ attempted: 5, ok: 5, failed: 0, skipped: 0 });
+    expect(res).toEqual({ attempted: 5, ok: 5, failed: 0, skipped: 0, aborted: 0 });
     const rows = await lines(join(dataDir, "raw", "naver_blog", "2026-10", "12.jsonl"));
     expect(rows[0]).toMatchObject({ placeId: "PA", total: 1234, recentPostDates: ["20261010", "20261001"], source: "naver_blog" });
     const text = await readFile(join(dataDir, "raw", "naver_blog", "2026-10", "12.jsonl"), "utf8");
@@ -60,7 +61,7 @@ describe("collectBlog", () => {
   it("하루 상한을 넘기지 않고, 실패는 인증 값 없이 기록한다", async () => {
     const dataDir = await tmp();
     const res = await collectBlog({ places, cfg: { ...cfg, blogDailyCap: 3 }, auth, dataDir, now, http: fake({ failKeyword: "kwB" }) });
-    expect(res).toEqual({ attempted: 3, ok: 2, failed: 1, skipped: 2 });
+    expect(res).toEqual({ attempted: 3, ok: 2, failed: 1, skipped: 2, aborted: 0 });
     const text = await readFile(join(dataDir, "state", "failures", "2026-10.jsonl"), "utf8");
     expect(text).toContain("HTTP_500");
     expect(text).not.toContain("SECRET");
@@ -72,7 +73,7 @@ describe("collectTrend", () => {
     const dataDir = await tmp();
     const http = fake();
     const res = await collectTrend({ places, cfg, auth, dataDir, now, http });
-    expect(res).toMatchObject({ places: 5, ok: 5, failed: 0 });
+    expect(res).toMatchObject({ attempted: 5, ok: 5, failed: 0 });
     expect(http.calls).toHaveLength(2); // 4 + 1
     expect(http.calls[0].body.keywordGroups[0]).toEqual({ groupName: "__anchor__", keywords: ["기준"] });
     expect(http.calls[0].body.keywordGroups).toHaveLength(5);

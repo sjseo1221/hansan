@@ -2,6 +2,7 @@ import { existsSync } from "node:fs";
 import { readFile } from "node:fs/promises";
 import { parse } from "yaml";
 import { readJson } from "../lib/store.js";
+import { exitCode } from "../lib/exit.js";
 import { collectBlog, collectTrend, type NaverConfig, type PlaceRef } from "../collect/naver.js";
 
 if (existsSync(".env")) process.loadEnvFile(".env");
@@ -19,6 +20,7 @@ if (!existsSync(PLACES)) {
   console.log(JSON.stringify({ skipped: "장소 목록 없음", path: PLACES }));
   process.exit(0);
 }
+// 숨김 장소는 다음 주기 작업부터 제외한다 (FR-DATA-13)
 const places = (await readJson<{ places: (PlaceRef & { hidden?: boolean })[] }>(PLACES, { places: [] })).places.filter((p) => !p.hidden);
 
 const cfg = (parse(await readFile("config/sources.yaml", "utf8")) as { naver: NaverConfig }).naver;
@@ -27,5 +29,5 @@ const blog = await collectBlog(ctx);
 const trend = await collectTrend(ctx);
 console.log(JSON.stringify({ blog, trend }));
 
-// 한 곳도 못 받았으면 실패로 끝내 저장소 알림이 가게 한다 (FR-OPS-04)
-if ((blog.attempted > 0 && blog.ok === 0) || (trend.places > 0 && trend.ok === 0 && trend.skipped < trend.places)) process.exit(1);
+// 블로그와 트렌드를 각각 판정한다 — 한쪽만 죽어도 알림이 가게 (FR-OPS-04)
+process.exit(Math.max(exitCode(blog), exitCode(trend)));

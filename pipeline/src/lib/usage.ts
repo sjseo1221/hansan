@@ -12,7 +12,9 @@ export class DailyUsage {
 
   static async load(dataDir: string, source: string, date: string, cap: number) {
     const u = new DailyUsage(join(dataDir, "state", "usage", source, `${date}.json`), cap);
-    u.count = (await readJson<{ count: number }>(u.path, { count: 0 })).count;
+    const count = (await readJson<{ count?: unknown }>(u.path, { count: 0 })).count;
+    // 파일이 손상돼 숫자가 아니면 한도가 무력화되지 않도록 상한까지 쓴 것으로 본다(보수적)
+    u.count = typeof count === "number" && Number.isFinite(count) ? count : cap;
     return u;
   }
 

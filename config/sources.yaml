@@ -21,3 +21,4 @@ naver:
   backfillStart: "2016-01-01"
   recentWeeks: 13
   timeoutMs: 15000
+  timeBudgetMs: 1200000   # 한 실행 최대 20분 — 넘으면 남은 호출을 멈추고 정상 커밋(job timeout 30분 전에)

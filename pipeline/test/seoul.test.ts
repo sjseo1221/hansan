@@ -61,7 +61,7 @@ describe("collectSeoul", () => {
   it("수집 결과를 KST 일별 JSONL 과 최신값에 출처·수집 일시와 함께 저장한다 (FR-DATA-12)", async () => {
     const dataDir = await tmp();
     const res = await collectSeoul({ places, cfg, key: "k", dataDir, now, fetchText: await fakeFetch() });
-    expect(res).toEqual({ attempted: 3, ok: 3, failed: 0, skipped: 0 });
+    expect(res).toEqual({ attempted: 3, ok: 3, failed: 0, skipped: 0, aborted: 0 });
 
     const rows = await readLines(join(dataDir, "raw", "seoul_citydata", "2026-10", "11.jsonl"));
     expect(rows.map((r) => r.areaCd)).toEqual(["POI001", "POI002", "POI003"]);

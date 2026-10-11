@@ -6,6 +6,13 @@
 # matches:           # 집중률 관광지 이름 → TourAPI contentId 수동 연결. contentId: null 이면 자동 매칭 차단
 #   - { signguCd: "11110", tAtsNm: "가회민화박물관", contentId: "1234567" }
 # add:               # 수동 추가 (SRS 9절 필드 전부)
-places: {}
-matches: []
+places:
+  # 아래 두 장소는 오매칭된 집중률 관광지에 연결돼 있었다(2026-10-12 검수). 연결은 matches 로 막았지만
+  # 직전 목록 유지 규칙으로 남으므로 숨긴다 — 올바른 집중률 이름이 확인되면 matches 로 다시 연결하고 숨김 해제
+  kto-3545967: { hidden: true }   # 정동진 ← 정동진핸드레일바이크
+  kto-2820721: { hidden: true }   # 삼척항 대게거리 ← 삼척항
+matches:
+  # 2026-10-12 partial 매칭 표본 20건 검수에서 찾은 오매칭 — 연결 차단
+  - { signguCd: "51150", tAtsNm: "정동진핸드레일바이크", contentId: null }   # → '정동진'(해변·역)에 잘못 연결
+  - { signguCd: "51230", tAtsNm: "삼척항", contentId: null }   # → '삼척항 대게거리'(상점가)에 잘못 연결
 add: []

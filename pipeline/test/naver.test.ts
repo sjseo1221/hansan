@@ -85,8 +85,8 @@ describe("collectTrend", () => {
     await collectTrend({ places, cfg, auth, dataDir, now, http: fake() });
     const rows = await lines(join(dataDir, "raw", "naver_trend", "backfill.jsonl"));
     const pb = rows.find((r) => r.placeId === "PB");
-    expect(pb.series[0]).toEqual({ period: "2026-09-01", ratio: 20, anchorRatio: 50, relative: 0.4 });
-    expect(pb.series[1].relative).toBeNull();
+    expect(pb.series[0]).toEqual(["2026-09", 0.4]);
+    expect(pb.series[1][1]).toBeNull();
   });
 
   it("백필을 받은 장소는 다음부터 최근 13주를 주 단위로 갱신한다", async () => {

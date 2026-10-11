@@ -212,10 +212,11 @@ export async function collectTrend(ctx: Ctx) {
             keyword: p.keyword,
             anchorKeyword: ctx.cfg.anchorKeyword,
             timeUnit: plan.timeUnit,
-            // 기준 키워드가 0인 기간은 비율을 만들 수 없어 null
-            series: data.map((d) => {
+            // [기간(월 단위면 YYYY-MM), 기준 키워드 대비 비율(소수 4자리)] — 기준이 0인 기간은 비율을 만들 수 없어 null.
+            // 원값·기준값은 저장하지 않는다(저장소 용량, 2026-10-12 결정)
+            series: data.map((d): [string, number | null] => {
               const a = anchor.get(d.period);
-              return { period: d.period, ratio: d.ratio, anchorRatio: a ?? null, relative: a ? d.ratio / a : null };
+              return [plan.timeUnit === "month" ? d.period.slice(0, 7) : d.period, a ? Math.round((d.ratio / a) * 1e4) / 1e4 : null];
             }),
             fetchedAt: at,
             source: TREND,

@@ -48,8 +48,11 @@ export function categoryOf(c: Candidate, cfg: CategoryConfig): string | null {
 export function keywordOf(name: string, signgu: string): string {
   const base = name.replace(/\([^)]*\)|\[[^\]]*\]/g, "").replace(/\s+/g, " ").trim();
   if (norm(base).length > SHORT_NAME) return base;
-  const head = signgu.split(" ")[0].replace(/(특별자치시|시|군|구)$/, "");
-  return head ? `${head} ${base}` : base;
+  const first = signgu.split(" ")[0];
+  const head = first.replace(/(특별자치시|시|군|구)$/, "");
+  // '동구'→'동' 처럼 한 글자만 남으면 검색어가 망가진다(2026-10-12 '동 문충사' 확인) — 그때는 원래 이름을 쓴다
+  const prefix = head.length >= 2 ? head : first;
+  return prefix ? `${prefix} ${base}` : base;
 }
 
 export function buildPlaces(input: {

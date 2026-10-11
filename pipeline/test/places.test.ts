@@ -78,6 +78,7 @@ describe("분류와 검색어", () => {
     expect(keywordOf("경복궁 (사적)", "종로구")).toBe("종로 경복궁");
     expect(keywordOf("북촌한옥마을", "종로구")).toBe("북촌한옥마을");
     expect(keywordOf("광교산", "수원시 장안구")).toBe("수원 광교산");
+    expect(keywordOf("문충사", "동구")).toBe("동구 문충사");
   });
 });
 

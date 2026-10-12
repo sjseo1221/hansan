@@ -45,7 +45,8 @@ function writeFilters(f: Filters) {
   history.replaceState(null, "", `?${q}`);
 }
 
-function card(it: FeedItem, f: Filters, cfg: Config, origin: Region | null): string {
+// basis: 카드마다 보이는 자료 기준 일시(검수 4)
+function card(it: FeedItem, f: Filters, cfg: Config, origin: Region | null, basis: string): string {
   const type = cfg.types.find((t) => t.id === it.rep)!;
   const lh = LH_TEXT[it.lh];
   const mins = origin ? travelMinutes(distanceKm(origin, it), cfg.travel) : null;
@@ -63,6 +64,7 @@ function card(it: FeedItem, f: Filters, cfg: Config, origin: Region | null): str
     } <span class="lh-${it.lh}"><span aria-hidden="true">${lh.mark}</span> ${lh.text}</span></div>
     ${slot}
     <p>${esc(it.reason ?? ruleReason(it, it.rep))}${it.prov ? " <small>(평소 자료가 아직 적어 임시로 판단했어요)</small>" : ""}</p>
+    <p class="basis">${esc(basis)}</p>
   </li>`;
 }
 
@@ -76,6 +78,9 @@ export async function initFeed() {
       feedEl.innerHTML = "<p>표시할 날짜의 추천이 아직 없습니다. 자료가 갱신되면 다시 보여 드릴게요.</p>";
       return;
     }
+    // 예측 자료 기준 일시 — '10월 12일 12:03 기준'
+    const fc = m.updated.forecast;
+    const basis = fc ? `혼잡 예측 ${Number(fc.slice(5, 7))}월 ${Number(fc.slice(8, 10))}일 ${fc.slice(11, 16)} 기준` : "혼잡 예측 기준 일시 모름";
     let f = readFilters(dates, {
       origins: new Set(regions.sigungu.map((s) => s.code)),
       minutes: cfg.travel.options.filter((x): x is number => x !== null),
@@ -141,7 +146,7 @@ export async function initFeed() {
           <h2 id="h-${t}">${esc(type.label)}</h2>
           ${t === "early_hotspot" ? `<details><summary class="badge">베타</summary>판정 기준을 아직 검증하고 있는 유형이에요. 결과가 덜 정확할 수 있어요.</details>` : ""}
           <p class="type-desc">${esc(type.desc)}</p>
-          ${list.length ? `<ul class="cards">${list.map((it) => card(it, f, cfg, origin)).join("")}</ul>` : `<p>${dateLabel(f.date)}에는 해당 장소가 없습니다.</p>`}
+          ${list.length ? `<ul class="cards">${list.map((it) => card(it, f, cfg, origin, basis)).join("")}</ul>` : `<p>${dateLabel(f.date)}에는 해당 장소가 없습니다.</p>`}
         </section>`;
       }).join("");
       // 낭독기에는 결과 수 한 줄만 알린다

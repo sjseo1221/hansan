@@ -28,3 +28,16 @@ for (const t of ["뚜벅뚜벅", "잠수교"]) {
   const b2: any = JSON.parse(await r2.text()).culturalEventInfo;
   console.log(JSON.stringify({ title: t, total: b2?.list_total_count ?? 0, rows: (b2?.row ?? []).map((r: any) => ({ title: r.TITLE, codename: r.CODENAME, place: r.PLACE, date: r.DATE, gu: r.GUNAME, lat: r.LAT, lot: r.LOT, time: r.PRO_TIME })) }));
 }
+
+// 분류·날짜 필터 확인
+for (const [label, path] of [
+  ["분류 축제-문화/예술", `1/5/${encodeURIComponent("축제-문화/예술")}/`],
+  ["분류 축제-관광/체육", `1/5/${encodeURIComponent("축제-관광/체육")}/`],
+  ["날짜 2026-10-17", `1/5/%20/%20/2026-10-17`],
+] as const) {
+  const r3 = await fetch(`http://openapi.seoul.go.kr:8088/${encodeURIComponent(key)}/json/culturalEventInfo/${path}`, { signal: AbortSignal.timeout(30000) });
+  const t3 = await r3.text();
+  let b3: any = null;
+  try { b3 = JSON.parse(t3).culturalEventInfo ?? JSON.parse(t3); } catch { b3 = { nonJson: t3.slice(0, 120) }; }
+  console.log(JSON.stringify({ filter: label, total: b3?.list_total_count ?? null, result: b3?.RESULT ?? null, sample: (b3?.row ?? []).slice(0, 3).map((r: any) => [r.CODENAME, r.TITLE, r.DATE]) }));
+}

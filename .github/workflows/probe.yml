@@ -7,7 +7,7 @@ on:
       target:
         description: 확인 도구
         type: choice
-        options: [rest, places, datagokr, naver]
+        options: [rest, places, datagokr, naver, seoulevents]
         default: rest
 
 jobs:
@@ -26,5 +26,6 @@ jobs:
         env:
           TARGET: ${{ inputs.target }}
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+          SEOUL_OPENAPI_KEY: ${{ secrets.SEOUL_OPENAPI_KEY }}
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
           NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}

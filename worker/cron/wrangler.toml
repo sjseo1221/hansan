@@ -10,7 +10,7 @@ preview_urls = false
 
 [triggers]
 # index.js 의 SCHEDULE 표와 같은 문자열 (UTC). 무료 플랜은 계정당 5개까지
-crons = ["17 * * * *", "30 19 * * *", "50 19 * * sun", "23 20 * * *"]
+crons = ["17 * * * *", "30 19 * * *", "50 19 * * sun", "23 20 * * *", "40 20 * * *"]
 
 [vars]
 REPO = "sjseo1221/hansan"

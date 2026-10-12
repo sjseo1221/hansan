@@ -26,7 +26,7 @@ export interface Place {
   lng: number;
   category: string;
   indoor: string;
-  operation: null;
+  operation: null | { rest: string; hours: string; updatedAt: string }; // FR-DATA-09 원문, build-places 가 병합
   keyword: string;
   external: { tour?: { contentId: string; contentTypeId: string; lclsSystm3: string }; cnctr?: { signguCd: string; tAtsNm: string }; seoulAreaCd?: string };
   match: { method: string; confidence: string };

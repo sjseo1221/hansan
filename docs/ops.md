@@ -21,6 +21,7 @@
 | collect-cnctr-daily | 매일 04:30 | 관광지 집중률 30일 예측(시·군·구 단위) → 최신 `data/latest/cnctr.json`(덮어씀), 오늘 날짜 값만 `data/raw/cnctr_history/` 누적, 관광지 이름 목록 `data/sources/cnctr/attractions.json`. 응답 없는 시·군·구 코드는 비활성으로 기록하고 월요일에 다시 확인 |
 | build-places-weekly | 월 04:50 | TourAPI 시·군·구 목록·후보 → 집중률 관광지와 이름 매칭 → `data/places/places.json`, 지표 `data/places/report.json`. 보이는 장소가 직전보다 30% 넘게 줄면 목록을 바꾸지 않고 실패 |
 | collect-naver-weekly | 매일 05:23 (장소를 요일별 7묶음으로 나눠 장소마다 주 1회) | 장소별 블로그 게시글 수·최근 게시일 → `data/raw/naver_blog/`, 검색어 트렌드(기준 키워드 대비 비율, 첫 회 2016년부터 월 단위 백필) → `data/raw/naver_trend/`. 장소 목록(`data/places/places.json`)이 없으면 건너뜀. 블로그 제목·요약은 저장하지 않음 |
+| collect-aux-daily | 매일 05:40 | 방문자수(약 33일 늦게 공개 — 마지막 저장일 다음부터) → `data/raw/visitors/`, 행사(14일 안) → `data/latest/events.json`, 날씨(시·군·구 대표 격자 단기 + 중기 육상) → `data/latest/weather.json`, 공휴일 → `data/sources/holidays.json`, 운영 정보(요일 묶음, 원문) → `data/sources/tour/operation.json` |
 | test | push 시 | 타입 검사, 자동 시험 |
 
 ## 장소 추가·숨김·수정 (FR-OPS-05)

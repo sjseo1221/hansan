@@ -14,12 +14,15 @@ export class DgError extends Error {
   }
 }
 
-export function datagokr(key: string, timeoutMs = 30000): DgGet {
+// base·defaults 를 바꾸면 같은 포털의 다른 기관 API(기상청 1360000, 한국천문연구원 B090041)에도 쓴다
+const KTO = { base: "https://apis.data.go.kr/B551011", defaults: { pageNo: "1", MobileOS: "ETC", MobileApp: "hansan", _type: "json" } };
+
+export function datagokr(key: string, timeoutMs = 30000, api: { base: string; defaults: Record<string, string> } = KTO): DgGet {
   return async (path, params) => {
-    const qs = new URLSearchParams({ pageNo: "1", MobileOS: "ETC", MobileApp: "hansan", _type: "json", ...params }).toString();
+    const qs = new URLSearchParams({ ...api.defaults, ...params }).toString();
     let res: Response;
     try {
-      res = await fetch(`https://apis.data.go.kr/B551011${path}?serviceKey=${encodeURIComponent(key)}&${qs}`, { signal: AbortSignal.timeout(timeoutMs) });
+      res = await fetch(`${api.base}${path}?serviceKey=${encodeURIComponent(key)}&${qs}`, { signal: AbortSignal.timeout(timeoutMs) });
     } catch (e) {
       throw new DgError((e as Error).name || "FETCH_ERROR");
     }
@@ -32,7 +35,9 @@ export function datagokr(key: string, timeoutMs = 30000): DgGet {
       throw new DgError(text.match(/<returnReasonCode>([^<]*)</)?.[1] ? `DG_${text.match(/<returnReasonCode>([^<]*)</)![1]}` : `HTTP_${res.status}`);
     }
     const code = j?.response?.header?.resultCode;
-    if (code !== "0000") throw new DgError(`DG_${code ?? "NO_HEADER"}`);
+    // 관광공사는 '0000', 기상청·천문연은 '00' 이 정상. 기상청 '03'(NO_DATA)은 빈 결과로 본다
+    if (code === "03") return { totalCount: 0, items: [] };
+    if (code !== "0000" && code !== "00") throw new DgError(`DG_${code ?? "NO_HEADER"}`);
     const raw = j?.response?.body?.items?.item ?? [];
     return { totalCount: Number(j?.response?.body?.totalCount ?? 0), items: Array.isArray(raw) ? raw : [raw] };
   };

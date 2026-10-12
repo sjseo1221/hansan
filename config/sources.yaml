@@ -37,3 +37,12 @@ tour:
     - { contentTypeId: "28" }
     - { contentTypeId: "15" }
     - { contentTypeId: "38", keepLcls2: [SH06] }
+
+aux:
+  # 보조 자료 하루 상한(호출 수). 공식 한도 미확인 — 사용자 면제(2026-10-12), 실패 기록으로 사후 감지
+  datalabDailyCap: 50      # 지역별 방문자수: 하루 1~3회면 충분
+  kmaDailyCap: 400         # 기상청 단기(시군구 대표 격자 약 150) + 중기 5
+  kasiDailyCap: 20         # 공휴일: 월 3회
+  visitorsFirstLookbackDays: 60   # 첫 실행에서 거슬러 받을 기간(공개가 약 33일 늦음)
+  eventsHorizonDays: 14           # FR-FLT-01 날짜 선택 범위와 같게
+  holidayMonths: 3

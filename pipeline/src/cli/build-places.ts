@@ -59,7 +59,11 @@ const { places, report } = buildPlaces({
   today: kstParts(now).date,
 });
 
-await writeJson("data/places/report.json", { ...report, tour });
+// 운영 정보(FR-DATA-09)를 붙인다 — collect-aux 가 요일 묶음으로 채우는 원문
+const { operation } = await readJson<{ operation: Record<string, Place["operation"]> }>("data/sources/tour/operation.json", { operation: {} });
+for (const p of places) p.operation = operation[p.placeId] ?? null;
+
+await writeJson("data/places/report.json", { ...report, operationFilled: places.filter((p) => p.operation).length, tour });
 // 보이는 장소가 직전보다 크게 줄면 원천 장애로 보고 목록을 바꾸지 않는다 (FR-DATA-11)
 if (report.shrinkBlocked) {
   console.error(JSON.stringify({ blocked: "보이는 장소 수 급감 — places.json 미갱신", visible: report.places.visible, previous: previous.filter((p) => !p.hidden).length }));

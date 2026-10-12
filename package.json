@@ -13,7 +13,8 @@
     "typecheck": "tsc --noEmit",
     "collect:naver": "tsx pipeline/src/cli/collect-naver.ts",
     "collect:cnctr": "tsx pipeline/src/cli/collect-cnctr.ts",
-    "build:places": "tsx pipeline/src/cli/build-places.ts"
+    "build:places": "tsx pipeline/src/cli/build-places.ts",
+    "collect:aux": "tsx pipeline/src/cli/collect-aux.ts"
   },
   "dependencies": {
     "yaml": "^2.5.0"

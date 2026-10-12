@@ -125,24 +125,22 @@ describe("운영 정보", () => {
 });
 
 describe("경기 유동인구 CSV 가공 (FR-DATA-05)", () => {
-  it("행정동·시군구 시간대 상대 패턴을 만들고, 따옴표 속 쉼표·BOM 을 처리한다", async () => {
-    const { buildPattern } = await import("../src/collect/gg-population.js");
-    const p = buildPattern(
-      [
-        "﻿기준년월,시간대코드,행정동코드,행정동명,행정동명_영문,유동인구수,유동인구수비율",
-        '202508,01,4111151000,파장동,"Pajang-dong, Suwon",100,0.1',
-        "202508,02,4111151000,파장동,x,400,0.4",
-        "202508,01,4111152000,율천동,x,300,0.3",
-        "202508,02,4111152000,율천동,x,100,0.1",
-      ],
-      "test",
-    );
-    expect(p.adminDong["4111151000"]).toEqual({ name: "파장동", pattern: { "01": 0.25, "02": 1 } });
+  const H = "﻿ADMI_CD,CTY_NM,ADMI_NM,TIME_CD,FORN_GB,M_10_CNT,F_10_CNT,ETL_YMD";
+  it("성·연령 열을 더해 행정동·시군구 시간대 상대 패턴을 만들고, 월·내외국인을 합산한다", async () => {
+    const { PatternBuilder } = await import("../src/collect/gg-population.js");
+    const b = new PatternBuilder();
+    b.add([H, "41111510,수원시 장안구,파장동,01,N,60,40,20260228", "41111510,수원시 장안구,파장동,02,N,300,100,20260228", "41111520,수원시 장안구,율천동,01,F,200,100,20260228"], "202601");
+    b.add([H, "41111520,수원시 장안구,율천동,02,N,50,50,20260331", "41111520,수원시 장안구,율천동,03,N,-,1,20260331"], "202602");
+    const p = b.result("test");
+    expect(p.adminDong["41111510"]).toEqual({ name: "파장동", pattern: { "01": 0.25, "02": 1 } });
+    expect(p.adminDong["41111520"].pattern).toEqual({ "01": 1, "02": 0.3333 });
     expect(p.sigungu["41111"]).toEqual({ "01": 0.8, "02": 1 });
-    expect(p.slots).toEqual(["01", "02"]);
+    expect(p.sigungu["41110"]).toEqual(p.sigungu["41111"]); // 일반구 → 시 코드 합산
+    expect(p.months).toEqual(["202601", "202602"]);
+    expect(p.skippedRows).toBe(1);
   });
   it("필수 열이 없으면 실제 열 이름을 알려 주며 실패한다", async () => {
-    const { buildPattern } = await import("../src/collect/gg-population.js");
-    expect(() => buildPattern(["a,b,c", "1,2,3"], "t")).toThrow("열 없음: 기준년월");
+    const { PatternBuilder } = await import("../src/collect/gg-population.js");
+    expect(() => new PatternBuilder().add(["a,b,c", "1,2,3"], "202601")).toThrow("열 없음: ADMI_CD");
   });
 });

@@ -53,15 +53,18 @@ export async function collectVisitors(input: { get: DgGet; usage: DailyUsage; pr
 }
 
 // ── FR-DATA-08 축제·행사 ── 오늘 진행 중이거나 horizonDays 안에 시작하는 행사, 최신 목록을 덮어쓴다
-export async function collectEvents(input: { get: DgGet; usage: DailyUsage; regnParams: string[]; dataDir: string; now: Date; horizonDays: number }) {
+export async function collectEvents(input: { get: DgGet; usage: DailyUsage; regnParams: string[]; dataDir: string; now: Date; horizonDays: number; lookbackDays?: number }) {
   const { get, usage, dataDir, now } = input;
   const today = ymd(now);
   const until = ymd(addDays(now, input.horizonDays));
   const events = [];
   for (const regn of input.regnParams) {
-    const r = await call(get, usage, "/KorService2/searchFestival2", { numOfRows: "1000", arrange: "C", eventStartDate: today, lDongRegnCd: regn });
+    // eventStartDate 는 '이날 이후 시작' 조건이라, 이미 시작해 진행 중인 축제(예: 9월에 시작해 10월까지)를 받으려고 앞으로 당겨 묻는다
+    const from = ymd(addDays(now, -(input.lookbackDays ?? 0)));
+    const r = await call(get, usage, "/KorService2/searchFestival2", { numOfRows: "1000", arrange: "C", eventStartDate: from, lDongRegnCd: regn });
     for (const i of r.items) {
-      if (String(i.eventstartdate) > until) continue;
+      // 오늘~horizon 과 겹치는 행사만(진행 중 포함)
+      if (String(i.eventstartdate) > until || String(i.eventenddate) < today) continue;
       const rc = String(i.lDongRegnCd ?? "");
       events.push({
         contentId: String(i.contentid), title: i.title, address: i.addr1 ?? "", lat: i.mapy ? Number(i.mapy) : null, lng: i.mapx ? Number(i.mapx) : null,

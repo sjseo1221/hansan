@@ -5,6 +5,7 @@ import { distanceKm, TYPE_IDS, type FeedItem } from "../shared/feed.js";
 import type { compute } from "./compute.js";
 import type { DailyRow } from "./daily.js";
 import type { ReviewCache } from "../llm/context.js";
+import { activeOn, type Festival } from "../collect/festival.js";
 
 type Out = ReturnType<typeof compute>;
 
@@ -48,6 +49,7 @@ export interface PublicInput {
   reviews: ReviewCache;
   placeDong: Record<string, string>; // 경기 장소의 소속 행정동 이름
   navYm: string; // 중심 관광지 자료 기준 월(YYYYMM)
+  festivals: Festival[]; // 이 날 열리는 축제(2026-10-12 사용자 요청)
 }
 
 const round = (x: number, n = 5) => Math.round(x * 10 ** n) / 10 ** n;
@@ -117,7 +119,26 @@ export function buildPublic(input: PublicInput): Record<string, unknown> {
         },
       ];
     });
-    files[`feed/${date}.json`] = { date, asOf, items };
+    // 이 날 열리는 축제 + 근처(5km) 그날 한산할 가능성 높은 곳 최대 3곳
+    const ymdC = date.replaceAll("-", "");
+    const wd = new Date(`${date}T00:00:00Z`).getUTCDay();
+    const dayRows = out.rowsByDate.get(date) ?? [];
+    const festivals = input.festivals
+      .filter((f) => activeOn(f, ymdC, wd))
+      .map((f) => {
+        const near =
+          f.lat !== null && f.lng !== null
+            ? dayRows
+                .filter((r) => r.likelihood === "high" && !r.closed && r.forecast !== null && byId.has(r.placeId))
+                .map((r) => ({ p: byId.get(r.placeId)!, km: distanceKm({ lat: f.lat!, lng: f.lng! }, byId.get(r.placeId)!) }))
+                .filter((x) => x.km <= 5)
+                .sort((a, b) => a.km - b.km || (a.p.placeId < b.p.placeId ? -1 : 1))
+                .slice(0, 3)
+                .map((x) => [x.p.placeId, x.p.name, Math.round(x.km * 10) / 10] as [string, string, number])
+            : [];
+        return { title: f.title, place: f.place, ...(f.lat !== null && f.lng !== null ? { lat: round(f.lat), lng: round(f.lng) } : {}), start: f.start, end: f.end, ...(f.time ? { time: f.time } : {}), ...(f.link ? { link: f.link } : {}), src: f.src, near };
+      });
+    files[`feed/${date}.json`] = { date, asOf, items, festivals };
   }
 
   // 근처 장소(대안, FR-DTL-05): 반경 안 가까운 30곳을 한 번만 구한다

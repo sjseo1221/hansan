@@ -14,6 +14,7 @@ import { addDays, latestBy } from "../score/stats.js";
 import { findDong, type AdmDong } from "../shared/geo.js";
 import { HUB_PATH, type HubFile } from "../collect/hub.js";
 import { matchHub } from "../score/hub-match.js";
+import { mergeFestivals, weekdaysOf, type Festival } from "../collect/festival.js";
 import { readJson, writeJson } from "../lib/store.js";
 import { kstParts } from "../lib/time.js";
 
@@ -87,6 +88,16 @@ const exposure = await readJson<ComputeInput["exposure"]>("data/state/exposure.j
 // 4단계 결과(없으면 빈 값): 후기 판정은 숨은 클래식 판정에, 근거 문장은 화면에 쓴다
 const reviews = await readJson<ReviewCache>(REVIEWS_PATH, {});
 const reasonCache = await readJson<ReasonCache>(REASONS_PATH, {});
+
+// 축제: 운영자 파일 > 서울 문화행사 > TourAPI 행사
+const manualF = (await yaml<{ festivals?: { title: string; place: string; lat?: number; lng?: number; start: string; end: string; weekdays?: number[]; time?: string; link?: string }[] }>("data/sources/festivals-manual.yaml").catch(() => ({ festivals: [] }))).festivals ?? [];
+const seoulF = (await readJson<{ festivals: Festival[] }>("data/latest/festivals-seoul.json", { festivals: [] })).festivals;
+const tourE = (await readJson<{ events: { contentId: string; title: string; address: string; lat: number | null; lng: number | null; start: string; end: string }[] }>("data/latest/events.json", { events: [] })).events;
+const festivals = mergeFestivals(
+  manualF.map((m, i) => ({ id: `manual-${i}`, src: "manual" as const, title: m.title, place: m.place, lat: m.lat ?? null, lng: m.lng ?? null, start: m.start.replaceAll("-", ""), end: m.end.replaceAll("-", ""), weekdays: m.weekdays ?? weekdaysOf(m.time), time: m.time, link: m.link })),
+  seoulF,
+  tourE.map((e) => ({ id: `tour-${e.contentId}`, src: "tour" as const, title: e.title, place: e.address, lat: e.lat, lng: e.lng, start: e.start, end: e.end })),
+);
 
 // 추가 인기도 신호(FR-DATA-14): 티맵 내비 기반 시·군·구 중심 관광지 순위
 const hub = await readJson<HubFile>(`data/${HUB_PATH}`, { baseYm: "", fetchedAt: "", source: "", sigungu: {} });
@@ -166,6 +177,7 @@ const pub = buildPublic({
   reviews,
   placeDong,
   navYm: hub.baseYm,
+  festivals,
   altRadiusKm: (cfg as unknown as { detail: { altRadiusKm: number } }).detail.altRadiusKm,
   updated: {
     forecast: maxOf(Object.values(cnctr.sigungu).map((x) => x.fetchedAt)),

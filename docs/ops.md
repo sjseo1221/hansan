@@ -83,6 +83,10 @@ places:
 
 장소 번호는 화면 상세 주소의 `id=` 값이다(예: `/place/?id=kto-644085`). 커밋하면 다음 월요일 `build-places-weekly` 에 반영된다. 바로 반영하려면 GitHub Actions 에서 `build-places-weekly` → `compute-daily` 를 차례로 수동 실행한다(Run workflow).
 
+### 정기 축제 추가
+
+공공데이터(관광공사 행사·서울시 문화행사)에 없는 축제는 `data/sources/festivals-manual.yaml` 에 적는다. 예: 잠수교 뚜벅뚜벅 축제(매주 일요일 `weekdays: [0]`). 다음 `compute-daily` 부터 피드의 '이 날 열리는 축제'에 나온다.
+
 ## 5. 기준값 변경
 
 값을 바꾸고 커밋하면 다음 `compute-daily` 부터 적용된다. push 하면 `test` 가 파일끼리 어긋나지 않는지·상한이 무료 한도 안인지 검사한다.

@@ -33,6 +33,7 @@ jobs:
         run: npm run collect:aux
         env:
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+          SEOUL_OPENAPI_KEY: ${{ secrets.SEOUL_OPENAPI_KEY }}
           AUX_ONLY: ${{ inputs.only }}
       - name: Commit data
         if: always()

@@ -78,6 +78,7 @@ describe("무료 한도 안의 상한 (NFR-COST-02)", () => {
       kasi: s.aux.kasiDailyCap,
       tour_hub: s.aux.hubDailyCap,
       seoul_citydata: s.seoul_citydata.dailyCap,
+      seoul_events: s.aux.seoulEventsDailyCap,
       naver_blog: s.naver.blogDailyCap,
       naver_blog_llm: llm.generation.reviewBlogCalls,
       naver_trend: s.naver.trendDailyCap,

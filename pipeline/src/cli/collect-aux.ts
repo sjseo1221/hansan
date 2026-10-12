@@ -5,6 +5,7 @@ import { readFile } from "node:fs/promises";
 import { parse } from "yaml";
 import { collectEvents, collectHolidays, collectOperation, collectVisitors, collectWeather } from "../collect/supplement.js";
 import { collectHub } from "../collect/hub.js";
+import { collectSeoulFestivals } from "../collect/festival.js";
 import { weekdayBucket } from "../collect/naver.js";
 import { datagokr } from "../lib/datagokr.js";
 import { appendJsonl, readJson } from "../lib/store.js";
@@ -65,7 +66,7 @@ const step = async (name: string, fn: () => Promise<unknown>) => {
 };
 
 await step("visitors", async () => collectVisitors({ get: kto, usage: await usage("datalab", src.aux.datalabDailyCap), provinces, dataDir: "data", now, firstLookbackDays: src.aux.visitorsFirstLookbackDays }));
-await step("events", async () => collectEvents({ get: kto, usage: await usage("tour_events", src.tour.caps.events), regnParams, dataDir: "data", now, horizonDays: src.aux.eventsHorizonDays }));
+await step("events", async () => collectEvents({ get: kto, usage: await usage("tour_events", src.tour.caps.events), regnParams, dataDir: "data", now, horizonDays: src.aux.eventsHorizonDays, lookbackDays: src.aux.eventsLookbackDays }));
 await step("holidays", async () => collectHolidays({ get: kasi, usage: await usage("kasi", src.aux.kasiDailyCap), dataDir: "data", now, months: src.aux.holidayMonths }));
 await step("weather", async () => {
   const r = await collectWeather({ get: kma, usage: await usage("kma", src.aux.kmaDailyCap), points, midRegions, dataDir: "data", now });
@@ -84,6 +85,15 @@ await step("operation", async () => {
   if (r.attempted > 0 && r.failed / r.attempted > 0.5) throw Object.assign(new Error("운영 정보 실패율 초과"), { name: "FAILURE_RATE" });
   // 하루 상한에 걸려 남은 장소가 있으면 알린다 — 조용히 다음 주로 밀리지 않게(2차 리뷰)
   if (r.capped || r.skipped > 0) throw Object.assign(new Error(`운영 정보 ${r.skipped}곳 미처리`), { name: "DAILY_CAP" });
+  return r;
+});
+
+// 서울시 문화행사 축제(정기 축제 포함) — 서울 키가 있을 때만
+await step("festivals", async () => {
+  const seoulKey = process.env.SEOUL_OPENAPI_KEY;
+  if (!seoulKey) return { skipped: "SEOUL_OPENAPI_KEY 없음" };
+  const r = await collectSeoulFestivals({ key: seoulKey, usage: await usage("seoul_events", src.aux.seoulEventsDailyCap), dataDir: "data", now, horizonDays: src.aux.eventsHorizonDays });
+  if (r.codes === 0 && r.failed > 0) throw Object.assign(new Error("서울 축제 실패"), { name: "FAILURE_RATE" });
   return r;
 });
 

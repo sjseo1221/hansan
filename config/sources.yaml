@@ -7,7 +7,7 @@ seoul_citydata:
   service: citydata_ppltn
   # 미등록 인증키의 하루 한도는 아직 공식 확인 전. 확인되면 그 90% 로 맞춘다.
   # 121곳 × 24회 = 2,904건이 필요하다.
-  dailyCap: 3000
+  dailyCap: 2950          # 121곳 × 24시간 = 2,904 + 여유. 같은 키로 축제(seoul_events) 하루 10회
   timeoutMs: 10000
   concurrency: 4
 
@@ -46,6 +46,8 @@ aux:
   hubDailyCap: 200         # 중심 관광지(티맵 내비 기반, FR-DATA-14): 시·군·구 약 140곳을 월 1회
   visitorsFirstLookbackDays: 60   # 첫 실행에서 거슬러 받을 기간(공개가 약 33일 늦음)
   eventsHorizonDays: 14           # FR-FLT-01 날짜 선택 범위와 같게
+  eventsLookbackDays: 120         # 이미 시작해 진행 중인 축제도 받으려고 시작일을 이만큼 당겨 묻는다
+  seoulEventsDailyCap: 10         # 서울시 문화행사 정보 축제 분류 6개 하루 1회
   holidayMonths: 3
 
 # 제공처 무료 한도 (docs/sources.md, 2026-10-12 확인). 우리 상한(위 cap·dailyCap)이 이 값을 넘지 않는지 시험으로 확인한다(NFR-COST-02),
@@ -57,6 +59,6 @@ freeLimits:
   kma: { limit: 10000, per: day, counters: [kma] }
   kasi: { limit: 10000, per: day, counters: [kasi] }
   tour_hub: { limit: 1000, per: day, counters: [tour_hub], note: "관광공사 기초지자체 중심 관광지 개발계정" }
-  seoul_citydata: { limit: 3000, per: day, counters: [seoul_citydata], note: "미등록 키 한도 미확인 — 우리 상한을 한도로 본다" }
+  seoul_citydata: { limit: 3000, per: day, counters: [seoul_citydata, seoul_events], note: "미등록 키 한도 미확인 — 우리 상한을 한도로 본다" }
   naver_search: { limit: 25000, per: day, counters: [naver_blog, naver_blog_llm], note: "API HUB 정오표 25,000/일(월 775,000 과 상충 — 보수적으로)" }
   naver_trend: { limit: 50000, per: month, counters: [naver_trend] }

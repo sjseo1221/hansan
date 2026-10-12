@@ -45,6 +45,42 @@ function writeFilters(f: Filters) {
   history.replaceState(null, "", `?${q}`);
 }
 
+interface FestivalItem {
+  title: string;
+  place: string;
+  lat?: number;
+  lng?: number;
+  start: string;
+  end: string;
+  time?: string;
+  link?: string;
+  near: [string, string, number][];
+}
+const md = (ymd: string) => `${Number(ymd.slice(4, 6))}.${Number(ymd.slice(6, 8))}`;
+
+// 이 날 열리는 축제(2026-10-12 사용자 요청) — 혼잡 예측이 없고 원래 붐비므로 한산 추천과 따로, 근처 한산한 곳을 함께 보여 준다
+function festivalSection(list: FestivalItem[], f: Filters, origin: Region | null, travel: Config["travel"]): string {
+  const shown = list
+    .map((x) => ({ x, mins: origin && x.lat !== undefined && x.lng !== undefined ? travelMinutes(distanceKm(origin, { lat: x.lat, lng: x.lng! }), travel) : null }))
+    .filter(({ mins }) => f.minutes === null || mins === null || mins <= f.minutes)
+    .sort((a, b) => (a.mins ?? 1e9) - (b.mins ?? 1e9) || (a.x.title < b.x.title ? -1 : 1))
+    .slice(0, 15);
+  const cards = shown
+    .map(({ x, mins }) => `<li class="card">
+      <h3>${esc(x.title)}</h3>
+      <p class="where">${esc(x.place)}${mins !== null ? ` · 약 ${mins < 60 ? `${mins}분` : `${Math.floor(mins / 60)}시간 ${mins % 60}분`}` : ""}</p>
+      <div><span class="badge">축제</span> ${md(x.start)}~${md(x.end)}${x.time ? ` · ${esc(x.time)}` : ""}</div>
+      <p>축제라 붐빌 수 있어요.${x.near.length ? ` 근처에서 덜 붐빌 곳: ${x.near.map(([id, name, km]) => `<a href="/place/?id=${encodeURIComponent(id)}&date=${f.date}">${esc(name)}</a>(약 ${km}km)`).join(", ")}` : ""}</p>
+      ${x.link ? `<p><a href="${esc(x.link)}" rel="noopener" target="_blank">축제 안내 보기</a></p>` : ""}
+    </li>`)
+    .join("");
+  return `<section class="type" aria-labelledby="h-fest">
+    <h2 id="h-fest">이 날 열리는 축제</h2>
+    <p class="type-desc">관광공사·서울시 행사 자료와 운영자가 등록한 정기 축제예요. 축제는 혼잡 예측이 없어요.</p>
+    ${cards ? `<ul class="cards">${cards}</ul>` : `<p>${dateLabel(f.date)}에 열리는 축제 정보가 없습니다.</p>`}
+  </section>`;
+}
+
 // basis: 카드마다 보이는 자료 기준 일시(검수 4)
 function card(it: FeedItem, f: Filters, cfg: Config, origin: Region | null, basis: string): string {
   const type = cfg.types.find((t) => t.id === it.rep)!;
@@ -124,9 +160,9 @@ export async function initFeed() {
       const my = ++seq;
       writeFilters(f);
       syncForm();
-      let feed: { items: FeedItem[] };
+      let feed: { items: FeedItem[]; festivals?: FestivalItem[] };
       try {
-        feed = await getJson<{ items: FeedItem[] }>(`feed/${f.date}.json`);
+        feed = await getJson<{ items: FeedItem[]; festivals?: FestivalItem[] }>(`feed/${f.date}.json`);
       } catch {
         if (my !== seq) return;
         $("heading").textContent = `${dateLabel(f.date)}, 덜 붐빌 나들이 장소`;
@@ -149,7 +185,7 @@ export async function initFeed() {
           <p class="type-desc">${esc(type.desc)}</p>
           ${list.length ? `<ul class="cards">${list.map((it) => card(it, f, cfg, origin, basis)).join("")}</ul>` : `<p>${dateLabel(f.date)}에는 해당 장소가 없습니다.</p>`}
         </section>`;
-      }).join("");
+      }).join("") + festivalSection(feed.festivals ?? [], f, origin, fcfg.travel);
       // 낭독기에는 결과 수 한 줄만 알린다
       const shown = TYPE_IDS.reduce((n, t) => n + groups[t].length, 0);
       $("count").textContent = `${dateLabel(f.date)} 추천 ${shown}곳을 보여 드려요.`;

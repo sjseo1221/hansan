@@ -21,3 +21,17 @@ chat:
   maxInputChars: 200  # FR-CHAT-10
   timeoutSec: 10      # FR-CHAT-12
   maxCards: 5         # FR-CHAT-04
+
+# 단가 (USD / 100만 토큰, 2026-10-10 공식 가격표 — kickoff-plan 4.1) — 호출 비용 기록(FR-LLM-10)·예산 판정에 쓴다
+price:
+  input: 0.10
+  cachedInput: 0.01
+  output: 0.50
+
+# 근거 생성(주기 작업) 상한 — 대화 예산과 별도로 생성 비용이 월 예산을 다 쓰지 않게
+generation:
+  reasoningEffort: none     # 짧은 문장이라 추론 토큰(출력 과금)을 쓰지 않는다
+  maxCallsPerRun: 1500
+  monthlyUsd: 8             # 생성 누적 비용이 이 값에 닿으면 그 달은 정형 문장만
+  reviewRefreshDays: 7      # 후기 판정 재사용 기간
+  reviewBlogCalls: 300      # 후기 판정용 네이버 블로그 검색 하루 상한(수집 상한과 별도 카운터)

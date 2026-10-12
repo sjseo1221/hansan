@@ -16,6 +16,7 @@ interface Day {
   caution?: boolean;
   prov?: boolean;
   fs?: boolean;
+  reason?: string; // 대표 유형의 근거 문장(LLM)
 }
 interface Place {
   id: string;
@@ -32,6 +33,7 @@ interface Place {
   lt: number | null;
   pat?: { basis: string; label: "실측" | "추정"; wd: (number | null)[]; hd: (number | null)[] };
   days: Day[];
+  review?: { verdict: "worth_visiting" | "not_recommended" | "undecided"; reason: string; quietTime: string; buzz: string };
   alt: Record<string, [string, string, number][]>;
 }
 
@@ -72,10 +74,13 @@ export async function initPlace() {
       ? `<p><strong>이 날은 쉬는 날이에요</strong>${day.cr ? ` (${esc(day.cr)})` : ""}.</p>`
       : day.types.length
         ? `<ul>${day.types
-            .map((t) => `<li><span class="badge">${esc(typeLabel(t))}</span> ${esc(ruleReason({ pop: p.pop, f: day.f ?? 0, u: day.u, trend: p.trend, lt: p.lt, slot: day.slot }, t))}${t === "timing_game" && day.prov ? " <small>(평소 자료가 아직 적어 임시로 판단했어요)</small>" : ""}</li>`)
+            .map((t) => `<li><span class="badge">${esc(typeLabel(t))}</span> ${esc(t === day.rep && day.reason ? day.reason : ruleReason({ pop: p.pop, f: day.f ?? 0, u: day.u, trend: p.trend, lt: p.lt, slot: day.slot }, t))}${t === "hidden_classic" && p.review?.reason ? ` <small>(최근 후기: ${esc(p.review.reason)})</small>` : ""}${t === "timing_game" && day.prov ? " <small>(평소 자료가 아직 적어 임시로 판단했어요)</small>" : ""}</li>`)
             .join("")}</ul>`
         : "<p>이 날은 추천 유형에 해당하지 않아요.</p>";
     const lh = day.lh ? LH_TEXT[day.lh] : null;
+    // 화제 이유(FR-DTL-04, FR-LLM-05)와 후기 속 한산한 시간대 언급(FR-LLM-04) — 최근 블로그 후기를 요약한 것
+    const buzzHtml = p.review?.buzz ? `<p><strong>요즘 화제</strong> ${esc(p.review.buzz)} <small>(최근 후기 요약)</small></p>` : "";
+    const quietMention = p.review?.quietTime ? `<p>후기에서 말하는 한산한 때: ${esc(p.review.quietTime)} <small>(최근 후기 요약)</small></p>` : "";
 
     // 14일 표 (FR-DTL-02)
     const rows = days
@@ -134,9 +139,11 @@ export async function initPlace() {
       ${lh && !day.closed ? `<p class="lh-${day.lh}"><span aria-hidden="true">${lh.mark}</span> ${lh.text}</p>` : ""}
       ${day.fs ? `<p class="notice">이 지역의 혼잡 예측이 며칠째 갱신되지 않았어요.</p>` : ""}
       ${typesHtml}
+      ${buzzHtml}
 
       <h2>시간대별 붐빔</h2>
       ${patternHtml}
+      ${quietMention}
 
       <h2>앞으로 2주 혼잡 예측</h2>
       <p>숫자가 클수록 붐빈다는 뜻이에요(0~100). 이 장소의 평소 수준과 비교해 보세요.</p>

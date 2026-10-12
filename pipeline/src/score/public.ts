@@ -4,6 +4,7 @@ import type { Place } from "../places/build.js";
 import { distanceKm, TYPE_IDS, type FeedItem } from "../shared/feed.js";
 import type { compute } from "./compute.js";
 import type { DailyRow } from "./daily.js";
+import type { ReviewCache } from "../llm/context.js";
 
 type Out = ReturnType<typeof compute>;
 
@@ -40,6 +41,8 @@ export interface PublicInput {
   altRadiusKm: number;
   updated: Record<string, string | null>;
   holidays: Record<string, string>; // YYYYMMDD → 이름
+  reasons: Record<string, string>; // "YYYY-MM-DD|placeId" → LLM 근거 문장(대표 유형)
+  reviews: ReviewCache;
 }
 
 const round = (x: number, n = 5) => Math.round(x * 10 ** n) / 10 ** n;
@@ -105,6 +108,7 @@ export function buildPublic(input: PublicInput): Record<string, unknown> {
           ...(r.patternLabel ? { label: r.patternLabel } : {}),
           ...(r.provisional ? { prov: true } : {}),
           ...(blocked.length ? { blocked } : {}),
+          ...(input.reasons[`${date}|${p.placeId}`] ? { reason: input.reasons[`${date}|${p.placeId}`] } : {}),
         },
       ];
     });
@@ -144,6 +148,7 @@ export function buildPublic(input: PublicInput): Record<string, unknown> {
         ...(r.operationCaution ? { caution: true } : {}),
         ...(r.provisional ? { prov: true } : {}),
         ...(r.forecastStale ? { fs: true } : {}),
+        ...(input.reasons[`${d}|${p.placeId}`] ? { reason: input.reasons[`${d}|${p.placeId}`] } : {}),
       };
     });
     const alt: Record<string, [string, string, number][]> = {};
@@ -175,6 +180,8 @@ export function buildPublic(input: PublicInput): Record<string, unknown> {
       trend: s?.trend ?? null,
       lt: s?.longTerm ?? null,
       ...(pat ? { pat: { basis: pat.basis, label: pat.label, wd: pat.weekday, hd: pat.holiday } } : {}),
+      // 후기 판정(FR-LLM-03~05): 판정 이유는 숨은 클래식에, 시간대 언급·화제 이유는 상세에
+      ...(input.reviews[p.placeId] ? { review: { verdict: input.reviews[p.placeId].verdict, reason: input.reviews[p.placeId].reason, quietTime: input.reviews[p.placeId].quietTime, buzz: input.reviews[p.placeId].buzz } } : {}),
       days,
       alt,
     };

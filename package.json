@@ -18,7 +18,8 @@
     "import:gg": "tsx pipeline/src/cli/import-gg.ts",
     "compute:daily": "tsx pipeline/src/cli/compute-daily.ts",
     "build:web": "astro build --root web",
-    "dev:web": "astro dev --root web"
+    "dev:web": "astro dev --root web",
+    "llm:daily": "tsx pipeline/src/cli/llm-daily.ts"
   },
   "dependencies": {
     "yaml": "^2.5.0"

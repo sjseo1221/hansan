@@ -7,6 +7,7 @@ import { parse } from "yaml";
 import type { Place } from "../places/build.js";
 import { compute, type ComputeConfig, type ComputeInput } from "../score/compute.js";
 import { buildPublic, type PublicInput } from "../score/public.js";
+import { factsFor, loadFactContext, REASONS_PATH, REVIEWS_PATH, type ReasonCache, type ReviewCache } from "../llm/context.js";
 import type { SeoulRow } from "../score/patterns.js";
 import type { TrendRow } from "../score/place-scores.js";
 import { addDays, latestBy } from "../score/stats.js";
@@ -66,6 +67,9 @@ const gg = await readJson<{ sigungu: Record<string, Record<string, number>> }>("
 const ggLink = await readJson<{ links: Record<string, string> }>("data/sources/gg/link.json", { links: {} });
 const holidays = await readJson<{ holidays: Record<string, string> }>("data/sources/holidays.json", { holidays: {} });
 const exposure = await readJson<ComputeInput["exposure"]>("data/state/exposure.json", {});
+// 4단계 결과(없으면 빈 값): 후기 판정은 숨은 클래식 판정에, 근거 문장은 화면에 쓴다
+const reviews = await readJson<ReviewCache>(REVIEWS_PATH, {});
+const reasonCache = await readJson<ReasonCache>(REASONS_PATH, {});
 
 const out = compute(
   {
@@ -82,6 +86,7 @@ const out = compute(
     gg: gg.sigungu,
     ggLink: ggLink.links,
     holidays: holidays.holidays,
+    reviewVerdicts: Object.fromEntries(Object.entries(reviews).map(([id, r]) => [id, r.verdict])),
     exposure,
   },
   cfg,
@@ -101,6 +106,13 @@ const regionsCfg = await yaml<{ travel: PublicInput["travel"] }>("config/regions
 const catCfg = await yaml<{ categories: { id: string; label: string }[] }>("config/categories.yaml");
 const comp = await yaml<{ companions: PublicInput["companions"] }>("config/companions.yaml");
 const sig = await readJson<{ sigungu: { code: string; name: string }[] }>("data/sources/regions/sigungu.json", { sigungu: [] });
+// 추천 항목별 근거 문장 — 같은 사실(해시)로 생성해 둔 문장이 있으면 쓴다(FR-LLM-07)
+const fc = await loadFactContext();
+const reasons: Record<string, string> = {};
+for (const [k, v] of factsFor(out.recommendations, new Map(places.map((p) => [p.placeId, p])), fc)) {
+  const r = reasonCache[v.hash]?.r;
+  if (r) reasons[k] = r;
+}
 const maxOf = (xs: (string | undefined)[]) => xs.filter((x): x is string => Boolean(x)).sort().at(-1) ?? null;
 const pub = buildPublic({
   asOf,
@@ -113,6 +125,8 @@ const pub = buildPublic({
   feed: cfg.feed,
   topN: cfg.exposure.topN,
   holidays: holidays.holidays,
+  reasons,
+  reviews,
   altRadiusKm: (cfg as unknown as { detail: { altRadiusKm: number } }).detail.altRadiusKm,
   updated: {
     forecast: maxOf(Object.values(cnctr.sigungu).map((x) => x.fetchedAt)),

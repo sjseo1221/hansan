@@ -26,6 +26,7 @@ export interface FeedItem {
   label?: "실측" | "추정";
   prov?: boolean;
   blocked?: TypeId[];
+  reason?: string; // LLM 근거 문장(4단계). 없으면 ruleReason
 }
 
 export interface Filters {

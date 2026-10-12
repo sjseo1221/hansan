@@ -7,7 +7,7 @@ import { DailyUsage } from "../lib/usage.js";
 
 export const BLOG = "naver_blog";
 export const TREND = "naver_trend";
-const HOST = "https://naverapihub.apigw.ntruss.com";
+export const HOST = "https://naverapihub.apigw.ntruss.com";
 
 // 연속 실패가 이만큼 나면 남은 호출을 멈춘다(키 오류·장애 시 상한 소진과 긴 실행 방지)
 export const MAX_CONSECUTIVE_FAILURES = 10;

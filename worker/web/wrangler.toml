@@ -1,6 +1,6 @@
-# 한산 화면 (3단계) — workers.dev 무료 주소. 배포: npm run build:web && (이 폴더에서) npx wrangler deploy
+# 한산 화면 + 대화 (3·4단계) — workers.dev 무료 주소. 배포: npm run build:web && (이 폴더에서) npx wrangler deploy
 name = "hansan-web"
-main = "index.js"
+main = "index.ts"
 compatibility_date = "2026-10-01"
 workers_dev = true
 preview_urls = false
@@ -8,8 +8,33 @@ preview_urls = false
 [assets]
 directory = "../../web/dist"
 binding = "ASSETS"
-# /data/* 만 Worker 가 처리하고 나머지는 정적 파일을 바로 내보낸다(Worker 요청 수를 아낀다)
-run_worker_first = ["/data/*"]
+# /data/*·/api/* 만 Worker 가 처리하고 나머지는 정적 파일을 바로 내보낸다(Worker 요청 수를 아낀다)
+run_worker_first = ["/data/*", "/api/*"]
 
+# 프롬프트 파일(prompts/*.md)을 문자열로 묶는다 (FR-LLM-09)
+[[rules]]
+type = "Text"
+globs = ["**/*.md"]
+fallthrough = true
+
+# 대화 횟수·예산 카운터 (무료 플랜은 SQLite 저장소 Durable Object)
+[[durable_objects.bindings]]
+name = "COUNTER"
+class_name = "Counter"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["Counter"]
+
+# config/llm.yaml 과 같은 값이어야 한다(시험으로 확인). 비밀 값 OPENAI_API_KEY·CHAT_SALT 는 wrangler secret 으로만
 [vars]
 REPO = "sjseo1221/hansan"
+MODEL = "gpt-6-luna"
+PRICE_INPUT = "0.10"
+PRICE_CACHED = "0.01"
+PRICE_OUTPUT = "0.50"
+PER_USER_DAILY = "20"
+SERVICE_DAILY = "500"
+CUTOFF_USD = "15"
+MAX_INPUT_CHARS = "200"
+MAX_CARDS = "5"

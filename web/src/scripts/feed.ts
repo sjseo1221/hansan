@@ -62,7 +62,7 @@ function card(it: FeedItem, f: Filters, cfg: Config, origin: Region | null): str
       it.beta ? ` <details><summary class="badge">베타</summary>판정 기준을 아직 검증하고 있는 유형이에요. 결과가 덜 정확할 수 있어요.</details>` : ""
     } <span class="lh-${it.lh}"><span aria-hidden="true">${lh.mark}</span> ${lh.text}</span></div>
     ${slot}
-    <p>${esc(ruleReason(it, it.rep))}${it.prov ? " <small>(평소 자료가 아직 적어 임시로 판단했어요)</small>" : ""}</p>
+    <p>${esc(it.reason ?? ruleReason(it, it.rep))}${it.prov ? " <small>(평소 자료가 아직 적어 임시로 판단했어요)</small>" : ""}</p>
   </li>`;
 }
 

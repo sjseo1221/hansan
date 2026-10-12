@@ -1,8 +1,13 @@
 # 외부 API 실호출 확인 (수동 실행 전용). 응답 구조만 출력하고 인증키는 출력하지 않는다.
+# 실행할 확인 도구를 입력으로 고른다 (기본: rest)
 name: probe
 
 on:
   workflow_dispatch:
+    inputs:
+      target:
+        description: "datagokr | naver | places | rest"
+        default: rest
 
 jobs:
   probe:
@@ -15,24 +20,9 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - name: data.go.kr
-        if: ${{ false }}
-        run: npx tsx pipeline/src/cli/probe-datagokr.ts
+      - name: probe
+        run: npx tsx pipeline/src/cli/probe-${{ inputs.target }}.ts
         env:
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
-      - name: naver
-        if: ${{ false }}
-        run: npx tsx pipeline/src/cli/probe-naver.ts
-        env:
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
           NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
-      - name: places
-        if: ${{ false }}
-        run: npx tsx pipeline/src/cli/probe-places.ts
-      - name: rest
-        if: always()
-        run: npx tsx pipeline/src/cli/probe-rest.ts
-        env:
-          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
-        env:
-          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}

@@ -19,3 +19,6 @@ public-out/
 # 화면 빌드 결과
 web/dist/
 web/.astro/
+
+# wrangler 임시 파일
+.wrangler/

@@ -9,6 +9,9 @@ import Base from "../../layouts/Base.astro";
 </Base>
 
 <style>
+  #place {
+    min-height: 100vh; /* 내용이 그려질 자리를 미리 잡는다(CLS) */
+  }
   :global(.facts) {
     display: grid;
     grid-template-columns: max-content 1fr;

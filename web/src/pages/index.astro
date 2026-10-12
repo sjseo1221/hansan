@@ -86,6 +86,10 @@ import Base from "../layouts/Base.astro";
     display: flex;
     gap: 8px;
     margin-bottom: 8px;
+    min-height: 44px; /* 버튼이 늦게 들어와도 아래가 밀리지 않게(CLS) */
+  }
+  #feed {
+    min-height: 100vh; /* 추천이 그려질 자리를 미리 잡아 하단이 밀려 내려가지 않게(CLS) */
   }
   .weekend button {
     flex: 1;

@@ -65,7 +65,7 @@ describe("인기도 (T02)", () => {
 });
 
 describe("평소 혼잡 (T08)", () => {
-  const u = cfg.usualCongestion;
+  const u = { ...cfg.usualCongestion, forecastFallback: true }; // 설정값(현재 false)과 무관하게 함수 동작을 시험
   const asOf = "2026-12-14"; // 월요일
   const hist = (n: number) => new Map(Array.from({ length: n }, (_, i) => [`2026${["1207", "1130", "1123", "1116", "1109", "1102", "1026", "1019"][i]}`, 80]));
   it("같은 요일 8개 → history, 2개 → 임시, 1개 + 예측창 → forecast_window, 끄면 null", () => {

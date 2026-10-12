@@ -60,7 +60,9 @@ usualCongestion:
   weeks: 8
   minWeeks: 2
   excludeHolidays: true
-  forecastFallback: true    # 이력이 minWeeks 미만이면 최신 30일 예측창의 같은 요일 평균을 임시로 쓴다(같은 출처)
+  # 이력이 minWeeks 미만이면 최신 30일 예측창의 같은 요일 평균을 임시로 쓴다(같은 출처).
+  # 2026-10-12 확보율 보고서 조정안 1: 예측창 대리값이 주말 피드를 눈치게임으로 채워 꺼 둔다 — 이력 2주가 차는 10-26부터 이력 기준으로 판정
+  forecastFallback: false
   forecastFallbackMinDays: 3
 
 # 추세(FR-SCORE-04)·장기 관심 변화(FR-SCORE-05) — 2단계 설계(2026-10-12)

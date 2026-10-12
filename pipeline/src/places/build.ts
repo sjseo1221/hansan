@@ -2,7 +2,7 @@
 // 운영자는 data/places/overrides.yaml 만 고친다. places.json 은 매번 다시 만든다.
 import type { Attraction } from "../collect/cnctr.js";
 import type { Candidate } from "../collect/tour.js";
-import { matchOne, norm, type Match } from "./match.js";
+import { PROVINCE_HEADS, matchOne, norm, type Match } from "./match.js";
 
 export interface CategoryConfig {
   categories: { id: string; indoor: string }[];
@@ -44,7 +44,6 @@ export const SHRINK_LIMIT = 0.3;
 export const validCoord = (lat: number, lng: number) => Number.isFinite(lat) && Number.isFinite(lng) && lat >= 33 && lat <= 39.5 && lng >= 124 && lng <= 132;
 
 // 이름 괄호 속 지역 표기 판별용 지역명(시·도 약칭 + 시·군·구 이름과 그 머리말)
-const PROVINCE_HEADS = ["서울", "부산", "대구", "인천", "광주", "대전", "울산", "세종", "경기", "강원", "충북", "충남", "전북", "전남", "경북", "경남", "제주"];
 export function regionHeadsOf(sigunguNames: string[]): Set<string> {
   const heads = new Set(PROVINCE_HEADS);
   for (const n of sigunguNames) for (const w of n.split(/\s+/)) {

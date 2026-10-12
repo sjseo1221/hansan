@@ -5009,9 +5009,7 @@
       "sources": [
         "tour",
         "cnctr"
-      ],
-      "stale": true,
-      "staleSince": "2026-10-12"
+      ]
     },
     {
       "placeId": "kto-125468",
@@ -6637,9 +6635,7 @@
       "sources": [
         "tour",
         "cnctr"
-      ],
-      "stale": true,
-      "staleSince": "2026-10-12"
+      ]
     },
     {
       "placeId": "kto-125531",
@@ -19668,9 +19664,7 @@
       "sources": [
         "tour",
         "cnctr"
-      ],
-      "stale": true,
-      "staleSince": "2026-10-12"
+      ]
     },
     {
       "placeId": "kto-126542",
@@ -22975,9 +22969,7 @@
       "sources": [
         "tour",
         "cnctr"
-      ],
-      "stale": true,
-      "staleSince": "2026-10-12"
+      ]
     },
     {
       "placeId": "kto-126844",
@@ -34943,9 +34935,7 @@
       "sources": [
         "tour",
         "cnctr"
-      ],
-      "stale": true,
-      "staleSince": "2026-10-12"
+      ]
     },
     {
       "placeId": "kto-128030",
@@ -53330,9 +53320,7 @@
       "sources": [
         "tour",
         "cnctr"
-      ],
-      "stale": true,
-      "staleSince": "2026-10-12"
+      ]
     },
     {
       "placeId": "kto-1603149",
@@ -64707,9 +64695,7 @@
       "sources": [
         "tour",
         "cnctr"
-      ],
-      "stale": true,
-      "staleSince": "2026-10-12"
+      ]
     },
     {
       "placeId": "kto-1955597",
@@ -79856,9 +79842,7 @@
       "sources": [
         "tour",
         "cnctr"
-      ],
-      "stale": true,
-      "staleSince": "2026-10-12"
+      ]
     },
     {
       "placeId": "kto-2611575",
@@ -80086,9 +80070,7 @@
       "sources": [
         "tour",
         "cnctr"
-      ],
-      "stale": true,
-      "staleSince": "2026-10-12"
+      ]
     },
     {
       "placeId": "kto-2612093",
@@ -94805,9 +94787,7 @@
       "sources": [
         "tour",
         "cnctr"
-      ],
-      "stale": true,
-      "staleSince": "2026-10-12"
+      ]
     },
     {
       "placeId": "kto-2733975",
@@ -109655,9 +109635,7 @@
       "sources": [
         "tour",
         "cnctr"
-      ],
-      "stale": true,
-      "staleSince": "2026-10-12"
+      ]
     },
     {
       "placeId": "kto-2758677",
@@ -115507,9 +115485,7 @@
       "sources": [
         "tour",
         "cnctr"
-      ],
-      "stale": true,
-      "staleSince": "2026-10-12"
+      ]
     },
     {
       "placeId": "kto-2767614",
@@ -116667,9 +116643,7 @@
       "sources": [
         "tour",
         "cnctr"
-      ],
-      "stale": true,
-      "staleSince": "2026-10-12"
+      ]
     },
     {
       "placeId": "kto-2769505",
@@ -119243,9 +119217,7 @@
       "sources": [
         "tour",
         "cnctr"
-      ],
-      "stale": true,
-      "staleSince": "2026-10-12"
+      ]
     },
     {
       "placeId": "kto-2774305",
@@ -126521,9 +126493,7 @@
       "sources": [
         "tour",
         "cnctr"
-      ],
-      "stale": true,
-      "staleSince": "2026-10-12"
+      ]
     },
     {
       "placeId": "kto-294505",
@@ -126679,9 +126649,7 @@
       "sources": [
         "tour",
         "cnctr"
-      ],
-      "stale": true,
-      "staleSince": "2026-10-12"
+      ]
     },
     {
       "placeId": "kto-298101",
@@ -127111,9 +127079,7 @@
       "sources": [
         "tour",
         "cnctr"
-      ],
-      "stale": true,
-      "staleSince": "2026-10-12"
+      ]
     },
     {
       "placeId": "kto-299985",
@@ -127649,9 +127615,7 @@
       "sources": [
         "tour",
         "cnctr"
-      ],
-      "stale": true,
-      "staleSince": "2026-10-12"
+      ]
     },
     {
       "placeId": "kto-304788",
@@ -127921,9 +127885,7 @@
       "sources": [
         "tour",
         "cnctr"
-      ],
-      "stale": true,
-      "staleSince": "2026-10-12"
+      ]
     },
     {
       "placeId": "kto-304816",
@@ -128345,9 +128307,7 @@
       "sources": [
         "tour",
         "cnctr"
-      ],
-      "stale": true,
-      "staleSince": "2026-10-12"
+      ]
     },
     {
       "placeId": "kto-309325",
@@ -128676,22 +128636,20 @@
           "lclsSystm3": "HS030100"
         },
         "cnctr": {
-          "signguCd": "11170",
-          "tAtsNm": "보광사(서울)"
+          "signguCd": "11305",
+          "tAtsNm": "보광사 보광선원(서울)"
         }
       },
       "match": {
-        "method": "normalized",
-        "confidence": "medium"
+        "method": "partial",
+        "confidence": "low"
       },
       "hidden": false,
       "lastSeenAt": "2026-10-12",
       "sources": [
         "tour",
         "cnctr"
-      ],
-      "stale": true,
-      "staleSince": "2026-10-12"
+      ]
     },
     {
       "placeId": "kto-315944",
@@ -129275,9 +129233,7 @@
       "sources": [
         "tour",
         "cnctr"
-      ],
-      "stale": true,
-      "staleSince": "2026-10-12"
+      ]
     },
     {
       "placeId": "kto-317569",
@@ -130361,9 +130317,7 @@
       "sources": [
         "tour",
         "cnctr"
-      ],
-      "stale": true,
-      "staleSince": "2026-10-12"
+      ]
     },
     {
       "placeId": "kto-337440",
@@ -131367,9 +131321,7 @@
       "sources": [
         "tour",
         "cnctr"
-      ],
-      "stale": true,
-      "staleSince": "2026-10-12"
+      ]
     },
     {
       "placeId": "kto-346995",
@@ -140123,9 +140075,7 @@
       "sources": [
         "tour",
         "cnctr"
-      ],
-      "stale": true,
-      "staleSince": "2026-10-12"
+      ]
     },
     {
       "placeId": "kto-762760",
@@ -140552,9 +140502,7 @@
       "sources": [
         "tour",
         "cnctr"
-      ],
-      "stale": true,
-      "staleSince": "2026-10-12"
+      ]
     },
     {
       "placeId": "kto-776735",

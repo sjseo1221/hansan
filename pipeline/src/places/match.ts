@@ -46,11 +46,15 @@ export function inSigungu(addr: string, signguNm: string): boolean {
   return false;
 }
 
-// 이름 괄호 안의 지역 표기 — "백덕산(평창)" 의 '평창'. regionHeads 에 있는 지역명일 때만 지역 표기로 본다("풍물시장(2, 7일)" 은 아님)
+export const PROVINCE_HEADS = ["서울", "부산", "대구", "인천", "광주", "대전", "울산", "세종", "경기", "강원", "충북", "충남", "전북", "전남", "경북", "경남", "제주"];
+const provinceHeads = new Set(PROVINCE_HEADS);
+
+// 이름 괄호 안의 지역 표기 — "백덕산(평창)" 의 '평창'. regionHeads 에 있는 지역명일 때만 지역 표기로 본다("풍물시장(2, 7일)" 은 아님).
+// 시·도 표기("봉선사(경기)")는 후보가 이미 같은 시·도로 좁혀져 있어 구분력이 없다 — 시·군·구 표기와 충돌로 보지 않는다(2026-10-12 재생성에서 발견)
 const tagOf = (s: string, heads: Set<string>) => {
   const m = s.match(/\(([^)]*)\)|（([^）]*)）/);
   const tag = norm((m?.[1] ?? m?.[2] ?? "").trim());
-  return tag && heads.has(tag) ? tag : null;
+  return tag && heads.has(tag) && !provinceHeads.has(tag) ? tag : null;
 };
 
 // 두 이름의 지역 표기가 서로 다른 곳을 가리키면 같은 장소가 아니다(괄호를 지우는 norm 이 이 구분을 없애므로 따로 본다)

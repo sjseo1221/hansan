@@ -3,15 +3,15 @@
   "attractions": 4315,
   "matched": {
     "exact": 3387,
-    "normalized": 217,
-    "partial": 117,
-    "total": 3721,
+    "normalized": 242,
+    "partial": 118,
+    "total": 3747,
     "ambiguous": 2,
     "duplicates": 17
   },
-  "matchRate": 0.862,
+  "matchRate": 0.868,
   "unmatched": {
-    "count": 594,
+    "count": 568,
     "list": [
       {
         "signguCd": "11110",
@@ -27,11 +27,6 @@
         "signguCd": "11110",
         "signguNm": "종로구",
         "tAtsNm": "그라운드시소 서촌"
-      },
-      {
-        "signguCd": "11110",
-        "signguNm": "종로구",
-        "tAtsNm": "대각사"
       },
       {
         "signguCd": "11110",
@@ -52,11 +47,6 @@
         "signguCd": "11110",
         "signguNm": "종로구",
         "tAtsNm": "쉼박물관"
-      },
-      {
-        "signguCd": "11110",
-        "signguNm": "종로구",
-        "tAtsNm": "안국선원"
       },
       {
         "signguCd": "11110",
@@ -259,29 +249,9 @@
         "tAtsNm": "아리랑골목시장(정릉 아리랑 골목시장)"
       },
       {
-        "signguCd": "11305",
-        "signguNm": "강북구",
-        "tAtsNm": "백련사(서울)"
-      },
-      {
-        "signguCd": "11305",
-        "signguNm": "강북구",
-        "tAtsNm": "보광사 보광선원(서울)"
-      },
-      {
-        "signguCd": "11320",
-        "signguNm": "도봉구",
-        "tAtsNm": "도봉서원"
-      },
-      {
         "signguCd": "11320",
         "signguNm": "도봉구",
         "tAtsNm": "법종사"
-      },
-      {
-        "signguCd": "11350",
-        "signguNm": "노원구",
-        "tAtsNm": "수암사"
       },
       {
         "signguCd": "11350",
@@ -297,11 +267,6 @@
         "signguCd": "11380",
         "signguNm": "은평구",
         "tAtsNm": "은평구생활체육광장"
-      },
-      {
-        "signguCd": "11410",
-        "signguNm": "서대문구",
-        "tAtsNm": "백련사(서울)"
       },
       {
         "signguCd": "11410",
@@ -322,11 +287,6 @@
         "signguCd": "11440",
         "signguNm": "마포구",
         "tAtsNm": "공덕시장"
-      },
-      {
-        "signguCd": "11440",
-        "signguNm": "마포구",
-        "tAtsNm": "노을공원"
       },
       {
         "signguCd": "11440",
@@ -367,16 +327,6 @@
         "signguCd": "11470",
         "signguNm": "양천구",
         "tAtsNm": "무중력지대 양천"
-      },
-      {
-        "signguCd": "11470",
-        "signguNm": "양천구",
-        "tAtsNm": "신영시장"
-      },
-      {
-        "signguCd": "11470",
-        "signguNm": "양천구",
-        "tAtsNm": "신트리공원(농촌체험,자연학습장)"
       },
       {
         "signguCd": "11470",
@@ -531,11 +481,6 @@
       {
         "signguCd": "11680",
         "signguNm": "강남구",
-        "tAtsNm": "불국사"
-      },
-      {
-        "signguCd": "11680",
-        "signguNm": "강남구",
         "tAtsNm": "서울국가무형문화재전수회관"
       },
       {
@@ -646,11 +591,6 @@
       {
         "signguCd": "28110",
         "signguNm": "중구",
-        "tAtsNm": "신흥시장"
-      },
-      {
-        "signguCd": "28110",
-        "signguNm": "중구",
         "tAtsNm": "실미해수욕장"
       },
       {
@@ -682,11 +622,6 @@
         "signguCd": "28140",
         "signguNm": "동구",
         "tAtsNm": "수도국산달동네박물관"
-      },
-      {
-        "signguCd": "28185",
-        "signguNm": "연수구",
-        "tAtsNm": "문화공원"
       },
       {
         "signguCd": "28185",
@@ -831,11 +766,6 @@
       {
         "signguCd": "30170",
         "signguNm": "서구",
-        "tAtsNm": "보라매공원"
-      },
-      {
-        "signguCd": "30170",
-        "signguNm": "서구",
         "tAtsNm": "엑스포시민광장"
       },
       {
@@ -934,11 +864,6 @@
         "tAtsNm": "사기막골공원"
       },
       {
-        "signguCd": "41133",
-        "signguNm": "성남시 중원구",
-        "tAtsNm": "약사사(경기)"
-      },
-      {
         "signguCd": "41135",
         "signguNm": "성남시 분당구",
         "tAtsNm": "골안사"
@@ -1026,11 +951,6 @@
       {
         "signguCd": "41220",
         "signguNm": "평택시",
-        "tAtsNm": "만기사(경기)"
-      },
-      {
-        "signguCd": "41220",
-        "signguNm": "평택시",
         "tAtsNm": "모곡공원"
       },
       {
@@ -1086,27 +1006,12 @@
       {
         "signguCd": "41281",
         "signguNm": "고양시 덕양구",
-        "tAtsNm": "국녕사(경기)"
-      },
-      {
-        "signguCd": "41281",
-        "signguNm": "고양시 덕양구",
         "tAtsNm": "덕양서원(고양)"
       },
       {
         "signguCd": "41281",
         "signguNm": "고양시 덕양구",
-        "tAtsNm": "무량사(경기)"
-      },
-      {
-        "signguCd": "41281",
-        "signguNm": "고양시 덕양구",
         "tAtsNm": "배다골테마파크"
-      },
-      {
-        "signguCd": "41281",
-        "signguNm": "고양시 덕양구",
-        "tAtsNm": "상운사(경기)"
       },
       {
         "signguCd": "41281",
@@ -1191,11 +1096,6 @@
       {
         "signguCd": "41360",
         "signguNm": "남양주시",
-        "tAtsNm": "봉선사(경기)"
-      },
-      {
-        "signguCd": "41360",
-        "signguNm": "남양주시",
         "tAtsNm": "봉영사(남양주시)"
       },
       {
@@ -1266,11 +1166,6 @@
       {
         "signguCd": "41410",
         "signguNm": "군포시",
-        "tAtsNm": "수리사(경기)"
-      },
-      {
-        "signguCd": "41410",
-        "signguNm": "군포시",
         "tAtsNm": "수리산 상상마을"
       },
       {
@@ -1282,11 +1177,6 @@
         "signguCd": "41430",
         "signguNm": "의왕시",
         "tAtsNm": "오봉정사"
-      },
-      {
-        "signguCd": "41430",
-        "signguNm": "의왕시",
-        "tAtsNm": "청계사(경기)"
       },
       {
         "signguCd": "41461",
@@ -1621,11 +1511,6 @@
       {
         "signguCd": "41610",
         "signguNm": "광주시",
-        "tAtsNm": "개원사(경기)"
-      },
-      {
-        "signguCd": "41610",
-        "signguNm": "광주시",
         "tAtsNm": "곤지암생활체육공원"
       },
       {
@@ -1662,11 +1547,6 @@
         "signguCd": "41630",
         "signguNm": "양주시",
         "tAtsNm": "양주골 한우마을"
-      },
-      {
-        "signguCd": "41630",
-        "signguNm": "양주시",
-        "tAtsNm": "육지장사(경기)"
       },
       {
         "signguCd": "41630",
@@ -1802,11 +1682,6 @@
         "signguCd": "41820",
         "signguNm": "가평군",
         "tAtsNm": "강촌레일파크(가평역)"
-      },
-      {
-        "signguCd": "41820",
-        "signguNm": "가평군",
-        "tAtsNm": "대금산(경기)"
       },
       {
         "signguCd": "41820",
@@ -1977,11 +1852,6 @@
         "signguCd": "43150",
         "signguNm": "제천시",
         "tAtsNm": "우드트레인"
-      },
-      {
-        "signguCd": "43150",
-        "signguNm": "제천시",
-        "tAtsNm": "원각사(충북)"
       },
       {
         "signguCd": "43150",
@@ -3687,6 +3557,12 @@
       "addr": "인천광역시 제물포구 제물량로 262-15 (선린동)"
     },
     {
+      "tAtsNm": "신흥시장",
+      "signguNm": "중구",
+      "title": "신흥시장(인천)",
+      "addr": "인천광역시 제물포구 도원로 23-13 (선화동)"
+    },
+    {
       "tAtsNm": "팔미도 유람선",
       "signguNm": "중구",
       "title": "팔미도유람선",
@@ -3707,18 +3583,8 @@
   ],
   "stale": [
     {
-      "placeId": "kto-125467",
-      "name": "대금산(가평)",
-      "staleSince": "2026-10-12"
-    },
-    {
       "placeId": "kto-125483",
       "name": "몽덕산",
-      "staleSince": "2026-10-12"
-    },
-    {
-      "placeId": "kto-125530",
-      "name": "청계사(의왕)",
       "staleSince": "2026-10-12"
     },
     {
@@ -3732,33 +3598,8 @@
       "staleSince": "2026-10-12"
     },
     {
-      "placeId": "kto-126539",
-      "name": "봉선사(남양주)",
-      "staleSince": "2026-10-12"
-    },
-    {
-      "placeId": "kto-126843",
-      "name": "수리사(군포)",
-      "staleSince": "2026-10-12"
-    },
-    {
       "placeId": "kto-127497",
       "name": "국립수목원",
-      "staleSince": "2026-10-12"
-    },
-    {
-      "placeId": "kto-128028",
-      "name": "백련사(서대문)",
-      "staleSince": "2026-10-12"
-    },
-    {
-      "placeId": "kto-1603100",
-      "name": "불국사(서울)",
-      "staleSince": "2026-10-12"
-    },
-    {
-      "placeId": "kto-1955511",
-      "name": "도봉서원(서울)",
       "staleSince": "2026-10-12"
     },
     {
@@ -3772,16 +3613,6 @@
       "staleSince": "2026-10-12"
     },
     {
-      "placeId": "kto-2611323",
-      "name": "신영시장(서울)",
-      "staleSince": "2026-10-12"
-    },
-    {
-      "placeId": "kto-2611887",
-      "name": "신트리공원(서울)",
-      "staleSince": "2026-10-12"
-    },
-    {
       "placeId": "kto-2649844",
       "name": "서해수호관",
       "staleSince": "2026-10-12"
@@ -3792,11 +3623,6 @@
       "staleSince": "2026-10-12"
     },
     {
-      "placeId": "kto-2733971",
-      "name": "노을공원(서울)",
-      "staleSince": "2026-10-12"
-    },
-    {
       "placeId": "kto-2734940",
       "name": "기흥레스피아호수공원",
       "staleSince": "2026-10-12"
@@ -3804,11 +3630,6 @@
     {
       "placeId": "kto-2758655",
       "name": "테미공원",
-      "staleSince": "2026-10-12"
-    },
-    {
-      "placeId": "kto-2758666",
-      "name": "보라매공원(대전)",
       "staleSince": "2026-10-12"
     },
     {
@@ -3827,23 +3648,8 @@
       "staleSince": "2026-10-12"
     },
     {
-      "placeId": "kto-2767606",
-      "name": "문화공원(인천)",
-      "staleSince": "2026-10-12"
-    },
-    {
       "placeId": "kto-2767868",
       "name": "한국가스공사 가스과학관",
-      "staleSince": "2026-10-12"
-    },
-    {
-      "placeId": "kto-2769502",
-      "name": "신흥시장(인천)",
-      "staleSince": "2026-10-12"
-    },
-    {
-      "placeId": "kto-2774286",
-      "name": "안국선원(서울)",
       "staleSince": "2026-10-12"
     },
     {
@@ -3852,73 +3658,13 @@
       "staleSince": "2026-10-12"
     },
     {
-      "placeId": "kto-294476",
-      "name": "개원사(광주)",
-      "staleSince": "2026-10-12"
-    },
-    {
-      "placeId": "kto-298098",
-      "name": "국녕사(고양)",
-      "staleSince": "2026-10-12"
-    },
-    {
-      "placeId": "kto-299980",
-      "name": "대각사(서울)",
-      "staleSince": "2026-10-12"
-    },
-    {
-      "placeId": "kto-304696",
-      "name": "만기사(평택)",
-      "staleSince": "2026-10-12"
-    },
-    {
-      "placeId": "kto-304813",
-      "name": "무량사(고양)",
-      "staleSince": "2026-10-12"
-    },
-    {
-      "placeId": "kto-309307",
-      "name": "백련사(강북)",
-      "staleSince": "2026-10-12"
-    },
-    {
-      "placeId": "kto-315921",
-      "name": "보광사(강북)",
-      "staleSince": "2026-10-12"
-    },
-    {
       "placeId": "kto-317082",
       "name": "봉영사(남양주)",
       "staleSince": "2026-10-12"
     },
     {
-      "placeId": "kto-317568",
-      "name": "상운사(고양)",
-      "staleSince": "2026-10-12"
-    },
-    {
-      "placeId": "kto-337425",
-      "name": "약사사(성남)",
-      "staleSince": "2026-10-12"
-    },
-    {
-      "placeId": "kto-346902",
-      "name": "원각사(제천)",
-      "staleSince": "2026-10-12"
-    },
-    {
       "placeId": "kto-3545967",
       "name": "정동진",
-      "staleSince": "2026-10-12"
-    },
-    {
-      "placeId": "kto-761264",
-      "name": "수암사(서울)",
-      "staleSince": "2026-10-12"
-    },
-    {
-      "placeId": "kto-776575",
-      "name": "육지장사(양주)",
       "staleSince": "2026-10-12"
     },
     {
@@ -3929,8 +3675,8 @@
   ],
   "places": {
     "total": 3731,
-    "visible": 3687,
-    "hidden": 44,
+    "visible": 3713,
+    "hidden": 18,
     "byProvince": {
       "11": 562,
       "28": 257,
@@ -3961,12 +3707,5 @@
   "shrinkBlocked": false,
   "warnings": [],
   "operationFilled": 541,
-  "tour": {
-    "sigungu": 147,
-    "sigunguFailed": false,
-    "provincesOk": 8,
-    "provincesFailed": 0,
-    "provincesKept": 0,
-    "candidates": 10951
-  }
+  "tour": "skipped"
 }

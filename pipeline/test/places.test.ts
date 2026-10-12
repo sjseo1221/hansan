@@ -86,6 +86,10 @@ describe("2차 리뷰 오매칭 재발 방지", () => {
     // 원문이 정확히 같은 1건은 경계 장소일 수 있어 medium 으로 연결
     expect(matchOne(a, byProv([cand({ title: "중앙공원", lDongRegnCd: "41", addr1: "경기도 안양시 동안구" })]), { typePriority: tp, regionHeads: heads })?.confidence).toBe("medium");
   });
+  it("시·도 표기는 시·군·구 표기와 충돌로 보지 않는다 — 봉선사(경기) = 봉선사(남양주)", () => {
+    const a = attr({ areaCd: "41", signguCd: "41360", signguNm: "남양주시", tAtsNm: "봉선사(경기)" });
+    expect(matchOne(a, byProv([cand({ title: "봉선사(남양주)", lDongRegnCd: "41", addr1: "경기도 남양주시 진접읍 봉선사길 32" })]), { typePriority: tp, regionHeads: heads })?.method).toBe("normalized");
+  });
   it("괄호가 지역명이 아니면 무시한다 — 풍물시장(2, 7일)", () => {
     const a = attr({ areaCd: "51", signguCd: "51110", signguNm: "춘천시", tAtsNm: "풍물시장" });
     expect(matchOne(a, byProv([cand({ title: "춘천 풍물시장(2, 7일)", lDongRegnCd: "51", addr1: "강원특별자치도 춘천시 온의동" })]), { typePriority: tp, regionHeads: heads })?.method).toBe("partial");

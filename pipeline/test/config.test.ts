@@ -32,7 +32,7 @@ describe("config", () => {
   it("한산 가능성 구간과 인기도 가중치가 올바르다", async () => {
     const t = await load("thresholds");
     expect(t.quietLikelihood.highMax).toBeLessThan(t.quietLikelihood.mediumMax);
-    expect(t.popularity.searchWeight + t.popularity.blogWeight).toBeCloseTo(1);
+    expect(t.popularity.searchWeight + t.popularity.blogWeight + (t.popularity.navWeight ?? 0)).toBeCloseTo(1);
   });
 
   it("서울 장소 카테고리가 모두 분류에 연결된다 (FR-SCORE-07)", async () => {
@@ -76,6 +76,7 @@ describe("무료 한도 안의 상한 (NFR-COST-02)", () => {
       datalab: s.aux.datalabDailyCap,
       kma: s.aux.kmaDailyCap,
       kasi: s.aux.kasiDailyCap,
+      tour_hub: s.aux.hubDailyCap,
       seoul_citydata: s.seoul_citydata.dailyCap,
       naver_blog: s.naver.blogDailyCap,
       naver_blog_llm: llm.generation.reviewBlogCalls,

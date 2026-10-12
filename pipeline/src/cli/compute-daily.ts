@@ -12,6 +12,8 @@ import type { SeoulRow } from "../score/patterns.js";
 import type { TrendRow } from "../score/place-scores.js";
 import { addDays, latestBy } from "../score/stats.js";
 import { findDong, type AdmDong } from "../shared/geo.js";
+import { HUB_PATH, type HubFile } from "../collect/hub.js";
+import { matchHub } from "../score/hub-match.js";
 import { readJson, writeJson } from "../lib/store.js";
 import { kstParts } from "../lib/time.js";
 
@@ -86,6 +88,14 @@ const exposure = await readJson<ComputeInput["exposure"]>("data/state/exposure.j
 const reviews = await readJson<ReviewCache>(REVIEWS_PATH, {});
 const reasonCache = await readJson<ReasonCache>(REASONS_PATH, {});
 
+// 추가 인기도 신호(FR-DATA-14): 티맵 내비 기반 시·군·구 중심 관광지 순위
+const hub = await readJson<HubFile>(`data/${HUB_PATH}`, { baseYm: "", fetchedAt: "", source: "", sigungu: {} });
+const hubMatch = matchHub(
+  places.filter((p) => !p.hidden && !p.stale),
+  Object.values(hub.sigungu).flatMap((s) => s.items),
+);
+const navRank = new Map([...hubMatch.ranks].map(([id, v]) => [id, v.rank]));
+
 const out = compute(
   {
     asOf,
@@ -101,6 +111,7 @@ const out = compute(
     gg: ggPatterns,
     ggLink,
     holidays: holidays.holidays,
+    navRank,
     reviewVerdicts: Object.fromEntries(Object.entries(reviews).map(([id, r]) => [id, r.verdict])),
     exposure,
   },
@@ -154,6 +165,7 @@ const pub = buildPublic({
   reasons,
   reviews,
   placeDong,
+  navYm: hub.baseYm,
   altRadiusKm: (cfg as unknown as { detail: { altRadiusKm: number } }).detail.altRadiusKm,
   updated: {
     forecast: maxOf(Object.values(cnctr.sigungu).map((x) => x.fetchedAt)),
@@ -165,4 +177,4 @@ await rm("public-out", { recursive: true, force: true });
 for (const [path, data] of Object.entries(pub)) await writeJson(join("public-out", path), data, 0);
 
 const today = out.coverage.typesByDate[asOf];
-console.log(JSON.stringify({ asOf, places: out.coverage.places, today, scores: { popularity: out.coverage.scores.popularity, trend: out.coverage.scores.trend, longTerm: out.coverage.scores.longTerm }, historyDays: new Set(historyRows.map((r) => r.date)).size }));
+console.log(JSON.stringify({ hub: { baseYm: hub.baseYm, ...hubMatch.stats, matched: navRank.size }, asOf, places: out.coverage.places, today, scores: { popularity: out.coverage.scores.popularity, trend: out.coverage.scores.trend, longTerm: out.coverage.scores.longTerm }, historyDays: new Set(historyRows.map((r) => r.date)).size }));

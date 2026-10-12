@@ -27,6 +27,7 @@ export const SOURCES = [
   "기상청",
   "한국천문연구원 (특일 정보)",
   "네이버 (검색어 트렌드·블로그 검색)",
+  "한국관광공사 기초지자체 중심 관광지 (티맵 모빌리티 내비게이션 기반)",
 ];
 
 export interface PublicInput {
@@ -45,6 +46,7 @@ export interface PublicInput {
   reasons: Record<string, string>; // "YYYY-MM-DD|placeId" → LLM 근거 문장(대표 유형)
   reviews: ReviewCache;
   placeDong: Record<string, string>; // 경기 장소의 소속 행정동 이름
+  navYm: string; // 중심 관광지 자료 기준 월(YYYYMM)
 }
 
 const round = (x: number, n = 5) => Math.round(x * 10 ** n) / 10 ** n;
@@ -180,6 +182,7 @@ export function buildPublic(input: PublicInput): Record<string, unknown> {
       lat: round(p.lat),
       lng: round(p.lng),
       pop: s?.popularity ?? null,
+      ...(s?.navRank ? { nav: { rank: s.navRank, ym: input.navYm } } : {}),
       trend: s?.trend ?? null,
       lt: s?.longTerm ?? null,
       ...(pat ? { pat: { basis: pat.basis, label: pat.label, wd: pat.weekday, hd: pat.holiday } } : {}),

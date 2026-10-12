@@ -4,6 +4,7 @@ import { existsSync } from "node:fs";
 import { readFile } from "node:fs/promises";
 import { parse } from "yaml";
 import { collectEvents, collectHolidays, collectOperation, collectVisitors, collectWeather } from "../collect/supplement.js";
+import { collectHub } from "../collect/hub.js";
 import { weekdayBucket } from "../collect/naver.js";
 import { datagokr } from "../lib/datagokr.js";
 import { appendJsonl, readJson } from "../lib/store.js";
@@ -50,7 +51,10 @@ const midRegions = [...new Set([...Object.values(regions.midLandRegions), region
 
 const results: Record<string, unknown> = {};
 let failed = false;
+// AUX_ONLY=hub,events 처럼 일부 단계만 돌릴 수 있다(수동 재실행 때 다른 출처의 하루 상한을 다시 쓰지 않게)
+const only = process.env.AUX_ONLY ? new Set(process.env.AUX_ONLY.split(",").map((x) => x.trim())) : null;
 const step = async (name: string, fn: () => Promise<unknown>) => {
+  if (only && !only.has(name)) return;
   try {
     results[name] = await fn();
   } catch (e) {
@@ -80,6 +84,15 @@ await step("operation", async () => {
   if (r.attempted > 0 && r.failed / r.attempted > 0.5) throw Object.assign(new Error("운영 정보 실패율 초과"), { name: "FAILURE_RATE" });
   // 하루 상한에 걸려 남은 장소가 있으면 알린다 — 조용히 다음 주로 밀리지 않게(2차 리뷰)
   if (r.capped || r.skipped > 0) throw Object.assign(new Error(`운영 정보 ${r.skipped}곳 미처리`), { name: "DAILY_CAP" });
+  return r;
+});
+
+// 추가 인기도 신호(FR-DATA-14): 티맵 내비 기반 시·군·구 중심 관광지 — 한 달에 한 번(이미 받은 시·군·구는 건너뜀)
+await step("hub", async () => {
+  const { attractions } = await readJson<{ attractions: { areaCd: string; signguCd: string }[] }>("data/sources/cnctr/attractions.json", { attractions: [] });
+  const sigungu = [...new Map(attractions.map((a) => [a.signguCd, { areaCd: a.areaCd, signguCd: a.signguCd }])).values()].sort((a, b) => (a.signguCd < b.signguCd ? -1 : 1));
+  const r = await collectHub({ get: kto, usage: await usage("tour_hub", src.aux.hubDailyCap), sigungu, dataDir: "data", now });
+  if (r.todo > 0 && r.failed / r.todo > 0.5) throw Object.assign(new Error("중심 관광지 실패율 초과"), { name: "FAILURE_RATE" });
   return r;
 });
 

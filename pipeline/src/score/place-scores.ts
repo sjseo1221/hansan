@@ -9,7 +9,7 @@ export interface TrendRow {
 }
 
 export interface PlaceScoreConfig {
-  popularity: { searchWeight: number; blogWeight: number };
+  popularity: { searchWeight: number; blogWeight: number; navWeight?: number };
   trend: { recentWeeks: number; prevWeeks: number; minPrevRatio: number; normalizeByMedian: boolean };
   longTerm: { months: number; yearsBack: number };
 }
@@ -20,6 +20,8 @@ export interface PlaceScore {
   searchBasis?: "week" | "month";
   searchPct?: number;
   blogPct?: number;
+  navPct?: number;
+  navRank?: number; // 시·군·구 중심 관광지 순위(티맵 내비 기반)
   trend: number | null;
   longTerm: number | null;
   longTermWindow?: { recent: [string, string]; past: [string, string] };
@@ -64,9 +66,12 @@ export function scorePlaces(input: {
   weekly: Map<string, TrendRow>;
   backfill: Map<string, TrendRow>;
   blogTotal: Map<string, number>;
+  // 티맵 내비 기반 시·군·구 중심 관광지 순위(1~100, FR-DATA-14). 자료가 없으면(빈 Map) 이 신호를 쓰지 않는다
+  navRank?: Map<string, number>;
   cfg: PlaceScoreConfig;
 }): Map<string, PlaceScore> {
   const { placeIds, weekly, backfill, blogTotal, cfg } = input;
+  const navRank = input.navRank ?? new Map<string, number>();
   const ids = [...placeIds].sort();
   const search = new Map<string, number>();
   const searchBasis = new Map<string, "week" | "month">();
@@ -98,10 +103,18 @@ export function scorePlaces(input: {
   const med = cfg.trend.normalizeByMedian ? median([...rawTrend.values()]) : 0;
   const ps = percentiles(search);
   const pb = percentiles(new Map(ids.filter((id) => search.has(id) && blogTotal.has(id)).map((id) => [id, blogTotal.get(id)!])));
+  // 내비 신호: 상위 100 안이면 101 − 순위, 밖이면 0 (중심 관광지에 못 든 것도 정보다). 검색 자료가 있는 장소끼리 백분위
+  const wn = navRank.size ? (cfg.popularity.navWeight ?? 0) : 0;
+  const pn = wn ? percentiles(new Map(ids.filter((id) => search.has(id)).map((id) => [id, navRank.has(id) ? 101 - navRank.get(id)! : 0]))) : new Map<string, number>();
   const raw = new Map<string, number>();
   for (const id of ids) {
     if (!ps.has(id)) continue;
-    raw.set(id, pb.has(id) ? cfg.popularity.searchWeight * ps.get(id)! + cfg.popularity.blogWeight * pb.get(id)! : ps.get(id)!);
+    // 있는 신호의 가중치만 다시 나눠 합한다(블로그가 없으면 검색·내비만)
+    const parts: [number, number][] = [[cfg.popularity.searchWeight, ps.get(id)!]];
+    if (pb.has(id)) parts.push([cfg.popularity.blogWeight, pb.get(id)!]);
+    if (wn) parts.push([wn, pn.get(id)!]);
+    const w = parts.reduce((a, [x]) => a + x, 0);
+    raw.set(id, parts.reduce((a, [x, v]) => a + x * v, 0) / w);
   }
   // 가중합을 한 번 더 백분위로 — '70 이상 = 상위 30%' 가 그대로 성립한다
   const pop = percentiles(raw);
@@ -112,7 +125,8 @@ export function scorePlaces(input: {
     const lt = backfill.get(id) ? longTermOf(backfill.get(id)!, cfg) : { longTerm: null };
     out.set(id, {
       popularity: pop.get(id) ?? null,
-      ...(pop.has(id) ? { popularityBasis: pb.has(id) ? "search_blog" : "search_only", searchBasis: searchBasis.get(id), searchPct: ps.get(id), ...(pb.has(id) ? { blogPct: pb.get(id) } : {}) } : {}),
+      ...(pop.has(id) ? { popularityBasis: pb.has(id) ? "search_blog" : "search_only", searchBasis: searchBasis.get(id), searchPct: ps.get(id), ...(pb.has(id) ? { blogPct: pb.get(id) } : {}), ...(wn ? { navPct: pn.get(id) } : {}) } : {}),
+      ...(navRank.has(id) ? { navRank: navRank.get(id) } : {}),
       trend: t === undefined ? null : r3((1 + t) / (1 + (Number.isFinite(med) ? med : 0)) - 1),
       ...lt,
     });

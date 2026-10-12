@@ -30,6 +30,7 @@ interface Place {
   lat: number;
   lng: number;
   pop: number | null;
+  nav?: { rank: number; ym: string }; // 티맵 내비 기반 시·군·구 중심 관광지 순위
   trend: number | null;
   lt: number | null;
   pat?: { basis: string; label: "실측" | "추정"; wd: (number | null)[]; hd: (number | null)[] };
@@ -129,6 +130,7 @@ export async function initPlace() {
       <dl class="facts">
         <dt>주소</dt><dd>${esc(p.addr || p.area)}</dd>
 ${p.dong ? `<dt>행정동</dt><dd>${esc(p.dong)}</dd>` : ""}
+        ${p.nav ? `<dt>내비 인기</dt><dd>${esc(p.area)} 중심 관광지 ${p.nav.rank}위 <small>(티맵 내비게이션 기준, ${Number(p.nav.ym.slice(0, 4))}년 ${Number(p.nav.ym.slice(4, 6))}월)</small></dd>` : ""}
         <dt>분류</dt><dd>${esc(cat)}</dd>
         <dt>실내·실외</dt><dd>${INDOOR[p.indoor]}</dd>
         <dt>쉬는 날</dt><dd>${p.op?.rest ? esc(p.op.rest) : "정보 없음"}</dd>

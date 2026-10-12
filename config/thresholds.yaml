@@ -56,8 +56,9 @@ freshness:
 # 인기도 = 검색 관심도 백분위·블로그 게시글 수 백분위의 가중합 (FR-SCORE-01)
 # 가중치는 착수 계획서 D-2 가정 초기값, 발주자 미결
 popularity:
-  searchWeight: 0.6
-  blogWeight: 0.4
+  searchWeight: 0.5
+  blogWeight: 0.3
+  navWeight: 0.2   # 티맵 내비 기반 시·군·구 중심 관광지 순위(FR-DATA-14, 2026-10-12 추가). 없는 신호는 가중치를 나눠 합한다
 
 # 평소 혼잡 산출 기간 (FR-SCORE-03). 8주가 차기 전에는 minWeeks 이상이면 '임시'로 계산 (착수 계획서 B-5)
 usualCongestion:

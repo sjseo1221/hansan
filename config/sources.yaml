@@ -43,6 +43,7 @@ aux:
   datalabDailyCap: 50      # 지역별 방문자수: 하루 1~3회면 충분
   kmaDailyCap: 400         # 기상청 단기(시군구 대표 격자 약 150) + 중기 5
   kasiDailyCap: 20         # 공휴일: 월 3회
+  hubDailyCap: 200         # 중심 관광지(티맵 내비 기반, FR-DATA-14): 시·군·구 약 140곳을 월 1회
   visitorsFirstLookbackDays: 60   # 첫 실행에서 거슬러 받을 기간(공개가 약 33일 늦음)
   eventsHorizonDays: 14           # FR-FLT-01 날짜 선택 범위와 같게
   holidayMonths: 3
@@ -55,6 +56,7 @@ freeLimits:
   datalab: { limit: 1000, per: day, counters: [datalab] }
   kma: { limit: 10000, per: day, counters: [kma] }
   kasi: { limit: 10000, per: day, counters: [kasi] }
+  tour_hub: { limit: 1000, per: day, counters: [tour_hub], note: "관광공사 기초지자체 중심 관광지 개발계정" }
   seoul_citydata: { limit: 3000, per: day, counters: [seoul_citydata], note: "미등록 키 한도 미확인 — 우리 상한을 한도로 본다" }
   naver_search: { limit: 25000, per: day, counters: [naver_blog, naver_blog_llm], note: "API HUB 정오표 25,000/일(월 775,000 과 상충 — 보수적으로)" }
   naver_trend: { limit: 50000, per: month, counters: [naver_trend] }

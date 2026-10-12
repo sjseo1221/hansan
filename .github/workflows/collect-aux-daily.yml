@@ -5,6 +5,11 @@ name: collect-aux-daily
 on:
   # 예약은 Cloudflare Worker hansan-cron 하나로만 실행한다(GitHub schedule 과 겹쳐 두 번 돌던 문제, 2차 리뷰)
   workflow_dispatch:
+    inputs:
+      only:
+        description: "일부 단계만 (예: hub, events). 비우면 전부"
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -28,6 +33,7 @@ jobs:
         run: npm run collect:aux
         env:
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+          AUX_ONLY: ${{ inputs.only }}
       - name: Commit data
         if: always()
         run: |

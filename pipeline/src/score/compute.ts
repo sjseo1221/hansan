@@ -29,6 +29,7 @@ export interface ComputeInput {
   ggLink: Record<string, string>;
   holidays: Record<string, string>;
   reviewVerdicts?: Record<string, string>;
+  navRank?: Map<string, number>; // 티맵 내비 기반 중심 관광지 순위(FR-DATA-14)
   exposure: ExposureLog;
 }
 
@@ -46,7 +47,7 @@ export interface RecItem extends DailyRow {
 export function compute(input: ComputeInput, cfg: ComputeConfig) {
   const { asOf } = input;
   const visible = input.places.filter((p) => !p.hidden && !p.stale).sort((a, b) => cmp(a.placeId, b.placeId));
-  const scores = scorePlaces({ placeIds: visible.map((p) => p.placeId), weekly: input.weekly, backfill: input.backfill, blogTotal: input.blogTotal, cfg });
+  const scores = scorePlaces({ placeIds: visible.map((p) => p.placeId), weekly: input.weekly, backfill: input.backfill, blogTotal: input.blogTotal, navRank: input.navRank, cfg });
   const holidaySet = new Set(Object.keys(input.holidays));
   const pcfg: PatternConfig = { timePattern: cfg.timePattern, timeSlot: cfg.timeSlot };
   const seoul = seoulPatterns(input.seoulRows, holidaySet, pcfg);
@@ -159,6 +160,7 @@ export function compute(input: ComputeInput, cfg: ComputeConfig) {
       seoulLinked: visible.filter((p) => p.external.seoulAreaCd).length,
       seoulPatterns: Object.keys(seoul).length,
       ggLinked: visible.filter((p) => input.ggLink[p.placeId]).length,
+      navRanked: visible.filter((p) => input.navRank?.has(p.placeId)).length,
       ggLinkedDong: visible.filter((p) => input.ggLink[p.placeId]?.startsWith("d:")).length,
       operation: visible.filter((p) => p.operation).length,
       operationCautionToday: stats.cautionToday,

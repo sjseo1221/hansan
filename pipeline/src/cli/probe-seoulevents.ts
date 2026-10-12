@@ -21,3 +21,10 @@ console.log(JSON.stringify({ match: hit.map((r) => ({ title: r.TITLE, codename: 
 const kinds: Record<string, number> = {};
 for (const r of rows) kinds[r.CODENAME] = (kinds[r.CODENAME] ?? 0) + 1;
 console.log(JSON.stringify({ codename: kinds }));
+
+// 제목으로 찾기(경로 순서: 분류/제목/날짜, 분류는 공백)
+for (const t of ["뚜벅뚜벅", "잠수교"]) {
+  const r2 = await fetch(`http://openapi.seoul.go.kr:8088/${encodeURIComponent(key)}/json/culturalEventInfo/1/20/%20/${encodeURIComponent(t)}/`, { signal: AbortSignal.timeout(30000) });
+  const b2: any = JSON.parse(await r2.text()).culturalEventInfo;
+  console.log(JSON.stringify({ title: t, total: b2?.list_total_count ?? 0, rows: (b2?.row ?? []).map((r: any) => ({ title: r.TITLE, codename: r.CODENAME, place: r.PLACE, date: r.DATE, gu: r.GUNAME, lat: r.LAT, lot: r.LOT, time: r.PRO_TIME })) }));
+}

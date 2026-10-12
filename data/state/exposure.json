@@ -1,0 +1,45 @@
+{
+  "2026-W42": {
+    "moderate_hotspot": [
+      "kto-126827",
+      "kto-127940",
+      "kto-2662397",
+      "kto-644085",
+      "kto-852304"
+    ],
+    "timing_game": [
+      "kto-126801",
+      "kto-130724",
+      "kto-1682800",
+      "kto-252555",
+      "kto-2782182"
+    ],
+    "early_hotspot": [
+      "kto-1626855"
+    ],
+    "time_slot": [],
+    "hidden_classic": []
+  },
+  "2026-W43": {
+    "moderate_hotspot": [
+      "kto-126827",
+      "kto-127940",
+      "kto-130124",
+      "kto-644085",
+      "kto-852304"
+    ],
+    "timing_game": [
+      "kto-129263",
+      "kto-1646664",
+      "kto-1842210",
+      "kto-252555",
+      "kto-2736734",
+      "kto-2758036"
+    ],
+    "early_hotspot": [
+      "kto-1626855"
+    ],
+    "time_slot": [],
+    "hidden_classic": []
+  }
+}

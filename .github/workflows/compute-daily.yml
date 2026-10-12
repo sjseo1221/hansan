@@ -1,0 +1,45 @@
+# 매일 점수·유형 판정 (FR-SCORE · FR-TYPE). 보조 자료 수집(05:40 KST)이 끝나면 이어서 실행한다 — 약 06:00 KST.
+# Cloudflare Cron 5개를 모두 쓰고 있어 workflow_run 으로 잇는다. 앞 작업이 실패해도 직전 자료로 계산한다(FR-DATA-11)
+name: compute-daily
+
+on:
+  workflow_run:
+    workflows: [collect-aux-daily]
+    types: [completed]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: data-compute
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Compute
+        run: npm run compute:daily
+      - name: Commit data
+        run: |
+          git config user.name "hansan-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A data/scores data/recommendations data/state/exposure.json data/reports
+          git diff --cached --quiet && exit 0
+          git commit -m "data: compute-daily $(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M') KST"
+          for i in 1 2 3; do
+            git pull --rebase --quiet && git push && exit 0
+            git rebase --abort 2>/dev/null || true
+            sleep $((i * 5))
+          done
+          exit 1

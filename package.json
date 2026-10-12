@@ -15,7 +15,8 @@
     "collect:cnctr": "tsx pipeline/src/cli/collect-cnctr.ts",
     "build:places": "tsx pipeline/src/cli/build-places.ts",
     "collect:aux": "tsx pipeline/src/cli/collect-aux.ts",
-    "import:gg": "tsx pipeline/src/cli/import-gg.ts"
+    "import:gg": "tsx pipeline/src/cli/import-gg.ts",
+    "compute:daily": "tsx pipeline/src/cli/compute-daily.ts"
   },
   "dependencies": {
     "yaml": "^2.5.0"

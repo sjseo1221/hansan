@@ -22,6 +22,7 @@ types:
     longTermChangeMax: -0.3  # 최근 12개월 / 3년 전 같은 기간 -30% 이하
     congestionMax: 40        # 미만
     reviewVerdict: worth_visiting
+    requireReview: true      # 후기 판정(FR-LLM-03, 4단계) 전에는 후보(pending_review)로만 기록
 
 # 여러 유형에 해당할 때 대표 유형 순서 (FR-TYPE-07) — 착수 계획서 D-3 제안, 발주자 미결
 representativePriority:
@@ -58,3 +59,33 @@ popularity:
 usualCongestion:
   weeks: 8
   minWeeks: 2
+  excludeHolidays: true
+  forecastFallback: true    # 이력이 minWeeks 미만이면 최신 30일 예측창의 같은 요일 평균을 임시로 쓴다(같은 출처)
+  forecastFallbackMinDays: 3
+
+# 추세(FR-SCORE-04)·장기 관심 변화(FR-SCORE-05) — 2단계 설계(2026-10-12)
+trend:
+  recentWeeks: 4
+  prevWeeks: 8
+  minPrevRatio: 0.002       # 직전 평균 검색 비율이 이보다 작으면 잡음으로 보고 계산하지 않는다
+  normalizeByMedian: true   # 기준 키워드(경복궁) 계절성 보정: (1+t)/(1+전체 중앙값) − 1
+longTerm:
+  months: 12
+  yearsBack: 3
+
+# 혼잡 예측(FR-SCORE-02)
+forecast:
+  flatRange: 5              # 30일 폭이 이보다 작으면 forecastFlat 표시(보고서용)
+
+# 시간대 패턴(FR-SCORE-06~09)·시간대 공략(FR-TYPE-04)
+timePattern:
+  weeks: 8
+  minSamples: 2
+  ggAlpha: 0.5              # 경기 = α·경기 유동인구 + (1−α)·분류 표준
+  standardExcludeSeoulCategories: [인구밀집지역]   # 출퇴근 인구라 나들이 패턴과 다르다
+timeSlot:
+  window: [9, 21]           # 방문 창 [시작, 끝) — 창이 없으면 새벽이 늘 가장 한산하다
+  windowByCategory:
+    exhibition: [10, 18]
+  slotHours: 2
+  eligibleBases: [measured, gg_blend]   # 분류 표준만 있는 장소는 시간대 공략 판정 안 함(B-6 제안)

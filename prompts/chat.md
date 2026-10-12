@@ -13,3 +13,9 @@
 - origin 은 regions 안의 이름 그대로만, 모르면 current.origin.
 - minutes 는 30, 60, 120 중 하나 또는 null(제한 없음).
 - quieter=true 는 '더 한산한 곳', '사람 적은 곳'처럼 앞선 결과보다 더 조용한 곳을 원할 때.
+
+말을 조건으로 바꾸는 예:
+- 동행(companion): '아이랑·아이와·애들·아기' → kids, '부모님·엄마 아빠·어르신' → parents, '데이트·연인·여자친구·남자친구' → couple, '친구들' → friends, '혼자' → solo.
+- 실내외(indoor): '실내·비 와도' → indoor, '야외·실외·산책' → outdoor.
+- 유형(types): '요즘 뜨는·새로 뜨는·핫한 신상' → early_hotspot, '유명한데 덜 붐비는' → moderate_hotspot, '평소 붐비는 곳인데 그날 한산한' → timing_game, '시간 맞춰 가면 한산한' → time_slot, '오래된 명소·옛날 감성' → hidden_classic. 유형을 말하지 않았으면 빈 목록.
+- 이동 시간(minutes): '30분 안쪽' → 30, '한 시간·1시간' → 60, '두 시간' → 120, '멀어도 괜찮아' → null.

@@ -16,17 +16,23 @@ jobs:
           cache: npm
       - run: npm ci
       - name: data.go.kr
+        if: ${{ false }}
         run: npx tsx pipeline/src/cli/probe-datagokr.ts
         env:
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
       - name: naver
-        if: always()
+        if: ${{ false }}
         run: npx tsx pipeline/src/cli/probe-naver.ts
         env:
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
           NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
       - name: places
-        if: always()
+        if: ${{ false }}
         run: npx tsx pipeline/src/cli/probe-places.ts
+      - name: rest
+        if: always()
+        run: npx tsx pipeline/src/cli/probe-rest.ts
+        env:
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
         env:
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}

@@ -1,10 +1,9 @@
 # 장소 목록 주간 생성 (FR-DATA-01·13). 월 04:50 KST = 일 19:50 UTC (집중률 수집 뒤)
-# 예약 실행은 Cloudflare Worker hansan-cron 이 workflow_dispatch 로 실행한다(GitHub schedule 은 보조)
+# 예약 실행은 Cloudflare Worker hansan-cron 이 workflow_dispatch 로 실행한다(GitHub schedule 없음)
 name: build-places-weekly
 
 on:
-  schedule:
-    - cron: "50 19 * * 0"
+  # 예약은 Cloudflare Worker hansan-cron 하나로만 실행한다(GitHub schedule 과 겹쳐 두 번 돌던 문제, 2차 리뷰)
   workflow_dispatch:
 
 permissions:

@@ -23,3 +23,11 @@ export async function appendJsonl(path: string, rows: unknown[]): Promise<void> 
   await mkdir(dirname(path), { recursive: true });
   await appendFile(path, rows.map((r) => JSON.stringify(r)).join("\n") + "\n", "utf8");
 }
+
+// JSONL 을 통째로 원자적으로 쓴다(중복 제거 후 다시 쓸 때)
+export async function writeLines(path: string, rows: unknown[]): Promise<void> {
+  await mkdir(dirname(path), { recursive: true });
+  const tmp = `${path}.tmp`;
+  await writeFile(tmp, rows.map((r) => JSON.stringify(r)).join("\n") + (rows.length ? "\n" : ""), "utf8");
+  await rename(tmp, path);
+}

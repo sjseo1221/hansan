@@ -24,8 +24,8 @@ if (process.env.SKIP_TOUR !== "1") {
     console.error("DATA_GO_KR_KEY 가 없습니다.");
     process.exit(1);
   }
-  const src = await yaml<{ tour: { dailyCap: number; types: { contentTypeId: string; keepLcls2?: string[] }[] } }>("config/sources.yaml");
-  const usage = await DailyUsage.load("data", "tour", kstParts(now).date, src.tour.dailyCap);
+  const src = await yaml<{ tour: { caps: { build: number }; types: { contentTypeId: string; keepLcls2?: string[] }[] } }>("config/sources.yaml");
+  const usage = await DailyUsage.load("data", "tour_build", kstParts(now).date, src.tour.caps.build);
   tour = await collectTour({ get: datagokr(key), usage, provinces, types: src.tour.types, dataDir: "data", now });
 }
 
@@ -78,4 +78,7 @@ if (report.keywordChanged.length) {
   await writeJson(path, done.filter((id) => !report.keywordChanged.includes(id)));
 }
 
-console.log(JSON.stringify({ tour, matchRate: report.matchRate, places: report.places, unmatched: report.unmatched.count, warnings: report.warnings.length }));
+console.log(JSON.stringify({ tour, matchRate: report.matchRate, places: report.places, unmatched: report.unmatched.count, crossSigungu: report.crossSigungu.length, stale: report.stale.length, warnings: report.warnings.length }));
+// 후보 수집 실패·직전 파일 유지가 있었으면 목록은 만들되 실패로 알린다 (2차 리뷰: 실패가 exit 0 으로 끝나던 문제)
+const t = tour as { sigunguFailed?: boolean; provincesFailed?: number; provincesKept?: number } | string;
+if (typeof t === "object" && (t.sigunguFailed || (t.provincesFailed ?? 0) > 0 || (t.provincesKept ?? 0) > 0)) process.exit(1);

@@ -4,6 +4,7 @@
 // 결과: 시간대별 상대 유동인구(그 단위의 최댓값 = 1) — 행정동 단위와, 장소 연결용 시·군·구 단위(행정동코드 앞 5자리) 두 가지
 export interface PatternFile {
   source: string;
+  skippedRows: number;
   months: string[];
   slots: string[];
   sigungu: Record<string, Record<string, number>>;
@@ -43,6 +44,7 @@ export function buildPattern(lines: Iterable<string>, source: string): PatternFi
   const sg = new Map<string, Map<string, number>>();
   const months = new Set<string>();
   const slots = new Set<string>();
+  let skipped = 0;
   for (const raw of lines) {
     const line = raw.replace(/^﻿/, "");
     if (!line.trim()) continue;
@@ -51,14 +53,19 @@ export function buildPattern(lines: Iterable<string>, source: string): PatternFi
       header = f;
       col = Object.fromEntries(f.map((h, i) => [h, i]));
       for (const need of ["기준년월", "시간대코드", "행정동코드", "행정동명", "유동인구수"]) {
-        if (!(need in col)) throw new Error(`열 없음: ${need} (실제 열: ${f.join(", ")})`);
+        if (!(need in col)) throw new Error(`열 없음: ${need} (실제 열: ${f.join(", ")}) — 열 이름이 깨져 보이면 파일이 EUC-KR 이니 UTF-8 로 바꿔 저장하세요`);
       }
       continue;
     }
     const code = f[col["행정동코드"]];
     const slot = f[col["시간대코드"]];
-    const n = Number(f[col["유동인구수"]]);
-    if (!code || !slot || !Number.isFinite(n)) continue;
+    // 천 단위 쉼표("1,234")를 지우고, 빈 값·"-" 는 0 으로 세지 않고 건너뛴다(2차 리뷰)
+    const rawN = (f[col["유동인구수"]] ?? "").replaceAll(",", "");
+    const n = rawN === "" || rawN === "-" ? NaN : Number(rawN);
+    if (!code || !slot || !Number.isFinite(n)) {
+      skipped++;
+      continue;
+    }
     months.add(f[col["기준년월"]]);
     slots.add(slot);
     // 월이 여러 개면 합산한다 — 상대 패턴만 쓰므로 월 평균과 같은 결과
@@ -70,6 +77,7 @@ export function buildPattern(lines: Iterable<string>, source: string): PatternFi
   if (!header) throw new Error("빈 파일");
   return {
     source,
+    skippedRows: skipped,
     months: [...months].sort(),
     slots: [...slots].sort((a, b) => a.localeCompare(b, undefined, { numeric: true })),
     sigungu: Object.fromEntries([...sg].map(([k, m]) => [k, normalize(m)])),

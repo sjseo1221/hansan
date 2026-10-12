@@ -21,7 +21,8 @@ if (!existsSync(PLACES)) {
   process.exit(0);
 }
 // 숨김 장소는 다음 주기 작업부터 제외한다 (FR-DATA-13)
-const all = (await readJson<{ places: (PlaceRef & { hidden?: boolean })[] }>(PLACES, { places: [] })).places.filter((p) => !p.hidden);
+// 이월(stale) 장소도 뺀다 — 다시 매칭되지 않은 옛 장소에 호출을 쓰지 않게
+const all = (await readJson<{ places: (PlaceRef & { hidden?: boolean; stale?: boolean })[] }>(PLACES, { places: [] })).places.filter((p) => !p.hidden && !p.stale);
 // 오늘(KST 요일) 묶음만 수집한다. ALL=1 이면 전부(수동 점검용)
 const now = new Date();
 const today = new Date(now.getTime() + 9 * 3600_000).getUTCDay();

@@ -16,7 +16,13 @@ export default {
     const workflow = SCHEDULE[normalize(controller.cron)];
     // 표에 없는 예약은 실패로 남겨 대시보드에서 보이게 한다
     if (!workflow) throw new Error(`알 수 없는 예약: ${controller.cron}`);
-    ctx.waitUntil(dispatch(env, workflow));
+    // await 해야 실패가 Cron 실행 기록에 남는다. 일시 오류(5xx·네트워크)는 한 번 더 시도한다(2차 리뷰)
+    try {
+      await dispatch(env, workflow);
+    } catch {
+      await new Promise((r) => setTimeout(r, 5000));
+      await dispatch(env, workflow);
+    }
   },
 };
 

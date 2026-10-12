@@ -9,7 +9,7 @@ import { datagokr } from "../lib/datagokr.js";
 import { appendJsonl, readJson } from "../lib/store.js";
 import { kstIso, kstParts } from "../lib/time.js";
 import { DailyUsage } from "../lib/usage.js";
-import type { Place } from "../places/build.js";
+import { validCoord, type Place } from "../places/build.js";
 
 if (existsSync(".env")) process.loadEnvFile(".env");
 const key = process.env.DATA_GO_KR_KEY;
@@ -21,7 +21,7 @@ if (!key) {
 const now = new Date();
 const t = kstParts(now);
 const yaml = async <T,>(p: string) => parse(await readFile(p, "utf8")) as T;
-const src = await yaml<{ aux: Record<string, number>; tour: { dailyCap: number } }>("config/sources.yaml");
+const src = await yaml<{ aux: Record<string, number>; tour: { caps: { events: number; operation: number } } }>("config/sources.yaml");
 const regions = await yaml<{ provinces: { code: string }[]; midLandRegions: Record<string, string>; midLandGangwonEast: { regId: string; sigungu: string[] } }>("config/regions.yaml");
 const provinces = regions.provinces.map((p) => p.code);
 const usage = (source: string, cap: number) => DailyUsage.load("data", source, t.date, cap);
@@ -31,7 +31,7 @@ const kma = datagokr(key, 30000, { base: "https://apis.data.go.kr/1360000", defa
 const kasi = datagokr(key, 30000, { base: "https://apis.data.go.kr/B090041/openapi/service/SpcdeInfoService", defaults: {} });
 
 const { places } = await readJson<{ places: Place[] }>("data/places/places.json", { places: [] });
-const visible = places.filter((p) => !p.hidden);
+const visible = places.filter((p) => !p.hidden && !p.stale);
 const { sigungu } = await readJson<{ sigungu: { code: string }[] }>("data/sources/regions/sigungu.json", { sigungu: [] });
 // 세종처럼 시·군·구가 하나뿐인 시·도는 그 5자리 코드로 조회한다(build-places 와 같은 규칙)
 const regnParams = provinces.map((p) => {
@@ -39,9 +39,9 @@ const regnParams = provinces.map((p) => {
   return own.length === 1 ? own[0].code : p;
 });
 
-// 시·군·구 대표 좌표 = 그 시·군·구 장소 좌표 평균
+// 시·군·구 대표 좌표 = 그 시·군·구 장소 좌표 평균 — 범위 밖 좌표는 뺀다(2차 리뷰: 좌표 0 이 섞여 가평 격자가 바다로 감)
 const bySg = new Map<string, { lat: number; lng: number; n: number }>();
-for (const p of visible) {
+for (const p of visible.filter((p) => validCoord(p.lat, p.lng))) {
   const a = bySg.get(p.region.signguCd) ?? { lat: 0, lng: 0, n: 0 };
   bySg.set(p.region.signguCd, { lat: a.lat + p.lat, lng: a.lng + p.lng, n: a.n + 1 });
 }
@@ -61,11 +61,13 @@ const step = async (name: string, fn: () => Promise<unknown>) => {
 };
 
 await step("visitors", async () => collectVisitors({ get: kto, usage: await usage("datalab", src.aux.datalabDailyCap), provinces, dataDir: "data", now, firstLookbackDays: src.aux.visitorsFirstLookbackDays }));
-await step("events", async () => collectEvents({ get: kto, usage: await usage("tour", src.tour.dailyCap), regnParams, dataDir: "data", now, horizonDays: src.aux.eventsHorizonDays }));
+await step("events", async () => collectEvents({ get: kto, usage: await usage("tour_events", src.tour.caps.events), regnParams, dataDir: "data", now, horizonDays: src.aux.eventsHorizonDays }));
 await step("holidays", async () => collectHolidays({ get: kasi, usage: await usage("kasi", src.aux.kasiDailyCap), dataDir: "data", now, months: src.aux.holidayMonths }));
 await step("weather", async () => {
   const r = await collectWeather({ get: kma, usage: await usage("kma", src.aux.kmaDailyCap), points, midRegions, dataDir: "data", now });
-  if (r.ok === 0 && r.points > 0) throw Object.assign(new Error("날씨 0건"), { name: "EMPTY" });
+  // 일부만 실패해도 20% 를 넘으면 알린다(직전 값은 시·군·구 단위로 유지됨)
+  const total = r.points + midRegions.length;
+  if (total > 0 && r.failed / total > 0.2) throw Object.assign(new Error(`날씨 실패 ${r.failed}/${total}`), { name: "FAILURE_RATE" });
   return r;
 });
 await step("operation", async () => {
@@ -74,8 +76,10 @@ await step("operation", async () => {
   const targets = visible
     .filter((p) => p.external.tour && weekdayBucket(p.placeId) === today)
     .map((p) => ({ placeId: p.placeId, contentId: p.external.tour!.contentId, contentTypeId: p.external.tour!.contentTypeId }));
-  const r = await collectOperation({ get: kto, usage: await usage("tour", src.tour.dailyCap), places: targets, dataDir: "data", now });
+  const r = await collectOperation({ get: kto, usage: await usage("tour_operation", src.tour.caps.operation), places: targets, dataDir: "data", now });
   if (r.attempted > 0 && r.failed / r.attempted > 0.5) throw Object.assign(new Error("운영 정보 실패율 초과"), { name: "FAILURE_RATE" });
+  // 하루 상한에 걸려 남은 장소가 있으면 알린다 — 조용히 다음 주로 밀리지 않게(2차 리뷰)
+  if (r.capped || r.skipped > 0) throw Object.assign(new Error(`운영 정보 ${r.skipped}곳 미처리`), { name: "DAILY_CAP" });
   return r;
 });
 

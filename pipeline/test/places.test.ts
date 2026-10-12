@@ -5,8 +5,8 @@ import { describe, expect, it } from "vitest";
 import { collectCnctr, type Attraction } from "../src/collect/cnctr.js";
 import type { Candidate } from "../src/collect/tour.js";
 import type { DgGet } from "../src/lib/datagokr.js";
-import { buildPlaces, categoryOf, keywordOf, type CategoryConfig, type Place } from "../src/places/build.js";
-import { matchOne, norm } from "../src/places/match.js";
+import { buildPlaces, categoryOf, keywordOf, regionHeadsOf, validCoord, type CategoryConfig, type Place } from "../src/places/build.js";
+import { inSigungu, matchOne, norm } from "../src/places/match.js";
 
 const cand = (o: Partial<Candidate>): Candidate => ({
   contentid: "1", contenttypeid: "12", title: "x", addr1: "서울특별시 종로구 어딘가", mapx: 127, mapy: 37.5,
@@ -65,6 +65,38 @@ describe("matchOne", () => {
     const byId = new Map([["77", c]]);
     expect(matchOne(attr({ tAtsNm: "가" }), byProv([c]), { typePriority: tp, manual: new Map([["11110|가", "77"]]), byId })?.method).toBe("manual");
     expect(matchOne(attr({ tAtsNm: "경복궁" }), byProv([cand({ title: "경복궁" })]), { typePriority: tp, manual: new Map([["11110|경복궁", null]]), byId })).toBeNull();
+  });
+});
+
+describe("2차 리뷰 오매칭 재발 방지", () => {
+  const heads = regionHeadsOf(["종로구", "동구", "남동구", "평창군", "영월군", "군포시", "시흥시", "양주시", "남양주시", "수원시 장안구"]);
+  it("시·군·구는 주소 낱말 단위로 비교 — '동구'가 '남동구'에, '양주시'가 '남양주시'에 걸리지 않는다", () => {
+    expect(inSigungu("인천광역시 남동구 소래로", "동구")).toBe(false);
+    expect(inSigungu("인천광역시 동구 송림로", "동구")).toBe(true);
+    expect(inSigungu("경기도 남양주시 화도읍", "양주시")).toBe(false);
+    expect(inSigungu("경기도 수원시 장안구 영화동", "수원시 장안구")).toBe(true);
+  });
+  it("괄호 속 지역이 다르면 같은 이름이어도 연결하지 않는다 — 백덕산(평창) ≠ 백덕산(영월)", () => {
+    const a = attr({ areaCd: "51", signguCd: "51760", signguNm: "평창군", tAtsNm: "백덕산(평창)" });
+    expect(matchOne(a, byProv([cand({ title: "백덕산(영월)", lDongRegnCd: "51", addr1: "강원특별자치도 영월군 수주면" })]), { typePriority: tp, regionHeads: heads })).toBeNull();
+  });
+  it("다른 시·군·구 후보는 원문이 정확히 같을 때만 — 중앙공원(군포) 이 중앙공원(시흥)에 붙지 않는다", () => {
+    const a = attr({ areaCd: "41", signguCd: "41410", signguNm: "군포시", tAtsNm: "중앙공원" });
+    expect(matchOne(a, byProv([cand({ title: "중앙공원(시흥)", lDongRegnCd: "41", addr1: "경기도 시흥시 정왕동" })]), { typePriority: tp, regionHeads: heads })).toBeNull();
+    // 원문이 정확히 같은 1건은 경계 장소일 수 있어 medium 으로 연결
+    expect(matchOne(a, byProv([cand({ title: "중앙공원", lDongRegnCd: "41", addr1: "경기도 안양시 동안구" })]), { typePriority: tp, regionHeads: heads })?.confidence).toBe("medium");
+  });
+  it("괄호가 지역명이 아니면 무시한다 — 풍물시장(2, 7일)", () => {
+    const a = attr({ areaCd: "51", signguCd: "51110", signguNm: "춘천시", tAtsNm: "풍물시장" });
+    expect(matchOne(a, byProv([cand({ title: "춘천 풍물시장(2, 7일)", lDongRegnCd: "51", addr1: "강원특별자치도 춘천시 온의동" })]), { typePriority: tp, regionHeads: heads })?.method).toBe("partial");
+  });
+});
+
+describe("좌표 검증 (2차 리뷰 Critical)", () => {
+  it("빈 좌표·한국 밖 좌표 후보는 장소가 되지 않는다", () => {
+    expect(validCoord(37.5, 127)).toBe(true);
+    expect(validCoord(0, 0)).toBe(false);
+    expect(validCoord(NaN, 127)).toBe(false);
   });
 });
 
@@ -141,10 +173,28 @@ describe("collectCnctr", () => {
     expect(res).toMatchObject({ ok: 1, empty: 1, failed: 1, activeCodes: 1 });
     const latest = JSON.parse(await readFile(join(dataDir, "latest", "cnctr.json"), "utf8"));
     expect(latest.sigungu["11110"].attractions["경복궁"]).toEqual({ "20261012": 55.5, "20261013": 60 });
-    const hist = (await readFile(join(dataDir, "raw", "cnctr_history", "2026-10.jsonl"), "utf8")).trim().split("\n");
-    expect(hist).toHaveLength(1);
+    const histPath = join(dataDir, "raw", "cnctr_history", "2026-10", "12.jsonl");
+    expect((await readFile(histPath, "utf8")).trim().split("\n")).toHaveLength(1);
     const attrs = JSON.parse(await readFile(join(dataDir, "sources", "cnctr", "attractions.json"), "utf8")).attractions;
     expect(attrs).toEqual([expect.objectContaining({ signguCd: "11110", tAtsNm: "경복궁" })]);
+
+    // 같은 날 다시 돌아도 이력은 한 줄 그대로 (2차 리뷰: 실행 횟수만큼 중복되던 문제)
+    await collectCnctr({ candidates: [{ code: "11110", name: "종로구" }], cfg: { dailyCap: 100 }, get, dataDir, now });
+    expect((await readFile(histPath, "utf8")).trim().split("\n")).toHaveLength(1);
+  });
+
+  it("잘 나오던 시·군·구가 한 번 비면 실패로 알리고 활성은 유지, 두 번째에 비활성 — 1만 건 넘게 잘리면 실패", async () => {
+    const dataDir = await mkdtemp(join(tmpdir(), "hansan-cnctr-"));
+    await collectCnctr({ candidates: [{ code: "11110", name: "종로구" }], cfg: { dailyCap: 100 }, get, dataDir, now });
+    const emptyGet: DgGet = async () => ({ totalCount: 0, items: [] });
+    const r1 = await collectCnctr({ candidates: [{ code: "11110", name: "종로구" }], cfg: { dailyCap: 100 }, get: emptyGet, dataDir, now });
+    expect(r1).toMatchObject({ failed: 1, activeCodes: 1 });
+    const r2 = await collectCnctr({ candidates: [{ code: "11110", name: "종로구" }], cfg: { dailyCap: 100 }, get: emptyGet, dataDir, now });
+    expect(r2).toMatchObject({ activeCodes: 0 });
+
+    const cut: DgGet = async () => ({ totalCount: 20000, items: [{ baseYmd: "20261012", areaCd: "11", areaNm: "서울", signguCd: "11140", signguNm: "중구", tAtsNm: "a", cnctrRate: "1" }] });
+    const r3 = await collectCnctr({ candidates: [{ code: "11140", name: "중구" }], cfg: { dailyCap: 100 }, get: cut, dataDir: await mkdtemp(join(tmpdir(), "hansan-cnctr-")), now });
+    expect(r3).toMatchObject({ ok: 0, failed: 1 });
   });
 
   it("후보가 비면 오류로 끝낸다", async () => {

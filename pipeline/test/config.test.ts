@@ -50,3 +50,16 @@ describe("config", () => {
     expect(llm.budget.appCutoffUsd).toBeLessThan(llm.budget.monthlyUsd);
   });
 });
+
+describe("예약 표 동기화 (2차 리뷰)", () => {
+  it("Worker SCHEDULE 키 = wrangler.toml crons, 값은 모두 실제 워크플로 파일", async () => {
+    const workerPath = "../../worker/cron/index.js";
+    const { SCHEDULE } = (await import(workerPath)) as { SCHEDULE: Record<string, string> };
+    const toml = await readFile("worker/cron/wrangler.toml", "utf8");
+    const crons: string[] = JSON.parse(toml.match(/crons = (\[.*\])/)![1]);
+    expect(Object.keys(SCHEDULE).sort()).toEqual([...crons].sort());
+    for (const wf of Object.values(SCHEDULE) as string[]) {
+      await expect(readFile(`.github/workflows/${wf}`, "utf8"), wf).resolves.toContain("workflow_dispatch");
+    }
+  });
+});

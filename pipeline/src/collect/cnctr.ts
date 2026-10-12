@@ -4,7 +4,8 @@
 // 저장: 최신 30일 예측은 덮어쓰고(data/latest/cnctr.json), 이력은 '오늘 날짜 예측'만 누적한다(평소 혼잡 계산용, 착수 계획서 B-5)
 import { join } from "node:path";
 import type { DgGet } from "../lib/datagokr.js";
-import { appendJsonl, readJson, writeJson } from "../lib/store.js";
+import { readFile } from "node:fs/promises";
+import { appendJsonl, readJson, writeJson, writeLines } from "../lib/store.js";
 import { kstIso, kstParts } from "../lib/time.js";
 import { DailyUsage } from "../lib/usage.js";
 
@@ -54,7 +55,8 @@ export async function collectCnctr(input: { candidates: SigunguCode[]; cfg: Cnct
 
   // 응답이 없던 코드는 주 1회만 다시 확인한다(개편으로 새로 생길 수 있어서)
   const activePath = join(dataDir, "state", "cnctr_codes.json");
-  const known = await readJson<Record<string, { active: boolean; checkedOn: string }>>(activePath, {});
+  // 빈 응답 연속 2회째에 비활성으로 둔다 — 일시적 빈 응답 한 번으로 일주일 빠지지 않게(2차 리뷰)
+  const known = await readJson<Record<string, { active: boolean; checkedOn: string; emptyStreak?: number }>>(activePath, {});
   const weekday = new Date(now.getTime() + 9 * 3600_000).getUTCDay();
   const targets = candidates.filter((c) => known[c.code]?.active !== false || weekday === 1);
 
@@ -87,11 +89,21 @@ export async function collectCnctr(input: { candidates: SigunguCode[]; cfg: Cnct
     try {
       const r = await get("/TatsCnctrRateService/tatsCnctrRatedList", { areaCd: c.code.slice(0, 2), signguCd: c.code, numOfRows: "10000" });
       streak = 0;
-      known[c.code] = { active: r.items.length > 0, checkedOn: t.date };
+      // 1만 건 넘게 있어 잘렸으면 부분 결과로 직전 예측을 덮지 않는다
+      if (r.totalCount > r.items.length) throw Object.assign(new Error("잘림"), { name: "TRUNCATED" });
       if (r.items.length === 0) {
+        const wasActive = known[c.code]?.active === true;
+        const emptyStreak = (known[c.code]?.emptyStreak ?? 0) + 1;
+        known[c.code] = { active: wasActive && emptyStreak < 2, checkedOn: t.date, emptyStreak };
         empty++;
+        // 잘 나오던 시·군·구가 비면 장애일 수 있어 실패로 기록·집계한다
+        if (wasActive) {
+          failed++;
+          await appendJsonl(failPath, [{ at, source: SOURCE, signguCd: c.code, code: "EMPTY", message: `빈 응답 ${emptyStreak}회째` }]);
+        }
         continue;
       }
+      known[c.code] = { active: true, checkedOn: t.date, emptyStreak: 0 };
       const f: SigunguForecast = { areaCd: r.items[0].areaCd, areaNm: r.items[0].areaNm, signguCd: c.code, signguNm: r.items[0].signguNm, attractions: {}, fetchedAt: at };
       for (const it of r.items) {
         (f.attractions[it.tAtsNm] ??= {})[it.baseYmd] = Number(it.cnctrRate);
@@ -117,7 +129,17 @@ export async function collectCnctr(input: { candidates: SigunguCode[]; cfg: Cnct
     await writeJson(latestPath, latest);
     await writeJson(attrPath, { source: latest.source, attractions: [...attrIndex.values()].sort((a, b) => (a.signguCd + a.tAtsNm).localeCompare(b.signguCd + b.tAtsNm)) });
   }
-  await appendJsonl(join(dataDir, "raw", "cnctr_history", `${t.yyyy}-${t.mm}.jsonl`), history);
+  // 이력은 날짜별 파일에 (날짜·시군구·관광지) 키로 합친다 — 같은 날 여러 번 돌아도 한 줄씩만 남는다(2차 리뷰: 3배 중복)
+  if (history.length) {
+    const hPath = join(dataDir, "raw", "cnctr_history", `${t.yyyy}-${t.mm}`, `${t.dd}.jsonl`);
+    const merged = new Map<string, unknown>();
+    for (const line of (await readFile(hPath, "utf8").catch(() => "")).split("\n").filter(Boolean)) {
+      const h = JSON.parse(line);
+      merged.set(`${h.signguCd}|${h.tAtsNm}`, h);
+    }
+    for (const h of history as { signguCd: string; tAtsNm: string }[]) merged.set(`${h.signguCd}|${h.tAtsNm}`, h);
+    await writeLines(hPath, [...merged.values()]);
+  }
   await writeJson(activePath, known);
 
   return { attempted: ok + empty + failed, ok, empty, failed, skipped, aborted, activeCodes: Object.values(known).filter((k) => k.active).length };

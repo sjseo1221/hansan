@@ -4,7 +4,7 @@
 import { join } from "node:path";
 import type { DgGet } from "../lib/datagokr.js";
 import { kstIso, kstParts } from "../lib/time.js";
-import { appendJsonl, writeJson } from "../lib/store.js";
+import { appendJsonl, readJson, writeJson } from "../lib/store.js";
 import type { DailyUsage } from "../lib/usage.js";
 import type { SigunguCode } from "./cnctr.js";
 
@@ -56,8 +56,9 @@ const pick = (i: any): Candidate => {
   contenttypeid: String(i.contenttypeid),
   title: i.title,
   addr1: i.addr1 ?? "",
-  mapx: Number(i.mapx),
-  mapy: Number(i.mapy),
+  // 빈 문자열은 Number("") = 0 이라 좌표 0 이 된다 — NaN 으로 두고 장소 생성에서 거른다(2차 리뷰 Critical)
+  mapx: i.mapx ? Number(i.mapx) : NaN,
+  mapy: i.mapy ? Number(i.mapy) : NaN,
   lDongRegnCd: regn.slice(0, 2),
   lDongSignguCd: regn.length === 5 ? regn.slice(2) : String(i.lDongSignguCd ?? ""),
   lclsSystm1: i.lclsSystm1 ?? "",
@@ -107,27 +108,39 @@ export async function collectTour(input: {
   const at = kstIso(now);
   const t = kstParts(now);
   const failPath = join(dataDir, "state", "failures", `${t.yyyy}-${t.mm}.jsonl`);
-  const result = { sigungu: 0, provincesOk: 0, provincesFailed: 0, candidates: 0 };
+  const result = { sigungu: 0, sigunguFailed: false, provincesOk: 0, provincesFailed: 0, provincesKept: 0, candidates: 0 };
+  const sigunguPath = join(dataDir, "sources", "regions", "sigungu.json");
 
   // 세종처럼 시·도 자체가 5자리 코드인 곳은 그 코드로 후보를 조회한다
-  const regnParam = new Map<string, string>();
+  // 시·군·구 목록을 못 받으면 직전 목록으로 대신한다 — 세종이 '36' 으로 조회돼 0건이 되는 것을 막는다(2차 리뷰)
+  let sigungu = (await readJson<{ sigungu: SigunguCode[] }>(sigunguPath, { sigungu: [] })).sigungu;
   try {
-    const sigungu = await fetchSigungu(get, usage, provinces);
-    for (const p of provinces) {
-      const own = sigungu.filter((s) => s.code.startsWith(p));
-      // 시·군·구가 하나뿐인 시·도(세종 36110)는 그 코드로 조회한다
-      regnParam.set(p, own.length === 1 ? own[0].code : p);
-    }
-    await writeJson(join(dataDir, "sources", "regions", "sigungu.json"), { fetchedAt: at, source: "TourAPI ldongCode2", sigungu });
+    sigungu = await fetchSigungu(get, usage, provinces);
+    await writeJson(sigunguPath, { fetchedAt: at, source: "TourAPI ldongCode2", sigungu });
     result.sigungu = sigungu.length;
   } catch (e) {
+    result.sigunguFailed = true;
     await appendJsonl(failPath, [{ at, source: "tour_ldong", code: (e as Error).name, message: "요청 실패" }]);
+  }
+  const regnParam = new Map<string, string>();
+  for (const p of provinces) {
+    const own = sigungu.filter((s) => s.code.startsWith(p));
+    // 시·군·구가 하나뿐인 시·도(세종 36110)는 그 코드로 조회한다
+    regnParam.set(p, own.length === 1 ? own[0].code : p);
   }
 
   for (const regn of provinces) {
     try {
       const candidates = await fetchCandidates(get, usage, regnParam.get(regn) ?? regn, types);
-      await writeJson(join(dataDir, "sources", "tour", "candidates", `${regn.slice(0, 2)}.json`), { fetchedAt: at, source: "TourAPI areaBasedList2", candidates });
+      const path = join(dataDir, "sources", "tour", "candidates", `${regn.slice(0, 2)}.json`);
+      const prev = (await readJson<{ candidates: Candidate[] }>(path, { candidates: [] })).candidates.length;
+      // 0건이거나 직전보다 30% 넘게 줄면 원천 이상으로 보고 직전 파일을 둔다 (FR-DATA-11)
+      if (candidates.length === 0 || (prev > 0 && candidates.length < prev * 0.7)) {
+        result.provincesKept++;
+        await appendJsonl(failPath, [{ at, source: SOURCE, regn, code: "SHRINK", message: `후보 ${prev} → ${candidates.length}, 직전 파일 유지` }]);
+        continue;
+      }
+      await writeJson(path, { fetchedAt: at, source: "TourAPI areaBasedList2", candidates });
       result.provincesOk++;
       result.candidates += candidates.length;
     } catch (e) {

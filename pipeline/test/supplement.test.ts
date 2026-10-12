@@ -51,8 +51,37 @@ describe("방문자수", () => {
     const aug = (await readFile(join(dataDir, "raw", "visitors", "2026-08.jsonl"), "utf8")).trim();
     expect(JSON.parse(aug)).toEqual({ d: "20260830", s: "11110", w: "7", t: "1", n: 1000 });
 
-    await collectVisitors({ get, usage: await usage(dataDir), provinces: ["11"], dataDir, now, firstLookbackDays: 60 });
-    expect(calls[1]).toMatchObject({ startYmd: "20260910" });
+    // 다음 실행은 마지막 저장일 '포함'해서 다시 받되(부분 공개일 보강), 이미 쌓인 행은 중복으로 붙이지 않는다
+    const r2 = await collectVisitors({ get, usage: await usage(dataDir), provinces: ["11"], dataDir, now, firstLookbackDays: 60 });
+    expect(calls[1]).toMatchObject({ startYmd: "20260909" });
+    expect(r2.rows).toBe(0);
+    expect((await readFile(join(dataDir, "raw", "visitors", "2026-09.jsonl"), "utf8")).trim().split("\n")).toHaveLength(1);
+  });
+});
+
+describe("날씨 (2차 리뷰: 발표 전 요청·빈 응답이 직전 값을 지우던 문제)", () => {
+  it("중기예보 발표 시각: 05:40 이면 전날 18시, 07:00 이면 당일 06시, 19:00 이면 당일 18시", async () => {
+    const { midIssueTime } = await import("../src/collect/supplement.js");
+    expect(midIssueTime(new Date("2026-10-11T20:40:00Z"))).toBe("202610111800"); // KST 10-12 05:40
+    expect(midIssueTime(new Date("2026-10-11T22:00:00Z"))).toBe("202610120600"); // KST 07:00
+    expect(midIssueTime(new Date("2026-10-12T10:00:00Z"))).toBe("202610121800"); // KST 19:00
+  });
+
+  it("단기·중기가 비거나 실패한 시·군·구·구역은 직전 값을 그대로 둔다", async () => {
+    const { collectWeather } = await import("../src/collect/supplement.js");
+    const dataDir = await tmp();
+    const okGet: DgGet = async (path) =>
+      path.includes("Mid")
+        ? { totalCount: 1, items: [{ regId: "11B00000", wf4Am: "맑음" }] }
+        : { totalCount: 1, items: [{ category: "TMX", fcstDate: "20261013", fcstTime: "1500", fcstValue: "20" }] };
+    const points = [{ signguCd: "11110", lat: 37.57, lng: 126.98 }];
+    await collectWeather({ get: okGet, usage: await usage(dataDir), points, midRegions: ["11B00000"], dataDir, now });
+    const emptyGet: DgGet = async () => ({ totalCount: 0, items: [] });
+    const r = await collectWeather({ get: emptyGet, usage: await usage(dataDir), points, midRegions: ["11B00000"], dataDir, now });
+    expect(r).toMatchObject({ ok: 0, mid: 0, failed: 2 });
+    const w = JSON.parse(await readFile(join(dataDir, "latest", "weather.json"), "utf8"));
+    expect(w.short["11110"].days["20261013"].tmx).toBe(20);
+    expect(w.mid["11B00000"].wf4Am).toBe("맑음");
   });
 });
 
@@ -85,6 +114,13 @@ describe("운영 정보", () => {
     const op = JSON.parse(await readFile(join(dataDir, "sources", "tour", "operation.json"), "utf8")).operation;
     expect(op["kto-2"]).toMatchObject({ rest: "매주 월요일 설날", hours: "09:00~18:00" });
     expect(op["kto-1"].rest).toBe("매주 화요일");
+
+    // 빈 응답은 실패로 세고 직전 값을 지우지 않는다 (2차 리뷰)
+    const empty: DgGet = async () => ({ totalCount: 0, items: [] });
+    const r2 = await collectOperation({ get: empty, usage: await usage(dataDir), places: [{ placeId: "kto-1", contentId: "1", contentTypeId: "12" }], dataDir, now });
+    expect(r2).toMatchObject({ ok: 0, failed: 1 });
+    const op2 = JSON.parse(await readFile(join(dataDir, "sources", "tour", "operation.json"), "utf8")).operation;
+    expect(op2["kto-1"].rest).toBe("매주 화요일");
   });
 });
 

@@ -1,10 +1,9 @@
 # 관광지 집중률 예측 매일 수집 (FR-DATA-02). 04:30 KST = 19:30 UTC
-# 예약 실행은 Cloudflare Worker hansan-cron 이 workflow_dispatch 로 실행한다(GitHub schedule 은 보조)
+# 예약 실행은 Cloudflare Worker hansan-cron 이 workflow_dispatch 로 실행한다(GitHub schedule 없음)
 name: collect-cnctr-daily
 
 on:
-  schedule:
-    - cron: "30 19 * * *"
+  # 예약은 Cloudflare Worker hansan-cron 하나로만 실행한다(GitHub schedule 과 겹쳐 두 번 돌던 문제, 2차 리뷰)
   workflow_dispatch:
 
 permissions:

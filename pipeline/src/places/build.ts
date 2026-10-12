@@ -31,11 +31,29 @@ export interface Place {
   external: { tour?: { contentId: string; contentTypeId: string; lclsSystm3: string }; cnctr?: { signguCd: string; tAtsNm: string }; seoulAreaCd?: string };
   match: { method: string; confidence: string };
   hidden: boolean;
+  // 이번 생성에서 다시 매칭되지 않고 직전 목록에서 이월된 장소 — 수집·추천 대상에서 빠진다(2차 리뷰: 잘못 매칭된 옛 장소가 계속 남던 문제)
+  stale?: boolean;
+  staleSince?: string;
   lastSeenAt: string;
   sources: string[];
 }
 
 export const SHRINK_LIMIT = 0.3;
+
+// 한국 좌표 범위 — 빈 문자열이 0 이 되어 바다 한가운데 장소가 생기던 문제(2차 리뷰 Critical) 방지
+export const validCoord = (lat: number, lng: number) => Number.isFinite(lat) && Number.isFinite(lng) && lat >= 33 && lat <= 39.5 && lng >= 124 && lng <= 132;
+
+// 이름 괄호 속 지역 표기 판별용 지역명(시·도 약칭 + 시·군·구 이름과 그 머리말)
+const PROVINCE_HEADS = ["서울", "부산", "대구", "인천", "광주", "대전", "울산", "세종", "경기", "강원", "충북", "충남", "전북", "전남", "경북", "경남", "제주"];
+export function regionHeadsOf(sigunguNames: string[]): Set<string> {
+  const heads = new Set(PROVINCE_HEADS);
+  for (const n of sigunguNames) for (const w of n.split(/\s+/)) {
+    heads.add(norm(w));
+    const h = w.replace(/(특별자치시|특별시|광역시|시|군|구)$/, "");
+    if (h.length >= 2) heads.add(norm(h));
+  }
+  return heads;
+}
 export const SHORT_NAME = 3;
 
 export function categoryOf(c: Candidate, cfg: CategoryConfig): string | null {
@@ -70,8 +88,10 @@ export function buildPlaces(input: {
   const indoorOf = new Map(cfg.categories.map((c) => [c.id, c.indoor]));
   const warnings: string[] = [];
 
+  const regionHeads = regionHeadsOf(Object.values(input.sigunguNames));
+  const excludedByCoord: string[] = [];
   const byProvince = new Map<string, Candidate[]>();
-  for (const c of candidates) (byProvince.get(c.lDongRegnCd) ?? byProvince.set(c.lDongRegnCd, []).get(c.lDongRegnCd)!).push(c);
+  for (const c of candidates.filter((c) => validCoord(c.mapy, c.mapx) || (excludedByCoord.push(`${c.title}(${c.contentid})`), false))) (byProvince.get(c.lDongRegnCd) ?? byProvince.set(c.lDongRegnCd, []).get(c.lDongRegnCd)!).push(c);
   const byId = new Map(candidates.map((c) => [c.contentid, c]));
   const manual = new Map((overrides.matches ?? []).map((m) => [`${m.signguCd}|${m.tAtsNm}`, m.contentId]));
   for (const m of overrides.matches ?? []) if (m.contentId && !byId.has(m.contentId)) warnings.push(`overrides.matches: 없는 contentId ${m.contentId}`);
@@ -79,7 +99,7 @@ export function buildPlaces(input: {
   const matched: Match[] = [];
   const unmatched: Attraction[] = [];
   for (const a of attractions) {
-    const m = matchOne(a, byProvince, { typePriority: cfg.typePriority, manual, byId });
+    const m = matchOne(a, byProvince, { typePriority: cfg.typePriority, manual, byId, regionHeads });
     if (m) matched.push(m);
     else unmatched.push(a);
   }
@@ -87,8 +107,10 @@ export function buildPlaces(input: {
   const places = new Map<string, Place>();
   const duplicates: string[] = [];
   const excludedByCategory: string[] = [];
+  // 같은 후보를 노리는 매칭이 여럿이면 신뢰도 → 방법 순으로 앞선 것이 갖는다(2차 리뷰 m4)
   const order = { manual: 0, exact: 1, normalized: 2, partial: 3 } as Record<string, number>;
-  matched.sort((x, y) => order[x.method] - order[y.method] || x.attraction.tAtsNm.localeCompare(y.attraction.tAtsNm));
+  const conf = { high: 0, medium: 1, low: 2 } as Record<string, number>;
+  matched.sort((x, y) => conf[x.confidence] - conf[y.confidence] || order[x.method] - order[y.method] || x.attraction.tAtsNm.localeCompare(y.attraction.tAtsNm));
   for (const m of matched) {
     const c = m.candidate;
     const id = `kto-${c.contentid}`;
@@ -140,7 +162,14 @@ export function buildPlaces(input: {
 
   // 이번에 안 나온 직전 장소도 지우지 않는다 — 번호·이력 유지, lastSeenAt 만 멈춘다
   // 복사본을 쓴다 — 아래 보정이 직전 목록(급감 판정의 기준)까지 바꾸지 않게
-  for (const p of previous) if (!places.has(p.placeId)) places.set(p.placeId, structuredClone(p));
+  const matchedNow = places.size;
+  for (const p of previous) {
+    if (places.has(p.placeId)) continue;
+    const kept = structuredClone(p);
+    kept.stale = true;
+    kept.staleSince = p.staleSince ?? today;
+    places.set(p.placeId, kept);
+  }
 
   // 운영자 보정 적용
   for (const [id, o] of Object.entries(overrides.places ?? {})) {
@@ -167,11 +196,12 @@ export function buildPlaces(input: {
 
   const list = [...places.values()].sort((a, b) => a.placeId.localeCompare(b.placeId));
   const keywordChanged = list.filter((p) => prevById.get(p.placeId) && prevById.get(p.placeId)!.keyword !== p.keyword).map((p) => p.placeId);
-  const visible = list.filter((p) => !p.hidden).length;
-  const prevVisible = previous.filter((p) => !p.hidden).length;
-  const shrinkBlocked = prevVisible > 0 && visible < prevVisible * (1 - SHRINK_LIMIT);
+  const visible = list.filter((p) => !p.hidden && !p.stale).length;
+  // 급감 판정은 '이번에 실제로 매칭된 장소 수' 대 '직전에 매칭돼 있던 장소 수' — 이월 장소는 세지 않는다(2차 리뷰: 가드 무력)
+  const prevMatched = previous.filter((p) => !p.stale && !p.hidden).length;
+  const shrinkBlocked = prevMatched > 0 && matchedNow < prevMatched * (1 - SHRINK_LIMIT);
 
-  const completeOf = (p: Place) => Boolean(p.name && p.address && p.region.provinceCd && p.region.signguCd && Number.isFinite(p.lat) && Number.isFinite(p.lng) && p.category && p.indoor);
+  const completeOf = (p: Place) => Boolean(p.name && p.address && p.region.provinceCd && p.region.signguCd && validCoord(p.lat, p.lng) && p.category && p.indoor);
   const count = <T,>(xs: T[], f: (x: T) => string) => xs.reduce<Record<string, number>>((m, x) => ((m[f(x)] = (m[f(x)] ?? 0) + 1), m), {});
   const methods = count(matched, (m) => m.method);
   const report = {
@@ -181,6 +211,11 @@ export function buildPlaces(input: {
     matchRate: attractions.length ? +(matched.length / attractions.length).toFixed(3) : 0,
     unmatched: { count: unmatched.length, list: unmatched.map((a) => ({ signguCd: a.signguCd, signguNm: a.signguNm, tAtsNm: a.tAtsNm })) },
     excludedByCategory,
+    excludedByCoord,
+    // 시·군·구가 아닌 시·도 범위에서 연결된 매칭 — 사람이 검수할 목록
+    crossSigungu: matched.filter((m) => m.confidence === "medium" && !m.ambiguous).map((m) => ({ tAtsNm: m.attraction.tAtsNm, signguNm: m.attraction.signguNm, title: m.candidate.title, addr: m.candidate.addr1 })),
+    ambiguousList: matched.filter((m) => m.ambiguous).map((m) => ({ tAtsNm: m.attraction.tAtsNm, signguNm: m.attraction.signguNm, title: m.candidate.title })),
+    stale: list.filter((p) => p.stale).map((p) => ({ placeId: p.placeId, name: p.name, staleSince: p.staleSince })),
     places: { total: list.length, visible, hidden: list.length - visible, byProvince: count(list, (p) => p.region.provinceCd), byCategory: count(list, (p) => p.category), seoulLinked: list.filter((p) => p.external.seoulAreaCd).length },
     completeness: { requiredFields: list.length ? +(list.filter(completeOf).length / list.length).toFixed(3) : 0, adminDong: 0, operation: 0 },
     keywordChanged,

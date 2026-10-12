@@ -2,8 +2,7 @@
 name: collect-naver-weekly
 
 on:
-  schedule:
-    - cron: "23 20 * * *"
+  # 예약은 Cloudflare Worker hansan-cron 하나로만 실행한다(GitHub schedule 과 겹쳐 두 번 돌던 문제, 2차 리뷰)
   workflow_dispatch:
 
 permissions:

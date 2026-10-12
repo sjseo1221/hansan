@@ -1,2 +1,4 @@
 * text=auto eol=lf
 *.xlsx binary
+# 여러 수집 워크플로가 같은 jsonl 끝에 덧붙여도 rebase 충돌 없이 합친다(2차 리뷰)
+data/**/*.jsonl merge=union

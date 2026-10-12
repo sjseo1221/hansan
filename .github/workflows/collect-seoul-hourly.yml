@@ -10,7 +10,7 @@ on:
 permissions:
   contents: write
 
-# 데이터 커밋끼리 겹치지 않게 한다 (다른 수집 워크플로도 같은 그룹을 쓴다)
+# 서울 실행끼리 겹치지 않게 한다. 다른 워크플로와의 커밋 경합은 .gitattributes union 병합과 재시도로 푼다
 concurrency:
   group: data-commit
   cancel-in-progress: false

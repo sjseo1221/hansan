@@ -120,6 +120,7 @@ export async function initFeed() {
     // 마지막 요청만 그린다(빠르게 바꿀 때 늦게 온 이전 응답이 덮어쓰지 않게). 실패하면 이전 결과를 지우고 안내한다
     let seq = 0;
     const render = async () => {
+      const t0 = performance.now();
       const my = ++seq;
       writeFilters(f);
       syncForm();
@@ -152,6 +153,8 @@ export async function initFeed() {
       // 낭독기에는 결과 수 한 줄만 알린다
       const shown = TYPE_IDS.reduce((n, t) => n + groups[t].length, 0);
       $("count").textContent = `${dateLabel(f.date)} 추천 ${shown}곳을 보여 드려요.`;
+      // 필터 적용 시간 기록(NFR-PERF-02 점검용) — 자료를 받는 시간까지 포함한 값
+      feedEl.dataset.renderMs = String(Math.round(performance.now() - t0));
       // 조건에 맞는 곳이 없으면 완화 제안 (FR-FLT-06)
       const relaxEl = $("relax");
       relaxEl.innerHTML = "";

@@ -238,3 +238,14 @@
 {"at":"2026-10-12T11:28:31.884+09:00","source":"tour","regn":"44","code":"TypeError","message":"요청 실패"}
 {"at":"2026-10-12T11:28:31.884+09:00","source":"tour","regn":"30","code":"TypeError","message":"요청 실패"}
 {"at":"2026-10-12T11:28:31.884+09:00","source":"tour","regn":"36","code":"TypeError","message":"요청 실패"}
+{"at":"2026-10-12T12:05:53.478+09:00","source":"tour_operation","placeId":"kto-2782195","code":"DG_NO_HEADER","message":"요청 실패"}
+{"at":"2026-10-12T12:05:53.478+09:00","source":"tour_operation","placeId":"kto-2782552","code":"DG_NO_HEADER","message":"요청 실패"}
+{"at":"2026-10-12T12:05:53.478+09:00","source":"tour_operation","placeId":"kto-2782902","code":"DG_NO_HEADER","message":"요청 실패"}
+{"at":"2026-10-12T12:05:53.478+09:00","source":"tour_operation","placeId":"kto-2783133","code":"DG_NO_HEADER","message":"요청 실패"}
+{"at":"2026-10-12T12:05:53.478+09:00","source":"tour_operation","placeId":"kto-2783140","code":"DG_NO_HEADER","message":"요청 실패"}
+{"at":"2026-10-12T12:05:53.478+09:00","source":"tour_operation","placeId":"kto-2784323","code":"DG_NO_HEADER","message":"요청 실패"}
+{"at":"2026-10-12T12:05:53.478+09:00","source":"tour_operation","placeId":"kto-2785632","code":"DG_NO_HEADER","message":"요청 실패"}
+{"at":"2026-10-12T12:05:53.478+09:00","source":"tour_operation","placeId":"kto-2787144","code":"DG_NO_HEADER","message":"요청 실패"}
+{"at":"2026-10-12T12:05:53.478+09:00","source":"tour_operation","placeId":"kto-2789048","code":"DG_NO_HEADER","message":"요청 실패"}
+{"at":"2026-10-12T12:05:53.478+09:00","source":"tour_operation","placeId":"kto-2789685","code":"DG_NO_HEADER","message":"요청 실패"}
+{"at":"2026-10-12T12:05:53.478+09:00","source":"aux_operation","code":"DAILY_CAP","message":"요청 실패"}

@@ -46,6 +46,10 @@ feed:
   maxPerType: 10        # FR-FEED-04
   dateRangeDays: 14     # FR-FLT-01
 
+# 장소 상세의 근처 대안 장소 반경 (FR-DTL-05)
+detail:
+  altRadiusKm: 20
+
 freshness:
   staleAfterDays: 3     # NFR-REL-02 자료 갱신 지연 안내
 

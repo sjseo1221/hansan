@@ -12,3 +12,10 @@ data/sources/gg/**/*.csv
 data/sources/gg/**/*.zip
 # 경기 유동인구 원본(압축 해제 폴더)은 커밋하지 않는다 — 가공 결과 pattern.json·link.json 만 커밋
 data/sources/gg/*/
+
+# 화면용 공개 자료 — public-data 브랜치로만 올린다(compute-daily)
+public-out/
+
+# 화면 빌드 결과
+web/dist/
+web/.astro/

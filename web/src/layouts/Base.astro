@@ -1,0 +1,165 @@
+---
+// 공통 틀: 지연 안내(NFR-REL-02) · 자료 기준 일시(NFR-REL-01) · 예측 고지(NFR-LEGAL-02) · 순위 고지(NFR-LEGAL-03) · 출처(NFR-LEGAL-01)
+interface Props {
+  title: string;
+}
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content="수도권·강원·충청 나들이 장소 중 덜 붐빌 곳을 날짜별로 추천합니다." />
+    <link rel="icon" href="data:," />
+  </head>
+  <body>
+    <a class="skip" href="#main">본문 바로가기</a>
+    <header class="top">
+      <a href="/" class="brand">한산</a>
+      <span class="tagline">덜 붐비는 나들이</span>
+    </header>
+    <div id="stale" class="notice" role="status" hidden></div>
+    <main id="main">
+      <slot />
+    </main>
+    <footer class="foot">
+      <p id="asof">자료 기준 일시를 불러오는 중입니다.</p>
+      <p>혼잡 예측은 참고 정보이며 실제와 다를 수 있습니다. 방문 전 운영 여부를 꼭 확인하세요.</p>
+      <p>추천 순위는 광고나 금전적 대가의 영향을 받지 않습니다.</p>
+      <details>
+        <summary>데이터 출처</summary>
+        <ul id="sources"></ul>
+      </details>
+    </footer>
+    <style is:global>
+      :root {
+        --fg: #1a1a1a;
+        --muted: #4a4a4a;
+        --bg: #ffffff;
+        --card: #f6f6f4;
+        --line: #d0d0cc;
+        --accent: #0b5cad;
+        --high: #11663a;
+        --medium: #7a5200;
+        --low: #a3261c;
+        font-size: 100%;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+        font-size: 1rem; /* 16px 이상 (NFR-UX-03) */
+        line-height: 1.6;
+        color: var(--fg);
+        background: var(--bg);
+      }
+      main,
+      .top,
+      .foot {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 0 16px;
+      }
+      .skip {
+        position: absolute;
+        left: -9999px;
+      }
+      .skip:focus {
+        left: 8px;
+        top: 8px;
+        background: var(--bg);
+        padding: 8px;
+      }
+      .top {
+        display: flex;
+        align-items: baseline;
+        gap: 12px;
+        padding-top: 16px;
+        padding-bottom: 8px;
+      }
+      .brand {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--fg);
+        text-decoration: none;
+      }
+      .tagline {
+        color: var(--muted);
+      }
+      a {
+        color: var(--accent);
+      }
+      :focus-visible {
+        outline: 3px solid var(--accent);
+        outline-offset: 2px;
+      }
+      .notice {
+        max-width: 960px;
+        margin: 8px auto;
+        padding: 12px 16px;
+        background: #fff4d6;
+        border: 1px solid #c9a227;
+      }
+      .foot {
+        margin-top: 40px;
+        padding-top: 16px;
+        padding-bottom: 32px;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+      }
+      h1 {
+        font-size: 1.5rem;
+        line-height: 1.3;
+      }
+      h2 {
+        font-size: 1.25rem;
+        margin-bottom: 4px;
+      }
+      button,
+      select,
+      input {
+        font: inherit;
+      }
+      select,
+      button {
+        min-height: 44px;
+      }
+      .badge {
+        display: inline-block;
+        padding: 0 8px;
+        border: 1px solid currentColor;
+        border-radius: 999px;
+        font-size: 0.9375rem;
+      }
+      /* 한산 가능성: 색과 함께 글자·기호로도 구분한다 (NFR-UX-02) */
+      .lh-high {
+        color: var(--high);
+      }
+      .lh-medium {
+        color: var(--medium);
+      }
+      .lh-low {
+        color: var(--low);
+      }
+      details summary {
+        cursor: pointer;
+      }
+      .sr {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+      }
+    </style>
+    <script>
+      import { initFrame } from "../scripts/common";
+      initFrame();
+    </script>
+  </body>
+</html>

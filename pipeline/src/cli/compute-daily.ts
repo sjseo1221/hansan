@@ -6,6 +6,7 @@ import { join } from "node:path";
 import { parse } from "yaml";
 import type { Place } from "../places/build.js";
 import { compute, type ComputeConfig, type ComputeInput } from "../score/compute.js";
+import { buildPublic, type PublicInput } from "../score/public.js";
 import type { SeoulRow } from "../score/patterns.js";
 import type { TrendRow } from "../score/place-scores.js";
 import { addDays, latestBy } from "../score/stats.js";
@@ -94,6 +95,32 @@ const recDir = "data/recommendations";
 for (const f of await readdir(recDir)) if (/^\d{4}-\d{2}-\d{2}\.json$/.test(f) && f.slice(0, 10) < asOf) await rm(join(recDir, f));
 await writeJson("data/state/exposure.json", out.exposure);
 await writeJson("data/reports/coverage/latest.json", out.coverage);
+
+// 화면용 공개 자료 → public-out/ (git 제외). 워크플로가 public-data 브랜치에 한 커밋으로 올린다
+const regionsCfg = await yaml<{ travel: PublicInput["travel"] }>("config/regions.yaml");
+const catCfg = await yaml<{ categories: { id: string; label: string }[] }>("config/categories.yaml");
+const comp = await yaml<{ companions: PublicInput["companions"] }>("config/companions.yaml");
+const sig = await readJson<{ sigungu: { code: string; name: string }[] }>("data/sources/regions/sigungu.json", { sigungu: [] });
+const maxOf = (xs: (string | undefined)[]) => xs.filter((x): x is string => Boolean(x)).sort().at(-1) ?? null;
+const pub = buildPublic({
+  asOf,
+  places,
+  out,
+  sigunguNames: Object.fromEntries(sig.sigungu.map((x) => [x.code, x.name])),
+  categories: catCfg.categories,
+  companions: comp.companions,
+  travel: regionsCfg.travel,
+  feed: cfg.feed,
+  topN: cfg.exposure.topN,
+  altRadiusKm: (cfg as unknown as { detail: { altRadiusKm: number } }).detail.altRadiusKm,
+  updated: {
+    forecast: maxOf(Object.values(cnctr.sigungu).map((x) => x.fetchedAt)),
+    seoul: maxOf(seoulRows.map((r) => r.fetchedAt)),
+    search: maxOf([...weekly.values()].map((r) => r.fetchedAt)),
+  },
+});
+await rm("public-out", { recursive: true, force: true });
+for (const [path, data] of Object.entries(pub)) await writeJson(join("public-out", path), data, 0);
 
 const today = out.coverage.typesByDate[asOf];
 console.log(JSON.stringify({ asOf, places: out.coverage.places, today, scores: { popularity: out.coverage.scores.popularity, trend: out.coverage.scores.trend, longTerm: out.coverage.scores.longTerm }, historyDays: new Set(historyRows.map((r) => r.date)).size }));

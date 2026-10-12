@@ -1,0 +1,79 @@
+---
+// 장소 상세(FR-DTL-01~08). 주소: /place/?id=<placeId>&date=YYYY-MM-DD — 장소마다 고유한 주소
+import Base from "../../layouts/Base.astro";
+---
+
+<Base title="장소 상세 — 한산">
+  <p><a href="/" id="back">← 추천 목록으로</a></p>
+  <div id="place" aria-live="polite"><p>장소 정보를 불러오는 중입니다.</p></div>
+</Base>
+
+<style>
+  :global(.facts) {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 4px 16px;
+  }
+  :global(.facts dt) {
+    color: var(--muted);
+  }
+  :global(.facts dd) {
+    margin: 0;
+  }
+  :global(.check) {
+    padding: 12px 16px;
+    background: #fff4d6;
+    border: 1px solid #c9a227;
+  }
+  :global(table) {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  :global(th),
+  :global(td) {
+    border-bottom: 1px solid var(--line);
+    padding: 6px 4px;
+    text-align: left;
+    vertical-align: top;
+  }
+  :global(tr[aria-current="date"]) {
+    background: var(--card);
+    font-weight: 700;
+  }
+  :global(.bar) {
+    display: inline-block;
+    height: 10px;
+    background: var(--muted);
+    vertical-align: middle;
+  }
+  :global(.hours) {
+    display: grid;
+    grid-template-columns: repeat(24, 1fr);
+    align-items: end;
+    gap: 2px;
+    height: 120px;
+    margin-top: 8px;
+  }
+  :global(.hours span) {
+    background: var(--muted);
+    min-height: 2px;
+  }
+  :global(.hours span.quiet) {
+    background: var(--high);
+    outline: 2px dashed var(--high);
+  }
+  :global(.hour-axis) {
+    display: flex;
+    justify-content: space-between;
+    color: var(--muted);
+    font-size: 0.9375rem;
+  }
+  :global(.table-wrap) {
+    overflow-x: auto;
+  }
+</style>
+
+<script>
+  import { initPlace } from "../../scripts/place";
+  initPlace();
+</script>

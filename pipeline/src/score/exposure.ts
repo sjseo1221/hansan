@@ -50,7 +50,7 @@ export function rankType(type: TypeId, rows: DailyRow[], scores: Map<string, Pla
   const orig = rows.filter((r) => r.types.includes(type)).sort(order).map((r) => r.placeId);
   const top = orig.filter((id) => !blocked.has(id)).slice(0, topN);
   const final = [...top, ...orig.filter((id) => !top.includes(id))];
-  return new Map(final.map((id, i) => [id, { rankRaw: orig.indexOf(id) + 1, rank: i + 1 }]));
+  return new Map(final.map((id, i) => [id, { rankRaw: orig.indexOf(id) + 1, rank: i + 1, ...(blocked.has(id) ? { blocked: true } : {}) }]));
 }
 
 // 이번 주(W) 차단 대상 = W−1 과 W−2 기록에 모두 있는 장소

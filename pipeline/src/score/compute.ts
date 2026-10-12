@@ -9,7 +9,7 @@ import { addDays, cmp, compact, median } from "./stats.js";
 export interface ComputeConfig extends Thresholds, PlaceScoreConfig {
   timePattern: PatternConfig["timePattern"];
   exposure: { maxConsecutiveWeeksInTop: number; topN: number };
-  feed: { dateRangeDays: number };
+  feed: { dateRangeDays: number; maxPerType: number };
   freshness: { staleAfterDays: number };
   forecast: { flatRange: number };
 }
@@ -38,7 +38,7 @@ export interface RecItem extends DailyRow {
   longTerm: number | null;
   beta: boolean;
   patternLabel: "실측" | "추정" | null;
-  ranks: Partial<Record<TypeId, { rankRaw: number; rank: number }>>;
+  ranks: Partial<Record<TypeId, { rankRaw: number; rank: number; blocked?: boolean }>>;
   reason: null;
   reasonMethod: "pending";
 }
@@ -57,6 +57,8 @@ export function compute(input: ComputeInput, cfg: ComputeConfig) {
   const patternBasis: Record<string, number> = {};
   const placeOut: Record<string, PlaceScore & { patternLabel?: string; patternBasis?: string }> = {};
   const rowsByDate = new Map<string, DailyRow[]>();
+  // 상세 화면용: 장소별 평일·휴일 시간대 패턴
+  const placePatterns: Record<string, { basis: string; label: string; weekday: (number | null)[]; holiday: (number | null)[] }> = {};
   const stats = { forecastStale: 0, forecastFlat: 0, noForecastToday: 0, closedToday: 0, cautionToday: 0, usualBasisToday: {} as Record<string, number> };
 
   for (const p of visible) {
@@ -73,6 +75,9 @@ export function compute(input: ComputeInput, cfg: ComputeConfig) {
     const todayPattern = patternFor(placeInfo, daytypeOf(asOf, holidaySet), pats, input.gg, pcfg);
     placeOut[p.placeId] = { ...s, ...(todayPattern ? { patternLabel: todayPattern.label, patternBasis: todayPattern.basis } : {}) };
     if (todayPattern) patternBasis[todayPattern.basis] = (patternBasis[todayPattern.basis] ?? 0) + 1;
+    const pw = patternFor(placeInfo, "weekday", pats, input.gg, pcfg);
+    const ph = patternFor(placeInfo, "holiday", pats, input.gg, pcfg);
+    if (pw && ph) placePatterns[p.placeId] = { basis: pw.basis, label: pw.label, weekday: pw.pattern, holiday: ph.pattern };
 
     for (const date of dates) {
       const pattern = patternFor(placeInfo, daytypeOf(date, holidaySet), pats, input.gg, pcfg);
@@ -171,5 +176,5 @@ export function compute(input: ComputeInput, cfg: ComputeConfig) {
     typesByDate: typeCounts,
   };
 
-  return { scores: placeOut, patterns: pats, recommendations, exposure, coverage };
+  return { scores: placeOut, patterns: pats, recommendations, exposure, coverage, rowsByDate, placePatterns, dates };
 }

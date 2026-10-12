@@ -37,6 +37,10 @@ const probes: Probe[] = [
   // 2026-10-12 추가 인기도 신호 후보(FR-DATA-14): 티맵 내비 기반 기초지자체 중심 관광지(15128559)·연관 관광지(15128560). 응답 필드 확인용
   { name: "중심 관광지(서울 종로, 지난달)", path: "/B551011/LocgoHubTarService1/areaBasedList1", params: { ...common, areaCd: "11", signguCd: "11110", baseYm: lastMonth } },
   { name: "연관 관광지(서울 종로, 지난달)", path: "/B551011/TarRlteTarService1/areaBasedList1", params: { ...common, areaCd: "11", signguCd: "11110", baseYm: lastMonth } },
+  // 2026-10-12 정기 축제 검토: 잠수교 뚜벅뚜벅 축제가 TourAPI 에 있는지(키워드·9월 시작 행사)
+  { name: "키워드 뚜벅뚜벅", path: "/B551011/KorService2/searchKeyword2", params: { ...common, keyword: "뚜벅뚜벅", numOfRows: "10" } },
+  { name: "키워드 잠수교", path: "/B551011/KorService2/searchKeyword2", params: { ...common, keyword: "잠수교", numOfRows: "10" } },
+  { name: "행사 9월 시작 서울", path: "/B551011/KorService2/searchFestival2", params: { ...common, eventStartDate: "20260901", lDongRegnCd: "11", numOfRows: "200" } },
   { name: "기상청 단기예보", path: "/1360000/VilageFcstInfoService_2.0/getVilageFcst", params: { numOfRows: "3", pageNo: "1", dataType: "JSON", base_date: today, base_time: "0500", nx: "60", ny: "127" } },
   { name: "기상청 중기육상예보", path: "/1360000/MidFcstInfoService/getMidLandFcst", params: { numOfRows: "3", pageNo: "1", dataType: "JSON", regId: "11B00000", tmFc: `${today}0600` } },
   { name: "특일 공휴일", path: "/B090041/openapi/service/SpcdeInfoService/getRestDeInfo", params: { numOfRows: "3", pageNo: "1", _type: "json", solYear: today.slice(0, 4), solMonth: today.slice(4, 6) } },

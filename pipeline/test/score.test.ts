@@ -406,3 +406,15 @@ describe("서울 실측 빈 시간 (2026-10-12 18시 누락)", () => {
     expect(seoulPatterns(rows([12, 18]), new Set(), pcfg).A).toBeUndefined();
   });
 });
+
+describe("인기 명소 (2026-10-12 사용자 요청)", () => {
+  it("인기 90 이상·예측 75 이하, 적당한 핫플보다 대표 우선", () => {
+    const s = (popularity: number) => ({ popularity, trend: 0, longTerm: 0 });
+    expect(ev({ score: s(89.9), forecast: 70 }).typeEval.famous_spot).toBe("fail");
+    expect(ev({ score: s(90), forecast: 75 }).typeEval.famous_spot).toBe("pass");
+    expect(ev({ score: s(95), forecast: 75.1 }).typeEval.famous_spot).toBe("fail");
+    const both = ev({ score: s(95), forecast: 50 });
+    expect(both.types).toEqual(["famous_spot", "moderate_hotspot"]);
+    expect(both.representative).toBe("famous_spot");
+  });
+});

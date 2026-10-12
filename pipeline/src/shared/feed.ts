@@ -1,7 +1,7 @@
 // 화면과 자료 생성이 함께 쓰는 순수 로직 — 이동 시간(FR-FLT-02)·필터(FR-FLT-03·04)·피드 묶음과 정렬(FR-FEED-02·04)·완화 제안(FR-FLT-06)·규칙 근거 문장
 // 브라우저에서도 돌아야 하므로 node 모듈을 쓰지 않는다
 
-export const TYPE_IDS = ["timing_game", "moderate_hotspot", "time_slot", "hidden_classic", "early_hotspot"] as const;
+export const TYPE_IDS = ["timing_game", "famous_spot", "moderate_hotspot", "time_slot", "hidden_classic", "early_hotspot"] as const;
 export type TypeId = (typeof TYPE_IDS)[number];
 export type Likelihood = "high" | "medium" | "low";
 
@@ -97,6 +97,8 @@ const pct = (x: number) => `${Math.round(Math.abs(x) * 100)}%`;
 // 수치로 만든 근거 문장 — 4단계(FR-LLM) 전까지 쓴다. 쉬운 말로(NFR-UX-03)
 export function ruleReason(it: Pick<FeedItem, "pop" | "f" | "u" | "trend" | "lt" | "slot">, type: TypeId): string {
   switch (type) {
+    case "famous_spot":
+      return `손꼽히게 많이 찾는 곳(상위 ${Math.max(1, Math.round(100 - (it.pop ?? 0)))}%)인데, 이날은 갈 만한 수준으로 붐빌 것 같아요.`;
     case "moderate_hotspot":
       return `많이 찾는 곳(상위 ${Math.max(1, Math.round(100 - (it.pop ?? 0)))}%)인데, 이날 혼잡 예측은 보통 수준이에요.`;
     case "timing_game":

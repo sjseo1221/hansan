@@ -3,6 +3,9 @@
 # 점수는 모두 0~100, 변화율은 비율(1.0 = +100%).
 
 types:
+  famous_spot:               # 인기 명소 (2026-10-12 사용자 요청): 아주 많이 찾는 곳인데 이날은 갈 만한 수준
+    popularityMin: 90        # 인기 상위 10%
+    congestionMax: 75        # 혼잡 예측 75 이하
   moderate_hotspot:          # 적당한 핫플 (FR-TYPE-01)
     popularityMin: 70
     congestionMin: 40
@@ -27,6 +30,7 @@ types:
 # 여러 유형에 해당할 때 대표 유형 순서 (FR-TYPE-07) — 착수 계획서 D-3 제안, 발주자 미결
 representativePriority:
   - timing_game
+  - famous_spot
   - moderate_hotspot
   - time_slot
   - hidden_classic

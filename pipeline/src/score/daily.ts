@@ -4,12 +4,13 @@ import type { PlaceScore } from "./place-scores.js";
 import { quietSlot, type PatternBasis, type Pattern } from "./patterns.js";
 import { addDays, clamp, compact, mean, r1, weekday } from "./stats.js";
 
-export const TYPES = ["moderate_hotspot", "timing_game", "early_hotspot", "time_slot", "hidden_classic"] as const;
+export const TYPES = ["famous_spot", "moderate_hotspot", "timing_game", "early_hotspot", "time_slot", "hidden_classic"] as const;
 export type TypeId = (typeof TYPES)[number];
 export type Eval = "pass" | "fail" | "insufficient_data" | "pending_review" | "not_applicable";
 
 export interface Thresholds {
   types: {
+    famous_spot: { popularityMin: number; congestionMax: number };
     moderate_hotspot: { popularityMin: number; congestionMin: number; congestionMax: number };
     timing_game: { usualCongestionMin: number; dropFromUsualMin: number };
     early_hotspot: { trendMin: number; popularityMax: number; congestionMax: number; beta: boolean };
@@ -92,6 +93,8 @@ export function evaluateDay(p: PlaceDayInput, date: string, holidays: Record<str
   const pop = p.score.popularity;
   const ev = row.typeEval;
   const T = t.types;
+  // 인기 명소(2026-10-12 사용자 요청): 아주 많이 찾는 곳(상위 10%)인데 이날은 갈 만한 수준(예측 75 이하)
+  ev.famous_spot = pop === null ? "insufficient_data" : pop >= T.famous_spot.popularityMin && forecast <= T.famous_spot.congestionMax ? "pass" : "fail";
   ev.moderate_hotspot = pop === null ? "insufficient_data" : pop >= T.moderate_hotspot.popularityMin && forecast >= T.moderate_hotspot.congestionMin && forecast <= T.moderate_hotspot.congestionMax ? "pass" : "fail";
   ev.timing_game =
     row.usual === null ? "insufficient_data" : row.usual >= T.timing_game.usualCongestionMin && r1(row.usual - forecast) >= T.timing_game.dropFromUsualMin ? "pass" : "fail";

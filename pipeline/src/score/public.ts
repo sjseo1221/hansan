@@ -12,6 +12,7 @@ const PROVINCE_SHORT: Record<string, string> = { "11": "서울", "28": "인천",
 
 export const TYPE_TEXT: Record<string, { label: string; desc: string }> = {
   timing_game: { label: "눈치게임", desc: "평소엔 붐비는데 이날은 덜 붐빌 것으로 보이는 곳" },
+  famous_spot: { label: "인기 명소", desc: "아주 많이 찾는 곳인데 이날은 갈 만한 수준으로 붐비는 곳" },
   moderate_hotspot: { label: "적당한 핫플", desc: "많이 찾는 곳이지만 이날은 보통 수준으로 붐비는 곳" },
   time_slot: { label: "시간대 공략", desc: "인기 장소지만 덜 붐비는 시간대를 노리면 좋은 곳" },
   hidden_classic: { label: "숨은 클래식", desc: "예전보다 관심이 줄어 한산해진 오래된 명소" },

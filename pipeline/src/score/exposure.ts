@@ -34,6 +34,8 @@ export function mondayOf(week: string): string {
 export function rankKey(type: TypeId, r: DailyRow, s: PlaceScore): number[] {
   const f = r.forecast ?? 0;
   switch (type) {
+    case "famous_spot":
+      return [f, -(s.popularity ?? 0)];
     case "moderate_hotspot":
       return [-(s.popularity ?? 0), Math.abs(f - 50)];
     case "timing_game":

@@ -1,0 +1,6 @@
+# 정적 화면 보안 헤더 (Cloudflare Workers 정적 자산). 스크립트는 모두 같은 출처 파일, 스타일은 Astro 인라인 <style>·막대 너비 style 속성
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin

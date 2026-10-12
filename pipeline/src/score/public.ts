@@ -39,6 +39,7 @@ export interface PublicInput {
   topN: number;
   altRadiusKm: number;
   updated: Record<string, string | null>;
+  holidays: Record<string, string>; // YYYYMMDD → 이름
 }
 
 const round = (x: number, n = 5) => Math.round(x * 10 ** n) / 10 ** n;
@@ -179,6 +180,8 @@ export function buildPublic(input: PublicInput): Record<string, unknown> {
     };
   }
 
-  files["meta.json"] = { asOf, dates: out.dates, updated: input.updated };
+  // 계산 기간 안의 공휴일 — 상세 화면이 휴일 시간대 패턴을 고르는 데 쓴다
+  const holidays = out.dates.filter((d) => input.holidays[d.replaceAll("-", "")]);
+  files["meta.json"] = { asOf, dates: out.dates, holidays, updated: input.updated };
   return files;
 }

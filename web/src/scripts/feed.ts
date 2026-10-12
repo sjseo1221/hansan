@@ -19,7 +19,8 @@ export function defaultDate(today: string, dates: string[]): string {
   return dates.includes(sat) ? sat : (dates.find((d) => d >= today) ?? dates[0]);
 }
 
-function readFilters(dates: string[]): Filters {
+// 주소의 값은 화면 선택지에 있는 것만 받는다 — 나머지는 조건 없음으로 본다
+function readFilters(dates: string[], ok: { origins: Set<string>; minutes: number[]; companions: Set<string> }): Filters {
   const q = new URLSearchParams(location.search);
   const today = todayKst();
   const date = q.get("date") ?? "";
@@ -27,9 +28,9 @@ function readFilters(dates: string[]): Filters {
   const indoor = q.get("indoor");
   return {
     date: dates.includes(date) && date >= today ? date : defaultDate(today, dates.filter((d) => d >= today)),
-    origin: q.get("origin") || null,
-    minutes: minutes ? Number(minutes) : null,
-    companion: q.get("companion") || null,
+    origin: ok.origins.has(q.get("origin") ?? "") ? q.get("origin") : null,
+    minutes: minutes && ok.minutes.includes(Number(minutes)) ? Number(minutes) : null,
+    companion: ok.companions.has(q.get("companion") ?? "") ? q.get("companion") : null,
     indoor: indoor === "indoor" || indoor === "outdoor" ? indoor : null,
   };
 }
@@ -75,7 +76,11 @@ export async function initFeed() {
       feedEl.innerHTML = "<p>표시할 날짜의 추천이 아직 없습니다. 자료가 갱신되면 다시 보여 드릴게요.</p>";
       return;
     }
-    let f = readFilters(dates);
+    let f = readFilters(dates, {
+      origins: new Set(regions.sigungu.map((s) => s.code)),
+      minutes: cfg.travel.options.filter((x): x is number => x !== null),
+      companions: new Set(cfg.companions.map((c) => c.id)),
+    });
     // 주소에 조건이 있으면 펼쳐서 보여 준다
     if (f.origin || f.companion || f.indoor) ($("more") as HTMLDetailsElement).open = true;
 
@@ -107,12 +112,24 @@ export async function initFeed() {
       $("more-summary").textContent = on.length ? `(${on.join(", ")})` : "";
     };
 
+    // 마지막 요청만 그린다(빠르게 바꿀 때 늦게 온 이전 응답이 덮어쓰지 않게). 실패하면 이전 결과를 지우고 안내한다
+    let seq = 0;
     const render = async () => {
+      const my = ++seq;
       writeFilters(f);
       syncForm();
-      const isWeekend = [0, 6].includes(weekday(f.date));
+      let feed: { items: FeedItem[] };
+      try {
+        feed = await getJson<{ items: FeedItem[] }>(`feed/${f.date}.json`);
+      } catch {
+        if (my !== seq) return;
+        $("heading").textContent = `${dateLabel(f.date)}, 덜 붐빌 나들이 장소`;
+        feedEl.innerHTML = "<p>이 날짜의 추천을 불러오지 못했습니다. 잠시 뒤 다시 골라 주세요.</p>";
+        $("count").textContent = "추천을 불러오지 못했습니다.";
+        return;
+      }
+      if (my !== seq) return;
       $("heading").textContent = `${dateLabel(f.date)}, 덜 붐빌 나들이 장소`;
-      const feed = await getJson<{ items: FeedItem[] }>(`feed/${f.date}.json`);
       const origin = f.origin ? (regions.sigungu.find((s) => s.code === f.origin) ?? null) : null;
       const fcfg = { travel: cfg.travel, companions: cfg.companions, maxPerType: cfg.maxPerType, topN: cfg.topN };
       const items = feed.items.filter((x) => matches(x, f, origin, fcfg));
@@ -121,11 +138,15 @@ export async function initFeed() {
         const type = cfg.types.find((x) => x.id === t)!;
         const list = groups[t];
         return `<section class="type" aria-labelledby="h-${t}">
-          <h2 id="h-${t}">${esc(type.label)}${t === "early_hotspot" ? ` <span class="badge">베타</span>` : ""}</h2>
+          <h2 id="h-${t}">${esc(type.label)}</h2>
+          ${t === "early_hotspot" ? `<details><summary class="badge">베타</summary>판정 기준을 아직 검증하고 있는 유형이에요. 결과가 덜 정확할 수 있어요.</details>` : ""}
           <p class="type-desc">${esc(type.desc)}</p>
-          ${list.length ? `<ul class="cards">${list.map((it) => card(it, f, cfg, origin)).join("")}</ul>` : `<p>${isWeekend ? "이번 주말에는" : "이 날에는"} 해당 장소가 없습니다.</p>`}
+          ${list.length ? `<ul class="cards">${list.map((it) => card(it, f, cfg, origin)).join("")}</ul>` : `<p>${dateLabel(f.date)}에는 해당 장소가 없습니다.</p>`}
         </section>`;
       }).join("");
+      // 낭독기에는 결과 수 한 줄만 알린다
+      const shown = TYPE_IDS.reduce((n, t) => n + groups[t].length, 0);
+      $("count").textContent = `${dateLabel(f.date)} 추천 ${shown}곳을 보여 드려요.`;
       // 조건에 맞는 곳이 없으면 완화 제안 (FR-FLT-06)
       const relaxEl = $("relax");
       relaxEl.innerHTML = "";

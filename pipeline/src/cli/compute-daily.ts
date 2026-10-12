@@ -112,6 +112,7 @@ const pub = buildPublic({
   travel: regionsCfg.travel,
   feed: cfg.feed,
   topN: cfg.exposure.topN,
+  holidays: holidays.holidays,
   altRadiusKm: (cfg as unknown as { detail: { altRadiusKm: number } }).detail.altRadiusKm,
   updated: {
     forecast: maxOf(Object.values(cnctr.sigungu).map((x) => x.fetchedAt)),

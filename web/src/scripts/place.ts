@@ -1,6 +1,6 @@
 // 장소 상세 — 14일 혼잡 예측과 평소 비교(FR-DTL-02), 시간대 패턴(03), 유형·근거(04), 근처 대안(05), 지도 앱 링크(06), 운영 확인 안내(07)
 import { ruleReason, type TypeId } from "../../../pipeline/src/shared/feed";
-import { config, dateLabel, esc, getJson, LH_TEXT, todayKst, weekday } from "./common";
+import { config, dateLabel, esc, getJson, LH_TEXT, meta, todayKst, weekday } from "./common";
 
 interface Day {
   d: string;
@@ -56,7 +56,7 @@ export async function initPlace() {
     return;
   }
   try {
-    const [p, cfg] = await Promise.all([getJson<Place>(`place/${id}.json`), config()]);
+    const [p, cfg, m] = await Promise.all([getJson<Place>(`place/${id}.json`), config(), meta()]);
     const today = todayKst();
     const days = p.days.filter((d) => d.d >= today);
     const date = days.some((d) => d.d === q.get("date")) ? q.get("date")! : (days[0]?.d ?? p.days[0].d);
@@ -94,7 +94,7 @@ export async function initPlace() {
     // 시간대 패턴 (FR-DTL-03): 그 날짜가 평일인지 휴일인지에 맞는 패턴
     let patternHtml = "<p>이 장소의 시간대 자료가 아직 없어요.</p>";
     if (p.pat) {
-      const holiday = [0, 6].includes(weekday(date));
+      const holiday = [0, 6].includes(weekday(date)) || Boolean(m.holidays?.includes(date));
       const pat = holiday ? p.pat.hd : p.pat.wd;
       const s = day.slot ? Number(day.slot.start.slice(0, 2)) : -1;
       const e = day.slot ? Number(day.slot.end.slice(0, 2)) : -1;

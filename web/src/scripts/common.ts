@@ -2,6 +2,7 @@
 export interface Meta {
   asOf: string;
   dates: string[];
+  holidays?: string[]; // YYYY-MM-DD
   updated: Record<string, string | null>;
 }
 export interface Config {
@@ -15,15 +16,16 @@ export interface Config {
 }
 
 const cache = new Map<string, Promise<unknown>>();
+// 실패한 요청은 캐시에서 지워 다음에 다시 시도한다
 export function getJson<T>(path: string): Promise<T> {
-  if (!cache.has(path))
-    cache.set(
-      path,
-      fetch(`/data/${path}`).then((r) => {
-        if (!r.ok) throw new Error(`${path}: ${r.status}`);
-        return r.json();
-      }),
-    );
+  if (!cache.has(path)) {
+    const p = fetch(`/data/${path}`).then((r) => {
+      if (!r.ok) throw new Error(`${path}: ${r.status}`);
+      return r.json();
+    });
+    p.catch(() => cache.delete(path));
+    cache.set(path, p);
+  }
   return cache.get(path) as Promise<T>;
 }
 
@@ -58,9 +60,12 @@ export async function initFrame() {
   try {
     const [m, c] = await Promise.all([meta(), config()]);
     asof.textContent = `자료 기준: 혼잡 예측 ${fmt(m.updated.forecast)}, 서울 실시간 인구 ${fmt(m.updated.seoul)}, 검색 추이 ${fmt(m.updated.search)} (계산 ${m.asOf})`;
-    if (m.asOf < addDays(todayKst(), -3)) {
+    // 계산은 수집이 실패해도 매일 돌므로 계산일이 아니라 원자료 수집 시각으로 판단한다 (NFR-REL-02: 3일 넘게)
+    const limit = addDays(todayKst(), -3);
+    const old = (iso: string | null | undefined) => !iso || iso.slice(0, 10) < limit;
+    if (old(m.updated.forecast) || old(m.updated.seoul) || m.asOf < limit) {
       stale.hidden = false;
-      stale.textContent = `자료가 ${m.asOf} 이후로 갱신되지 않았습니다. 추천이 실제와 많이 다를 수 있어요.`;
+      stale.textContent = "자료가 3일 넘게 갱신되지 않았습니다. 추천이 실제와 많이 다를 수 있어요.";
     }
     document.getElementById("sources")!.innerHTML = c.sources.map((s) => `<li>${esc(s)}</li>`).join("");
   } catch {

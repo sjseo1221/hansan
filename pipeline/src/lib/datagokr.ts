@@ -20,11 +20,20 @@ const KTO = { base: "https://apis.data.go.kr/B551011", defaults: { pageNo: "1", 
 export function datagokr(key: string, timeoutMs = 30000, api: { base: string; defaults: Record<string, string> } = KTO): DgGet {
   return async (path, params) => {
     const qs = new URLSearchParams({ ...api.defaults, ...params }).toString();
-    let res: Response;
-    try {
-      res = await fetch(`${api.base}${path}?serviceKey=${encodeURIComponent(key)}&${qs}`, { signal: AbortSignal.timeout(timeoutMs) });
-    } catch (e) {
-      throw new DgError((e as Error).name || "FETCH_ERROR");
+    let res: Response | undefined;
+    // 연결 실패(TypeError: fetch failed)는 러너에 따라 일시적으로 난다(2026-10-12 build 9건 전부 실패, 같은 시각 probe 는 정상) — 한 번 더 시도한다.
+    // 기록에는 원인 코드(UND_ERR_CONNECT_TIMEOUT 등)를 남긴다
+    for (let attempt = 1; !res; attempt++) {
+      try {
+        res = await fetch(`${api.base}${path}?serviceKey=${encodeURIComponent(key)}&${qs}`, { signal: AbortSignal.timeout(timeoutMs) });
+      } catch (e) {
+        const err = e as Error & { cause?: { code?: string } };
+        if (err.name === "TypeError" && attempt < 2) {
+          await new Promise((r) => setTimeout(r, 3000));
+          continue;
+        }
+        throw new DgError(err.name === "TypeError" ? `NET_${err.cause?.code ?? "FETCH_FAILED"}` : err.name || "FETCH_ERROR");
+      }
     }
     const text = await res.text();
     let j: any;

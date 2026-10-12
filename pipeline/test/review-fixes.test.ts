@@ -133,3 +133,25 @@ describe("서울 수집 안전장치 (리뷰 CR#2 · M1 · CR#12)", () => {
 
   afterEach(() => vi.unstubAllGlobals());
 });
+
+describe("data.go.kr 연결 실패 (2026-10-12 build 9건 TypeError)", () => {
+  it("연결 실패는 한 번 다시 시도하고, 그래도 실패하면 원인 코드를 NET_ 로 남긴다", async () => {
+    const { datagokr } = await import("../src/lib/datagokr.js");
+    const orig = globalThis.fetch;
+    let n = 0;
+    globalThis.fetch = (async () => {
+      n++;
+      throw Object.assign(new TypeError("fetch failed"), { cause: { code: "UND_ERR_CONNECT_TIMEOUT" } });
+    }) as typeof fetch;
+    vi.useFakeTimers();
+    try {
+      const p = datagokr("k")("/x", {}).catch((e) => e);
+      await vi.runAllTimersAsync();
+      expect((await p).name).toBe("NET_UND_ERR_CONNECT_TIMEOUT");
+      expect(n).toBe(2);
+    } finally {
+      vi.useRealTimers();
+      globalThis.fetch = orig;
+    }
+  });
+});

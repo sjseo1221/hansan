@@ -24,6 +24,15 @@
 | collect-aux-daily | 매일 05:40 | 방문자수(약 33일 늦게 공개 — 마지막 저장일 다음부터) → `data/raw/visitors/`, 행사(14일 안) → `data/latest/events.json`, 날씨(시·군·구 대표 격자 단기 + 중기 육상) → `data/latest/weather.json`, 공휴일 → `data/sources/holidays.json`, 운영 정보(요일 묶음, 원문) → `data/sources/tour/operation.json` |
 | test | push 시 | 타입 검사, 자동 시험 |
 
+## 경기 유동인구 가져오기 (FR-DATA-05, 1회성)
+
+공공데이터포털 `15151641`(경기도_데이터분석 유동인구 시군구 행정동별 시간대별 집계)은 갱신 없는 CSV 하나다. 경기데이터드림이 자동 다운로드를 막아 사람이 받는다.
+
+1. https://www.data.go.kr/data/15151641/fileData.do 에서 CSV 를 받아 `data/sources/gg/` 에 둔다(원본 CSV 는 커밋되지 않는다). EUC-KR 이면 UTF-8 로 바꿔 둔다
+2. `npm run import:gg` → `data/sources/gg/pattern.json`(행정동·시·군·구 시간대 상대 패턴), `link.json`(경기 장소 → 시·군·구 패턴) 생성 후 커밋
+
+행정동 단위 연결은 좌표→행정동 경계 자료가 필요해 아직 시·군·구 단위다.
+
 ## 장소 추가·숨김·수정 (FR-OPS-05)
 
 `data/places/places.json` 은 매주 다시 만드는 생성 파일이라 직접 고치지 않는다. **`data/places/overrides.yaml` 만 고친다.**

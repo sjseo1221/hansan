@@ -16,7 +16,8 @@
     "blog": 542,
     "seoulLinked": 32,
     "seoulPatterns": 0,
-    "ggLinked": 619,
+    "ggLinked": 621,
+    "ggLinkedDong": 605,
     "operation": 539,
     "operationCautionToday": 49,
     "closedToday": 93
@@ -31,7 +32,7 @@
       "none": 3713
     },
     "patternBasisToday": {
-      "gg_only": 619
+      "gg_only": 621
     }
   },
   "categoryPatterns": [],

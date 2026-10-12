@@ -20,7 +20,8 @@
     "build:web": "astro build --root web",
     "dev:web": "astro dev --root web",
     "llm:daily": "tsx pipeline/src/cli/llm-daily.ts",
-    "report:weekly": "tsx pipeline/src/cli/weekly-report.ts"
+    "report:weekly": "tsx pipeline/src/cli/weekly-report.ts",
+    "import:admdong": "tsx pipeline/src/cli/import-admdong.ts"
   },
   "dependencies": {
     "yaml": "^2.5.0"

@@ -11,6 +11,7 @@ import { factsFor, loadFactContext, REASONS_PATH, REVIEWS_PATH, type ReasonCache
 import type { SeoulRow } from "../score/patterns.js";
 import type { TrendRow } from "../score/place-scores.js";
 import { addDays, latestBy } from "../score/stats.js";
+import { findDong, type AdmDong } from "../shared/geo.js";
 import { readJson, writeJson } from "../lib/store.js";
 import { kstParts } from "../lib/time.js";
 
@@ -64,8 +65,21 @@ const blogTotal = new Map([...latestBy(blogRows, (r) => r.placeId)].map(([id, r]
 
 const seoulRows = await dayFiles<SeoulRow>("seoul_citydata", addDays(asOf, -7 * 8), asOf);
 const seoulPlaces = await readJson<{ places: { areaCd: string; category: string }[] }>("data/sources/seoul/places.json", { places: [] });
-const gg = await readJson<{ sigungu: Record<string, Record<string, number>> }>("data/sources/gg/pattern.json", { sigungu: {} });
-const ggLink = await readJson<{ links: Record<string, string> }>("data/sources/gg/link.json", { links: {} });
+// 경기 유동인구(FR-DATA-05): 장소 좌표가 속한 행정동의 패턴을 쓰고, 그 행정동 자료가 없으면 시·군·구 패턴으로 대신한다
+const gg = await readJson<{ sigungu: Record<string, Record<string, number>>; adminDong: Record<string, { name: string; pattern: Record<string, number> }> }>("data/sources/gg/pattern.json", { sigungu: {}, adminDong: {} });
+const dongs = (await readJson<{ features: AdmDong[] }>("data/sources/regions/admdong-41.json", { features: [] })).features;
+const ggPatterns: Record<string, Record<string, number>> = {};
+for (const [k, v] of Object.entries(gg.sigungu)) ggPatterns[`s:${k}`] = v;
+for (const [k, v] of Object.entries(gg.adminDong ?? {})) ggPatterns[`d:${k}`] = v.pattern;
+const ggLink: Record<string, string> = {};
+const placeDong: Record<string, string> = {};
+for (const p of places) {
+  if (p.region.provinceCd !== "41" || p.hidden || p.stale) continue;
+  const d = findDong(p.lng, p.lat, dongs);
+  if (d) placeDong[p.placeId] = d.name.split(" ").at(-1)!;
+  if (d && ggPatterns[`d:${d.code}`]) ggLink[p.placeId] = `d:${d.code}`;
+  else if (ggPatterns[`s:${p.region.signguCd}`]) ggLink[p.placeId] = `s:${p.region.signguCd}`;
+}
 const holidays = await readJson<{ holidays: Record<string, string> }>("data/sources/holidays.json", { holidays: {} });
 const exposure = await readJson<ComputeInput["exposure"]>("data/state/exposure.json", {});
 // 4단계 결과(없으면 빈 값): 후기 판정은 숨은 클래식 판정에, 근거 문장은 화면에 쓴다
@@ -84,8 +98,8 @@ const out = compute(
     seoulRows,
     seoulCategory: Object.fromEntries(seoulPlaces.places.map((p) => [p.areaCd, p.category])),
     seoulCategoryMap: cat.seoulCategoryMap,
-    gg: gg.sigungu,
-    ggLink: ggLink.links,
+    gg: ggPatterns,
+    ggLink,
     holidays: holidays.holidays,
     reviewVerdicts: Object.fromEntries(Object.entries(reviews).map(([id, r]) => [id, r.verdict])),
     exposure,
@@ -139,6 +153,7 @@ const pub = buildPublic({
   holidays: holidays.holidays,
   reasons,
   reviews,
+  placeDong,
   altRadiusKm: (cfg as unknown as { detail: { altRadiusKm: number } }).detail.altRadiusKm,
   updated: {
     forecast: maxOf(Object.values(cnctr.sigungu).map((x) => x.fetchedAt)),

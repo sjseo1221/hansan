@@ -23,6 +23,7 @@ interface Place {
   name: string;
   addr: string;
   area: string;
+  dong?: string; // 경기 장소의 소속 행정동
   cat: string;
   indoor: "indoor" | "outdoor" | "mixed";
   op: { rest: string; hours: string } | null;
@@ -127,6 +128,7 @@ export async function initPlace() {
       <h1>${esc(p.name)}</h1>
       <dl class="facts">
         <dt>주소</dt><dd>${esc(p.addr || p.area)}</dd>
+${p.dong ? `<dt>행정동</dt><dd>${esc(p.dong)}</dd>` : ""}
         <dt>분류</dt><dd>${esc(cat)}</dd>
         <dt>실내·실외</dt><dd>${INDOOR[p.indoor]}</dd>
         <dt>쉬는 날</dt><dd>${p.op?.rest ? esc(p.op.rest) : "정보 없음"}</dd>

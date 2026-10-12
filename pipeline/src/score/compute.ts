@@ -159,6 +159,7 @@ export function compute(input: ComputeInput, cfg: ComputeConfig) {
       seoulLinked: visible.filter((p) => p.external.seoulAreaCd).length,
       seoulPatterns: Object.keys(seoul).length,
       ggLinked: visible.filter((p) => input.ggLink[p.placeId]).length,
+      ggLinkedDong: visible.filter((p) => input.ggLink[p.placeId]?.startsWith("d:")).length,
       operation: visible.filter((p) => p.operation).length,
       operationCautionToday: stats.cautionToday,
       closedToday: stats.closedToday,

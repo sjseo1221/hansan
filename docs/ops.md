@@ -133,7 +133,7 @@ types:
 4. 예약 Worker: `cd worker/cron && npx wrangler login && npx wrangler deploy && npx wrangler secret put GITHUB_TOKEN`
 5. 화면 Worker: `npm run build:web && cd worker/web && npx wrangler deploy`, 이어서 `npx wrangler secret put OPENAI_API_KEY`, `npx wrangler secret put CHAT_SALT`
 6. GitHub Actions 에서 `build-places-weekly` → `collect-cnctr-daily` → `collect-naver-weekly` → `collect-aux-daily` → `compute-daily` 순서로 한 번씩 수동 실행한다. 이후는 예약으로 돈다.
-7. 경기 유동인구(1회성): 경기데이터드림 '유동인구_행정동 단위 집계' 최신 zip 을 받아 `data/sources/gg/` 에 풀고 `npm run import:gg` 후 커밋한다.
+7. 경기 유동인구(1회성): 경기데이터드림 '유동인구_행정동 단위 집계' 최신 zip 을 받아 `data/sources/gg/` 에 풀고 `npm run import:gg` 후 커밋한다. 행정동 경계는 `npm run import:admdong`(vuski/admdongkor 최신판, `ADMDONG_VERSION=verYYYYMMDD` 로 지정 가능) 후 커밋한다.
 
 화면만 고쳤을 때는 5번만 다시 한다. 자료는 `public-data` 브랜치에서 읽으므로 매일 재배포할 필요가 없다.
 
@@ -160,6 +160,6 @@ types:
 ## 10. 알려진 제약
 
 - 예측 적중률은 서울 실측이 있는 장소(32곳)만 평가할 수 있어 표본이 작다.
-- 경기 유동인구는 16개 시군·시군구 단위다. 이용허락범위가 공공누리 4유형이라 출처 '경기도'를 표시한다.
+- 경기 유동인구는 16개 시군만 제공된다. 장소 좌표가 속한 행정동의 패턴을 쓰고(경계: 통계청 SGIS·vuski/admdongkor), 행정동 자료가 없으면 시·군·구 패턴을 쓴다. 공공누리 4유형이라 출처 '경기도'를 표시한다.
 - 블로그 원문은 저장하지 않고 판정·요약에만 쓴다(재게시 조건 미확인).
 - 재방문 집계(FR-OPS-07)는 개인정보 적정성 결정 전이라 하지 않는다.

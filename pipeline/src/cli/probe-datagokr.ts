@@ -17,6 +17,7 @@ const ymd = (d: Date) => d.toISOString().slice(0, 10).replaceAll("-", "");
 const today = ymd(kst);
 const weekAgo = ymd(new Date(kst.getTime() - 7 * 86400_000));
 const monthAgo = ymd(new Date(kst.getTime() - 35 * 86400_000));
+const lastMonth = monthAgo.slice(0, 6); // YYYYMM
 
 interface Probe {
   name: string;
@@ -33,6 +34,9 @@ const probes: Probe[] = [
   { name: "TourAPI v2 분류 코드", path: "/B551011/KorService2/lclsSystmCode2", params: { ...common } },
   { name: "TourAPI v2 행사 검색", path: "/B551011/KorService2/searchFestival2", params: { ...common, eventStartDate: today } },
   { name: "TourAPI v1 지역기반 목록", path: "/B551011/KorService1/areaBasedList1", params: { ...common, arrange: "C" } },
+  // 2026-10-12 추가 인기도 신호 후보(FR-DATA-14): 티맵 내비 기반 기초지자체 중심 관광지(15128559)·연관 관광지(15128560). 응답 필드 확인용
+  { name: "중심 관광지(서울 종로, 지난달)", path: "/B551011/LocgoHubTarService1/areaBasedList1", params: { ...common, areaCd: "11", signguCd: "11110", baseYm: lastMonth } },
+  { name: "연관 관광지(서울 종로, 지난달)", path: "/B551011/TarRlteTarService1/areaBasedList1", params: { ...common, areaCd: "11", signguCd: "11110", baseYm: lastMonth } },
   { name: "기상청 단기예보", path: "/1360000/VilageFcstInfoService_2.0/getVilageFcst", params: { numOfRows: "3", pageNo: "1", dataType: "JSON", base_date: today, base_time: "0500", nx: "60", ny: "127" } },
   { name: "기상청 중기육상예보", path: "/1360000/MidFcstInfoService/getMidLandFcst", params: { numOfRows: "3", pageNo: "1", dataType: "JSON", regId: "11B00000", tmFc: `${today}0600` } },
   { name: "특일 공휴일", path: "/B090041/openapi/service/SpcdeInfoService/getRestDeInfo", params: { numOfRows: "3", pageNo: "1", _type: "json", solYear: today.slice(0, 4), solMonth: today.slice(4, 6) } },
@@ -41,7 +45,7 @@ const probes: Probe[] = [
 function summarize(body: string) {
   try {
     const j = JSON.parse(body);
-    const header = j?.response?.header ?? j?.header ?? null;
+    const header = j?.response?.header ?? j?.header ?? j?.OpenAPI_ServiceResponse?.cmmMsgHeader ?? null;
     const items = j?.response?.body?.items?.item ?? j?.response?.body?.items ?? null;
     const first = Array.isArray(items) ? items[0] : items;
     return {

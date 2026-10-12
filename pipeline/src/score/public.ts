@@ -23,6 +23,7 @@ export const SOURCES = [
   "한국관광공사 (관광지 정보·집중률 예측·관광 데이터랩)",
   "서울특별시 공공데이터 (실시간 도시데이터)",
   "경기도 (유동인구)",
+  "통계청 SGIS 행정구역 경계 (vuski/admdongkor, CC BY 4.0)",
   "기상청",
   "한국천문연구원 (특일 정보)",
   "네이버 (검색어 트렌드·블로그 검색)",
@@ -43,6 +44,7 @@ export interface PublicInput {
   holidays: Record<string, string>; // YYYYMMDD → 이름
   reasons: Record<string, string>; // "YYYY-MM-DD|placeId" → LLM 근거 문장(대표 유형)
   reviews: ReviewCache;
+  placeDong: Record<string, string>; // 경기 장소의 소속 행정동 이름
 }
 
 const round = (x: number, n = 5) => Math.round(x * 10 ** n) / 10 ** n;
@@ -171,6 +173,7 @@ export function buildPublic(input: PublicInput): Record<string, unknown> {
       name: p.name,
       addr: p.address,
       area: areaOf(p),
+      ...(input.placeDong[p.placeId] ? { dong: input.placeDong[p.placeId] } : {}),
       cat: p.category,
       indoor: p.indoor,
       op: p.operation ? { rest: p.operation.rest, hours: p.operation.hours } : null,

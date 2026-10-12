@@ -155,3 +155,16 @@ describe("data.go.kr 연결 실패 (2026-10-12 build 9건 TypeError)", () => {
     }
   });
 });
+
+describe("data.go.kr JSON 오류 응답 (2026-10-12 운영 정보 DG_NO_HEADER)", () => {
+  it("OpenAPI_ServiceResponse 의 사유 코드를 남긴다 — 22 = 하루 한도 초과", async () => {
+    const { datagokr } = await import("../src/lib/datagokr.js");
+    const orig = globalThis.fetch;
+    globalThis.fetch = (async () => new Response(JSON.stringify({ OpenAPI_ServiceResponse: { cmmMsgHeader: { returnReasonCode: "22" } } }), { status: 429 })) as typeof fetch;
+    try {
+      await expect(datagokr("k")("/x", {})).rejects.toMatchObject({ name: "DG_22" });
+    } finally {
+      globalThis.fetch = orig;
+    }
+  });
+});

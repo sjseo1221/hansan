@@ -46,7 +46,9 @@ export function datagokr(key: string, timeoutMs = 30000, api: { base: string; de
     const code = j?.response?.header?.resultCode;
     // 관광공사는 '0000', 기상청·천문연은 '00' 이 정상. 기상청 '03'(NO_DATA)은 빈 결과로 본다
     if (code === "03") return { totalCount: 0, items: [] };
-    if (code !== "0000" && code !== "00") throw new DgError(`DG_${code ?? "NO_HEADER"}`);
+    // 인증·한도 오류는 JSON 으로도 온다(OpenAPI_ServiceResponse.cmmMsgHeader, 2026-10-12 확인) — 22 가 하루 한도 초과, 30 이 미등록 키
+    const reason = j?.OpenAPI_ServiceResponse?.cmmMsgHeader?.returnReasonCode;
+    if (code !== "0000" && code !== "00") throw new DgError(`DG_${code ?? reason ?? "NO_HEADER"}`);
     const raw = j?.response?.body?.items?.item ?? [];
     return { totalCount: Number(j?.response?.body?.totalCount ?? 0), items: Array.isArray(raw) ? raw : [raw] };
   };

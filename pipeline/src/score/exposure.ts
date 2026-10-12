@@ -23,6 +23,13 @@ export function shiftWeek(week: string, n: number): string {
   return isoWeek(new Date(monday + n * 7 * 86400000).toISOString().slice(0, 10));
 }
 
+// ISO 주의 월요일 날짜 (YYYY-MM-DD)
+export function mondayOf(week: string): string {
+  const [y, w] = week.split("-W").map(Number);
+  const jan4 = new Date(Date.UTC(y, 0, 4));
+  return new Date(jan4.getTime() - ((jan4.getUTCDay() + 6) % 7) * 86400000 + (w - 1) * 7 * 86400000).toISOString().slice(0, 10);
+}
+
 // 유형별 정렬 기준(동점은 placeId)
 export function rankKey(type: TypeId, r: DailyRow, s: PlaceScore): number[] {
   const f = r.forecast ?? 0;

@@ -4,6 +4,7 @@
 import { DurableObject } from "cloudflare:workers";
 import { distanceKm, matches, relaxations, travelMinutes, TYPE_IDS, type FeedItem, type Filters, type TypeId } from "../../pipeline/src/shared/feed";
 import { callJson, emptyUsage, LlmError } from "../../pipeline/src/shared/openai";
+import { decideTake, HIT_KINDS, type HitKind } from "../../pipeline/src/shared/limits";
 import CHAT_PROMPT from "../../prompts/chat.md";
 
 interface Env {
@@ -43,12 +44,26 @@ export class Counter extends DurableObject {
   async take(date: string, user: string, perUser: number, serviceDaily: number, cutoff: number) {
     await this.cleanup(date);
     const st = await this.status(date, cutoff, serviceDaily);
-    if (!st.open) return { ok: false, reason: "closed" as const };
     const uk = `u:${date}:${user}`;
     const u = (await this.ctx.storage.get<number>(uk)) ?? 0;
-    if (u >= perUser) return { ok: false, reason: "user_limit" as const };
+    const d = decideTake({ service: st.service, cost: st.cost, user: u }, { perUser, serviceDaily, cutoff });
+    if (d !== "ok") return { ok: false as const, reason: d };
     await this.ctx.storage.put({ [uk]: u + 1, [`s:${date}`]: st.service + 1 });
     return { ok: true as const };
+  }
+  // 이용 집계(FR-OPS-06): 날짜·종류별 수만. 개인 식별 정보 없음
+  async hit(date: string, kind: HitKind) {
+    const k = `h:${date}:${kind}`;
+    await this.ctx.storage.put(k, ((await this.ctx.storage.get<number>(k)) ?? 0) + 1);
+  }
+  async stats(dates: string[]) {
+    const out: Record<string, Record<string, number>> = {};
+    for (const d of dates) {
+      out[d] = {};
+      for (const k of HIT_KINDS) out[d][k] = (await this.ctx.storage.get<number>(`h:${d}:${k}`)) ?? 0;
+      out[d].chatService = (await this.ctx.storage.get<number>(`s:${d}`)) ?? 0;
+    }
+    return { days: out, chatCostMonth: (await this.ctx.storage.get<number>(`c:${(dates.at(-1) ?? "").slice(0, 7)}`)) ?? 0 };
   }
   async addCost(date: string, usd: number) {
     const k = `c:${date.slice(0, 7)}`;
@@ -138,6 +153,7 @@ async function chat(request: Request, env: Env): Promise<Response> {
   const ipRaw = request.headers.get("CF-Connecting-IP") ?? "unknown";
   const ip = ipRaw.includes(":") ? ipRaw.split(":").slice(0, 4).join(":") : ipRaw;
   const t = await counter.take(today, await userKey(env, ip, today), Number(env.PER_USER_DAILY), Number(env.SERVICE_DAILY), cutoff);
+  if (t.ok) await counter.hit(today, "chat");
   if (!t.ok)
     return json({
       ok: false,
@@ -226,8 +242,14 @@ async function chat(request: Request, env: Env): Promise<Response> {
 }
 
 export default {
-  async fetch(request: Request, env: Env): Promise<Response> {
+  async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
+    const counter = () => env.COUNTER.get(env.COUNTER.idFromName("global"));
+    // 주간 리포트용 이용 집계 조회 — 날짜별 수만 내보낸다(최근 14일)
+    if (url.pathname === "/api/stats") {
+      const days = Array.from({ length: 14 }, (_, i) => new Date(Date.now() + 9 * 3600000 - i * 86400000).toISOString().slice(0, 10)).reverse();
+      return json(await counter().stats(days));
+    }
     if (url.pathname === "/api/chat/status") {
       if (!env.OPENAI_API_KEY || !env.CHAT_SALT) return json({ open: false });
       // 화면을 열 때마다 묻는 요청이라 30초 캐시 — 카운터(Durable Object) 호출을 아낀다
@@ -247,6 +269,9 @@ export default {
       const path = url.pathname.slice("/data/".length);
       // 정해진 모양의 JSON 경로만 — 다른 파일·상위 경로 접근 차단
       if (!/^[A-Za-z0-9_\-/]+\.json$/.test(path) || path.includes("..") || path.includes("//")) return new Response("Not found", { status: 404 });
+      // 화면 방문 = 페이지마다 한 번 읽는 meta.json, 상세 열람 = place/*.json (기존 요청으로 센다 — 요청 수를 늘리지 않음)
+      if (path === "meta.json") ctx.waitUntil(counter().hit(kstToday(), "visit"));
+      else if (path.startsWith("place/")) ctx.waitUntil(counter().hit(kstToday(), "detail"));
       const res = await fetch(`https://raw.githubusercontent.com/${env.REPO}/refs/heads/public-data/${path}`, { cf: { cacheTtl: 300, cacheEverything: true } });
       if (!res.ok) return new Response(res.status === 404 ? "Not found" : "Upstream error", { status: res.status === 404 ? 404 : 502 });
       return new Response(res.body, { headers: { "content-type": "application/json; charset=utf-8", "cache-control": "public, max-age=300", "x-content-type-options": "nosniff" } });

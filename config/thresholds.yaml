@@ -95,3 +95,8 @@ timeSlot:
     exhibition: [10, 18]
   slotHours: 2
   eligibleBases: [measured, gg_blend]   # 분류 표준만 있는 장소는 시간대 공략 판정 안 함(B-6 제안)
+
+# 예측 적중률 (FR-OPS-03): '높음' 추천 중 실제로 한산했던 비율. 실제 = 서울 실시간 인구 혼잡 단계가 방문 시간대에 주로 quietLevels (착수 계획서 B-8)
+accuracy:
+  quietLevels: [여유]
+  hours: [10, 18]   # [시작, 끝) KST

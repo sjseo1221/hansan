@@ -14,6 +14,7 @@ on:
 
 permissions:
   contents: write
+  actions: read   # 주간 리포트의 실행 시간 집계(NFR-COST-04)
 
 concurrency:
   group: data-compute
@@ -54,6 +55,12 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       - name: Compute (with reasons)
         run: npm run compute:daily
+      # 주간 품질 리포트(FR-OPS-02) — 지난주 리포트가 없을 때만 만든다(월요일 첫 실행). 실패해도 발행은 계속
+      - name: Weekly report
+        continue-on-error: true
+        run: npm run report:weekly
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       # 화면용 공개 자료는 public-data 브랜치에 한 커밋으로 덮어쓴다 — main 이력이 매일 수 MB씩 커지지 않게.
       # 이 브랜치는 생성물만 담는 자료 전용 브랜치라 강제 덮어쓰기가 의도된 동작이다. 화면 Worker 가 이 브랜치를 읽는다
       - name: Publish screen data
@@ -71,7 +78,7 @@ jobs:
         run: |
           git config user.name "hansan-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -A data/scores data/recommendations data/state/exposure.json data/state/llm data/state/usage data/reports
+          git add -A data/scores data/recommendations data/state/exposure.json data/state/llm data/state/usage data/state/rec-log data/reports docs/reports/weekly
           git diff --cached --quiet && exit 0
           git commit -m "data: compute-daily $(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M') KST"
           for i in 1 2 3; do

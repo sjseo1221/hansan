@@ -120,3 +120,17 @@ describe("예산 (review-expert M2)", () => {
     expect(validReason("자세한 건 www.example.com 에서 봐요.", buildFacts(base, ctx()), 100, 2)).toBe(false);
   });
 });
+
+describe("대화 상한 판정 (FR-CHAT-08·09, NFR-COST-02·03)", async () => {
+  const { decideTake } = await import("../src/shared/limits.js");
+  const l = { perUser: 20, serviceDaily: 500, cutoff: 15 };
+  it("이용자 20회째까지 허용, 21회째 거절", () => {
+    expect(decideTake({ service: 10, cost: 0, user: 19 }, l)).toBe("ok");
+    expect(decideTake({ service: 10, cost: 0, user: 20 }, l)).toBe("user_limit");
+  });
+  it("서비스 하루 500회·월 비용 $15 에 닿으면 대화를 닫는다", () => {
+    expect(decideTake({ service: 500, cost: 0, user: 0 }, l)).toBe("closed");
+    expect(decideTake({ service: 0, cost: 15, user: 0 }, l)).toBe("closed");
+    expect(decideTake({ service: 499, cost: 14.99, user: 0 }, l)).toBe("ok");
+  });
+});

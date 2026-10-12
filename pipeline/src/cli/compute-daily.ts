@@ -35,6 +35,7 @@ async function dayFiles<T>(src: string, from: string, to: string): Promise<T[]> 
 const cfg = await yaml<ComputeConfig>("config/thresholds.yaml");
 const cat = await yaml<{ seoulCategoryMap: Record<string, string> }>("config/categories.yaml");
 const { places } = await readJson<{ places: Place[] }>("data/places/places.json", { places: [] });
+const byIdPlace = new Map(places.map((p) => [p.placeId, p]));
 const cnctr = await readJson<{ sigungu: ComputeInput["cnctr"] }>("data/latest/cnctr.json", { sigungu: {} });
 
 const historyRows = await dayFiles<{ date: string; signguCd: string; tAtsNm: string; cnctrRate: number; fetchedAt: string }>(
@@ -100,6 +101,15 @@ const recDir = "data/recommendations";
 for (const f of await readdir(recDir)) if (/^\d{4}-\d{2}-\d{2}\.json$/.test(f) && f.slice(0, 10) < asOf) await rm(join(recDir, f));
 await writeJson("data/state/exposure.json", out.exposure);
 await writeJson("data/reports/coverage/latest.json", out.coverage);
+
+// 오늘 추천 기록(적중률 계산 원자료, FR-OPS-03) — 추천 파일은 지난 날짜를 지우므로 당일 것만 따로 남긴다. 같은 날 다시 돌면 덮어쓴다
+const todayRec = out.recommendations[asOf];
+if (todayRec)
+  await writeJson(
+    `data/state/rec-log/${asOf.slice(0, 7)}/${asOf.slice(8)}.json`,
+    { date: asOf, items: todayRec.items.map((r) => ({ id: r.placeId, rep: r.representative, lh: r.likelihood, ...(byIdPlace.get(r.placeId)?.external.seoulAreaCd ? { seoul: byIdPlace.get(r.placeId)!.external.seoulAreaCd } : {}) })) },
+    0,
+  );
 
 // 화면용 공개 자료 → public-out/ (git 제외). 워크플로가 public-data 브랜치에 한 커밋으로 올린다
 const regionsCfg = await yaml<{ travel: PublicInput["travel"] }>("config/regions.yaml");

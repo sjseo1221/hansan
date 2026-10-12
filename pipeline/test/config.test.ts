@@ -63,3 +63,28 @@ describe("예약 표 동기화 (2차 리뷰)", () => {
     }
   });
 });
+
+describe("무료 한도 안의 상한 (NFR-COST-02)", () => {
+  it("출처별 하루 상한 합이 제공처 무료 한도를 넘지 않는다 (월 한도는 31일 기준)", async () => {
+    const s = await load("sources");
+    const llm = await load("llm");
+    const cap: Record<string, number> = {
+      tour_build: s.tour.caps.build,
+      tour_events: s.tour.caps.events,
+      tour_operation: s.tour.caps.operation,
+      cnctr: s.cnctr.dailyCap,
+      datalab: s.aux.datalabDailyCap,
+      kma: s.aux.kmaDailyCap,
+      kasi: s.aux.kasiDailyCap,
+      seoul_citydata: s.seoul_citydata.dailyCap,
+      naver_blog: s.naver.blogDailyCap,
+      naver_blog_llm: llm.generation.reviewBlogCalls,
+      naver_trend: s.naver.trendDailyCap,
+    };
+    for (const [name, l] of Object.entries(s.freeLimits as Record<string, { limit: number; per: string; counters: string[] }>)) {
+      const daily = l.counters.reduce((n, c) => n + (cap[c] ?? NaN), 0);
+      expect(Number.isFinite(daily), `${name} 카운터 상한 없음`).toBe(true);
+      expect(l.per === "month" ? daily * 31 : daily, name).toBeLessThanOrEqual(l.limit);
+    }
+  });
+});

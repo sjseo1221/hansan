@@ -19,7 +19,8 @@
     "compute:daily": "tsx pipeline/src/cli/compute-daily.ts",
     "build:web": "astro build --root web",
     "dev:web": "astro dev --root web",
-    "llm:daily": "tsx pipeline/src/cli/llm-daily.ts"
+    "llm:daily": "tsx pipeline/src/cli/llm-daily.ts",
+    "report:weekly": "tsx pipeline/src/cli/weekly-report.ts"
   },
   "dependencies": {
     "yaml": "^2.5.0"

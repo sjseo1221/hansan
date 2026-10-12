@@ -46,3 +46,15 @@ aux:
   visitorsFirstLookbackDays: 60   # 첫 실행에서 거슬러 받을 기간(공개가 약 33일 늦음)
   eventsHorizonDays: 14           # FR-FLT-01 날짜 선택 범위와 같게
   holidayMonths: 3
+
+# 제공처 무료 한도 (docs/sources.md, 2026-10-12 확인). 우리 상한(위 cap·dailyCap)이 이 값을 넘지 않는지 시험으로 확인한다(NFR-COST-02),
+# 주간 리포트는 실제 사용량이 이 값의 80% 에 닿으면 경고한다(FR-OPS-08). per: day | month
+freeLimits:
+  tour: { limit: 1000, per: day, counters: [tour_build, tour_events, tour_operation], note: "TourAPI KorService2 개발계정 — 기능 합산으로 보임" }
+  cnctr: { limit: 1000, per: day, counters: [cnctr] }
+  datalab: { limit: 1000, per: day, counters: [datalab] }
+  kma: { limit: 10000, per: day, counters: [kma] }
+  kasi: { limit: 10000, per: day, counters: [kasi] }
+  seoul_citydata: { limit: 3000, per: day, counters: [seoul_citydata], note: "미등록 키 한도 미확인 — 우리 상한을 한도로 본다" }
+  naver_search: { limit: 25000, per: day, counters: [naver_blog, naver_blog_llm], note: "API HUB 정오표 25,000/일(월 775,000 과 상충 — 보수적으로)" }
+  naver_trend: { limit: 50000, per: month, counters: [naver_trend] }

@@ -46,6 +46,7 @@
   ],
   "typesByDate": {
     "2026-10-12": {
+      "famous_spot": 172,
       "moderate_hotspot": 152,
       "timing_game": 0,
       "early_hotspot": 3,
@@ -53,9 +54,10 @@
       "hidden_classic": 14,
       "hidden_classic_candidates": 34,
       "insufficient_any": 3620,
-      "recommended": 171
+      "recommended": 284
     },
     "2026-10-13": {
+      "famous_spot": 184,
       "moderate_hotspot": 152,
       "timing_game": 0,
       "early_hotspot": 3,
@@ -63,9 +65,10 @@
       "hidden_classic": 14,
       "hidden_classic_candidates": 31,
       "insufficient_any": 3698,
-      "recommended": 171
+      "recommended": 298
     },
     "2026-10-14": {
+      "famous_spot": 172,
       "moderate_hotspot": 137,
       "timing_game": 0,
       "early_hotspot": 3,
@@ -73,9 +76,10 @@
       "hidden_classic": 14,
       "hidden_classic_candidates": 30,
       "insufficient_any": 3706,
-      "recommended": 156
+      "recommended": 281
     },
     "2026-10-15": {
+      "famous_spot": 178,
       "moderate_hotspot": 166,
       "timing_game": 0,
       "early_hotspot": 3,
@@ -83,9 +87,10 @@
       "hidden_classic": 13,
       "hidden_classic_candidates": 26,
       "insufficient_any": 3710,
-      "recommended": 184
+      "recommended": 301
     },
     "2026-10-16": {
+      "famous_spot": 173,
       "moderate_hotspot": 185,
       "timing_game": 0,
       "early_hotspot": 3,
@@ -93,9 +98,10 @@
       "hidden_classic": 11,
       "hidden_classic_candidates": 23,
       "insufficient_any": 3711,
-      "recommended": 201
+      "recommended": 305
     },
     "2026-10-17": {
+      "famous_spot": 49,
       "moderate_hotspot": 67,
       "timing_game": 0,
       "early_hotspot": 1,
@@ -103,9 +109,10 @@
       "hidden_classic": 5,
       "hidden_classic_candidates": 7,
       "insufficient_any": 3703,
-      "recommended": 75
+      "recommended": 108
     },
     "2026-10-18": {
+      "famous_spot": 71,
       "moderate_hotspot": 96,
       "timing_game": 0,
       "early_hotspot": 1,
@@ -113,9 +120,10 @@
       "hidden_classic": 5,
       "hidden_classic_candidates": 9,
       "insufficient_any": 3694,
-      "recommended": 104
+      "recommended": 146
     },
     "2026-10-19": {
+      "famous_spot": 173,
       "moderate_hotspot": 140,
       "timing_game": 0,
       "early_hotspot": 3,
@@ -123,9 +131,10 @@
       "hidden_classic": 15,
       "hidden_classic_candidates": 28,
       "insufficient_any": 3618,
-      "recommended": 160
+      "recommended": 279
     },
     "2026-10-20": {
+      "famous_spot": 181,
       "moderate_hotspot": 146,
       "timing_game": 0,
       "early_hotspot": 3,
@@ -133,9 +142,10 @@
       "hidden_classic": 14,
       "hidden_classic_candidates": 29,
       "insufficient_any": 3697,
-      "recommended": 165
+      "recommended": 296
     },
     "2026-10-21": {
+      "famous_spot": 174,
       "moderate_hotspot": 153,
       "timing_game": 0,
       "early_hotspot": 3,
@@ -143,9 +153,10 @@
       "hidden_classic": 15,
       "hidden_classic_candidates": 27,
       "insufficient_any": 3706,
-      "recommended": 173
+      "recommended": 296
     },
     "2026-10-22": {
+      "famous_spot": 176,
       "moderate_hotspot": 167,
       "timing_game": 0,
       "early_hotspot": 3,
@@ -153,9 +164,10 @@
       "hidden_classic": 13,
       "hidden_classic_candidates": 24,
       "insufficient_any": 3710,
-      "recommended": 185
+      "recommended": 299
     },
     "2026-10-23": {
+      "famous_spot": 166,
       "moderate_hotspot": 174,
       "timing_game": 0,
       "early_hotspot": 3,
@@ -163,9 +175,10 @@
       "hidden_classic": 13,
       "hidden_classic_candidates": 23,
       "insufficient_any": 3711,
-      "recommended": 192
+      "recommended": 296
     },
     "2026-10-24": {
+      "famous_spot": 42,
       "moderate_hotspot": 58,
       "timing_game": 0,
       "early_hotspot": 1,
@@ -173,9 +186,10 @@
       "hidden_classic": 3,
       "hidden_classic_candidates": 6,
       "insufficient_any": 3703,
-      "recommended": 64
+      "recommended": 94
     },
     "2026-10-25": {
+      "famous_spot": 61,
       "moderate_hotspot": 83,
       "timing_game": 0,
       "early_hotspot": 1,
@@ -183,7 +197,7 @@
       "hidden_classic": 5,
       "hidden_classic_candidates": 6,
       "insufficient_any": 3696,
-      "recommended": 91
+      "recommended": 132
     }
   }
 }

@@ -41,7 +41,7 @@
 | collect-cnctr-daily | 04:30 | 관광지 집중률 30일 예측 → `data/latest/cnctr.json`, 당일 값 `data/raw/cnctr_history/` 누적 |
 | build-places-weekly | 월 04:50 | TourAPI 후보와 집중률 관광지 이름 매칭 → `data/places/places.json`, `report.json`. 보이는 장소가 30% 넘게 줄면 바꾸지 않고 실패 |
 | collect-naver-weekly | 05:23 | 장소를 요일별 7묶음으로 나눠 장소마다 주 1회: 블로그 게시글 수(제목·요약 저장 안 함), 검색어 트렌드 |
-| collect-aux-daily | 05:40 | 방문자수·행사·날씨·공휴일·운영 정보 |
+| collect-aux-daily | 05:40 | 방문자수·행사·날씨·공휴일·운영 정보, 중심 관광지(티맵 내비 순위, 월 1회). 일부만 수동 실행: Run workflow 의 only 에 `hub` 등 |
 | compute-daily | collect-aux-daily 끝난 뒤(약 06:00), 보조 예약 07:15 | 계산 → 후기 판정(OpenAI) → 계산 → 근거 문장(OpenAI) → 계산 → 주간 리포트(지난주 것이 없을 때) → `public-data` 발행 → `data/` 커밋 |
 | test | push 시 | 타입 검사(pipeline·web·worker)·자동 시험 |
 
@@ -98,7 +98,7 @@ types:
 
 | 파일 | 내용 |
 |---|---|
-| `config/thresholds.yaml` | 유형 판정 기준값, 대표 유형 순서, 한산 가능성 구간(40·60), 피드 유형당 수(10), 연속 노출 제한, 평소 혼잡 기간, 추세·장기 계산, 시간대 공략 방문 창, 적중률 기준 |
+| `config/thresholds.yaml` | 인기도 가중치(검색 0.5·블로그 0.3·내비 0.2), 유형 판정 기준값, 대표 유형 순서, 한산 가능성 구간(40·60), 피드 유형당 수(10), 연속 노출 제한, 평소 혼잡 기간, 추세·장기 계산, 시간대 공략 방문 창, 적중률 기준 |
 | `config/categories.yaml` | 장소 분류 8종, 서울 장소 카테고리 연결, TourAPI 분류 연결 |
 | `config/companions.yaml` | 동행 5종 × 분류 적합 표 |
 | `config/regions.yaml` | 대상 시·도, 이동 시간 계수(직선거리 × 1.3 ÷ 40km/h) |

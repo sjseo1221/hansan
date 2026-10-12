@@ -366,18 +366,19 @@ describe("2단계 리뷰 반영 (claude-reviewer C1·M3·M6·M7·M8·N2, review-
 
 describe("추가 인기도 신호 — 티맵 내비 중심 관광지 (FR-DATA-14)", async () => {
   const { matchHub } = await import("../src/score/hub-match.js");
-  it("이름(정규화·포함)으로 3km 안, 이름이 달라도 150m 안이면 연결, 여럿이면 높은 순위", () => {
+  it("이름(정규화·포함)이 같을 때만 3km 안에서 연결, 거리만으로는 안 붙이고 숙박은 뺀다, 여럿이면 높은 순위", () => {
     const places = [
       { placeId: "a", name: "북악스카이웨이 팔각정", lat: 37.6016, lng: 126.9806 },
       { placeId: "b", name: "경복궁", lat: 37.5796, lng: 126.977 },
       { placeId: "c", name: "멀리있는공원", lat: 37.7, lng: 127.1 },
     ];
-    const item = (name: string, rank: number, lat: number, lng: number) => ({ signguCd: "11110", name, rank, lat, lng, lcls: "", mcls: "" });
-    const r = matchHub(places, [item("팔각정", 3, 37.6017, 126.9807), item("경복궁", 1, 37.5797, 126.9771), item("경복궁 흥례문", 5, 37.5790, 126.9768), item("없는곳", 9, 37.0, 127.0)]);
+    const item = (name: string, rank: number, lat: number, lng: number, lcls = "관광지") => ({ signguCd: "11110", name, rank, lat, lng, lcls, mcls: "" });
+    const r = matchHub(places, [item("팔각정", 3, 37.6017, 126.9807), item("경복궁", 1, 37.5797, 126.9771), item("경복궁 흥례문", 5, 37.5790, 126.9768), item("없는곳", 9, 37.0, 127.0), item("옆호텔", 2, 37.5797, 126.9771, "숙박"), item("옆미술관", 4, 37.6016, 126.9806)]);
     expect(r.ranks.get("a")?.rank).toBe(3);
     expect(r.ranks.get("b")?.rank).toBe(1);
     expect(r.ranks.has("c")).toBe(false);
-    expect(r.stats.unmatched).toBe(1);
+    expect(r.stats.unmatched).toBe(2); // 없는곳 + 이름이 다른 옆미술관(바로 옆이어도)
+    expect(r.stats.lodging).toBe(1);
   });
   it("내비 신호가 있으면 가중치에 넣고, 없으면(빈 Map) 기존 두 신호만", () => {
     const weekly = new Map(["a", "b"].map((id) => [id, week(id, weeks12.map((w) => [w, 0.01]))]));

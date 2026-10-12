@@ -3707,5 +3707,12 @@
   "shrinkBlocked": false,
   "warnings": [],
   "operationFilled": 541,
-  "tour": "skipped"
+  "tour": {
+    "sigungu": 147,
+    "sigunguFailed": false,
+    "provincesOk": 8,
+    "provincesFailed": 0,
+    "provincesKept": 0,
+    "candidates": 10951
+  }
 }

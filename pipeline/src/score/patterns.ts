@@ -1,10 +1,10 @@
 // 시간대 패턴(FR-SCORE-06~09)과 시간대 공략 구간 계산. 패턴은 24칸, 그 단위 최댓값 = 1
 // 날짜 유형은 평일(월~금)·휴일(토·일·공휴일) 두 가지. 설계의 '요일별' 단계는 8주 표본이 차기 전에는 표본이 너무 적어 두지 않았다
-import { compact, mean, r3, weekday } from "./stats.js";
+import { cmp, compact, mean, r3, weekday } from "./stats.js";
 
 export type Daytype = "weekday" | "holiday";
 export type Pattern = (number | null)[];
-export type PatternBasis = "measured" | "gg_blend" | "category" | "overall";
+export type PatternBasis = "measured" | "gg_blend" | "gg_only" | "category" | "overall";
 
 export interface SeoulRow {
   areaCd: string;
@@ -50,7 +50,7 @@ export function seoulPatterns(rows: SeoulRow[], holidays: Set<string>, cfg: Patt
     if (!prev || (r.fetchedAt ?? "") >= (prev.fetchedAt ?? "")) last.set(k, r);
   }
   const byArea = new Map<string, Record<Daytype | "all", number[][]>>();
-  for (const r of [...last.values()].sort((a, b) => a.ppltnTime.localeCompare(b.ppltnTime))) {
+  for (const r of [...last.values()].sort((a, b) => cmp(a.ppltnTime, b.ppltnTime))) {
     const a = byArea.get(r.areaCd) ?? byArea.set(r.areaCd, { weekday: grid(), holiday: grid(), all: grid() }).get(r.areaCd)!;
     const h = Number(r.ppltnTime.slice(11, 13));
     const v = (r.ppltnMin + r.ppltnMax) / 2;
@@ -58,7 +58,7 @@ export function seoulPatterns(rows: SeoulRow[], holidays: Set<string>, cfg: Patt
     a.all[h].push(v);
   }
   const out: Patterns["seoul"] = {};
-  for (const [area, s] of [...byArea].sort(([a], [b]) => a.localeCompare(b))) {
+  for (const [area, s] of [...byArea].sort(([a], [b]) => cmp(a, b))) {
     const all = hoursFull(s.all, cfg.timeSlot.window, 1) ? normalize(s.all.map((x) => (x.length ? mean(x) : null))) : null;
     const pick = (d: Daytype) => (hoursFull(s[d], cfg.timeSlot.window, cfg.timePattern.minSamples) ? normalize(s[d].map((x) => (x.length ? mean(x) : null))) : all);
     const weekday = pick("weekday");
@@ -85,7 +85,7 @@ export function standardPatterns(seoul: Patterns["seoul"], seoulCategory: Record
       return xs.length ? mean(xs) : null;
     }));
   const category: Patterns["category"] = {};
-  for (const [c, ps] of [...groups].sort(([a], [b]) => a.localeCompare(b))) category[c] = { weekday: avg(ps, "weekday"), holiday: avg(ps, "holiday") };
+  for (const [c, ps] of [...groups].sort(([a], [b]) => cmp(a, b))) category[c] = { weekday: avg(ps, "weekday"), holiday: avg(ps, "holiday") };
   return { category, overall: { weekday: avg(all, "weekday"), holiday: avg(all, "holiday") } };
 }
 
@@ -110,7 +110,8 @@ export function patternFor(
       if (gv === undefined) return v;
       return v === null ? gv : a * gv + (1 - a) * v;
     });
-    return { basis: "gg_blend", pattern: normalize(blended), label: "추정" };
+    // 결합할 분류 표준이 없으면(서울 자료 부족) 순수 경기 패턴 — 시간대 공략 판정 대상이 아니다
+    return { basis: base.every((v) => v === null) ? "gg_only" : "gg_blend", pattern: normalize(blended), label: "추정" };
   }
   if (base.every((v) => v === null)) return null;
   return { basis: baseBasis, pattern: base, label: "추정" };

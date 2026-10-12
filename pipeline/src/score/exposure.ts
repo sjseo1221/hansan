@@ -1,7 +1,7 @@
 // 유형별 순위와 연속 노출 제한(FR-TYPE-09) — 직전 두 주 연속 상위 topN 에 든 장소는 이번 주 상위 topN 에서 뺀다
 import type { DailyRow, TypeId } from "./daily.js";
 import type { PlaceScore } from "./place-scores.js";
-import { toDate, weekday } from "./stats.js";
+import { cmp, toDate, weekday } from "./stats.js";
 
 export type ExposureLog = Record<string, Partial<Record<TypeId, string[]>>>; // "YYYY-Www" → 유형 → placeId[]
 
@@ -41,13 +41,13 @@ export function rankKey(type: TypeId, r: DailyRow, s: PlaceScore): number[] {
 }
 
 export function rankType(type: TypeId, rows: DailyRow[], scores: Map<string, PlaceScore>, blocked: Set<string>, topN: number) {
-  const cmp = (a: DailyRow, b: DailyRow) => {
+  const order = (a: DailyRow, b: DailyRow) => {
     const ka = rankKey(type, a, scores.get(a.placeId)!);
     const kb = rankKey(type, b, scores.get(b.placeId)!);
     for (let i = 0; i < ka.length; i++) if (ka[i] !== kb[i]) return ka[i] - kb[i];
-    return a.placeId.localeCompare(b.placeId);
+    return cmp(a.placeId, b.placeId);
   };
-  const orig = rows.filter((r) => r.types.includes(type)).sort(cmp).map((r) => r.placeId);
+  const orig = rows.filter((r) => r.types.includes(type)).sort(order).map((r) => r.placeId);
   const top = orig.filter((id) => !blocked.has(id)).slice(0, topN);
   const final = [...top, ...orig.filter((id) => !top.includes(id))];
   return new Map(final.map((id, i) => [id, { rankRaw: orig.indexOf(id) + 1, rank: i + 1 }]));

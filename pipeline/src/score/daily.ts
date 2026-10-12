@@ -27,6 +27,7 @@ export type Likelihood = "high" | "medium" | "low";
 export interface DailyRow {
   placeId: string;
   forecast: number | null;
+  forecastStale?: boolean; // 집중률 수집이 staleAfterDays 넘게 멈춤(NFR-REL-02)
   usual: number | null;
   usualBasis?: "history" | "forecast_window";
   usualWeeks?: number;
@@ -73,6 +74,7 @@ export interface PlaceDayInput {
   category: string;
   score: PlaceScore;
   forecast: number | null; // 해당일 혼잡 예측(원값)
+  forecastStale?: boolean;
   usual: Pick<DailyRow, "usual" | "usualBasis" | "usualWeeks" | "provisional">;
   pattern: { basis: PatternBasis; pattern: Pattern } | null;
   rest: string | null;
@@ -81,7 +83,7 @@ export interface PlaceDayInput {
 
 export function evaluateDay(p: PlaceDayInput, date: string, holidays: Record<string, string>, t: Thresholds): DailyRow {
   const forecast = p.forecast === null ? null : r1(clamp(p.forecast, 0, 100));
-  const row: DailyRow = { placeId: p.placeId, forecast, ...p.usual, likelihood: null, typeEval: {}, types: [], representative: null };
+  const row: DailyRow = { placeId: p.placeId, forecast, ...(p.forecastStale ? { forecastStale: true } : {}), ...p.usual, likelihood: null, typeEval: {}, types: [], representative: null };
   const c = closedOn(p.rest, date, holidays);
   if (c.caution) row.operationCaution = true;
   if (c.closed) return { ...row, closed: true, closedReason: c.reason };
@@ -115,6 +117,8 @@ export function evaluateDay(p: PlaceDayInput, date: string, holidays: Record<str
 
   row.types = t.representativePriority.filter((x) => ev[x] === "pass");
   row.representative = row.types[0] ?? null;
+  // '임시' 는 평소 혼잡을 쓰는 눈치게임에만 해당한다
+  if (!row.types.includes("timing_game")) delete row.provisional;
   const basis = row.representative === "time_slot" && row.slot?.slotCongestion != null ? row.slot.slotCongestion : forecast;
   row.likelihood = likelihoodOf(basis, t.quietLikelihood);
   return row;

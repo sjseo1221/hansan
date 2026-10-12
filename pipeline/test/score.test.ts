@@ -190,6 +190,38 @@ describe("휴무 해석 (T17)", () => {
   });
 });
 
+describe("휴무 해석 — 실제 문구 회귀 (review-expert M1~M4)", () => {
+  const H = { "20261005": "대체공휴일(개천절)", "20261009": "한글날", "20260924": "추석", "20260925": "추석", "20260926": "추석", "20270207": "설날", "20270208": "설날", "20270209": "설날" };
+  const c = (t: string, d: string) => closedOn(t, d, H);
+  it("공휴일이면 개관 — 공휴일 월요일은 열고, '다음 첫 번째 평일' 이면 다음 평일에 쉰다", () => {
+    expect(c("매주 월요일 (※ 월요일 공휴일인 경우 개관)", "2026-10-05").closed).toBe(false);
+    expect(c("매주 월요일 (※ 월요일 공휴일인 경우 개관)", "2026-10-12").closed).toBe(true);
+    expect(c("매주 월요일 (단, 월요일이 법정공휴일일 경우 정상 운영)", "2026-10-05").closed).toBe(false);
+    const s = "매주 월요일 ※ 단, 월요일이 공휴일인 경우 개방하며, 그 다음 첫 번째 평일에 휴관";
+    expect(c(s, "2026-10-05").closed).toBe(false);
+    expect(c(s, "2026-10-06").closed).toBe(true);
+    expect(c(s, "2026-10-07").closed).toBe(false);
+    expect(c("매주 월요일, 화요일 (단, 공휴일인 경우는 정상 개관) / 1월 1일 / 설·추석 당일", "2026-10-05").closed).toBe(false);
+    expect(c("매주 월요일 / 법정 공휴일", "2026-10-09").closed).toBe(true);
+  });
+  it("나열: 첫째·셋째 일요일, 매월 10·20·30일", () => {
+    expect(c("매월 첫째, 셋째 일요일 / 1월 1일 / 설·추석 연휴", "2026-10-04").closed).toBe(true);
+    expect(c("매월 첫째, 셋째 일요일 / 1월 1일 / 설·추석 연휴", "2026-10-18").closed).toBe(true);
+    expect(c("매월 첫째, 셋째 일요일 / 1월 1일 / 설·추석 연휴", "2026-10-11").closed).toBe(false);
+    expect(["2026-10-10", "2026-10-20", "2026-10-30", "2026-10-21"].map((d) => c("매월 10일, 20일, 30일", d).closed)).toEqual([true, true, true, false]);
+  });
+  it("월 범위 계절 구분은 조건부(열림 + 주의)", () => {
+    expect(c("[4월~10월] 연중무휴 [11월~3월] 매주 월요일 (단, 월요일 공휴일 시 익일 대체 휴관)", "2026-07-06")).toEqual({ closed: false, caution: true });
+    expect(c("[1월~6월 / 9월~12월] - 월요일~화요일[7월~8월]- 월요일", "2026-07-14")).toEqual({ closed: false, caution: true });
+  });
+  it("'시설' 은 설날이 아니고, '공휴일, 설·추석 연휴 운영' 은 여는 날", () => {
+    expect(c("연중무휴 (단, 시설사용은 사전 확인 필요)", "2027-02-08").closed).toBe(false);
+    expect(c("매주 수요일※ 공휴일, 설·추석 연휴 운영", "2026-10-09").closed).toBe(false);
+    expect(c("매주 수요일※ 공휴일, 설·추석 연휴 운영", "2026-09-25").closed).toBe(false);
+    expect(c("매주 월요일 / 1월 1일 / 설·추석 당일", "2027-02-08").closed).toBe(true);
+  });
+});
+
 const pcfg: PatternConfig = { timePattern: cfg.timePattern, timeSlot: cfg.timeSlot };
 describe("시간대 패턴 (T19~T21)", () => {
   const rows = (area: string, date: string, f: (h: number) => number) =>
@@ -273,5 +305,61 @@ describe("결정성·설정 변경 (T23·T24·T25)", () => {
     const after = compute(input(), c2).recommendations["2026-10-12"].items.map((i) => i.placeId);
     expect(before).toEqual(["b"]);
     expect(after).toEqual(["a", "b"]);
+  });
+});
+
+describe("2단계 리뷰 반영 (claude-reviewer C1·M3·M6·M7·M8·N2, review-expert m5)", () => {
+  const H = { "20261009": "한글날" };
+  const c = (t: string, d: string) => closedOn(t, d, H).closed;
+  // 2026-10-12(월) ~ 10-18(일)
+  const week7 = (t: string) => ["12", "13", "14", "15", "16", "17", "18"].map((d) => (c(t, `2026-10-${d}`) ? "X" : "o")).join("");
+  it("'X요일~Y요일' 범위는 X 부터 — '요일' 의 '일' 을 일요일로 읽지 않는다", () => {
+    expect(week7("매주 월요일~금요일")).toBe("XXXXXoo");
+    expect(week7("매주 수요일~토요일")).toBe("ooXXXXo");
+    expect(week7("매주 금요일~일요일")).toBe("ooooXXX");
+    expect(week7("매주 일요일~월요일 / 공휴일")).toBe("XoooooX");
+  });
+  it("매월 N일이 휴일이면 다음 평일로 옮긴다", () => {
+    expect(c("매월 18일※ 18일이 휴일·연휴일 경우 그 다음 평일", "2026-10-18")).toBe(false); // 일요일
+    expect(c("매월 18일※ 18일이 휴일·연휴일 경우 그 다음 평일", "2026-10-19")).toBe(true);
+    expect(c("매월 18일 (공휴일인 경우 다음 평일)", "2026-11-18")).toBe(true); // 수요일
+  });
+  it("임시 표시는 눈치게임에만, 예측 정체(forecastStale)는 행에 남는다", () => {
+    const r = ev({ score: { popularity: 75, trend: 0, longTerm: 0 }, forecast: 50, usual: { usual: 60, usualBasis: "forecast_window", provisional: true }, forecastStale: true });
+    expect(r.types).toEqual(["moderate_hotspot"]);
+    expect(r.provisional).toBeUndefined();
+    expect(r.forecastStale).toBe(true);
+  });
+  it("분류 표준 없이 경기 패턴만 있으면 gg_only — 시간대 공략 판정 대상 아님", () => {
+    const pats = { seoul: {}, category: {}, overall: { weekday: Array(24).fill(null), holiday: Array(24).fill(null) } };
+    const p = patternFor({ category: "heritage", ggSigungu: "41111" }, "weekday", pats, { "41111": { "10": 0.2, "12": 1 } }, pcfg)!;
+    expect(p.basis).toBe("gg_only");
+    expect(ev({ pattern: { basis: "gg_only", pattern: p.pattern } }).typeEval.time_slot).not.toBe("pass");
+  });
+  it("공휴일 이력을 빼고도 2주가 남으면 공휴일 값은 평균에서 빠진다", () => {
+    const hist = new Map([["20261207", 90], ["20261130", 50], ["20261123", 50]]);
+    expect(usualOf("2026-12-14", "2026-12-14", hist, new Map(), { "20261207": "x" }, cfg.usualCongestion)).toMatchObject({ usual: 50, usualWeeks: 2 });
+  });
+  it("일요일 실행은 같은 주 토요일 노출 기록을 지우지 않는다(합친다)", () => {
+    const place = (id: string) => ({ placeId: id, name: id, category: "heritage", hidden: false, operation: null, region: { provinceCd: "11", signguCd: "11110", signgu: "종로구", adminDong: null }, external: { cnctr: { signguCd: "11110", tAtsNm: id } } });
+    const c2 = clone(cfg);
+    c2.feed.dateRangeDays = 1;
+    c2.types.moderate_hotspot.popularityMin = 0; // 장소 1곳이면 인기도 50
+    const out = compute(
+      {
+        asOf: "2026-10-18",
+        places: [place("a")] as unknown as ComputeInput["places"],
+        cnctr: { "11110": { fetchedAt: "2026-10-18T04:30:00+09:00", attractions: { a: { "20261018": 50 } } } },
+        cnctrHistory: new Map(),
+        weekly: new Map([["a", week("a", weeks12.map((w) => [w, 0.01]), "2026-10-18T05:00:00+09:00")]]),
+        backfill: new Map(),
+        blogTotal: new Map([["a", 5]]),
+        seoulRows: [], seoulCategory: {}, seoulCategoryMap: {}, gg: {}, ggLink: {}, holidays: {},
+        exposure: { "2026-W42": { moderate_hotspot: ["x"] }, "2026-W30": { moderate_hotspot: ["old"] } },
+      },
+      c2,
+    );
+    expect(out.exposure["2026-W42"].moderate_hotspot).toEqual(["a", "x"]);
+    expect(out.exposure["2026-W30"]).toBeUndefined(); // 8주보다 오래된 기록 정리
   });
 });

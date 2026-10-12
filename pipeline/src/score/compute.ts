@@ -1,10 +1,10 @@
 // 매일 계산 전체 — 입력 스냅샷 + asOf → 결과. 파일 입출력은 cli/compute-daily.ts 가 한다(같은 입력 → 같은 결과, 시험 가능)
 import type { Place } from "../places/build.js";
 import { evaluateDay, TYPES, usualOf, type DailyRow, type Thresholds, type TypeId } from "./daily.js";
-import { blockedFor, isoWeek, isWeekend, rankType, type ExposureLog } from "./exposure.js";
+import { blockedFor, isoWeek, isWeekend, rankType, shiftWeek, type ExposureLog } from "./exposure.js";
 import { daytypeOf, patternFor, seoulPatterns, standardPatterns, type PatternConfig, type SeoulRow } from "./patterns.js";
 import { scorePlaces, type PlaceScoreConfig, type PlaceScore, type TrendRow } from "./place-scores.js";
-import { addDays, compact, median } from "./stats.js";
+import { addDays, cmp, compact, median } from "./stats.js";
 
 export interface ComputeConfig extends Thresholds, PlaceScoreConfig {
   timePattern: PatternConfig["timePattern"];
@@ -45,7 +45,7 @@ export interface RecItem extends DailyRow {
 
 export function compute(input: ComputeInput, cfg: ComputeConfig) {
   const { asOf } = input;
-  const visible = input.places.filter((p) => !p.hidden && !p.stale).sort((a, b) => a.placeId.localeCompare(b.placeId));
+  const visible = input.places.filter((p) => !p.hidden && !p.stale).sort((a, b) => cmp(a.placeId, b.placeId));
   const scores = scorePlaces({ placeIds: visible.map((p) => p.placeId), weekly: input.weekly, backfill: input.backfill, blogTotal: input.blogTotal, cfg });
   const holidaySet = new Set(Object.keys(input.holidays));
   const pcfg: PatternConfig = { timePattern: cfg.timePattern, timeSlot: cfg.timeSlot };
@@ -65,7 +65,8 @@ export function compute(input: ComputeInput, cfg: ComputeConfig) {
     const sg = p.external.cnctr ? input.cnctr[p.external.cnctr.signguCd] : undefined;
     const fc = (p.external.cnctr && sg?.attractions[p.external.cnctr.tAtsNm]) || {};
     const fcVals = Object.values(fc);
-    if (sg && addDays(sg.fetchedAt.slice(0, 10), cfg.freshness.staleAfterDays) < asOf) stats.forecastStale++;
+    const forecastStale = Boolean(sg && addDays(sg.fetchedAt.slice(0, 10), cfg.freshness.staleAfterDays) < asOf);
+    if (forecastStale) stats.forecastStale++;
     if (fcVals.length && Math.max(...fcVals) - Math.min(...fcVals) < cfg.forecast.flatRange) stats.forecastFlat++;
     const window = new Map(Object.entries(fc));
     const placeInfo = { category: p.category, seoulAreaCd: p.external.seoulAreaCd, ggSigungu: input.ggLink[p.placeId] };
@@ -81,6 +82,7 @@ export function compute(input: ComputeInput, cfg: ComputeConfig) {
           category: p.category,
           score: s,
           forecast: fc[compact(date)] ?? null,
+          forecastStale,
           usual: usualOf(date, asOf, input.cnctrHistory.get(key) ?? new Map(), window, input.holidays, cfg.usualCongestion),
           pattern,
           rest: p.operation?.rest ?? null,
@@ -101,9 +103,9 @@ export function compute(input: ComputeInput, cfg: ComputeConfig) {
     }
   }
 
-  // 순위·연속 노출 제한. 주말 최종 상위는 그 주 노출 기록이 된다(이번 실행이 다루는 주만 덮어쓴다 — 지난 주는 고정)
-  const exposure: ExposureLog = structuredClone(input.exposure);
-  const weekRecords: ExposureLog = {};
+  // 순위·연속 노출 제한. 주말 최종 상위는 그 주 노출 기록에 합친다(덮어쓰지 않는다 — 일요일 실행이 토요일 기록을 지우지 않게).
+  // 날짜 순으로 바로 반영해, 같은 실행 안에서도 W 주 기록이 W+1 주 차단에 쓰인다. 8주보다 오래된 기록은 지운다
+  const exposure: ExposureLog = Object.fromEntries(Object.entries(structuredClone(input.exposure)).filter(([w]) => w >= shiftWeek(isoWeek(asOf), -8)));
   const recommendations: Record<string, { date: string; asOf: string; items: RecItem[]; candidates: Partial<Record<TypeId, string[]>>; closed: number }> = {};
   const typeCounts: Record<string, Record<string, number>> = {};
   for (const date of dates) {
@@ -115,7 +117,7 @@ export function compute(input: ComputeInput, cfg: ComputeConfig) {
       for (const [id, v] of r) (ranks.get(id) ?? ranks.set(id, {}).get(id)!)[type] = v;
       if (isWeekend(date)) {
         const top = [...r].filter(([, v]) => v.rank <= cfg.exposure.topN).map(([id]) => id);
-        const rec = (weekRecords[week] ??= {});
+        const rec = (exposure[week] ??= {});
         rec[type] = [...new Set([...(rec[type] ?? []), ...top])].sort();
       }
     }
@@ -134,7 +136,6 @@ export function compute(input: ComputeInput, cfg: ComputeConfig) {
     tc.recommended = items.length;
     typeCounts[date] = tc;
   }
-  for (const [w, rec] of Object.entries(weekRecords)) exposure[w] = rec;
 
   // 확보율 보고서 원자료
   const has = (f: (s: PlaceScore) => unknown) => visible.filter((p) => f(scores.get(p.placeId)!) !== null && f(scores.get(p.placeId)!) !== undefined).length;

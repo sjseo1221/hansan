@@ -8,7 +8,7 @@ import type { Place } from "../places/build.js";
 import { compute, type ComputeConfig, type ComputeInput } from "../score/compute.js";
 import type { SeoulRow } from "../score/patterns.js";
 import type { TrendRow } from "../score/place-scores.js";
-import { addDays, compact, latestBy } from "../score/stats.js";
+import { addDays, latestBy } from "../score/stats.js";
 import { readJson, writeJson } from "../lib/store.js";
 import { kstParts } from "../lib/time.js";
 
@@ -49,7 +49,9 @@ for (const r of latestBy(historyRows, (r) => `${r.signguCd}|${r.tAtsNm}|${r.date
 // 검색 트렌드: 주 단위는 날짜별 파일(최근 것 우선), 장기는 backfill
 const trendDir = "data/raw/naver_trend";
 const weeklyRows: TrendRow[] = [];
-for (const f of existsSync(trendDir) ? (await readdir(trendDir)).filter((f) => /^\d{4}-\d{2}-\d{2}\.jsonl$/.test(f) && f.slice(0, 10) <= asOf) : []) weeklyRows.push(...(await jsonl<TrendRow>(join(trendDir, f))));
+// 요일 묶음으로 장소마다 주 1회 갱신되므로 14일보다 오래된 행은 쓰지 않는다(낡은 창이 백분위에 섞이지 않게)
+const trendFiles = existsSync(trendDir) ? (await readdir(trendDir)).filter((f) => /^\d{4}-\d{2}-\d{2}\.jsonl$/.test(f) && f.slice(0, 10) <= asOf && f.slice(0, 10) >= addDays(asOf, -14)).sort() : [];
+for (const f of trendFiles) weeklyRows.push(...(await jsonl<TrendRow>(join(trendDir, f))));
 const weekly = latestBy(weeklyRows, (r) => r.placeId);
 const backfill = latestBy(await jsonl<TrendRow>(join(trendDir, "backfill.jsonl")), (r) => r.placeId);
 
@@ -94,4 +96,4 @@ await writeJson("data/state/exposure.json", out.exposure);
 await writeJson("data/reports/coverage/latest.json", out.coverage);
 
 const today = out.coverage.typesByDate[asOf];
-console.log(JSON.stringify({ asOf, places: out.coverage.places, today, scores: { popularity: out.coverage.scores.popularity, trend: out.coverage.scores.trend, longTerm: out.coverage.scores.longTerm }, historyDays: new Set(historyRows.map((r) => r.date)).size, compact: compact(asOf) }));
+console.log(JSON.stringify({ asOf, places: out.coverage.places, today, scores: { popularity: out.coverage.scores.popularity, trend: out.coverage.scores.trend, longTerm: out.coverage.scores.longTerm }, historyDays: new Set(historyRows.map((r) => r.date)).size }));

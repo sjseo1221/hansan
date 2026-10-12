@@ -6,6 +6,10 @@ on:
   workflow_run:
     workflows: [collect-aux-daily]
     types: [completed]
+    branches: [main]
+  # 보조 수집이 돌지 않은 날을 위한 보조 예약(07:15 KST). 두 번 돌면 그 사이 쌓인 자료로 다시 계산할 뿐이다
+  schedule:
+    - cron: "15 22 * * *"
   workflow_dispatch:
 
 permissions:

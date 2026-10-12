@@ -58,3 +58,6 @@ export const toDate = (d: string) => {
 export const ymd = (d: Date) => d.toISOString().slice(0, 10);
 export const addDays = (d: string, n: number) => ymd(new Date(toDate(d).getTime() + n * dayMs));
 export const weekday = (d: string) => toDate(d).getUTCDay(); // 0 = 일요일
+
+// 문자열 정렬은 코드포인트 비교 — localeCompare 는 ICU 버전에 따라 순서가 달라질 수 있다(결정성)
+export const cmp = (a: string, b: string) => (a < b ? -1 : a > b ? 1 : 0);

@@ -11,6 +11,9 @@ import Base from "../layouts/Base.astro";
       <div id="weekend" class="weekend"></div>
       <label>다른 날짜 <select id="date" name="date"></select></label>
     </fieldset>
+    <details id="more" class="more">
+    <summary>조건 더 보기 <span id="more-summary"></span></summary>
+    <div class="more-body">
     <label>출발 지역
       <select id="origin" name="origin"><option value="">선택 안 함</option></select>
     </label>
@@ -31,6 +34,8 @@ import Base from "../layouts/Base.astro";
       <label><input type="radio" name="indoor" value="indoor" /> 실내</label>
       <label><input type="radio" name="indoor" value="outdoor" /> 실외</label>
     </fieldset>
+    </div>
+    </details>
   </form>
   <p class="hint">이동 시간은 직선거리로 어림한 값이라 '약'으로 표시합니다.</p>
   <div id="relax" role="status" aria-live="polite"></div>
@@ -40,7 +45,7 @@ import Base from "../layouts/Base.astro";
 <style>
   .filters {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
     gap: 12px;
     padding: 12px;
     background: var(--card);
@@ -50,6 +55,20 @@ import Base from "../layouts/Base.astro";
     display: flex;
     flex-direction: column;
     gap: 4px;
+  }
+  .more {
+    grid-column: 1 / -1;
+  }
+  .more summary {
+    min-height: 44px;
+    padding-top: 10px;
+    font-weight: 700;
+  }
+  .more-body {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+    gap: 12px;
+    margin-top: 8px;
   }
   .filters fieldset {
     border: 0;

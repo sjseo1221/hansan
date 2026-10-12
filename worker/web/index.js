@@ -7,7 +7,7 @@ export default {
       const path = url.pathname.slice("/data/".length);
       // 정해진 모양의 JSON 경로만 — 다른 파일·상위 경로 접근 차단
       if (!/^[A-Za-z0-9_\-/]+\.json$/.test(path) || path.includes("..") || path.includes("//")) return new Response("Not found", { status: 404 });
-      const res = await fetch(`https://raw.githubusercontent.com/${env.REPO}/public-data/${path}`, { cf: { cacheTtl: 300, cacheEverything: true } });
+      const res = await fetch(`https://raw.githubusercontent.com/${env.REPO}/refs/heads/public-data/${path}`, { cf: { cacheTtl: 300, cacheEverything: true } });
       if (!res.ok) return new Response(res.status === 404 ? "Not found" : "Upstream error", { status: res.status === 404 ? 404 : 502 });
       return new Response(res.body, {
         headers: { "content-type": "application/json; charset=utf-8", "cache-control": "public, max-age=300", "x-content-type-options": "nosniff" },

@@ -76,6 +76,8 @@ export async function initFeed() {
       return;
     }
     let f = readFilters(dates);
+    // 주소에 조건이 있으면 펼쳐서 보여 준다
+    if (f.origin || f.companion || f.indoor) ($("more") as HTMLDetailsElement).open = true;
 
     // 필터 선택지 채우기
     const dateSel = $<HTMLSelectElement>("date");
@@ -100,6 +102,9 @@ export async function initFeed() {
       $<HTMLSelectElement>("companion").value = f.companion ?? "";
       (form.querySelector(`input[name=indoor][value="${f.indoor ?? ""}"]`) as HTMLInputElement).checked = true;
       for (const b of weekendEl.querySelectorAll("button")) b.setAttribute("aria-pressed", String(b.dataset.date === f.date));
+      // 접힌 조건 요약 — 무엇이 걸려 있는지 펼치지 않아도 보이게
+      const on = [f.origin && regions.sigungu.find((s) => s.code === f.origin)?.name, f.companion && cfg.companions.find((c) => c.id === f.companion)?.label, f.indoor && (f.indoor === "indoor" ? "실내" : "실외")].filter(Boolean);
+      $("more-summary").textContent = on.length ? `(${on.join(", ")})` : "";
     };
 
     const render = async () => {

@@ -9,11 +9,11 @@
     "costUsd": 0
   },
   "month": {
-    "calls": 4151,
-    "inputTokens": 4883462,
+    "calls": 5655,
+    "inputTokens": 6567351,
     "cachedTokens": 0,
-    "outputTokens": 203376,
-    "costUsd": 0.59
+    "outputTokens": 281664,
+    "costUsd": 0.7976
   },
   "reasons": {
     "needed": 0,

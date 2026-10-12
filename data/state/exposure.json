@@ -18,7 +18,10 @@
       "kto-1626855"
     ],
     "time_slot": [],
-    "hidden_classic": []
+    "hidden_classic": [
+      "kto-129305",
+      "kto-2664196"
+    ]
   },
   "2026-W43": {
     "moderate_hotspot": [
@@ -40,6 +43,10 @@
       "kto-1626855"
     ],
     "time_slot": [],
-    "hidden_classic": []
+    "hidden_classic": [
+      "kto-125434",
+      "kto-129305",
+      "kto-2664196"
+    ]
   }
 }

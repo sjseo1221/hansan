@@ -41,140 +41,140 @@
       "timing_game": 0,
       "early_hotspot": 5,
       "time_slot": 0,
-      "hidden_classic": 0,
-      "hidden_classic_candidates": 14,
+      "hidden_classic": 6,
+      "hidden_classic_candidates": 0,
       "insufficient_any": 3620,
-      "recommended": 39
+      "recommended": 45
     },
     "2026-10-13": {
       "moderate_hotspot": 47,
       "timing_game": 0,
       "early_hotspot": 5,
       "time_slot": 0,
-      "hidden_classic": 0,
-      "hidden_classic_candidates": 15,
+      "hidden_classic": 7,
+      "hidden_classic_candidates": 0,
       "insufficient_any": 3698,
-      "recommended": 52
+      "recommended": 59
     },
     "2026-10-14": {
       "moderate_hotspot": 42,
       "timing_game": 0,
       "early_hotspot": 5,
       "time_slot": 0,
-      "hidden_classic": 0,
-      "hidden_classic_candidates": 14,
+      "hidden_classic": 7,
+      "hidden_classic_candidates": 0,
       "insufficient_any": 3706,
-      "recommended": 47
+      "recommended": 54
     },
     "2026-10-15": {
       "moderate_hotspot": 52,
       "timing_game": 0,
       "early_hotspot": 5,
       "time_slot": 0,
-      "hidden_classic": 0,
-      "hidden_classic_candidates": 12,
+      "hidden_classic": 6,
+      "hidden_classic_candidates": 0,
       "insufficient_any": 3710,
-      "recommended": 57
+      "recommended": 63
     },
     "2026-10-16": {
       "moderate_hotspot": 53,
       "timing_game": 0,
       "early_hotspot": 4,
       "time_slot": 0,
-      "hidden_classic": 0,
-      "hidden_classic_candidates": 9,
+      "hidden_classic": 4,
+      "hidden_classic_candidates": 0,
       "insufficient_any": 3711,
-      "recommended": 57
+      "recommended": 61
     },
     "2026-10-17": {
       "moderate_hotspot": 26,
       "timing_game": 0,
       "early_hotspot": 1,
       "time_slot": 0,
-      "hidden_classic": 0,
-      "hidden_classic_candidates": 2,
+      "hidden_classic": 2,
+      "hidden_classic_candidates": 0,
       "insufficient_any": 3703,
-      "recommended": 27
+      "recommended": 29
     },
     "2026-10-18": {
       "moderate_hotspot": 32,
       "timing_game": 0,
       "early_hotspot": 1,
       "time_slot": 0,
-      "hidden_classic": 0,
-      "hidden_classic_candidates": 2,
+      "hidden_classic": 2,
+      "hidden_classic_candidates": 0,
       "insufficient_any": 3694,
-      "recommended": 33
+      "recommended": 35
     },
     "2026-10-19": {
       "moderate_hotspot": 33,
       "timing_game": 0,
       "early_hotspot": 5,
       "time_slot": 0,
-      "hidden_classic": 0,
-      "hidden_classic_candidates": 11,
+      "hidden_classic": 6,
+      "hidden_classic_candidates": 0,
       "insufficient_any": 3618,
-      "recommended": 38
+      "recommended": 44
     },
     "2026-10-20": {
       "moderate_hotspot": 41,
       "timing_game": 0,
       "early_hotspot": 5,
       "time_slot": 0,
-      "hidden_classic": 0,
-      "hidden_classic_candidates": 14,
+      "hidden_classic": 7,
+      "hidden_classic_candidates": 0,
       "insufficient_any": 3697,
-      "recommended": 46
+      "recommended": 53
     },
     "2026-10-21": {
       "moderate_hotspot": 47,
       "timing_game": 0,
       "early_hotspot": 5,
       "time_slot": 0,
-      "hidden_classic": 0,
-      "hidden_classic_candidates": 14,
+      "hidden_classic": 7,
+      "hidden_classic_candidates": 0,
       "insufficient_any": 3706,
-      "recommended": 52
+      "recommended": 59
     },
     "2026-10-22": {
       "moderate_hotspot": 49,
       "timing_game": 0,
       "early_hotspot": 5,
       "time_slot": 0,
-      "hidden_classic": 0,
-      "hidden_classic_candidates": 12,
+      "hidden_classic": 6,
+      "hidden_classic_candidates": 0,
       "insufficient_any": 3710,
-      "recommended": 54
+      "recommended": 60
     },
     "2026-10-23": {
       "moderate_hotspot": 44,
       "timing_game": 0,
       "early_hotspot": 5,
       "time_slot": 0,
-      "hidden_classic": 0,
-      "hidden_classic_candidates": 9,
+      "hidden_classic": 4,
+      "hidden_classic_candidates": 0,
       "insufficient_any": 3711,
-      "recommended": 49
+      "recommended": 53
     },
     "2026-10-24": {
       "moderate_hotspot": 22,
       "timing_game": 0,
       "early_hotspot": 1,
       "time_slot": 0,
-      "hidden_classic": 0,
-      "hidden_classic_candidates": 2,
+      "hidden_classic": 2,
+      "hidden_classic_candidates": 0,
       "insufficient_any": 3703,
-      "recommended": 23
+      "recommended": 25
     },
     "2026-10-25": {
       "moderate_hotspot": 33,
       "timing_game": 0,
       "early_hotspot": 1,
       "time_slot": 0,
-      "hidden_classic": 0,
-      "hidden_classic_candidates": 3,
+      "hidden_classic": 3,
+      "hidden_classic_candidates": 0,
       "insufficient_any": 3696,
-      "recommended": 34
+      "recommended": 37
     }
   }
 }

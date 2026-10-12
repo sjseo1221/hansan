@@ -83,7 +83,7 @@ function sourcesHtml(p: Place, day: Day, m: Awaited<ReturnType<typeof meta>>, cf
           : p.pat.basis === "category"
             ? `서울 실측 장소 중 같은 분류(${esc(cfg.categories.find((c) => c.id === p.cat)?.label ?? p.cat)}) 평균`
             : `서울 실측 장소 전체 평균`;
-    items.push(`<li><strong>시간대별 붐빔(${p.pat.label})</strong>: ${src}을 바탕으로 했어요. 가장 붐비는 시간을 1로 둔 상대 모양이에요.</li>`);
+    items.push(`<li><strong>시간대별 붐빔(${p.pat.label})</strong>: 바탕 자료 — ${src}. 가장 붐비는 시간을 1로 둔 상대 모양이에요.</li>`);
   }
   if (p.op) items.push(`<li><strong>쉬는 날·이용 시간</strong>: 한국관광공사 관광정보(TourAPI) 상세 정보예요. 바뀔 수 있으니 방문 전에 확인하세요.</li>`);
   items.push(`<li><strong>근거 문장</strong>: 위 수치와 기상청 예보·관광공사 행사 정보·공휴일만 넣어 AI(OpenAI)가 쓴 문장이에요. 문장 속 숫자는 입력 자료와 대조해 맞지 않으면 버리고 정해진 문장으로 바꿔요.${p.review ? " '최근 후기' 내용은 최근 90일 네이버 블로그 글을 AI 가 요약한 것이에요(원문은 저장하지 않아요)." : ""}</li>`);

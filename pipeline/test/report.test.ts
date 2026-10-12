@@ -18,9 +18,13 @@ describe("예측 적중률 (FR-OPS-03)", () => {
         ],
       },
     ];
-    const rows = [row("P1", "10:00", "여유"), row("P1", "13:00", "여유"), row("P1", "16:00", "붐빔"), row("P2", "11:00", "붐빔"), row("P2", "12:00", "보통"), row("P1", "08:00", "붐빔"), row("P2", "20:00", "여유")];
+    const rows = [row("P1", "10:00", "여유"), row("P1", "13:00", "여유"), row("P1", "16:00", "붐빔"), row("P2", "11:00", "붐빔"), row("P2", "12:00", "보통"), row("P2", "14:00", "붐빔"), row("P1", "08:00", "붐빔"), row("P2", "20:00", "여유")];
     expect(accuracy(logs, rows, cfg)).toEqual({ recommendedHigh: 3, evaluable: 2, excluded: 1, quiet: 1, rate: 50 });
     expect(typeCounts(logs)).toEqual({ timing_game: 2, moderate_hotspot: 2 });
+  });
+  it("방문 시간대 실측이 3건 미만이면 평가에서 뺀다", () => {
+    const logs = [{ date: "2026-10-17", items: [{ id: "a", rep: "timing_game", lh: "high", seoul: "P1" }] }];
+    expect(accuracy(logs, [row("P1", "10:00", "여유"), row("P1", "11:00", "여유")], cfg)).toMatchObject({ evaluable: 0, excluded: 1 });
   });
   it("평가할 건이 없으면 적중률은 null", () => {
     expect(accuracy([{ date: "2026-10-17", items: [{ id: "a", rep: null, lh: "high" }] }], [], cfg).rate).toBeNull();

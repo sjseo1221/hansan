@@ -100,3 +100,4 @@ timeSlot:
 accuracy:
   quietLevels: [여유]
   hours: [10, 18]   # [시작, 끝) KST
+  minRows: 3        # 방문 시간대 실측이 이보다 적으면 평가에서 뺀다

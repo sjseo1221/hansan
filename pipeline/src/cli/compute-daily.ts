@@ -102,12 +102,14 @@ for (const f of await readdir(recDir)) if (/^\d{4}-\d{2}-\d{2}\.json$/.test(f) &
 await writeJson("data/state/exposure.json", out.exposure);
 await writeJson("data/reports/coverage/latest.json", out.coverage);
 
-// 오늘 추천 기록(적중률 계산 원자료, FR-OPS-03) — 추천 파일은 지난 날짜를 지우므로 당일 것만 따로 남긴다. 같은 날 다시 돌면 덮어쓴다
+// 오늘 추천 기록(적중률 계산 원자료, FR-OPS-03) — 추천 파일은 지난 날짜를 지우므로 당일 것만 따로 남긴다.
+// 그날 첫 실행만 남긴다 — 나중 실행은 당일 실측을 이미 본 뒤라 예측 적중률이 사후 일치율이 될 수 있다
 const todayRec = out.recommendations[asOf];
-if (todayRec)
+const recLogPath = `data/state/rec-log/${asOf.slice(0, 7)}/${asOf.slice(8)}.json`;
+if (todayRec && !existsSync(recLogPath))
   await writeJson(
-    `data/state/rec-log/${asOf.slice(0, 7)}/${asOf.slice(8)}.json`,
-    { date: asOf, items: todayRec.items.map((r) => ({ id: r.placeId, rep: r.representative, lh: r.likelihood, ...(byIdPlace.get(r.placeId)?.external.seoulAreaCd ? { seoul: byIdPlace.get(r.placeId)!.external.seoulAreaCd } : {}) })) },
+    recLogPath,
+    { date: asOf, at: new Date().toISOString(), items: todayRec.items.map((r) => ({ id: r.placeId, rep: r.representative, lh: r.likelihood, ...(byIdPlace.get(r.placeId)?.external.seoulAreaCd ? { seoul: byIdPlace.get(r.placeId)!.external.seoulAreaCd } : {}) })) },
     0,
   );
 

@@ -11,7 +11,7 @@ export interface SeoulRow {
 }
 
 // 예측 적중률: '높음'으로 추천한 장소·날짜 중 실제 혼잡 단계가 방문 시간대에 주로 한산이었던 비율. 실측 없는 건 빼고 수를 센다
-export function accuracy(logs: RecLog[], rows: SeoulRow[], cfg: { quietLevels: string[]; hours: [number, number] }) {
+export function accuracy(logs: RecLog[], rows: SeoulRow[], cfg: { quietLevels: string[]; hours: [number, number]; minRows?: number }) {
   const byKey = new Map<string, string[]>();
   for (const r of rows) {
     const h = Number(r.ppltnTime.slice(11, 13));
@@ -27,7 +27,8 @@ export function accuracy(logs: RecLog[], rows: SeoulRow[], cfg: { quietLevels: s
       if (it.lh !== "high") continue;
       high++;
       const lv = it.seoul ? byKey.get(`${it.seoul}|${log.date}`) : undefined;
-      if (!lv?.length) continue;
+      // 방문 시간대 실측이 너무 적으면 평가하지 않는다
+      if (!lv || lv.length < (cfg.minRows ?? 3)) continue;
       evaluable++;
       if (lv.filter((x) => cfg.quietLevels.includes(x)).length * 2 > lv.length) quiet++;
     }

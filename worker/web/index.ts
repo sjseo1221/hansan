@@ -52,18 +52,31 @@ export class Counter extends DurableObject {
     return { ok: true as const };
   }
   // 이용 집계(FR-OPS-06): 날짜·종류별 수만. 개인 식별 정보 없음
+  // 이 메서드들은 대화 카운터와 다른 인스턴스("stats")에서 쓴다 — 공개 요청이 많아도 대화 상한 판정에 영향이 없게
   async hit(date: string, kind: HitKind) {
     const k = `h:${date}:${kind}`;
     await this.ctx.storage.put(k, ((await this.ctx.storage.get<number>(k)) ?? 0) + 1);
+    // 하루 한 번 90일 지난 집계를 지운다
+    if ((await this.ctx.storage.get<string>("hcleaned")) !== date) {
+      const limit = new Date(Date.parse(`${date}T00:00:00Z`) - 90 * 86400000).toISOString().slice(0, 10);
+      const old = [...(await this.ctx.storage.list({ prefix: "h:" })).keys()].filter((x) => x.slice(2, 12) < limit);
+      for (let i = 0; i < old.length; i += 128) await this.ctx.storage.delete(old.slice(i, i + 128));
+      await this.ctx.storage.put("hcleaned", date);
+    }
   }
-  async stats(dates: string[]) {
+  async hits(dates: string[]) {
     const out: Record<string, Record<string, number>> = {};
     for (const d of dates) {
       out[d] = {};
       for (const k of HIT_KINDS) out[d][k] = (await this.ctx.storage.get<number>(`h:${d}:${k}`)) ?? 0;
-      out[d].chatService = (await this.ctx.storage.get<number>(`s:${d}`)) ?? 0;
     }
-    return { days: out, chatCostMonth: (await this.ctx.storage.get<number>(`c:${(dates.at(-1) ?? "").slice(0, 7)}`)) ?? 0 };
+    return out;
+  }
+  // 대화 카운터 인스턴스("global")의 날짜별 대화 수·월 비용
+  async chatInfo(dates: string[]) {
+    const service: Record<string, number> = {};
+    for (const d of dates) service[d] = (await this.ctx.storage.get<number>(`s:${d}`)) ?? 0;
+    return { service, costMonth: (await this.ctx.storage.get<number>(`c:${(dates.at(-1) ?? "").slice(0, 7)}`)) ?? 0 };
   }
   async addCost(date: string, usd: number) {
     const k = `c:${date.slice(0, 7)}`;
@@ -153,7 +166,7 @@ async function chat(request: Request, env: Env): Promise<Response> {
   const ipRaw = request.headers.get("CF-Connecting-IP") ?? "unknown";
   const ip = ipRaw.includes(":") ? ipRaw.split(":").slice(0, 4).join(":") : ipRaw;
   const t = await counter.take(today, await userKey(env, ip, today), Number(env.PER_USER_DAILY), Number(env.SERVICE_DAILY), cutoff);
-  if (t.ok) await counter.hit(today, "chat");
+  if (t.ok) await env.COUNTER.get(env.COUNTER.idFromName("stats")).hit(today, "chat").catch(() => {});
   if (!t.ok)
     return json({
       ok: false,
@@ -244,11 +257,18 @@ async function chat(request: Request, env: Env): Promise<Response> {
 export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
-    const counter = () => env.COUNTER.get(env.COUNTER.idFromName("global"));
-    // 주간 리포트용 이용 집계 조회 — 날짜별 수만 내보낸다(최근 14일)
+    const statsDo = () => env.COUNTER.get(env.COUNTER.idFromName("stats"));
+    // 주간 리포트용 이용 집계 조회 — 날짜별 수만 내보낸다(최근 14일). 60초 캐시
     if (url.pathname === "/api/stats") {
+      const cache = caches.default;
+      const hit = await cache.match(request);
+      if (hit) return hit;
       const days = Array.from({ length: 14 }, (_, i) => new Date(Date.now() + 9 * 3600000 - i * 86400000).toISOString().slice(0, 10)).reverse();
-      return json(await counter().stats(days));
+      const [h, c] = await Promise.all([statsDo().hits(days), env.COUNTER.get(env.COUNTER.idFromName("global")).chatInfo(days)]);
+      for (const d of days) h[d].chatService = c.service[d];
+      const res = new Response(JSON.stringify({ days: h, chatCostMonth: c.costMonth }), { headers: { "content-type": "application/json; charset=utf-8", "cache-control": "public, max-age=60" } });
+      await cache.put(request, res.clone());
+      return res;
     }
     if (url.pathname === "/api/chat/status") {
       if (!env.OPENAI_API_KEY || !env.CHAT_SALT) return json({ open: false });
@@ -270,10 +290,11 @@ export default {
       // 정해진 모양의 JSON 경로만 — 다른 파일·상위 경로 접근 차단
       if (!/^[A-Za-z0-9_\-/]+\.json$/.test(path) || path.includes("..") || path.includes("//")) return new Response("Not found", { status: 404 });
       // 화면 방문 = 페이지마다 한 번 읽는 meta.json, 상세 열람 = place/*.json (기존 요청으로 센다 — 요청 수를 늘리지 않음)
-      if (path === "meta.json") ctx.waitUntil(counter().hit(kstToday(), "visit"));
-      else if (path.startsWith("place/")) ctx.waitUntil(counter().hit(kstToday(), "detail"));
       const res = await fetch(`https://raw.githubusercontent.com/${env.REPO}/refs/heads/public-data/${path}`, { cf: { cacheTtl: 300, cacheEverything: true } });
       if (!res.ok) return new Response(res.status === 404 ? "Not found" : "Upstream error", { status: res.status === 404 ? 404 : 502 });
+      // 있는 파일을 내보낼 때만 센다(없는 경로 반복으로 집계를 부풀리지 못하게). 집계 실패는 화면에 영향 없음
+      const kind: HitKind | null = path === "meta.json" ? "visit" : path.startsWith("place/") ? "detail" : null;
+      if (kind) ctx.waitUntil(statsDo().hit(kstToday(), kind).catch(() => {}));
       return new Response(res.body, { headers: { "content-type": "application/json; charset=utf-8", "cache-control": "public, max-age=300", "x-content-type-options": "nosniff" } });
     }
     return env.ASSETS.fetch(request);

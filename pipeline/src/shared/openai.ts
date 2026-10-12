@@ -72,7 +72,12 @@ export async function callJson<T>(apiKey: string, call: JsonCall<T>, usage: Usag
       throw new LlmError((e as Error).name === "TimeoutError" ? "TIMEOUT" : "NETWORK");
     }
     if (!res.ok) throw new LlmError(`HTTP_${res.status}`);
-    const body: any = await res.json();
+    let body: any;
+    try {
+      body = await res.json();
+    } catch {
+      throw new LlmError("BAD_BODY");
+    }
     const u = { inputTokens: body?.usage?.input_tokens ?? 0, cachedTokens: body?.usage?.input_tokens_details?.cached_tokens ?? 0, outputTokens: body?.usage?.output_tokens ?? 0 };
     usage.calls++;
     usage.inputTokens += u.inputTokens;

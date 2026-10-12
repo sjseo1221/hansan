@@ -34,6 +34,9 @@ const cfg = parse(await readFile("config/llm.yaml", "utf8")) as {
   review: { minReviews: number };
   generation: { reasoningEffort: string; maxCallsPerRun: number; monthlyUsd: number; reviewRefreshDays: number; reviewBlogCalls: number };
 };
+const apiKey: string = key; // 아래 함수 안에서도 정의된 값으로
+// LLM_MODE: reviews(후기 판정) → (compute) → reasons(근거 문장). 후기 판정이 숨은 클래식 통과를 바꾸므로 근거 문장보다 먼저 돈다
+const mode = process.env.LLM_MODE ?? "all";
 const month = asOf.slice(0, 7);
 const monthPath = `data/state/llm/usage-${month}.json`;
 const monthUsage = await readJson(monthPath, emptyUsage());
@@ -52,6 +55,7 @@ const byId = new Map(places.map((p) => [p.placeId, p]));
 const recs: Record<string, { items: RecItemLite[]; candidates?: { hidden_classic?: string[] } }> = {};
 for (const f of (await readdir("data/recommendations")).filter((f) => f.endsWith(".json") && f.slice(0, 10) >= asOf).sort()) recs[f.slice(0, 10)] = await readJson(`data/recommendations/${f}`, { items: [] });
 
+async function reasons() {
 // 1) 근거 문장 — 캐시에 없는 사실만
 const fc = await loadFactContext();
 const cache = await readJson<ReasonCache>(REASONS_PATH, {});
@@ -80,7 +84,7 @@ await pool(work, 5, async (x) => {
   }
   try {
     const out = await callJson(
-      key,
+      apiKey,
       {
         model: cfg.model,
         name: "reason",
@@ -102,13 +106,14 @@ await pool(work, 5, async (x) => {
     // 네트워크·HTTP 오류는 캐시하지 않는다 — 다음 실행에 다시 시도
     stats.reasons.failed++;
     fail(e);
-    if (!(e instanceof LlmError)) throw e;
   }
 });
 // 30일 넘게 안 쓰인 캐시 정리
 for (const [h, v] of Object.entries(cache)) if (v.at < addDays(asOf, -30)) delete cache[h];
 await writeJson(REASONS_PATH, cache, 0);
+}
 
+async function reviewsRun() {
 // 2) 후기 판정 — 숨은 클래식 후보와 인기 장소(화제 이유). 7일 안에 판정한 장소는 재사용
 const reviews = await readJson<ReviewCache>(REVIEWS_PATH, {});
 const targets = new Set<string>();
@@ -149,7 +154,7 @@ for (const id of [...targets].sort()) {
       continue;
     }
     const out = await callJson(
-      key,
+      apiKey,
       { model: cfg.model, name: "review", instructions: reviewPrompt, input: { place: p.name, posts }, schema: REVIEW_SCHEMA, validate: isReview, maxOutputTokens: 300, reasoningEffort: cfg.generation.reasoningEffort },
       usage,
       cfg.price,
@@ -163,14 +168,22 @@ for (const id of [...targets].sort()) {
   } catch (e) {
     stats.reviews.failed++;
     fail(e);
-    if (!(e instanceof LlmError)) throw e;
   }
 }
 await writeJson(REVIEWS_PATH, reviews);
+}
+
+// 어떤 오류가 나도 이미 청구된 사용량은 기록한다(FR-LLM-10). 이 단계 실패는 화면 발행을 막지 않는다(워크플로 continue-on-error)
+try {
+  if (mode !== "reasons") await reviewsRun();
+  if (mode !== "reviews") await reasons();
+} catch (e) {
+  fail(e);
+}
 
 // 3) 호출 수·비용 기록 (FR-LLM-10)
 for (const k of ["calls", "inputTokens", "cachedTokens", "outputTokens", "costUsd"] as const) monthUsage[k] += usage[k];
 await writeJson(monthPath, monthUsage);
 const report = { asOf, model: cfg.model, run: { ...usage, costUsd: Math.round(usage.costUsd * 10000) / 10000 }, month: { ...monthUsage, costUsd: Math.round(monthUsage.costUsd * 10000) / 10000 }, ...stats, failures };
-await writeJson(`data/reports/llm/${asOf}.json`, report);
+await writeJson(`data/reports/llm/${asOf}-${mode}.json`, report);
 console.log(JSON.stringify(report));

@@ -32,6 +32,6 @@ price:
 generation:
   reasoningEffort: none     # 짧은 문장이라 추론 토큰(출력 과금)을 쓰지 않는다
   maxCallsPerRun: 1500
-  monthlyUsd: 8             # 생성 누적 비용이 이 값에 닿으면 그 달은 정형 문장만
+  monthlyUsd: 5             # 생성 누적 비용이 이 값에 닿으면 그 달은 정형 문장만. 생성 5 + 대화 차단선 15 = 월 예산 20 (시험으로 고정)
   reviewRefreshDays: 7      # 후기 판정 재사용 기간
   reviewBlogCalls: 300      # 후기 판정용 네이버 블로그 검색 하루 상한(수집 상한과 별도 카운터)

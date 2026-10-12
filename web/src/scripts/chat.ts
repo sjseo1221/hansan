@@ -13,21 +13,21 @@ interface Reply {
   closed?: boolean;
   offTopic?: boolean;
   text: string;
-  filters?: Record<string, string | number | null>;
+  filters?: Record<string, string | number | null | string[]>;
   cards?: Card[];
 }
 
 const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
 
 // 지금 화면의 필터(피드 주소) — 대화의 기본 조건(FR-CHAT-02)
-function currentFilters(): Record<string, string | number | null> {
+function currentFilters(): Record<string, string | number | null | string[]> {
   const q = new URLSearchParams(location.pathname === "/" ? location.search : "");
   return { date: q.get("date"), origin: q.get("origin"), minutes: q.get("minutes") ? Number(q.get("minutes")) : null, companion: q.get("companion"), indoor: q.get("indoor") };
 }
 
-const feedUrl = (f: Record<string, string | number | null>) => {
+const feedUrl = (f: Record<string, string | number | null | string[]>) => {
   const q = new URLSearchParams();
-  for (const [k, v] of Object.entries(f)) if (v !== null && v !== undefined && v !== "") q.set(k, String(v));
+  for (const [k, v] of Object.entries(f)) if (k !== "types" && v !== null && v !== undefined && v !== "") q.set(k, String(v));
   return `/?${q}`;
 };
 
@@ -77,7 +77,9 @@ export async function initChat() {
       const cards = (r.cards ?? [])
         .map((c) => `<li><a href="/place/?id=${encodeURIComponent(c.id)}&date=${encodeURIComponent(String(filters.date ?? ""))}">${esc(c.name)}</a> · ${esc(c.area)}${c.minutes !== null ? ` · 약 ${c.minutes}분` : ""} · <span class="lh-${c.lh}">${LH_TEXT[c.lh].text}</span></li>`)
         .join("");
-      say("bot", `<p>${esc(r.text)}</p>${cards ? `<ul>${cards}</ul><p><a href="${esc(feedUrl(filters))}">이 조건으로 피드 보기</a></p>` : ""}`);
+      // 실패 응답이면 지금 조건의 피드로 안내한다(FR-CHAT-12)
+      const link = cards ? `<ul>${cards}</ul><p><a href="${esc(feedUrl(filters))}">이 조건으로 피드 보기</a></p>` : !r.ok ? `<p><a href="${esc(feedUrl(currentFilters()))}">지금 조건의 추천 보기</a></p>` : "";
+      say("bot", `<p>${esc(r.text)}</p>${link}`);
       if (r.closed) {
         form.hidden = true;
         open.hidden = true;

@@ -10,7 +10,7 @@
   "scripts": {
     "collect:seoul": "tsx pipeline/src/cli/collect-seoul.ts",
     "test": "vitest run",
-    "typecheck": "tsc --noEmit && tsc -p web",
+    "typecheck": "tsc --noEmit && tsc -p web && tsc -p worker/web",
     "collect:naver": "tsx pipeline/src/cli/collect-naver.ts",
     "collect:cnctr": "tsx pipeline/src/cli/collect-cnctr.ts",
     "build:places": "tsx pipeline/src/cli/build-places.ts",

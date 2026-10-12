@@ -113,6 +113,7 @@ export const factsHash = (facts: ReasonFacts, prompt: string) => createHash("sha
 export function validReason(text: string, facts: ReasonFacts, maxChars: number, maxSentences: number): boolean {
   const t = text.trim();
   if (!t || t.length > maxChars) return false;
+  if (/https?:|www.|.com|.kr/i.test(t)) return false; // 주소·링크 금지(장소·행사 이름은 외부 자료)
   const sentences = t.split(/(?<=[.!?。])\s*/).filter((s) => s.trim());
   if (sentences.length > maxSentences) return false;
   const allowed = new Set((JSON.stringify(facts).match(/\d+/g) ?? []).map(Number));

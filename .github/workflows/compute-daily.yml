@@ -34,13 +34,24 @@ jobs:
       - run: npm ci
       - name: Compute
         run: npm run compute:daily
-      # 근거 문장·후기 판정(4단계). 키가 없으면 건너뛰고 정형 문장을 쓴다. 생성 뒤 계산을 한 번 더 돌려 결과를 반영한다
-      - name: LLM reasons
+      # 근거 문장·후기 판정(4단계). 키가 없으면 건너뛰고 정형 문장을 쓴다. 후기 판정 → 계산(숨은 클래식 반영) → 근거 문장 → 계산(문장 반영)
+      # 이 단계들이 실패해도 정형 문장으로 발행은 계속한다(continue-on-error)
+      - name: LLM reviews
+        continue-on-error: true
         run: npm run llm:daily
         env:
+          LLM_MODE: reviews
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
           NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
+      - name: Compute (with reviews)
+        run: npm run compute:daily
+      - name: LLM reasons
+        continue-on-error: true
+        run: npm run llm:daily
+        env:
+          LLM_MODE: reasons
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
       - name: Compute (with reasons)
         run: npm run compute:daily
       # 화면용 공개 자료는 public-data 브랜치에 한 커밋으로 덮어쓴다 — main 이력이 매일 수 MB씩 커지지 않게.

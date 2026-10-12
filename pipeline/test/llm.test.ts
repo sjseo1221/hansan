@@ -110,3 +110,13 @@ describe("대화 Worker 설정 = config/llm.yaml", () => {
     expect(Number(v("MAX_CARDS"))).toBe(llm.chat.maxCards);
   });
 });
+
+describe("예산 (review-expert M2)", () => {
+  it("생성 상한 + 대화 차단선 ≤ 월 예산", () => {
+    const llm = parse(readFileSync("config/llm.yaml", "utf8"));
+    expect(llm.generation.monthlyUsd + llm.budget.appCutoffUsd).toBeLessThanOrEqual(llm.budget.monthlyUsd);
+  });
+  it("문장에 주소·링크가 있으면 버린다", () => {
+    expect(validReason("자세한 건 www.example.com 에서 봐요.", buildFacts(base, ctx()), 100, 2)).toBe(false);
+  });
+});

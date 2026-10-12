@@ -111,9 +111,12 @@ async function chat(request: Request, env: Env): Promise<Response> {
   const counter = env.COUNTER.get(env.COUNTER.idFromName("global"));
   if (!env.OPENAI_API_KEY || !env.CHAT_SALT) return json({ ok: false, closed: true, text: "대화 기능은 아직 준비 중이에요. 피드에서 조건을 골라 주세요." });
 
-  let body: { message?: unknown; current?: Partial<Filters> };
+  // 본문 크기 제한 — 메시지 200자 + 조건 몇 개면 충분하다(큰 입력으로 비용을 키우지 못하게)
+  const raw = await request.text();
+  if (raw.length > 2000) return json({ ok: false, text: "요청이 너무 길어요." }, 413);
+  let body: { message?: unknown; current?: Partial<Filters> & { types?: unknown } };
   try {
-    body = await request.json();
+    body = JSON.parse(raw);
   } catch {
     return json({ ok: false, text: "요청 형식이 올바르지 않아요." }, 400);
   }
@@ -121,7 +124,19 @@ async function chat(request: Request, env: Env): Promise<Response> {
   if (!message) return json({ ok: false, text: "찾고 싶은 나들이 조건을 말해 주세요." }, 400);
   if (message.length > Number(env.MAX_INPUT_CHARS)) return json({ ok: false, text: `${env.MAX_INPUT_CHARS}자 이내로 말해 주세요.` }, 400);
 
-  const ip = request.headers.get("CF-Connecting-IP") ?? "unknown";
+  // 자료를 먼저 읽는다 — 자료 문제로 실패하면 이용 횟수를 쓰지 않게
+  let meta: { dates: string[] }, config: { companions: { id: string; label: string; suitable: string[] }[]; travel: { detourFactor: number; speedKmh: number }; types: { id: string; label: string }[] }, regions: { sigungu: { code: string; name: string; provinceCd: string; lat: number; lng: number }[]; provinces: { code: string; name: string }[] };
+  try {
+    [meta, config, regions] = await Promise.all([data<typeof meta>(env, "meta.json"), data<typeof config>(env, "config.json"), data<typeof regions>(env, "regions.json")]);
+  } catch {
+    return json({ ok: false, text: "추천 자료를 불러오지 못했어요. 피드에서 조건을 골라 주세요." }, 503);
+  }
+  const dates = meta.dates.filter((d) => d >= today);
+  if (!dates.length) return json({ ok: false, text: "지금 추천할 날짜 자료가 없어요." }, 503);
+
+  // IPv6 는 /64 로 묶는다 — 같은 회선에서 주소만 바꿔 이용자 제한을 피하지 못하게
+  const ipRaw = request.headers.get("CF-Connecting-IP") ?? "unknown";
+  const ip = ipRaw.includes(":") ? ipRaw.split(":").slice(0, 4).join(":") : ipRaw;
   const t = await counter.take(today, await userKey(env, ip, today), Number(env.PER_USER_DAILY), Number(env.SERVICE_DAILY), cutoff);
   if (!t.ok)
     return json({
@@ -130,16 +145,18 @@ async function chat(request: Request, env: Env): Promise<Response> {
       text: t.reason === "user_limit" ? `대화는 하루 ${env.PER_USER_DAILY}번까지 쓸 수 있어요. 내일 다시 이용하거나 피드에서 조건을 골라 주세요.` : "오늘은 대화를 더 받을 수 없어요. 피드에서 조건을 골라 주세요.",
     });
 
-  const [meta, config, regions] = await Promise.all([
-    data<{ dates: string[] }>(env, "meta.json"),
-    data<{ companions: { id: string; label: string; suitable: string[] }[]; travel: { detourFactor: number; speedKmh: number }; types: { id: string; label: string }[] }>(env, "config.json"),
-    data<{ sigungu: { code: string; name: string; provinceCd: string; lat: number; lng: number }[]; provinces: { code: string; name: string }[] }>(env, "regions.json"),
-  ]);
-  const dates = meta.dates.filter((d) => d >= today);
   const provName = (c: string) => regions.provinces.find((p) => p.code === c)?.name ?? "";
   const regionName = (s: { name: string; provinceCd: string }) => `${provName(s.provinceCd)} ${s.name}`;
-  const cur = body.current ?? {};
-  const curOrigin = regions.sigungu.find((s) => s.code === cur.origin);
+  // 화면이 보낸 현재 조건도 선택지에 있는 값만 받는다(모델 입력에 임의 문자열이 들어가지 않게)
+  const c0 = body.current ?? {};
+  const curOrigin = regions.sigungu.find((s) => s.code === c0.origin);
+  const curTypes = Array.isArray(c0.types) ? c0.types.filter((x): x is TypeId => typeof x === "string" && (TYPE_IDS as readonly string[]).includes(x)) : [];
+  const cur = {
+    date: dates.includes(String(c0.date)) ? String(c0.date) : dates[0],
+    minutes: [30, 60, 120].includes(Number(c0.minutes)) ? Number(c0.minutes) : null,
+    companion: config.companions.some((c) => c.id === c0.companion) ? (c0.companion as string) : null,
+    indoor: c0.indoor === "indoor" || c0.indoor === "outdoor" ? c0.indoor : null,
+  };
 
   const usage = emptyUsage();
   let ask: Ask | null;
@@ -152,7 +169,7 @@ async function chat(request: Request, env: Env): Promise<Response> {
         instructions: CHAT_PROMPT,
         input: {
           message,
-          current: { date: cur.date ?? dates[0], origin: curOrigin ? regionName(curOrigin) : null, minutes: cur.minutes ?? null, companion: cur.companion ?? null, indoor: cur.indoor ?? null },
+          current: { date: cur.date, origin: curOrigin ? regionName(curOrigin) : null, minutes: cur.minutes, companion: cur.companion, indoor: cur.indoor, types: curTypes },
           today,
           dates,
           regions: regions.sigungu.map(regionName),
@@ -178,13 +195,15 @@ async function chat(request: Request, env: Env): Promise<Response> {
   // 모델 출력은 그대로 믿지 않는다 — 선택지에 있는 값만 받는다
   const origin = regions.sigungu.find((s) => regionName(s) === ask!.origin || s.name === ask!.origin) ?? curOrigin ?? null;
   const f: Filters = {
-    date: dates.includes(ask.date) ? ask.date : dates.includes(cur.date ?? "") ? cur.date! : dates[0],
+    date: dates.includes(ask.date) ? ask.date : cur.date,
     origin: origin?.code ?? null,
     minutes: origin && [30, 60, 120].includes(ask.minutes ?? -1) ? ask.minutes : null,
     companion: config.companions.some((c) => c.id === ask!.companion) ? ask.companion : null,
     indoor: ask.indoor === "indoor" || ask.indoor === "outdoor" ? ask.indoor : null,
   };
-  const types = ask.types.filter((x): x is TypeId => (TYPE_IDS as readonly string[]).includes(x));
+  // 선호 유형은 새로 말하지 않으면 앞선 조건을 이어받는다(FR-CHAT-05)
+  const asked = ask.types.filter((x): x is TypeId => (TYPE_IDS as readonly string[]).includes(x));
+  const types = asked.length ? asked : curTypes;
   const feed = await data<{ items: FeedItem[] }>(env, `feed/${f.date}.json`);
   const fcfg = { travel: config.travel, companions: config.companions, maxPerType: 10, topN: 3 };
   let items = feed.items.filter((x) => matches(x, f, origin, fcfg) && (!types.length || x.types.some((t) => types.includes(t))));
@@ -199,9 +218,11 @@ async function chat(request: Request, env: Env): Promise<Response> {
     // 없으면 없다고 말하고 가장 가까운 조건을 제안(FR-CHAT-07)
     const r = relaxations(feed.items, f, origin, fcfg)[0];
     const label = { minutes: "이동 시간 제한을 풀면", companion: "'누구와' 조건을 풀면", indoor: "실내·실외 조건을 풀면" };
-    return json({ ok: true, filters: f, cards, text: `${cond} 조건에 맞는 장소가 없어요.${r ? ` ${label[r.key]} ${r.count}곳이 있어요.` : " 다른 날짜로 바꿔 보세요."}` });
+    const withoutTypes = types.length ? feed.items.filter((x) => matches(x, f, origin, fcfg)).length : 0;
+    const hint = withoutTypes ? ` 선호 유형을 풀면 ${withoutTypes}곳이 있어요.` : r ? ` ${label[r.key]} ${r.count}곳이 있어요.` : " 다른 날짜로 바꿔 보세요.";
+    return json({ ok: true, filters: { ...f, types }, cards, text: `${cond} 조건에 맞는 장소가 없어요.${hint}` });
   }
-  return json({ ok: true, filters: f, cards, text: `${cond} 조건으로 한산할 가능성이 높은 순서대로 ${cards.length}곳을 골랐어요.` });
+  return json({ ok: true, filters: { ...f, types }, cards, text: `${cond} 조건으로 한산할 가능성이 높은 순서대로 ${cards.length}곳을 골랐어요.` });
 }
 
 export default {
@@ -209,8 +230,14 @@ export default {
     const url = new URL(request.url);
     if (url.pathname === "/api/chat/status") {
       if (!env.OPENAI_API_KEY || !env.CHAT_SALT) return json({ open: false });
+      // 화면을 열 때마다 묻는 요청이라 30초 캐시 — 카운터(Durable Object) 호출을 아낀다
+      const cache = caches.default;
+      const hit = await cache.match(request);
+      if (hit) return hit;
       const st = await env.COUNTER.get(env.COUNTER.idFromName("global")).status(kstToday(), Number(env.CUTOFF_USD), Number(env.SERVICE_DAILY));
-      return json({ open: st.open });
+      const res = new Response(JSON.stringify({ open: st.open }), { headers: { "content-type": "application/json; charset=utf-8", "cache-control": "public, max-age=30" } });
+      await cache.put(request, res.clone());
+      return res;
     }
     if (url.pathname === "/api/chat") {
       if (request.method !== "POST") return json({ ok: false }, 405);

@@ -31,7 +31,7 @@ const cfg = parse(await readFile("config/llm.yaml", "utf8")) as {
   model: string;
   price: Price;
   reason: { maxSentences: number; maxChars: number };
-  review: { minReviews: number };
+  review: { minReviews: number; recentDays: number };
   generation: { reasoningEffort: string; maxCallsPerRun: number; monthlyUsd: number; reviewRefreshDays: number; reviewBlogCalls: number };
 };
 const apiKey: string = key; // 아래 함수 안에서도 정의된 값으로
@@ -146,10 +146,12 @@ for (const id of [...targets].sort()) {
     });
     if (!res.ok) throw new LlmError(`NAVER_${res.status}`);
     const j = (await res.json()) as { items?: { title: string; description: string; postdate: string }[] };
-    const posts = (j.items ?? []).map((i) => ({ title: strip(i.title), summary: strip(i.description), date: i.postdate }));
+    // 최근 recentDays 안의 글만 — 지난 계절 글로 '요즘 화제'를 잘못 말하지 않게(2026-10-12 '여름철 수영장' 사례)
+    const since = addDays(asOf, -cfg.review.recentDays).replaceAll("-", "");
+    const posts = (j.items ?? []).filter((i) => i.postdate >= since).map((i) => ({ title: strip(i.title), summary: strip(i.description), date: i.postdate }));
     if (posts.length < cfg.review.minReviews) {
       // 후기 5건 미만이면 판단 보류 (FR-LLM-03)
-      reviews[id] = { verdict: "undecided", reason: "후기가 적어 판단을 보류했어요.", quietTime: "", buzz: "", n: posts.length, at: asOf };
+      reviews[id] = { verdict: "undecided", reason: "최근 후기가 적어 판단을 보류했어요.", quietTime: "", buzz: "", n: posts.length, at: asOf };
       stats.reviews.fewPosts++;
       continue;
     }

@@ -41,15 +41,8 @@ export const weekday = (d: string) => new Date(`${d}T00:00:00Z`).getUTCDay();
 const WD = "일월화수목금토";
 export const dateLabel = (d: string) => `${Number(d.slice(5, 7))}월 ${Number(d.slice(8, 10))}일(${WD[weekday(d)]})`;
 
-export const LH_TEXT: Record<string, { text: string; mark: string }> = {
-  high: { text: "한산할 가능성 높음", mark: "●●●" },
-  medium: { text: "한산할 가능성 보통", mark: "●●○" },
-  low: { text: "한산할 가능성 낮음", mark: "●○○" },
-};
-
-export function esc(s: string): string {
-  return s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
-}
+import { esc, isStale, LH_TEXT } from "../../../pipeline/src/shared/ui";
+export { esc, LH_TEXT };
 
 const fmt = (iso: string | null | undefined) => (iso ? `${iso.slice(0, 10)} ${iso.slice(11, 16)}` : "알 수 없음");
 
@@ -61,9 +54,7 @@ export async function initFrame() {
     const [m, c] = await Promise.all([meta(), config()]);
     asof.textContent = `자료 기준: 혼잡 예측 ${fmt(m.updated.forecast)}, 서울 실시간 인구 ${fmt(m.updated.seoul)}, 검색 추이 ${fmt(m.updated.search)} (계산 ${m.asOf})`;
     // 계산은 수집이 실패해도 매일 돌므로 계산일이 아니라 원자료 수집 시각으로 판단한다 (NFR-REL-02: 3일 넘게)
-    const limit = addDays(todayKst(), -3);
-    const old = (iso: string | null | undefined) => !iso || iso.slice(0, 10) < limit;
-    if (old(m.updated.forecast) || old(m.updated.seoul) || m.asOf < limit) {
+    if (isStale(m, todayKst())) {
       stale.hidden = false;
       stale.textContent = "자료가 3일 넘게 갱신되지 않았습니다. 추천이 실제와 많이 다를 수 있어요.";
     }

@@ -15,7 +15,7 @@
     "trendBackfill": 533,
     "blog": 542,
     "seoulLinked": 32,
-    "seoulPatterns": 0,
+    "seoulPatterns": 121,
     "ggLinked": 621,
     "navRanked": 1811,
     "ggLinkedDong": 605,
@@ -33,10 +33,17 @@
       "none": 3713
     },
     "patternBasisToday": {
-      "gg_only": 621
+      "category": 2143,
+      "measured": 32,
+      "gg_blend": 621,
+      "overall": 917
     }
   },
-  "categoryPatterns": [],
+  "categoryPatterns": [
+    "heritage",
+    "nature_park",
+    "street_market"
+  ],
   "typesByDate": {
     "2026-10-12": {
       "moderate_hotspot": 35,

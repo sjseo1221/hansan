@@ -11,6 +11,7 @@ reason:               # 근거 문장 (FR-LLM-01)
 
 review:               # 후기 판정 (FR-LLM-03)
   minReviews: 5       # 미만이면 판단 보류
+  recentDays: 90      # 이 기간 안의 후기만 판정·화제 이유에 쓴다
 
 retry:
   invalidJson: 1      # 형식 오류 시 1회 재시도 후 비움 (FR-LLM-06)

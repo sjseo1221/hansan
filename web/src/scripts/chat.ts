@@ -1,20 +1,14 @@
 // 대화 창(FR-CHAT-01·04·05·10·12) — 서버(/api/chat)가 조건을 해석하고 미리 계산된 추천에서 고른다. 대화 내용은 이 창 안에만 있다
-import { esc, LH_TEXT } from "./common";
+import { chatReplyHtml, chatTimeoutHtml, type ChatCard } from "../../../pipeline/src/shared/ui";
+import { esc } from "./common";
 
-interface Card {
-  id: string;
-  name: string;
-  area: string;
-  lh: "high" | "medium" | "low";
-  minutes: number | null;
-}
 interface Reply {
   ok: boolean;
   closed?: boolean;
   offTopic?: boolean;
   text: string;
   filters?: Record<string, string | number | null | string[]>;
-  cards?: Card[];
+  cards?: ChatCard[];
 }
 
 const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
@@ -74,19 +68,14 @@ export async function initChat() {
       });
       const r = (await res.json()) as Reply;
       if (r.filters) filters = r.filters; // 다음 질문은 이 조건을 이어받는다(FR-CHAT-05)
-      const cards = (r.cards ?? [])
-        .map((c) => `<li><a href="/place/?id=${encodeURIComponent(c.id)}&date=${encodeURIComponent(String(filters.date ?? ""))}">${esc(c.name)}</a> · ${esc(c.area)}${c.minutes !== null ? ` · 약 ${c.minutes}분` : ""} · <span class="lh-${c.lh}">${LH_TEXT[c.lh].text}</span></li>`)
-        .join("");
-      // 실패 응답이면 지금 조건의 피드로 안내한다(FR-CHAT-12)
-      const link = cards ? `<ul>${cards}</ul><p><a href="${esc(feedUrl(filters))}">이 조건으로 피드 보기</a></p>` : !r.ok ? `<p><a href="${esc(feedUrl(currentFilters()))}">지금 조건의 추천 보기</a></p>` : "";
-      say("bot", `<p>${esc(r.text)}</p>${link}`);
+      say("bot", chatReplyHtml(r, String(filters.date ?? ""), feedUrl(filters), feedUrl(currentFilters())));
       if (r.closed) {
         form.hidden = true;
         open.hidden = true;
       }
     } catch {
       // 실패·10초 초과 — 안내하고 지금 조건의 피드를 보여 준다(FR-CHAT-12)
-      say("bot", `<p>응답이 늦어 답을 드리지 못했어요. <a href="${esc(feedUrl(currentFilters()))}">지금 조건의 추천 보기</a></p>`);
+      say("bot", chatTimeoutHtml(feedUrl(currentFilters())));
     } finally {
       btn.disabled = false;
     }

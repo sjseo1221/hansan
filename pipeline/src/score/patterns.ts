@@ -36,10 +36,23 @@ export function normalize(p: Pattern): Pattern {
   return p.map((v) => (v === null ? null : max ? r3(v / max) : 0));
 }
 
-const hoursFull = (samples: number[][], window: [number, number], min: number) => {
-  for (let h = window[0]; h < window[1]; h++) if (samples[h].length < min) return false;
+// 방문 창의 모든 시간에 표본이 min 개 이상인지. 단, 앞뒤 시간에 표본이 있는 '한 시간짜리 빈칸'은 maxGaps 개까지 봐준다
+// (매시간 수집이 한 번 빠지면 패턴 전체가 사라지던 문제, 2026-10-12 18시 누락)
+const hoursFull = (samples: number[][], window: [number, number], min: number, maxGaps = 1) => {
+  let gaps = 0;
+  for (let h = window[0]; h < window[1]; h++) {
+    if (samples[h].length >= min) continue;
+    const filled = !samples[h].length && (samples[h - 1]?.length ?? 0) >= min && (samples[h + 1]?.length ?? 0) >= min;
+    if (!filled || ++gaps > maxGaps) return false;
+  }
   return true;
 };
+
+// 비어 있는 한 시간은 앞뒤 시간 평균으로 채운다(창 밖은 그대로 null)
+function meansWithGaps(samples: number[][]): Pattern {
+  const m: Pattern = samples.map((x) => (x.length ? mean(x) : null));
+  return m.map((v, h) => (v === null && m[h - 1] != null && m[h + 1] != null ? (m[h - 1]! + m[h + 1]!) / 2 : v));
+}
 
 // 서울 실측: 값 = (최소+최대)/2. (장소, 날짜, 시)가 같으면 마지막 값 하나
 export function seoulPatterns(rows: SeoulRow[], holidays: Set<string>, cfg: PatternConfig): Patterns["seoul"] {
@@ -59,8 +72,8 @@ export function seoulPatterns(rows: SeoulRow[], holidays: Set<string>, cfg: Patt
   }
   const out: Patterns["seoul"] = {};
   for (const [area, s] of [...byArea].sort(([a], [b]) => cmp(a, b))) {
-    const all = hoursFull(s.all, cfg.timeSlot.window, 1) ? normalize(s.all.map((x) => (x.length ? mean(x) : null))) : null;
-    const pick = (d: Daytype) => (hoursFull(s[d], cfg.timeSlot.window, cfg.timePattern.minSamples) ? normalize(s[d].map((x) => (x.length ? mean(x) : null))) : all);
+    const all = hoursFull(s.all, cfg.timeSlot.window, 1) ? normalize(meansWithGaps(s.all)) : null;
+    const pick = (d: Daytype) => (hoursFull(s[d], cfg.timeSlot.window, cfg.timePattern.minSamples) ? normalize(meansWithGaps(s[d])) : all);
     const weekday = pick("weekday");
     const holiday = pick("holiday");
     if (weekday && holiday) out[area] = { weekday, holiday };

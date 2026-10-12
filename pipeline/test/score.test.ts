@@ -389,3 +389,20 @@ describe("추가 인기도 신호 — 티맵 내비 중심 관광지 (FR-DATA-14
     expect(withNav.get("a")!.navRank).toBe(1);
   });
 });
+
+describe("서울 실측 빈 시간 (2026-10-12 18시 누락)", () => {
+  const rows = (skip: number[], extra: number[] = []) =>
+    Array.from({ length: 24 }, (_, h) => h)
+      .filter((h) => !skip.includes(h))
+      .map((h) => ({ areaCd: "A", ppltnMin: h, ppltnMax: h, ppltnTime: `2026-10-12 ${String(h).padStart(2, "0")}:00`, fetchedAt: "x" }))
+      .concat(extra.map((h) => ({ areaCd: "A", ppltnMin: h, ppltnMax: h, ppltnTime: `2026-10-12 ${String(h).padStart(2, "0")}:30`, fetchedAt: "y" })));
+  it("방문 창 안 한 시간 빈칸은 앞뒤 평균으로 채워 패턴을 만든다", () => {
+    const p = seoulPatterns(rows([18]), new Set(), pcfg);
+    expect(p.A).toBeDefined();
+    expect(p.A.weekday[18]).toBeCloseTo((17 + 19) / 2 / 23, 3);
+  });
+  it("두 시간 연속 빈칸이나 빈칸 두 곳이면 만들지 않는다", () => {
+    expect(seoulPatterns(rows([17, 18]), new Set(), pcfg).A).toBeUndefined();
+    expect(seoulPatterns(rows([12, 18]), new Set(), pcfg).A).toBeUndefined();
+  });
+});

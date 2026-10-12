@@ -98,7 +98,8 @@ const pct = (x: number) => `${Math.round(Math.abs(x) * 100)}%`;
 export function ruleReason(it: Pick<FeedItem, "pop" | "f" | "u" | "trend" | "lt" | "slot">, type: TypeId): string {
   switch (type) {
     case "famous_spot":
-      return `손꼽히게 많이 찾는 곳(상위 ${Math.max(1, Math.round(100 - (it.pop ?? 0)))}%)인데, 이날은 갈 만한 수준으로 붐빌 것 같아요.`;
+      // 예측이 낮으면(한산 가능성 높음) '갈 만한 수준'이 아니라 '덜 붐빌 것'으로 — 카드의 한산 가능성과 어긋나지 않게
+      return `손꼽히게 많이 찾는 곳(상위 ${Math.max(1, Math.round(100 - (it.pop ?? 0)))}%)인데, 이날은 ${it.f <= 40 ? "덜 붐빌 것 같아요" : "갈 만한 수준으로 붐빌 것 같아요"}.`;
     case "moderate_hotspot":
       return `많이 찾는 곳(상위 ${Math.max(1, Math.round(100 - (it.pop ?? 0)))}%)인데, 이날 혼잡 예측은 보통 수준이에요.`;
     case "timing_game":

@@ -128,6 +128,9 @@ export async function initFeed() {
     // 필터 선택지 채우기
     const dateSel = $<HTMLSelectElement>("date");
     dateSel.innerHTML = dates.map((d) => `<option value="${d}">${dateLabel(d)}</option>`).join("");
+    // 고를 수 있는 기간을 이름에 보여 준다(사용자 피드백: '다른 날짜'·'2주 안 다른 날'이 무슨 뜻인지 모호)
+    const short = (d: string) => `${Number(d.slice(5, 7))}월 ${Number(d.slice(8, 10))}일`;
+    $("date-label").textContent = `날짜 직접 고르기 (${short(dates[0])}~${short(dates.at(-1)!)})`;
     const wk = defaultDate(today, dates);
     const weekendDays = [wk, addDays(wk, 1)].filter((d) => dates.includes(d) && [0, 6].includes(weekday(d)));
     const weekendEl = $("weekend");

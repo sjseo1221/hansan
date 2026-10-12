@@ -3,6 +3,7 @@ export interface Meta {
   asOf: string;
   dates: string[];
   holidays?: string[]; // YYYY-MM-DD
+  popN?: number; // 인기도를 매긴 장소 수
   updated: Record<string, string | null>;
 }
 export interface Config {
@@ -13,6 +14,8 @@ export interface Config {
   maxPerType: number;
   topN: number;
   sources: string[];
+  defaultOrigin?: string | null;
+  weights?: { searchWeight: number; blogWeight: number; navWeight?: number };
 }
 
 const cache = new Map<string, Promise<unknown>>();

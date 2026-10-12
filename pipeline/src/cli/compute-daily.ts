@@ -90,11 +90,11 @@ const reviews = await readJson<ReviewCache>(REVIEWS_PATH, {});
 const reasonCache = await readJson<ReasonCache>(REASONS_PATH, {});
 
 // 축제: 운영자 파일 > 서울 문화행사 > TourAPI 행사
-const manualF = (await yaml<{ festivals?: { title: string; place: string; lat?: number; lng?: number; start: string; end: string; weekdays?: number[]; time?: string; link?: string }[] }>("data/sources/festivals-manual.yaml").catch(() => ({ festivals: [] }))).festivals ?? [];
+const manualF = (await yaml<{ festivals?: { title: string; place: string; lat?: number; lng?: number; start: string; end: string; weekdays?: number[]; time?: string; link?: string; note?: string }[] }>("data/sources/festivals-manual.yaml").catch(() => ({ festivals: [] }))).festivals ?? [];
 const seoulF = (await readJson<{ festivals: Festival[] }>("data/latest/festivals-seoul.json", { festivals: [] })).festivals;
 const tourE = (await readJson<{ events: { contentId: string; title: string; address: string; lat: number | null; lng: number | null; start: string; end: string }[] }>("data/latest/events.json", { events: [] })).events;
 const festivals = mergeFestivals(
-  manualF.map((m, i) => ({ id: `manual-${i}`, src: "manual" as const, title: m.title, place: m.place, lat: m.lat ?? null, lng: m.lng ?? null, start: m.start.replaceAll("-", ""), end: m.end.replaceAll("-", ""), weekdays: m.weekdays ?? weekdaysOf(m.time), time: m.time, link: m.link })),
+  manualF.map((m, i) => ({ id: `manual-${i}`, src: "manual" as const, title: m.title, place: m.place, lat: m.lat ?? null, lng: m.lng ?? null, start: m.start.replaceAll("-", ""), end: m.end.replaceAll("-", ""), weekdays: m.weekdays ?? weekdaysOf(m.time), time: m.time, link: m.link, note: m.note })),
   seoulF,
   tourE.map((e) => ({ id: `tour-${e.contentId}`, src: "tour" as const, title: e.title, place: e.address, lat: e.lat, lng: e.lng, start: e.start, end: e.end })),
 );
@@ -150,7 +150,7 @@ if (todayRec && !existsSync(recLogPath))
   );
 
 // 화면용 공개 자료 → public-out/ (git 제외). 워크플로가 public-data 브랜치에 한 커밋으로 올린다
-const regionsCfg = await yaml<{ travel: PublicInput["travel"] }>("config/regions.yaml");
+const regionsCfg = await yaml<{ travel: PublicInput["travel"]; defaultOrigin?: string }>("config/regions.yaml");
 const catCfg = await yaml<{ categories: { id: string; label: string }[] }>("config/categories.yaml");
 const comp = await yaml<{ companions: PublicInput["companions"] }>("config/companions.yaml");
 const sig = await readJson<{ sigungu: { code: string; name: string }[] }>("data/sources/regions/sigungu.json", { sigungu: [] });
@@ -170,6 +170,8 @@ const pub = buildPublic({
   categories: catCfg.categories,
   companions: comp.companions,
   travel: regionsCfg.travel,
+  defaultOrigin: regionsCfg.defaultOrigin ?? null,
+  weights: cfg.popularity as PublicInput["weights"],
   feed: cfg.feed,
   topN: cfg.exposure.topN,
   holidays: holidays.holidays,

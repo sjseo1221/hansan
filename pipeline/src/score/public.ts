@@ -50,6 +50,8 @@ export interface PublicInput {
   placeDong: Record<string, string>; // 경기 장소의 소속 행정동 이름
   navYm: string; // 중심 관광지 자료 기준 월(YYYYMM)
   festivals: Festival[]; // 이 날 열리는 축제(2026-10-12 사용자 요청)
+  defaultOrigin: string | null;
+  weights: { searchWeight: number; blogWeight: number; navWeight?: number };
 }
 
 const round = (x: number, n = 5) => Math.round(x * 10 ** n) / 10 ** n;
@@ -81,6 +83,8 @@ export function buildPublic(input: PublicInput): Record<string, unknown> {
     categories: input.categories,
     companions: input.companions,
     travel: input.travel,
+    defaultOrigin: input.defaultOrigin,
+    weights: input.weights,
     maxPerType: input.feed.maxPerType,
     topN: input.topN,
     sources: SOURCES,
@@ -136,7 +140,7 @@ export function buildPublic(input: PublicInput): Record<string, unknown> {
                 .slice(0, 3)
                 .map((x) => [x.p.placeId, x.p.name, Math.round(x.km * 10) / 10] as [string, string, number])
             : [];
-        return { title: f.title, place: f.place, ...(f.lat !== null && f.lng !== null ? { lat: round(f.lat), lng: round(f.lng) } : {}), start: f.start, end: f.end, ...(f.time ? { time: f.time } : {}), ...(f.link ? { link: f.link } : {}), src: f.src, near };
+        return { title: f.title, place: f.place, ...(f.lat !== null && f.lng !== null ? { lat: round(f.lat), lng: round(f.lng) } : {}), start: f.start, end: f.end, ...(f.time ? { time: f.time } : {}), ...(f.link ? { link: f.link } : {}), ...(f.note ? { note: f.note } : {}), src: f.src, near };
       });
     files[`feed/${date}.json`] = { date, asOf, items, festivals };
   }
@@ -165,7 +169,7 @@ export function buildPublic(input: PublicInput): Record<string, unknown> {
         d,
         f: r.forecast,
         u: r.usual,
-        ...(r.usualBasis ? { ub: r.usualBasis } : {}),
+        ...(r.usualBasis ? { ub: r.usualBasis, uw: r.usualWeeks } : {}),
         lh: r.likelihood,
         rep: r.representative,
         types: r.types,
@@ -204,6 +208,8 @@ export function buildPublic(input: PublicInput): Record<string, unknown> {
       lat: round(p.lat),
       lng: round(p.lng),
       pop: s?.popularity ?? null,
+      // 인기도 근거: 신호별 백분위(높을수록 인기)와 검색 자료 단위
+      ...(s?.popularity != null ? { popx: { search: s.searchPct, blog: s.blogPct ?? null, nav: s.navPct ?? null, searchBasis: s.searchBasis } } : {}),
       ...(s?.navRank ? { nav: { rank: s.navRank, ym: input.navYm } } : {}),
       trend: s?.trend ?? null,
       lt: s?.longTerm ?? null,
@@ -217,6 +223,8 @@ export function buildPublic(input: PublicInput): Record<string, unknown> {
 
   // 계산 기간 안의 공휴일 — 상세 화면이 휴일 시간대 패턴을 고르는 데 쓴다
   const holidays = out.dates.filter((d) => input.holidays[d.replaceAll("-", "")]);
-  files["meta.json"] = { asOf, dates: out.dates, holidays, updated: input.updated };
+  // popN: 인기도를 매긴 장소 수(상위 % 의 모집단)
+  const popN = Object.values(out.scores).filter((s) => s.popularity !== null).length;
+  files["meta.json"] = { asOf, dates: out.dates, holidays, popN, updated: input.updated };
   return files;
 }

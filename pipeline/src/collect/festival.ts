@@ -19,6 +19,7 @@ export interface Festival {
   weekdays?: number[]; // 0=일 … 6=토. 없으면 기간 내 매일
   time?: string;
   link?: string;
+  note?: string; // 운영자 등록 축제의 근거(보도·공지)
 }
 
 const WD = "일월화수목금토";

@@ -20,7 +20,7 @@ export function defaultDate(today: string, dates: string[]): string {
 }
 
 // 주소의 값은 화면 선택지에 있는 것만 받는다 — 나머지는 조건 없음으로 본다
-function readFilters(dates: string[], ok: { origins: Set<string>; minutes: number[]; companions: Set<string> }): Filters {
+function readFilters(dates: string[], ok: { origins: Set<string>; minutes: number[]; companions: Set<string>; defaultOrigin: string | null }): Filters {
   const q = new URLSearchParams(location.search);
   const today = todayKst();
   const date = q.get("date") ?? "";
@@ -28,7 +28,8 @@ function readFilters(dates: string[], ok: { origins: Set<string>; minutes: numbe
   const indoor = q.get("indoor");
   return {
     date: dates.includes(date) && date >= today ? date : defaultDate(today, dates.filter((d) => d >= today)),
-    origin: ok.origins.has(q.get("origin") ?? "") ? q.get("origin") : null,
+    // 주소에 출발 지역이 없으면 기본 출발 지역(설정, 성남시 중원구). '선택 안 함'은 origin=none 으로 남는다
+    origin: q.has("origin") ? (ok.origins.has(q.get("origin") ?? "") ? q.get("origin") : null) : ok.defaultOrigin && ok.origins.has(ok.defaultOrigin) ? ok.defaultOrigin : null,
     minutes: minutes && ok.minutes.includes(Number(minutes)) ? Number(minutes) : null,
     companion: ok.companions.has(q.get("companion") ?? "") ? q.get("companion") : null,
     indoor: indoor === "indoor" || indoor === "outdoor" ? indoor : null,
@@ -38,7 +39,7 @@ function readFilters(dates: string[], ok: { origins: Set<string>; minutes: numbe
 function writeFilters(f: Filters) {
   const q = new URLSearchParams();
   q.set("date", f.date);
-  if (f.origin) q.set("origin", f.origin);
+  q.set("origin", f.origin ?? "none");
   if (f.origin && f.minutes !== null) q.set("minutes", String(f.minutes));
   if (f.companion) q.set("companion", f.companion);
   if (f.indoor) q.set("indoor", f.indoor);
@@ -54,8 +55,12 @@ interface FestivalItem {
   end: string;
   time?: string;
   link?: string;
+  note?: string;
+  src: "tour" | "seoul" | "manual";
   near: [string, string, number][];
 }
+// 축제 정보 출처(2026-10-12 사용자 요청)
+const FEST_SRC = { tour: "한국관광공사 행사 정보(TourAPI)", seoul: "서울시 문화행사 정보(서울 열린데이터광장)", manual: "운영자 등록" } as const;
 const md = (ymd: string) => `${Number(ymd.slice(4, 6))}.${Number(ymd.slice(6, 8))}`;
 
 // 이 날 열리는 축제(2026-10-12 사용자 요청) — 혼잡 예측이 없고 원래 붐비므로 한산 추천과 따로, 근처 한산한 곳을 함께 보여 준다
@@ -71,7 +76,7 @@ function festivalSection(list: FestivalItem[], f: Filters, origin: Region | null
       <p class="where">${esc(x.place)}${mins !== null ? ` · 약 ${mins < 60 ? `${mins}분` : `${Math.floor(mins / 60)}시간 ${mins % 60}분`}` : ""}</p>
       <div><span class="badge">축제</span> ${md(x.start)}~${md(x.end)}${x.time ? ` · ${esc(x.time)}` : ""}</div>
       <p>축제라 붐빌 수 있어요.${x.near.length ? ` 근처에서 덜 붐빌 곳: ${x.near.map(([id, name, km]) => `<a href="/place/?id=${encodeURIComponent(id)}&date=${f.date}">${esc(name)}</a>(약 ${km}km)`).join(", ")}` : ""}</p>
-      ${x.link ? `<p><a href="${esc(x.link)}" rel="noopener" target="_blank">축제 안내 보기</a></p>` : ""}
+      <p class="basis">출처: ${FEST_SRC[x.src]}${x.note ? ` — ${esc(x.note)}` : ""}${x.link ? ` · <a href="${esc(x.link)}" rel="noopener" target="_blank">축제 안내 보기</a>` : ""}</p>
     </li>`)
     .join("");
   return `<section class="type" aria-labelledby="h-fest">
@@ -116,11 +121,12 @@ export async function initFeed() {
     }
     // 예측 자료 기준 일시 — '10월 12일 12:03 기준'
     const fc = m.updated.forecast;
-    const basis = fc ? `혼잡 예측 ${Number(fc.slice(5, 7))}월 ${Number(fc.slice(8, 10))}일 ${fc.slice(11, 16)} 기준` : "혼잡 예측 기준 일시 모름";
+    const basis = fc ? `혼잡 예측: 한국관광공사(KT 통신 데이터 기반) ${Number(fc.slice(5, 7))}월 ${Number(fc.slice(8, 10))}일 ${fc.slice(11, 16)} 기준 · 근거는 장소를 누르면 볼 수 있어요` : "혼잡 예측 기준 일시 모름";
     let f = readFilters(dates, {
       origins: new Set(regions.sigungu.map((s) => s.code)),
       minutes: cfg.travel.options.filter((x): x is number => x !== null),
       companions: new Set(cfg.companions.map((c) => c.id)),
+      defaultOrigin: cfg.defaultOrigin ?? null,
     });
     // 주소에 조건이 있으면 펼쳐서 보여 준다
     if (f.origin || f.companion || f.indoor) ($("more") as HTMLDetailsElement).open = true;

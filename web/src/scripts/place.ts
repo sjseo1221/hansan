@@ -7,6 +7,7 @@ interface Day {
   f: number | null;
   u: number | null;
   ub?: "history" | "forecast_window";
+  uw?: number; // 평소 혼잡에 쓴 주 수
   lh: "high" | "medium" | "low" | null;
   rep: TypeId | null;
   types: TypeId[];
@@ -30,6 +31,7 @@ interface Place {
   lat: number;
   lng: number;
   pop: number | null;
+  popx?: { search: number; blog: number | null; nav: number | null; searchBasis?: "week" | "month" };
   nav?: { rank: number; ym: string }; // 티맵 내비 기반 시·군·구 중심 관광지 순위
   trend: number | null;
   lt: number | null;
@@ -49,6 +51,43 @@ function compare(f: number | null, u: number | null): string {
   if (d <= -10) return "평소보다 한산";
   if (d >= 10) return "평소보다 붐빔";
   return "평소와 비슷";
+}
+
+const pctTop = (pct: number) => `상위 ${Math.max(1, Math.round(100 - pct))}%`;
+const ymdKo = (iso: string | null | undefined) => (iso ? `${Number(iso.slice(5, 7))}월 ${Number(iso.slice(8, 10))}일 ${iso.slice(11, 16)}` : "알 수 없음");
+
+// 근거와 출처(2026-10-12 사용자 요청: 혼잡 예측 근거·인기 상위 % 출처를 상세히) — 숫자마다 어디서 왔고 어떻게 계산했는지
+function sourcesHtml(p: Place, day: Day, m: Awaited<ReturnType<typeof meta>>, cfg: Awaited<ReturnType<typeof config>>): string {
+  const w = cfg.weights;
+  const items: string[] = [];
+  items.push(`<li><strong>혼잡 예측(0~100)</strong>: 한국관광공사 '관광지 집중률 방문자 추이 예측'(공공데이터포털). KT 이동통신 데이터를 바탕으로 2018년부터의 방문 패턴을 기계학습해 앞으로 30일을 예측한 값이에요. <strong>이 관광지가 가장 붐비던 때를 100으로 둔 상대 값</strong>이라 다른 장소와 숫자를 바로 비교할 수는 없어요. KT 가입 휴대폰 기준이라 실제 방문자 수와 다를 수 있어요. 자료 기준 ${ymdKo(m.updated.forecast)}.</li>`);
+  items.push(
+    day.u === null
+      ? `<li><strong>평소 혼잡</strong>: 같은 요일의 최근 8주 혼잡 예측 평균인데, 아직 자료를 쌓는 중이라 비워 두었어요.</li>`
+      : `<li><strong>평소 혼잡</strong>: 같은 요일의 지난 혼잡 예측을 평균했어요(공휴일 제외) — 지금은 ${day.uw ?? 0}주치${(day.uw ?? 0) < 8 ? "로 계산해 임시 값이에요(8주가 차면 확정)" : ""}.</li>`,
+  );
+  if (p.pop !== null && p.popx) {
+    const parts = [`네이버 검색어 트렌드(${p.popx.searchBasis === "month" ? "최근 완결 월" : "최근 4주"} 검색 관심도, 비중 ${Math.round((w?.searchWeight ?? 0) * 100)}%, 이 장소 ${pctTop(p.popx.search)})`];
+    if (p.popx.blog !== null) parts.push(`네이버 블로그 글 수(비중 ${Math.round((w?.blogWeight ?? 0) * 100)}%, ${pctTop(p.popx.blog)})`);
+    if (p.popx.nav !== null) parts.push(`한국관광공사 기초지자체 중심 관광지 순위 — 티맵 내비게이션 목적지 검색·이동 기준(비중 ${Math.round((w?.navWeight ?? 0) * 100)}%, ${p.nav ? `${esc(p.area)} ${p.nav.rank}위` : "시·군·구 상위 100곳 밖"})`);
+    items.push(`<li><strong>인기도 ${pctTop(p.pop)}</strong>: 인기도를 매긴 ${m.popN ?? "?"}곳 중 순위예요. ${parts.join(", ")}를 각각 백분위로 바꿔 가중 평균했어요. 검색 자료 기준 ${ymdKo(m.updated.search)}.</li>`);
+  } else items.push(`<li><strong>인기도</strong>: 네이버 검색 자료를 아직 받지 못해 비워 두었어요(장소마다 주 1회 받아요).</li>`);
+  if (p.trend !== null) items.push(`<li><strong>요즘 관심 변화</strong>: 네이버 검색어 트렌드 최근 4주 평균을 그 전 8주와 비교했어요(${Math.round(p.trend * 100)}%).</li>`);
+  if (p.lt !== null) items.push(`<li><strong>장기 관심 변화</strong>: 네이버 검색어 트렌드 최근 12개월 합을 3년 전 같은 기간과 비교했어요(${Math.round(p.lt * 100)}%).</li>`);
+  if (p.pat) {
+    const src =
+      p.pat.basis === "measured"
+        ? `서울시 실시간 도시데이터(서울 열린데이터광장)를 매시간 모은 최근 8주 시간별 인구`
+        : p.pat.basis === "gg_blend" || p.pat.basis === "gg_only"
+          ? `경기도 유동인구(경기데이터드림, 2026년 1~3월${p.dong ? `, ${esc(p.dong)}` : ""} 행정동)${p.pat.basis === "gg_blend" ? "와 서울 실측 장소의 같은 분류 평균을 반씩" : ""}`
+          : p.pat.basis === "category"
+            ? `서울 실측 장소 중 같은 분류(${esc(cfg.categories.find((c) => c.id === p.cat)?.label ?? p.cat)}) 평균`
+            : `서울 실측 장소 전체 평균`;
+    items.push(`<li><strong>시간대별 붐빔(${p.pat.label})</strong>: ${src}을 바탕으로 했어요. 가장 붐비는 시간을 1로 둔 상대 모양이에요.</li>`);
+  }
+  if (p.op) items.push(`<li><strong>쉬는 날·이용 시간</strong>: 한국관광공사 관광정보(TourAPI) 상세 정보예요. 바뀔 수 있으니 방문 전에 확인하세요.</li>`);
+  items.push(`<li><strong>근거 문장</strong>: 위 수치와 기상청 예보·관광공사 행사 정보·공휴일만 넣어 AI(OpenAI)가 쓴 문장이에요. 문장 속 숫자는 입력 자료와 대조해 맞지 않으면 버리고 정해진 문장으로 바꿔요.${p.review ? " '최근 후기' 내용은 최근 90일 네이버 블로그 글을 AI 가 요약한 것이에요(원문은 저장하지 않아요)." : ""}</li>`);
+  return `<ul class="sources">${items.join("")}</ul>`;
 }
 
 export async function initPlace() {
@@ -157,7 +196,10 @@ ${p.dong ? `<dt>행정동</dt><dd>${esc(p.dong)}</dd>` : ""}
       </table></div>
 
       <h2>근처의 한산한 곳</h2>
-      ${altHtml}`;
+      ${altHtml}
+
+      <h2>이 정보의 근거와 출처</h2>
+      ${sourcesHtml(p, day, m, cfg)}`;
   } catch {
     el.innerHTML = "<p>장소 정보를 불러오지 못했습니다. 주소를 확인하거나 <a href='/'>추천 목록</a>으로 돌아가 주세요.</p>";
   }

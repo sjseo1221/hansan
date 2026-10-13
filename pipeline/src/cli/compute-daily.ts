@@ -7,7 +7,7 @@ import { parse } from "yaml";
 import type { Place } from "../places/build.js";
 import { compute, type ComputeConfig, type ComputeInput } from "../score/compute.js";
 import { buildPublic, type PublicInput } from "../score/public.js";
-import { factsFor, loadFactContext, REASONS_PATH, REVIEWS_PATH, type ReasonCache, type ReviewCache } from "../llm/context.js";
+import { factsFor, KNOWN_PATH, loadFactContext, REASONS_PATH, REVIEWS_PATH, type KnownCache, type ReasonCache, type ReviewCache } from "../llm/context.js";
 import type { SeoulRow } from "../score/patterns.js";
 import type { TrendRow } from "../score/place-scores.js";
 import { addDays, latestBy } from "../score/stats.js";
@@ -88,6 +88,8 @@ const exposure = await readJson<ComputeInput["exposure"]>("data/state/exposure.j
 // 4단계 결과(없으면 빈 값): 후기 판정은 숨은 클래식 판정에, 근거 문장은 화면에 쓴다
 const reviews = await readJson<ReviewCache>(REVIEWS_PATH, {});
 const reasonCache = await readJson<ReasonCache>(REASONS_PATH, {});
+// 장소 한 줄 소개(관광공사 소개 글 요약) — 빈 문자열은 뺀다
+const known = Object.fromEntries(Object.entries(await readJson<KnownCache>(KNOWN_PATH, {})).filter(([, v]) => v.known).map(([id, v]) => [id, v.known]));
 
 // 축제: 운영자 파일 > 서울 문화행사 > TourAPI 행사
 const manualF = (await yaml<{ festivals?: { title: string; place: string; lat?: number; lng?: number; start: string; end: string; weekdays?: number[]; time?: string; link?: string; note?: string }[] }>("data/sources/festivals-manual.yaml").catch(() => ({ festivals: [] }))).festivals ?? [];
@@ -177,6 +179,7 @@ const pub = buildPublic({
   holidays: holidays.holidays,
   reasons,
   reviews,
+  known,
   placeDong,
   navYm: hub.baseYm,
   festivals,

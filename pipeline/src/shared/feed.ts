@@ -27,6 +27,7 @@ export interface FeedItem {
   prov?: boolean;
   blocked?: TypeId[];
   reason?: string; // LLM 근거 문장(4단계). 없으면 ruleReason
+  known?: string; // 무엇으로 알려진 곳인지(관광공사 소개 글 요약, 인기 장소만)
 }
 
 export interface Filters {

@@ -73,3 +73,8 @@ export interface ReviewCache {
 }
 export const REASONS_PATH = "data/state/llm/reasons.json";
 export const REVIEWS_PATH = "data/state/llm/reviews.json";
+// 장소 한 줄 소개 — h 는 소개 글+프롬프트 해시(글이 바뀌면 다시 만든다)
+export interface KnownCache {
+  [placeId: string]: { known: string; h: string; at: string };
+}
+export const KNOWN_PATH = "data/state/llm/known.json";

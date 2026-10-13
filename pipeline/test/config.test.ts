@@ -72,6 +72,7 @@ describe("무료 한도 안의 상한 (NFR-COST-02)", () => {
       tour_build: s.tour.caps.build,
       tour_events: s.tour.caps.events,
       tour_operation: s.tour.caps.operation,
+      tour_overview: s.tour.caps.overview,
       cnctr: s.cnctr.dailyCap,
       datalab: s.aux.datalabDailyCap,
       kma: s.aux.kmaDailyCap,

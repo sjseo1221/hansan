@@ -241,3 +241,44 @@ export async function collectOperation(input: { get: DgGet; usage: DailyUsage; p
   if (ok > 0) await writeJson(path, { source: "TourAPI detailIntro2", operation: store.operation });
   return { attempted: ok + failed, ok, failed, skipped: input.places.length - ok - failed, capped };
 }
+
+// ── 장소 소개(개요) ── '무엇으로 알려진 곳인지'(2026-10-13 사용자 요청: 많이 찾는 이유 설명)의 바탕. TourAPI detailCommon2 의 overview.
+// 소개 글은 거의 바뀌지 않아 refreshDays 마다 한 번만 받는다. 인기도 높은 장소부터(목록 순서 그대로) — 상한에 걸리면 다음 날 이어서
+export const htmlToText = (s: string) =>
+  s.replace(/<br\s*\/?>/gi, " ").replace(/<[^>]+>/g, "").replace(/&nbsp;/g, " ").replace(/&quot;/g, '"').replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&#39;/g, "'").replace(/\s+/g, " ").trim();
+
+export async function collectOverview(input: { get: DgGet; usage: DailyUsage; places: { placeId: string; contentId: string }[]; dataDir: string; now: Date; refreshDays: number; maxChars: number }) {
+  const { get, usage, dataDir, now } = input;
+  const path = join(dataDir, "sources", "tour", "overview.json");
+  const store = await readJson<{ overview: Record<string, { text: string; updatedAt: string }> }>(path, { overview: {} });
+  const t = kstParts(now);
+  const since = kstParts(addDays(now, -input.refreshDays)).date;
+  const failPath = join(dataDir, "state", "failures", `${t.yyyy}-${t.mm}.jsonl`);
+  const todo = input.places.filter((p) => !store.overview[p.placeId] || store.overview[p.placeId].updatedAt < since);
+  let ok = 0;
+  let failed = 0;
+  let streak = 0;
+  let capped = false;
+  for (const p of todo) {
+    if (streak >= 10) break;
+    try {
+      const r = await call(get, usage, "/KorService2/detailCommon2", { numOfRows: "1", contentId: p.contentId });
+      const it = r.items[0];
+      if (!it) throw Object.assign(new Error("빈 응답"), { name: "EMPTY" });
+      // 소개가 없는 장소도 빈 문자열로 남긴다 — 매일 다시 묻지 않게
+      store.overview[p.placeId] = { text: htmlToText(String(it.overview ?? "")).slice(0, input.maxChars), updatedAt: t.date };
+      ok++;
+      streak = 0;
+    } catch (e) {
+      if ((e as Error).name === "DAILY_CAP") {
+        capped = true;
+        break;
+      }
+      failed++;
+      streak++;
+      await appendJsonl(failPath, [{ at: kstIso(now), source: "tour_overview", placeId: p.placeId, code: (e as Error).name, message: "요청 실패" }]);
+    }
+  }
+  if (ok > 0) await writeJson(path, { source: "TourAPI detailCommon2", overview: store.overview });
+  return { todo: todo.length, ok, failed, capped, remaining: todo.length - ok };
+}

@@ -105,6 +105,7 @@ function card(it: FeedItem, f: Filters, cfg: Config, origin: Region | null, basi
     } <span class="lh-${it.lh}"><span aria-hidden="true">${lh.mark}</span> ${lh.text}</span></div>
     ${slot}
     <p>${esc(it.reason ?? ruleReason(it, it.rep))}${it.prov ? " <small>(평소 자료가 아직 적어 임시로 판단했어요)</small>" : ""}</p>
+    ${it.known ? `<p class="known">${esc(it.known)} <small>(관광공사 소개 요약)</small></p>` : ""}
     <p class="basis">${esc(basis)}</p>
   </li>`;
 }

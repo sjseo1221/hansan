@@ -1,15 +1,16 @@
-// 근거 문장(FR-LLM-01·02·06·07)·후기 판정(FR-LLM-03~05) 생성. compute-daily 다음에 돈다(그 뒤 compute-daily 를 한 번 더 돌려 캐시를 반영).
+// 근거 문장(FR-LLM-01·02·06·07)·후기 판정(FR-LLM-03~05)·장소 한 줄 소개 생성. compute-daily 다음에 돈다(그 뒤 compute-daily 를 한 번 더 돌려 캐시를 반영).
 // OPENAI_API_KEY 가 없으면 아무것도 하지 않는다 — 화면은 정형 문장(FR-LLM-08)을 쓴다.
 // 블로그 제목·요약은 판정 입력으로만 쓰고 저장하지 않는다(공개 저장소, 약관 재배포 범위 미확인)
 import { existsSync } from "node:fs";
+import { createHash } from "node:crypto";
 import { readdir, readFile } from "node:fs/promises";
 import { parse } from "yaml";
 import { HOST } from "../collect/naver.js";
 import { DailyUsage } from "../lib/usage.js";
 import { readJson, writeJson } from "../lib/store.js";
 import { kstParts } from "../lib/time.js";
-import { factsFor, loadFactContext, REASONS_PATH, REVIEWS_PATH, type RecItemLite, type ReasonCache, type ReviewCache } from "../llm/context.js";
-import { isReview, REASON_SCHEMA, REVIEW_SCHEMA, validReason } from "../llm/facts.js";
+import { factsFor, KNOWN_PATH, loadFactContext, REASONS_PATH, REVIEWS_PATH, type KnownCache, type RecItemLite, type ReasonCache, type ReviewCache } from "../llm/context.js";
+import { isKnown, isReview, KNOWN_SCHEMA, REASON_SCHEMA, REVIEW_SCHEMA, validReason } from "../llm/facts.js";
 import type { Place } from "../places/build.js";
 import { addDays } from "../score/stats.js";
 import { callJson, emptyUsage, LlmError, type Price } from "../shared/openai.js";
@@ -35,7 +36,7 @@ const cfg = parse(await readFile("config/llm.yaml", "utf8")) as {
   generation: { reasoningEffort: string; maxCallsPerRun: number; monthlyUsd: number; reviewRefreshDays: number; reviewBlogCalls: number };
 };
 const apiKey: string = key; // 아래 함수 안에서도 정의된 값으로
-// LLM_MODE: reviews(후기 판정) → (compute) → reasons(근거 문장). 후기 판정이 숨은 클래식 통과를 바꾸므로 근거 문장보다 먼저 돈다
+// LLM_MODE: reviews(후기 판정·장소 소개) → (compute) → reasons(근거 문장). 후기 판정이 숨은 클래식 통과를 바꾸므로 근거 문장보다 먼저 돈다
 const mode = process.env.LLM_MODE ?? "all";
 const month = asOf.slice(0, 7);
 const monthPath = `data/state/llm/usage-${month}.json`;
@@ -48,7 +49,7 @@ const fail = (e: unknown) => {
   const c = e instanceof LlmError ? e.code : "UNKNOWN";
   failures[c] = (failures[c] ?? 0) + 1;
 };
-const stats = { reasons: { needed: 0, reused: 0, generated: 0, invalid: 0, failed: 0, skippedBudget: 0 }, reviews: { needed: 0, reused: 0, fewPosts: 0, judged: 0, failed: 0, skipped: 0 } };
+const stats = { reasons: { needed: 0, reused: 0, generated: 0, invalid: 0, failed: 0, skippedBudget: 0 }, reviews: { needed: 0, reused: 0, fewPosts: 0, judged: 0, failed: 0, skipped: 0 }, known: { needed: 0, reused: 0, noOverview: 0, generated: 0, empty: 0, failed: 0, skippedBudget: 0 } };
 
 const { places } = await readJson<{ places: Place[] }>("data/places/places.json", { places: [] });
 const byId = new Map(places.map((p) => [p.placeId, p]));
@@ -175,15 +176,62 @@ for (const id of [...targets].sort()) {
 await writeJson(REVIEWS_PATH, reviews);
 }
 
+async function knownRun() {
+// 3) 장소 한 줄 소개(2026-10-13 사용자 요청: 많이 찾는 이유) — 인기 장소(70 이상)만, 관광공사 소개 글이 바뀌었을 때만 다시 만든다
+const cache = await readJson<KnownCache>(KNOWN_PATH, {});
+const { overview } = await readJson<{ overview: Record<string, { text: string }> }>("data/sources/tour/overview.json", { overview: {} });
+const prompt = await readFile("prompts/known.md", "utf8");
+const targets = new Set<string>();
+for (const r of Object.values(recs)) for (const it of r.items) if ((it.popularity ?? 0) >= 70) targets.add(it.placeId);
+for (const id of [...targets].sort()) {
+  stats.known.needed++;
+  const text = overview[id]?.text ?? "";
+  if (!text) {
+    stats.known.noOverview++;
+    continue;
+  }
+  const h = createHash("sha256").update(prompt).update("\n").update(text).digest("hex").slice(0, 16);
+  if (cache[id]?.h === h) {
+    stats.known.reused++;
+    continue;
+  }
+  if (!budgetLeft()) {
+    stats.known.skippedBudget++;
+    continue;
+  }
+  try {
+    const out = await callJson(
+      apiKey,
+      { model: cfg.model, name: "known", instructions: prompt, input: { place: byId.get(id)?.name ?? "", overview: text }, schema: KNOWN_SCHEMA, validate: isKnown, maxOutputTokens: 120, reasoningEffort: cfg.generation.reasoningEffort },
+      usage,
+      cfg.price,
+    );
+    if (!out) {
+      stats.known.failed++;
+      continue;
+    }
+    // 빈 문자열도 저장한다 — 같은 글로 다시 묻지 않게
+    cache[id] = { known: out.known.trim(), h, at: asOf };
+    if (out.known.trim()) stats.known.generated++;
+    else stats.known.empty++;
+  } catch (e) {
+    stats.known.failed++;
+    fail(e);
+  }
+}
+await writeJson(KNOWN_PATH, cache);
+}
+
 // 어떤 오류가 나도 이미 청구된 사용량은 기록한다(FR-LLM-10). 이 단계 실패는 화면 발행을 막지 않는다(워크플로 continue-on-error)
 try {
   if (mode !== "reasons") await reviewsRun();
+  if (mode !== "reasons") await knownRun();
   if (mode !== "reviews") await reasons();
 } catch (e) {
   fail(e);
 }
 
-// 3) 호출 수·비용 기록 (FR-LLM-10)
+// 4) 호출 수·비용 기록 (FR-LLM-10)
 for (const k of ["calls", "inputTokens", "cachedTokens", "outputTokens", "costUsd"] as const) monthUsage[k] += usage[k];
 await writeJson(monthPath, monthUsage);
 const report = { asOf, model: cfg.model, run: { ...usage, costUsd: Math.round(usage.costUsd * 10000) / 10000 }, month: { ...monthUsage, costUsd: Math.round(monthUsage.costUsd * 10000) / 10000 }, ...stats, failures };

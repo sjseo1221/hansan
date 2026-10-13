@@ -47,6 +47,7 @@ export interface PublicInput {
   holidays: Record<string, string>; // YYYYMMDD → 이름
   reasons: Record<string, string>; // "YYYY-MM-DD|placeId" → LLM 근거 문장(대표 유형)
   reviews: ReviewCache;
+  known: Record<string, string>; // 장소 한 줄 소개(관광공사 소개 글 요약, 인기 장소만)
   placeDong: Record<string, string>; // 경기 장소의 소속 행정동 이름
   navYm: string; // 중심 관광지 자료 기준 월(YYYYMM)
   festivals: Festival[]; // 이 날 열리는 축제(2026-10-12 사용자 요청)
@@ -120,6 +121,7 @@ export function buildPublic(input: PublicInput): Record<string, unknown> {
           ...(r.provisional ? { prov: true } : {}),
           ...(blocked.length ? { blocked } : {}),
           ...(input.reasons[`${date}|${p.placeId}`] ? { reason: input.reasons[`${date}|${p.placeId}`] } : {}),
+          ...(input.known[p.placeId] ? { known: input.known[p.placeId] } : {}),
         },
       ];
     });
@@ -215,6 +217,7 @@ export function buildPublic(input: PublicInput): Record<string, unknown> {
       lt: s?.longTerm ?? null,
       ...(pat ? { pat: { basis: pat.basis, label: pat.label, wd: pat.weekday, hd: pat.holiday } } : {}),
       // 후기 판정(FR-LLM-03~05): 판정 이유는 숨은 클래식에, 시간대 언급·화제 이유는 상세에
+      ...(input.known[p.placeId] ? { known: input.known[p.placeId] } : {}),
       ...(input.reviews[p.placeId] ? { review: { verdict: input.reviews[p.placeId].verdict, reason: input.reviews[p.placeId].reason, quietTime: input.reviews[p.placeId].quietTime, buzz: input.reviews[p.placeId].buzz } } : {}),
       days,
       alt,

@@ -2,7 +2,8 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { parse } from "yaml";
-import { buildFacts, factsHash, isReview, validReason, weatherOf, type FactInput } from "../src/llm/facts.js";
+import { buildFacts, factsHash, isKnown, isReview, validReason, weatherOf, type FactInput } from "../src/llm/facts.js";
+import { htmlToText } from "../src/collect/supplement.js";
 import { callJson, costOf, emptyUsage, LlmError } from "../src/shared/openai.js";
 
 const base: FactInput = {
@@ -132,5 +133,19 @@ describe("대화 상한 판정 (FR-CHAT-08·09, NFR-COST-02·03)", async () => {
     expect(decideTake({ service: 500, cost: 0, user: 0 }, l)).toBe("closed");
     expect(decideTake({ service: 0, cost: 15, user: 0 }, l)).toBe("closed");
     expect(decideTake({ service: 499, cost: 14.99, user: 0 }, l)).toBe("ok");
+  });
+});
+
+describe("장소 한 줄 소개 (많이 찾는 이유)", () => {
+  it("숫자·링크·50자 초과는 버리고, 빈 문자열(소개 없음)은 받는다", () => {
+    expect(isKnown({ known: "조선 왕실의 정원과 한옥이 남아 있는 궁궐로 알려진 곳이에요." })).toBe(true);
+    expect(isKnown({ known: "" })).toBe(true);
+    expect(isKnown({ known: "1395년에 지은 궁궐로 알려진 곳이에요." })).toBe(false);
+    expect(isKnown({ known: "자세한 내용은 www.example.kr 에서 보세요." })).toBe(false);
+    expect(isKnown({ known: "가".repeat(51) })).toBe(false);
+    expect(isKnown({})).toBe(false);
+  });
+  it("관광공사 소개 글의 태그·엔티티를 걷어 낸다", () => {
+    expect(htmlToText("한옥<br />골목이 &quot;아름다운&quot;<b>마을</b>&nbsp; &amp; 산책로")).toBe('한옥 골목이 "아름다운"마을 & 산책로');
   });
 });

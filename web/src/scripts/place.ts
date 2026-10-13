@@ -37,6 +37,7 @@ interface Place {
   lt: number | null;
   pat?: { basis: string; label: "실측" | "추정"; wd: (number | null)[]; hd: (number | null)[] };
   days: Day[];
+  known?: string; // 무엇으로 알려진 곳인지(관광공사 소개 글 요약)
   review?: { verdict: "worth_visiting" | "not_recommended" | "undecided"; reason: string; quietTime: string; buzz: string };
   alt: Record<string, [string, string, number][]>;
 }
@@ -55,6 +56,17 @@ function compare(f: number | null, u: number | null): string {
 
 const pctTop = (pct: number) => `상위 ${Math.max(1, Math.round(100 - pct))}%`;
 const ymdKo = (iso: string | null | undefined) => (iso ? `${Number(iso.slice(5, 7))}월 ${Number(iso.slice(8, 10))}일 ${iso.slice(11, 16)}` : "알 수 없음");
+
+// 인기도를 끌어올린 신호 — 상위 10% 안에 드는 신호만, 없으면 가장 높은 신호 하나
+function popSignals(p: Place): string {
+  if (!p.popx) return "검색 자료를 아직 받지 못했어요.";
+  const s: [number, string][] = [[p.popx.search, `네이버 검색 ${pctTop(p.popx.search)}`]];
+  if (p.popx.blog !== null) s.push([p.popx.blog, `블로그 글 수 ${pctTop(p.popx.blog)}`]);
+  if (p.popx.nav !== null && p.nav) s.push([p.popx.nav, `티맵 내비 목적지 ${esc(p.area)} ${p.nav.rank}위`]);
+  s.sort((a, b) => b[0] - a[0]);
+  const strong = s.filter(([v]) => v >= 90);
+  return (strong.length ? strong : s.slice(0, 1)).map(([, t]) => t).join(" · ");
+}
 
 // 근거와 출처(2026-10-12 사용자 요청: 혼잡 예측 근거·인기 상위 % 출처를 상세히) — 숫자마다 어디서 왔고 어떻게 계산했는지
 function sourcesHtml(p: Place, day: Day, m: Awaited<ReturnType<typeof meta>>, cfg: Awaited<ReturnType<typeof config>>): string {
@@ -85,6 +97,7 @@ function sourcesHtml(p: Place, day: Day, m: Awaited<ReturnType<typeof meta>>, cf
             : `서울 실측 장소 전체 평균`;
     items.push(`<li><strong>시간대별 붐빔(${p.pat.label})</strong>: 바탕 자료 — ${src}. 가장 붐비는 시간을 1로 둔 상대 모양이에요.</li>`);
   }
+  if (p.known) items.push(`<li><strong>어떤 곳</strong>: 한국관광공사 관광정보(TourAPI)의 장소 소개 글을 AI(OpenAI)가 한 줄로 줄였어요. 소개 글에 없는 내용과 숫자는 쓰지 않게 했어요.</li>`);
   if (p.op) items.push(`<li><strong>쉬는 날·이용 시간</strong>: 한국관광공사 관광정보(TourAPI) 상세 정보예요. 바뀔 수 있으니 방문 전에 확인하세요.</li>`);
   items.push(`<li><strong>근거 문장</strong>: 위 수치와 기상청 예보·관광공사 행사 정보·공휴일만 넣어 AI(OpenAI)가 쓴 문장이에요. 문장 속 숫자는 입력 자료와 대조해 맞지 않으면 버리고 정해진 문장으로 바꿔요.${p.review ? " '최근 후기' 내용은 최근 90일 네이버 블로그 글을 AI 가 요약한 것이에요(원문은 저장하지 않아요)." : ""}</li>`);
   return `<ul class="sources">${items.join("")}</ul>`;
@@ -121,6 +134,15 @@ export async function initPlace() {
     const lh = day.lh ? LH_TEXT[day.lh] : null;
     // 화제 이유(FR-DTL-04, FR-LLM-05)와 후기 속 한산한 시간대 언급(FR-LLM-04) — 최근 블로그 후기를 요약한 것
     const buzzHtml = p.review?.buzz ? `<p><strong>요즘 화제</strong> ${esc(p.review.buzz)} <small>(최근 후기 요약)</small></p>` : "";
+    // 많이 찾는 이유(2026-10-13 사용자 요청) — 인기 장소(상위 30%)만: 어떤 곳인지 · 요즘 화제 · 인기도를 끌어올린 신호
+    let whyHtml = buzzHtml;
+    if (p.pop !== null && p.pop >= 70) {
+      const why: string[] = [];
+      if (p.known) why.push(`<li><strong>어떤 곳</strong> ${esc(p.known)} <small>(한국관광공사 소개 요약)</small></li>`);
+      if (p.review?.buzz) why.push(`<li><strong>요즘 화제</strong> ${esc(p.review.buzz)} <small>(최근 후기 요약)</small></li>`);
+      why.push(`<li><strong>찾는 사람이 많다는 근거</strong> ${popSignals(p)}</li>`);
+      whyHtml = `<h3>많이 찾는 이유</h3><ul class="why">${why.join("")}</ul>`;
+    }
     const quietMention = p.review?.quietTime ? `<p>후기에서 말하는 한산한 때: ${esc(p.review.quietTime)} <small>(최근 후기 요약)</small></p>` : "";
 
     // 14일 표 (FR-DTL-02)
@@ -182,7 +204,7 @@ ${p.dong ? `<dt>행정동</dt><dd>${esc(p.dong)}</dd>` : ""}
       ${lh && !day.closed ? `<p class="lh-${day.lh}"><span aria-hidden="true">${lh.mark}</span> ${lh.text}</p>` : ""}
       ${day.fs ? `<p class="notice">이 지역의 혼잡 예측이 며칠째 갱신되지 않았어요.</p>` : ""}
       ${typesHtml}
-      ${buzzHtml}
+      ${whyHtml}
 
       <h2>시간대별 붐빔</h2>
       ${patternHtml}

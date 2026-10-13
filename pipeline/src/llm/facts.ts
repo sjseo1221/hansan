@@ -160,3 +160,16 @@ export const isReview = (x: unknown): x is ReviewOut => {
     r.buzz.length <= 60
   );
 };
+
+// 장소 한 줄 소개(2026-10-13 사용자 요청: 많이 찾는 이유) — 관광공사 소개 글 요약. 숫자·링크는 금지(지어낸 수치를 막는다)
+export const KNOWN_SCHEMA = {
+  type: "object",
+  properties: { known: { type: "string" } },
+  required: ["known"],
+  additionalProperties: false,
+} as const;
+
+export const isKnown = (x: unknown): x is { known: string } => {
+  const k = (x as { known?: unknown })?.known;
+  return typeof k === "string" && k.trim().length <= 50 && !/\d/.test(k) && !/https?:|www\.|\.com|\.kr/i.test(k);
+};

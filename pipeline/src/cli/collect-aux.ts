@@ -1,9 +1,9 @@
-// 보조 자료 매일 수집: 방문자수(FR-DATA-03) · 행사·날씨·공휴일(FR-DATA-08) · 운영 정보(FR-DATA-09, 요일 묶음)
+// 보조 자료 매일 수집: 방문자수(FR-DATA-03) · 행사·날씨·공휴일(FR-DATA-08) · 운영 정보(FR-DATA-09, 요일 묶음) · 장소 소개
 // 단계마다 따로 실패를 기록하고, 하나라도 실패하면 종료 코드 1 (FR-OPS-04)
 import { existsSync } from "node:fs";
 import { readFile } from "node:fs/promises";
 import { parse } from "yaml";
-import { collectEvents, collectHolidays, collectOperation, collectVisitors, collectWeather } from "../collect/supplement.js";
+import { collectEvents, collectHolidays, collectOperation, collectOverview, collectVisitors, collectWeather } from "../collect/supplement.js";
 import { collectHub } from "../collect/hub.js";
 import { collectSeoulFestivals } from "../collect/festival.js";
 import { weekdayBucket } from "../collect/naver.js";
@@ -23,7 +23,7 @@ if (!key) {
 const now = new Date();
 const t = kstParts(now);
 const yaml = async <T,>(p: string) => parse(await readFile(p, "utf8")) as T;
-const src = await yaml<{ aux: Record<string, number>; tour: { caps: { events: number; operation: number } } }>("config/sources.yaml");
+const src = await yaml<{ aux: Record<string, number>; tour: { caps: { events: number; operation: number; overview: number } } }>("config/sources.yaml");
 const regions = await yaml<{ provinces: { code: string }[]; midLandRegions: Record<string, string>; midLandGangwonEast: { regId: string; sigungu: string[] } }>("config/regions.yaml");
 const provinces = regions.provinces.map((p) => p.code);
 const usage = (source: string, cap: number) => DailyUsage.load("data", source, t.date, cap);
@@ -85,6 +85,19 @@ await step("operation", async () => {
   if (r.attempted > 0 && r.failed / r.attempted > 0.5) throw Object.assign(new Error("운영 정보 실패율 초과"), { name: "FAILURE_RATE" });
   // 하루 상한에 걸려 남은 장소가 있으면 알린다 — 조용히 다음 주로 밀리지 않게(2차 리뷰)
   if (r.capped || r.skipped > 0) throw Object.assign(new Error(`운영 정보 ${r.skipped}곳 미처리`), { name: "DAILY_CAP" });
+  return r;
+});
+
+// 장소 소개(2026-10-13 사용자 요청: 많이 찾는 이유 설명) — 인기도 높은 장소부터. 상한에 걸려 남은 곳은 다음 날 이어서 받는다(실패로 보지 않음)
+await step("overview", async () => {
+  const { places: scores } = await readJson<{ places: Record<string, { popularity: number | null }> }>("data/scores/places.json", { places: {} });
+  const targets = visible
+    .filter((p) => p.external.tour)
+    .sort((a, b) => (scores[b.placeId]?.popularity ?? -1) - (scores[a.placeId]?.popularity ?? -1) || (a.placeId < b.placeId ? -1 : 1))
+    .map((p) => ({ placeId: p.placeId, contentId: p.external.tour!.contentId }));
+  const r = await collectOverview({ get: kto, usage: await usage("tour_overview", src.tour.caps.overview), places: targets, dataDir: "data", now, refreshDays: src.aux.overviewRefreshDays, maxChars: src.aux.overviewMaxChars });
+  const tried = r.ok + r.failed;
+  if (tried > 0 && r.failed / tried > 0.5) throw Object.assign(new Error("장소 소개 실패율 초과"), { name: "FAILURE_RATE" });
   return r;
 });
 

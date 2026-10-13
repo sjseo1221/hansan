@@ -28,8 +28,9 @@ cnctr:
   dailyCap: 900
 
 tour:
-  # TourAPI v2(KorService2). 하루 한도는 미확인(사용자 면제) — 합계 900 을 작업별로 나눈다(2차 리뷰: 한 카운터를 세 작업이 나눠 쓰다 소진)
-  caps: { build: 150, events: 50, operation: 700 }
+  # TourAPI v2(KorService2). 하루 한도는 미확인(사용자 면제) — 합계 1,000 을 작업별로 나눈다(2차 리뷰: 한 카운터를 세 작업이 나눠 쓰다 소진)
+  # overview: 장소 소개(detailCommon2, 2026-10-13 추가) — 남은 100 을 쓴다(합 1,000). 인기 장소부터 180일에 한 번
+  caps: { build: 150, events: 50, operation: 700, overview: 100 }
   # 장소 후보 콘텐츠 유형: 12 관광지 · 14 문화시설 · 28 레포츠 · 15 축제공연행사, 38 쇼핑은 신분류 SH06(시장)만
   types:
     - { contentTypeId: "12" }
@@ -49,11 +50,13 @@ aux:
   eventsLookbackDays: 120         # 이미 시작해 진행 중인 축제도 받으려고 시작일을 이만큼 당겨 묻는다
   seoulEventsDailyCap: 10         # 서울시 문화행사 정보 축제 분류 6개 하루 1회
   holidayMonths: 3
+  overviewRefreshDays: 180       # 장소 소개는 거의 안 바뀐다
+  overviewMaxChars: 800          # 저장·요약 입력에 쓰는 소개 글 길이(앞부분)
 
 # 제공처 무료 한도 (docs/sources.md, 2026-10-12 확인). 우리 상한(위 cap·dailyCap)이 이 값을 넘지 않는지 시험으로 확인한다(NFR-COST-02),
 # 주간 리포트는 실제 사용량이 이 값의 80% 에 닿으면 경고한다(FR-OPS-08). per: day | month
 freeLimits:
-  tour: { limit: 1000, per: day, counters: [tour_build, tour_events, tour_operation], note: "TourAPI KorService2 개발계정 — 기능 합산으로 보임" }
+  tour: { limit: 1000, per: day, counters: [tour_build, tour_events, tour_operation, tour_overview], note: "TourAPI KorService2 개발계정 — 기능 합산으로 보임" }
   cnctr: { limit: 1000, per: day, counters: [cnctr] }
   datalab: { limit: 1000, per: day, counters: [datalab] }
   kma: { limit: 10000, per: day, counters: [kma] }

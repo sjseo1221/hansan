@@ -831,3 +831,10 @@
 {"at":"2026-10-15T05:17:53.536+09:00","source":"seoul_citydata","areaCd":"POI011","code":"TimeoutError","message":"요청 실패 또는 시간 초과"}
 {"at":"2026-10-15T05:17:53.536+09:00","source":"seoul_citydata","areaCd":"POI012","code":"TimeoutError","message":"요청 실패 또는 시간 초과"}
 {"at":"2026-10-15T05:17:53.536+09:00","source":"seoul_citydata","areaCd":"POI013","code":"TimeoutError","message":"요청 실패 또는 시간 초과"}
+{"at":"2026-10-15T05:41:05.082+09:00","source":"aux_weather","code":"FAILURE_RATE","message":"요청 실패"}
+{"at":"2026-10-15T05:41:05.082+09:00","source":"tour_operation","placeId":"kto-131821","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-15T05:41:05.082+09:00","source":"tour_operation","placeId":"kto-646762","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-15T05:41:05.082+09:00","source":"tour_hub","signguCd":"28110","code":"EMPTY","message":"빈 응답"}
+{"at":"2026-10-15T05:41:05.082+09:00","source":"tour_hub","signguCd":"28140","code":"EMPTY","message":"빈 응답"}
+{"at":"2026-10-15T05:41:05.082+09:00","source":"tour_hub","signguCd":"28260","code":"EMPTY","message":"빈 응답"}
+{"at":"2026-10-15T05:41:05.082+09:00","source":"tour_hub","signguCd":"41590","code":"EMPTY","message":"빈 응답"}

@@ -1302,3 +1302,7 @@
 {"at":"2026-10-17T05:24:10.448+09:00","source":"naver_trend","placeId":"kto-125687","code":"EMPTY","message":"요청 실패"}
 {"at":"2026-10-17T05:24:10.448+09:00","source":"naver_trend","placeId":"kto-125688","code":"EMPTY","message":"요청 실패"}
 {"at":"2026-10-17T06:18:00.058+09:00","source":"seoul_citydata","areaCd":"POI092","code":"INFO-000","message":"정상 처리되었습니다."}
+{"at":"2026-10-17T07:17:58.483+09:00","source":"seoul_citydata","areaCd":"POI102","code":"INFO-000","message":"정상 처리되었습니다."}
+{"at":"2026-10-17T07:17:58.483+09:00","source":"seoul_citydata","areaCd":"POI103","code":"INFO-000","message":"정상 처리되었습니다."}
+{"at":"2026-10-17T07:17:58.483+09:00","source":"seoul_citydata","areaCd":"POI104","code":"INFO-000","message":"정상 처리되었습니다."}
+{"at":"2026-10-17T07:17:58.483+09:00","source":"seoul_citydata","areaCd":"POI105","code":"INFO-000","message":"정상 처리되었습니다."}

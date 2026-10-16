@@ -1148,3 +1148,10 @@
 {"at":"2026-10-17T02:18:03.317+09:00","source":"seoul_citydata","areaCd":"POI025","code":"INFO-000","message":"정상 처리되었습니다."}
 {"at":"2026-10-17T02:18:03.317+09:00","source":"seoul_citydata","areaCd":"POI027","code":"INFO-000","message":"정상 처리되었습니다."}
 {"at":"2026-10-17T05:18:02.322+09:00","source":"seoul_citydata","areaCd":"POI086","code":"INFO-000","message":"정상 처리되었습니다."}
+{"at":"2026-10-17T05:41:08.721+09:00","source":"tour_operation","placeId":"kto-1223212","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-17T05:41:08.721+09:00","source":"tour_operation","placeId":"kto-127812","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-17T05:41:08.721+09:00","source":"tour_operation","placeId":"kto-131074","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-17T05:41:08.721+09:00","source":"tour_hub","signguCd":"28110","code":"EMPTY","message":"빈 응답"}
+{"at":"2026-10-17T05:41:08.721+09:00","source":"tour_hub","signguCd":"28140","code":"EMPTY","message":"빈 응답"}
+{"at":"2026-10-17T05:41:08.721+09:00","source":"tour_hub","signguCd":"28260","code":"EMPTY","message":"빈 응답"}
+{"at":"2026-10-17T05:41:08.721+09:00","source":"tour_hub","signguCd":"41590","code":"EMPTY","message":"빈 응답"}

@@ -23,7 +23,8 @@ concurrency:
 jobs:
   run:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    # LLM 단계는 코드 안 시간 예산(LLM_DEADLINE_MIN, 기본 10분)으로 스스로 끝낸다. 단계별 제한은 그래도 멈출 때의 안전장치
+    timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
         with:
@@ -39,6 +40,7 @@ jobs:
       # 이 단계들이 실패해도 정형 문장으로 발행은 계속한다(continue-on-error)
       - name: LLM reviews
         continue-on-error: true
+        timeout-minutes: 15
         run: npm run llm:daily
         env:
           LLM_MODE: reviews
@@ -49,6 +51,7 @@ jobs:
         run: npm run compute:daily
       - name: LLM reasons
         continue-on-error: true
+        timeout-minutes: 15
         run: npm run llm:daily
         env:
           LLM_MODE: reasons

@@ -44,6 +44,16 @@ const monthUsage = await readJson(monthPath, emptyUsage());
 const usage = emptyUsage();
 const maxCalls = Number(process.env.LLM_MAX_CALLS ?? cfg.generation.maxCallsPerRun);
 const budgetLeft = () => monthUsage.costUsd + usage.costUsd < cfg.generation.monthlyUsd && usage.calls < maxCalls;
+// 시간 예산 — 이 시간이 지나면 새 호출을 시작하지 않고 지금까지의 결과를 저장해 끝낸다.
+// 워크플로 제한(20분)에 걸려 프로세스가 죽으면 캐시가 저장되지 않아 매일 처음부터 다시 하게 된다(2026-10-13~17 compute-daily 취소 원인)
+const deadline = Date.now() + Number(process.env.LLM_DEADLINE_MIN ?? 10) * 60_000;
+const timeUp = () => Date.now() > deadline;
+async function pool<T>(items: T[], n: number, fn: (x: T) => Promise<void>) {
+  let i = 0;
+  await Promise.all(Array.from({ length: n }, async () => {
+    while (i < items.length) await fn(items[i++]);
+  }));
+}
 const failures: Record<string, number> = {};
 const fail = (e: unknown) => {
   const c = e instanceof LlmError ? e.code : "UNKNOWN";
@@ -72,14 +82,8 @@ const queue = [...facts.values()].filter((x) => {
 });
 const seen = new Set<string>();
 const work = queue.filter((x) => !seen.has(x.hash) && seen.add(x.hash));
-async function pool<T>(items: T[], n: number, fn: (x: T) => Promise<void>) {
-  let i = 0;
-  await Promise.all(Array.from({ length: n }, async () => {
-    while (i < items.length) await fn(items[i++]);
-  }));
-}
 await pool(work, 5, async (x) => {
-  if (!budgetLeft()) {
+  if (!budgetLeft() || timeUp()) {
     stats.reasons.skippedBudget++;
     return;
   }
@@ -127,17 +131,18 @@ const naverSecret = process.env.NAVER_CLIENT_SECRET;
 const blogUsage = await DailyUsage.load("data", "naver_blog_llm", asOf, cfg.generation.reviewBlogCalls);
 const reviewPrompt = await readFile("prompts/review.md", "utf8");
 const strip = (s: string) => s.replace(/<[^>]+>/g, "").replace(/&quot;/g, '"').replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&#39;/g, "'");
+const todo: string[] = [];
 for (const id of [...targets].sort()) {
   stats.reviews.needed++;
   const prev = reviews[id];
-  if (prev && prev.at >= addDays(asOf, -cfg.generation.reviewRefreshDays)) {
-    stats.reviews.reused++;
-    continue;
-  }
+  if (prev && prev.at >= addDays(asOf, -cfg.generation.reviewRefreshDays)) stats.reviews.reused++;
+  else todo.push(id);
+}
+await pool(todo, 5, async (id) => {
   const p = byId.get(id);
-  if (!p || !naverId || !naverSecret || !budgetLeft() || !blogUsage.tryConsume()) {
+  if (!p || !naverId || !naverSecret || !budgetLeft() || timeUp() || !blogUsage.tryConsume()) {
     stats.reviews.skipped++;
-    continue;
+    return;
   }
   await blogUsage.save();
   try {
@@ -154,7 +159,7 @@ for (const id of [...targets].sort()) {
       // 후기 5건 미만이면 판단 보류 (FR-LLM-03)
       reviews[id] = { verdict: "undecided", reason: "최근 후기가 적어 판단을 보류했어요.", quietTime: "", buzz: "", n: posts.length, at: asOf };
       stats.reviews.fewPosts++;
-      continue;
+      return;
     }
     const out = await callJson(
       apiKey,
@@ -164,7 +169,7 @@ for (const id of [...targets].sort()) {
     );
     if (!out) {
       stats.reviews.failed++;
-      continue;
+      return;
     }
     reviews[id] = { ...out, n: posts.length, at: asOf };
     stats.reviews.judged++;
@@ -172,7 +177,7 @@ for (const id of [...targets].sort()) {
     stats.reviews.failed++;
     fail(e);
   }
-}
+});
 await writeJson(REVIEWS_PATH, reviews);
 }
 
@@ -183,21 +188,21 @@ const { overview } = await readJson<{ overview: Record<string, { text: string }>
 const prompt = await readFile("prompts/known.md", "utf8");
 const targets = new Set<string>();
 for (const r of Object.values(recs)) for (const it of r.items) if ((it.popularity ?? 0) >= 70) targets.add(it.placeId);
-for (const id of [...targets].sort()) {
+await pool([...targets].sort(), 5, async (id) => {
   stats.known.needed++;
   const text = overview[id]?.text ?? "";
   if (!text) {
     stats.known.noOverview++;
-    continue;
+    return;
   }
   const h = createHash("sha256").update(prompt).update("\n").update(text).digest("hex").slice(0, 16);
   if (cache[id]?.h === h) {
     stats.known.reused++;
-    continue;
+    return;
   }
-  if (!budgetLeft()) {
+  if (!budgetLeft() || timeUp()) {
     stats.known.skippedBudget++;
-    continue;
+    return;
   }
   try {
     const out = await callJson(
@@ -208,7 +213,7 @@ for (const id of [...targets].sort()) {
     );
     if (!out) {
       stats.known.failed++;
-      continue;
+      return;
     }
     // 빈 문자열도 저장한다 — 같은 글로 다시 묻지 않게
     cache[id] = { known: out.known.trim(), h, at: asOf };
@@ -218,7 +223,7 @@ for (const id of [...targets].sort()) {
     stats.known.failed++;
     fail(e);
   }
-}
+});
 await writeJson(KNOWN_PATH, cache);
 }
 

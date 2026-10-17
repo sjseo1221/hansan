@@ -1326,3 +1326,6 @@
 {"at":"2026-10-17T11:18:04.051+09:00","source":"seoul_citydata","areaCd":"POI012","code":"TimeoutError","message":"요청 실패 또는 시간 초과"}
 {"at":"2026-10-17T11:18:04.051+09:00","source":"seoul_citydata","areaCd":"POI013","code":"TimeoutError","message":"요청 실패 또는 시간 초과"}
 {"at":"2026-10-17T14:17:59.194+09:00","source":"seoul_citydata","areaCd":"POI089","code":"INFO-000","message":"정상 처리되었습니다."}
+{"at":"2026-10-17T15:17:59.516+09:00","source":"seoul_citydata","areaCd":"POI119","code":"INFO-000","message":"정상 처리되었습니다."}
+{"at":"2026-10-17T15:17:59.516+09:00","source":"seoul_citydata","areaCd":"POI120","code":"INFO-000","message":"정상 처리되었습니다."}
+{"at":"2026-10-17T15:17:59.516+09:00","source":"seoul_citydata","areaCd":"POI121","code":"INFO-000","message":"정상 처리되었습니다."}

@@ -115,3 +115,21 @@ describe("collectSeoul", () => {
     expect(rows.map((r) => r.areaCd)).toEqual(["POI003"]);
   });
 });
+
+describe("시간 초과 재시도", () => {
+  it("TimeoutError 는 한 번 재시도하고, 재시도도 사용량에 센다", async () => {
+    const dataDir = await mkdtemp(join(tmpdir(), "seoul-retry-"));
+    const places = [{ areaCd: "POI001", areaNm: "a", category: "x" }];
+    let n = 0;
+    const base = await fakeFetch();
+    const fetchText: FetchText = async (url, t) => {
+      if (n++ === 0) throw Object.assign(new Error("t"), { name: "TimeoutError" });
+      return base(url, t);
+    };
+    const res = await collectSeoul({ places, cfg, key: "k", dataDir, now: new Date("2026-10-17T02:17:00Z"), fetchText });
+    expect(res).toMatchObject({ ok: 1, failed: 0 });
+    expect(n).toBe(2);
+    const u = JSON.parse(await readFile(join(dataDir, "state", "usage", "seoul_citydata", "2026-10-17.json"), "utf8"));
+    expect(u.count).toBe(2);
+  });
+});

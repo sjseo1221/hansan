@@ -136,7 +136,15 @@ export async function collectSeoul(input: CollectInput): Promise<CollectResult> 
       const before = failures.length;
       const url = `${cfg.baseUrl}/${encodeURIComponent(key)}/json/${cfg.service}/1/5/${place.areaCd}`;
       try {
-        const parsed = parseResponse(await get(url, cfg.timeoutMs));
+        let body: string;
+        try {
+          body = await get(url, cfg.timeoutMs);
+        } catch (e) {
+          // 서울 API 가 일시적으로 느릴 때(2026-10-17 11시 13곳 연속 시간 초과) 한 번만 재시도한다. 재시도도 하루 상한에 센다
+          if ((e as Error).name !== "TimeoutError" || !usage.tryConsume()) throw e;
+          body = await get(url, cfg.timeoutMs);
+        }
+        const parsed = parseResponse(body);
         if (!parsed.ok) fail(place.areaCd, parsed.code, parsed.message);
         else if (parsed.record.areaCd !== place.areaCd) fail(place.areaCd, "AREA_MISMATCH", `응답 장소 ${parsed.record.areaCd}`);
         else records.push({ ...parsed.record, fetchedAt, source: SOURCE });
@@ -148,6 +156,7 @@ export async function collectSeoul(input: CollectInput): Promise<CollectResult> 
     }
   };
   await Promise.all(Array.from({ length: Math.max(1, cfg.concurrency) }, worker));
+  await usage.save(); // 재시도로 더 쓴 호출 수 반영
 
   records.sort((a, b) => a.areaCd.localeCompare(b.areaCd));
   await appendJsonl(join(dataDir, "raw", SOURCE, `${t.yyyy}-${t.mm}`, `${t.dd}.jsonl`), records);

@@ -144,7 +144,6 @@ await pool(todo, 5, async (id) => {
     stats.reviews.skipped++;
     return;
   }
-  await blogUsage.save();
   try {
     const res = await fetch(`${HOST}/search/v1/blog?query=${encodeURIComponent(p.keyword)}&display=20&sort=date`, {
       headers: { "X-NCP-APIGW-API-KEY-ID": naverId, "X-NCP-APIGW-API-KEY": naverSecret },
@@ -178,6 +177,7 @@ await pool(todo, 5, async (id) => {
     fail(e);
   }
 });
+await blogUsage.save(); // 병렬 중에 저장하면 같은 .tmp 파일을 다퉈 rename 이 실패한다
 await writeJson(REVIEWS_PATH, reviews);
 }
 

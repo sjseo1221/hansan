@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-10-12",
+  "generatedAt": "2026-10-19",
   "attractions": 4315,
   "matched": {
-    "exact": 3387,
-    "normalized": 242,
-    "partial": 118,
-    "total": 3747,
+    "exact": 3384,
+    "normalized": 245,
+    "partial": 119,
+    "total": 3748,
     "ambiguous": 2,
-    "duplicates": 17
+    "duplicates": 18
   },
-  "matchRate": 0.868,
+  "matchRate": 0.869,
   "unmatched": {
-    "count": 568,
+    "count": 567,
     "list": [
       {
         "signguCd": "11110",
@@ -1651,17 +1651,7 @@
       {
         "signguCd": "41800",
         "signguNm": "연천군",
-        "tAtsNm": "신탄리역"
-      },
-      {
-        "signguCd": "41800",
-        "signguNm": "연천군",
         "tAtsNm": "연강갤러리"
-      },
-      {
-        "signguCd": "41800",
-        "signguNm": "연천군",
-        "tAtsNm": "전곡역"
       },
       {
         "signguCd": "41820",
@@ -1794,9 +1784,19 @@
         "tAtsNm": "공군박물관"
       },
       {
+        "signguCd": "43111",
+        "signguNm": "청주시 상당구",
+        "tAtsNm": "운용사(충북)"
+      },
+      {
         "signguCd": "43112",
         "signguNm": "청주시 서원구",
         "tAtsNm": "노산리 솔밭 자연유원지"
+      },
+      {
+        "signguCd": "43113",
+        "signguNm": "청주시 흥덕구",
+        "tAtsNm": "백록서원"
       },
       {
         "signguCd": "43113",
@@ -1894,11 +1894,6 @@
         "tAtsNm": "심천역(영동)"
       },
       {
-        "signguCd": "43740",
-        "signguNm": "영동군",
-        "tAtsNm": "천태산"
-      },
-      {
         "signguCd": "43745",
         "signguNm": "증평군",
         "tAtsNm": "농심테마파크(농업기술센터)"
@@ -1961,6 +1956,11 @@
       {
         "signguCd": "44131",
         "signguNm": "천안시 동남구",
+        "tAtsNm": "천안상록리조트"
+      },
+      {
+        "signguCd": "44131",
+        "signguNm": "천안시 동남구",
         "tAtsNm": "천안예술의전당 미술관"
       },
       {
@@ -1997,11 +1997,6 @@
         "signguCd": "44180",
         "signguNm": "보령시",
         "tAtsNm": "JFK 대천 워터파크"
-      },
-      {
-        "signguCd": "44180",
-        "signguNm": "보령시",
-        "tAtsNm": "보령 청소역"
       },
       {
         "signguCd": "44180",
@@ -2476,6 +2471,11 @@
       {
         "signguCd": "51230",
         "signguNm": "삼척시",
+        "tAtsNm": "한재밑해변"
+      },
+      {
+        "signguCd": "51230",
+        "signguNm": "삼척시",
         "tAtsNm": "해양레일바이크 궁촌정거장(삼척)"
       },
       {
@@ -2597,11 +2597,6 @@
         "signguCd": "51760",
         "signguNm": "평창군",
         "tAtsNm": "장암산 활공장"
-      },
-      {
-        "signguCd": "51760",
-        "signguNm": "평창군",
-        "tAtsNm": "한국전통음식문화체험관(정강원)"
       },
       {
         "signguCd": "51770",
@@ -2861,8 +2856,11 @@
     "덕산국민여가캠핑장(AC05)",
     "동강오토캠핑장(AC05)",
     "맹방비치캠핑장(AC05)",
+    "보령 청소역(VE11)",
+    "신탄리역(VE11)",
     "영월별마로캠핑장(AC05)",
     "장호비치캠핑장(AC05)",
+    "전곡역(VE11)",
     "진동리 국민여가캠핑장(AC05)",
     "진천명품 휴미락캠핑장(AC05)",
     "춘천숲자연휴양림(AC05)",
@@ -2885,15 +2883,13 @@
     "부평 굴포누리 기후변화체험관(3456754)",
     "한국가스공사 가스과학관(2767868)",
     "테미공원(2758655)",
-    "오산반려동물테마파크(2930689)",
     "시화조력문화관(2463284)",
+    "오산반려동물테마파크(2930689)",
     "몽덕산(125483)",
     "제3땅굴(127000)",
     "복하천수변공원(2763852)",
-    "기흥레스피아호수공원(2734940)",
     "성령대군묘(920339)",
     "서해수호관(2649844)",
-    "드론봇 페스티벌(3113995)",
     "조산공원(1688386)",
     "보령목재문화체험장(3453008)",
     "현충사 달빛야행(2865122)",
@@ -2902,12 +2898,6 @@
     "만경대(125793)"
   ],
   "crossSigungu": [
-    {
-      "tAtsNm": "가리왕산",
-      "signguNm": "정선군",
-      "title": "가리왕산",
-      "addr": "강원특별자치도 평창군 진부면 장전리 산 1"
-    },
     {
       "tAtsNm": "간송미술관(서울 보화각)",
       "signguNm": "중구",
@@ -3314,7 +3304,7 @@
       "tAtsNm": "월미문화의거리 & 달빛음악분수",
       "signguNm": "중구",
       "title": "월미문화의거리 & 달빛음악분수",
-      "addr": "인천광역시 제물포구 월미로 252"
+      "addr": "인천광역시 제물포구 월미로 252 (북성동1가)"
     },
     {
       "tAtsNm": "월미바다열차",
@@ -3593,6 +3583,16 @@
       "staleSince": "2026-10-12"
     },
     {
+      "placeId": "kto-125688",
+      "name": "한재밑해변",
+      "staleSince": "2026-10-19"
+    },
+    {
+      "placeId": "kto-125792",
+      "name": "두타산성",
+      "staleSince": "2026-10-19"
+    },
+    {
       "placeId": "kto-125793",
       "name": "만경대",
       "staleSince": "2026-10-12"
@@ -3601,6 +3601,21 @@
       "placeId": "kto-127497",
       "name": "국립수목원",
       "staleSince": "2026-10-12"
+    },
+    {
+      "placeId": "kto-127812",
+      "name": "천안상록리조트",
+      "staleSince": "2026-10-19"
+    },
+    {
+      "placeId": "kto-1626554",
+      "name": "은진향교 대성전",
+      "staleSince": "2026-10-19"
+    },
+    {
+      "placeId": "kto-1956032",
+      "name": "백록서원",
+      "staleSince": "2026-10-19"
     },
     {
       "placeId": "kto-2456640",
@@ -3623,9 +3638,14 @@
       "staleSince": "2026-10-12"
     },
     {
-      "placeId": "kto-2734940",
-      "name": "기흥레스피아호수공원",
-      "staleSince": "2026-10-12"
+      "placeId": "kto-2734948",
+      "name": "기흥레스피아호수공원 반려동물놀이터",
+      "staleSince": "2026-10-19"
+    },
+    {
+      "placeId": "kto-2757155",
+      "name": "법룡사",
+      "staleSince": "2026-10-19"
     },
     {
       "placeId": "kto-2758655",
@@ -3663,6 +3683,11 @@
       "staleSince": "2026-10-12"
     },
     {
+      "placeId": "kto-346685",
+      "name": "운용사(충북)",
+      "staleSince": "2026-10-19"
+    },
+    {
       "placeId": "kto-3545967",
       "name": "정동진",
       "staleSince": "2026-10-12"
@@ -3674,26 +3699,26 @@
     }
   ],
   "places": {
-    "total": 3731,
-    "visible": 3713,
-    "hidden": 18,
+    "total": 3735,
+    "visible": 3710,
+    "hidden": 25,
     "byProvince": {
-      "11": 562,
+      "11": 563,
       "28": 257,
       "30": 99,
       "36": 31,
       "41": 1061,
-      "43": 400,
-      "44": 603,
-      "51": 718
+      "43": 401,
+      "44": 604,
+      "51": 719
     },
     "byCategory": {
       "nature_park": 1187,
       "street_market": 390,
-      "theme_park": 359,
+      "theme_park": 360,
       "exhibition": 460,
-      "heritage": 1049,
-      "walking_trail": 253,
+      "heritage": 1051,
+      "walking_trail": 254,
       "leisure_sports": 33
     },
     "seoulLinked": 32
@@ -3703,16 +3728,19 @@
     "adminDong": 0,
     "operation": 0
   },
-  "keywordChanged": [],
+  "keywordChanged": [
+    "kto-126751",
+    "kto-129417"
+  ],
   "shrinkBlocked": false,
   "warnings": [],
-  "operationFilled": 541,
+  "operationFilled": 3704,
   "tour": {
     "sigungu": 147,
     "sigunguFailed": false,
     "provincesOk": 8,
     "provincesFailed": 0,
     "provincesKept": 0,
-    "candidates": 10951
+    "candidates": 10935
   }
 }

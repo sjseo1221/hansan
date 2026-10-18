@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-10-12T12:04:59.500+09:00",
+  "fetchedAt": "2026-10-19T04:50:56.426+09:00",
   "source": "TourAPI areaBasedList2",
   "candidates": [
     {
@@ -759,6 +759,20 @@
       "modifiedtime": "20250507190643"
     },
     {
+      "contentid": "129968",
+      "contenttypeid": "14",
+      "title": "세종문화원",
+      "addr1": "세종특별자치시 조치원읍 문화로 17",
+      "mapx": 127.3007447472,
+      "mapy": 36.6031529402,
+      "lDongRegnCd": "36",
+      "lDongSignguCd": "110",
+      "lclsSystm1": "VE",
+      "lclsSystm2": "VE09",
+      "lclsSystm3": "VE090100",
+      "modifiedtime": "20261012142706"
+    },
+    {
       "contentid": "2758601",
       "contenttypeid": "14",
       "title": "비오케이아트센터",
@@ -967,20 +981,6 @@
       "lclsSystm2": "VE07",
       "lclsSystm3": "VE070300",
       "modifiedtime": "20260311100340"
-    },
-    {
-      "contentid": "129968",
-      "contenttypeid": "14",
-      "title": "세종문화원",
-      "addr1": "세종특별자치시 조치원읍 문화로 17",
-      "mapx": 127.3007603571,
-      "mapy": 36.6032018291,
-      "lDongRegnCd": "36",
-      "lDongSignguCd": "110",
-      "lclsSystm1": "VE",
-      "lclsSystm2": "VE09",
-      "lclsSystm3": "VE090100",
-      "modifiedtime": "20251222172100"
     },
     {
       "contentid": "2758549",

@@ -1696,3 +1696,7 @@
 {"at":"2026-10-19T05:23:56.102+09:00","source":"naver_trend","placeId":"kto-125772","code":"EMPTY","message":"요청 실패"}
 {"at":"2026-10-19T05:23:56.102+09:00","source":"naver_trend","placeId":"kto-125811","code":"EMPTY","message":"요청 실패"}
 {"at":"2026-10-19T05:23:56.102+09:00","source":"naver_trend","placeId":"kto-125823","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-19T05:41:01.458+09:00","source":"tour_hub","signguCd":"28110","code":"EMPTY","message":"빈 응답"}
+{"at":"2026-10-19T05:41:01.458+09:00","source":"tour_hub","signguCd":"28140","code":"EMPTY","message":"빈 응답"}
+{"at":"2026-10-19T05:41:01.458+09:00","source":"tour_hub","signguCd":"28260","code":"EMPTY","message":"빈 응답"}
+{"at":"2026-10-19T05:41:01.458+09:00","source":"tour_hub","signguCd":"41590","code":"EMPTY","message":"빈 응답"}

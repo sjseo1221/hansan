@@ -1,0 +1,151 @@
+{
+  "week": "2026-W42",
+  "days": [
+    "2026-10-12",
+    "2026-10-18"
+  ],
+  "accuracy": {
+    "recommendedHigh": 84,
+    "evaluable": 2,
+    "excluded": 82,
+    "quiet": 0,
+    "rate": 0
+  },
+  "types": {
+    "moderate_hotspot": 299,
+    "hidden_classic": 16,
+    "early_hotspot": 20,
+    "famous_spot": 247,
+    "time_slot": 12
+  },
+  "recLogDays": 3,
+  "failures": {
+    "naver_trend EMPTY": 1312,
+    "seoul_citydata INFO-000": 61,
+    "tour_ldong TypeError": 2,
+    "tour TypeError": 16,
+    "tour_operation DG_NO_HEADER": 10,
+    "aux_operation DAILY_CAP": 1,
+    "seoul_citydata TimeoutError": 76,
+    "tour_hub EMPTY": 28,
+    "tour_operation EMPTY": 11,
+    "aux_weather FAILURE_RATE": 2,
+    "seoul_citydata TypeError": 2
+  },
+  "usage": [
+    {
+      "service": "tour",
+      "per": "day",
+      "used": 661,
+      "limit": 1000,
+      "pct": 66.1,
+      "warn": false,
+      "note": "TourAPI KorService2 개발계정 — 기능 합산으로 보임"
+    },
+    {
+      "service": "cnctr",
+      "per": "day",
+      "used": 600,
+      "limit": 1000,
+      "pct": 60,
+      "warn": false
+    },
+    {
+      "service": "datalab",
+      "per": "day",
+      "used": 4,
+      "limit": 1000,
+      "pct": 0.4,
+      "warn": false
+    },
+    {
+      "service": "kma",
+      "per": "day",
+      "used": 265,
+      "limit": 10000,
+      "pct": 2.7,
+      "warn": false
+    },
+    {
+      "service": "kasi",
+      "per": "day",
+      "used": 6,
+      "limit": 10000,
+      "pct": 0.1,
+      "warn": false
+    },
+    {
+      "service": "tour_hub",
+      "per": "day",
+      "used": 133,
+      "limit": 1000,
+      "pct": 13.3,
+      "warn": false,
+      "note": "관광공사 기초지자체 중심 관광지 개발계정"
+    },
+    {
+      "service": "seoul_citydata",
+      "per": "day",
+      "used": 2934,
+      "limit": 3000,
+      "pct": 97.8,
+      "warn": true,
+      "note": "미등록 키 한도 미확인 — 우리 상한을 한도로 본다"
+    },
+    {
+      "service": "naver_search",
+      "per": "day",
+      "used": 2300,
+      "limit": 25000,
+      "pct": 9.2,
+      "warn": false,
+      "note": "API HUB 정오표 25,000/일(월 775,000 과 상충 — 보수적으로)"
+    },
+    {
+      "service": "naver_trend",
+      "per": "month",
+      "used": 2334,
+      "limit": 50000,
+      "pct": 4.7,
+      "warn": false
+    }
+  ],
+  "openai": {
+    "generationWeekUsd": 0.6624,
+    "generationMonthUsd": 2.6948,
+    "chatMonthUsd": 0.0041,
+    "budgetUsd": 20
+  },
+  "visits": {
+    "visit": 32,
+    "detail": 19,
+    "chat": 1
+  },
+  "actionsMinutes": 705,
+  "coverage": {
+    "places": {
+      "total": 3735,
+      "visible": 3710,
+      "hidden": 2,
+      "stale": 25
+    },
+    "sources": {
+      "cnctrLinked": 3710,
+      "forecastToday": 3710,
+      "forecastStale": 0,
+      "forecastFlat": 13,
+      "trendWeekly": 2035,
+      "trendBackfill": 3653,
+      "blog": 3709,
+      "seoulLinked": 32,
+      "seoulPatterns": 121,
+      "ggLinked": 621,
+      "navRanked": 1809,
+      "ggLinkedDong": 603,
+      "operation": 3696,
+      "operationCautionToday": 378,
+      "closedToday": 555
+    }
+  },
+  "complete": true
+}

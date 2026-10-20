@@ -1760,3 +1760,43 @@
 {"at":"2026-10-20T15:17:39.932+09:00","source":"seoul_citydata","areaCd":"POI011","code":"TimeoutError","message":"요청 실패 또는 시간 초과"}
 {"at":"2026-10-20T15:17:39.932+09:00","source":"seoul_citydata","areaCd":"POI012","code":"TimeoutError","message":"요청 실패 또는 시간 초과"}
 {"at":"2026-10-20T15:17:39.932+09:00","source":"seoul_citydata","areaCd":"POI013","code":"TimeoutError","message":"요청 실패 또는 시간 초과"}
+{"at":"2026-10-21T05:23:44.384+09:00","source":"naver_trend","placeId":"kto-127585","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-21T05:23:44.384+09:00","source":"naver_trend","placeId":"kto-1956403","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-21T05:23:44.384+09:00","source":"naver_trend","placeId":"kto-2769492","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-21T05:23:44.384+09:00","source":"naver_trend","placeId":"kto-2786012","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-21T05:23:44.384+09:00","source":"naver_trend","placeId":"kto-2789008","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-21T05:23:44.384+09:00","source":"naver_trend","placeId":"kto-1113230","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-21T05:23:44.384+09:00","source":"naver_trend","placeId":"kto-1115203","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-21T05:23:44.384+09:00","source":"naver_trend","placeId":"kto-1231032","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-21T05:23:44.384+09:00","source":"naver_trend","placeId":"kto-125501","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-21T05:23:44.384+09:00","source":"naver_trend","placeId":"kto-125711","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-21T05:23:44.384+09:00","source":"naver_trend","placeId":"kto-125917","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-21T05:23:44.384+09:00","source":"naver_trend","placeId":"kto-126480","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-21T05:23:44.384+09:00","source":"naver_trend","placeId":"kto-126481","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-21T05:23:44.384+09:00","source":"naver_trend","placeId":"kto-126881","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-21T05:23:44.384+09:00","source":"naver_trend","placeId":"kto-126917","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-21T05:23:44.384+09:00","source":"naver_trend","placeId":"kto-128101","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-21T05:23:44.384+09:00","source":"naver_trend","placeId":"kto-129784","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-21T05:23:44.384+09:00","source":"naver_trend","placeId":"kto-132554","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-21T05:23:44.384+09:00","source":"naver_trend","placeId":"kto-1579548","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-21T05:23:44.384+09:00","source":"naver_trend","placeId":"kto-1606052","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-21T05:23:44.384+09:00","source":"naver_trend","placeId":"kto-1606096","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-21T05:23:44.384+09:00","source":"naver_trend","placeId":"kto-1619210","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-21T05:23:44.384+09:00","source":"naver_trend","placeId":"kto-1619758","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-21T05:23:44.384+09:00","source":"naver_trend","placeId":"kto-1622562","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-21T05:23:44.384+09:00","source":"naver_trend","placeId":"kto-1622660","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-21T05:23:44.384+09:00","source":"naver_trend","placeId":"kto-1622775","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-21T05:23:44.384+09:00","source":"naver_trend","placeId":"kto-1622872","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-21T05:23:44.384+09:00","source":"naver_trend","placeId":"kto-1623687","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-21T05:23:44.384+09:00","source":"naver_trend","placeId":"kto-1623767","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-21T05:23:44.384+09:00","source":"naver_trend","placeId":"kto-1623927","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-21T05:23:44.384+09:00","source":"naver_trend","placeId":"kto-1646664","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-21T05:23:44.384+09:00","source":"naver_trend","placeId":"kto-1679426","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-21T05:23:44.384+09:00","source":"naver_trend","placeId":"kto-1916338","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-21T05:23:44.384+09:00","source":"naver_trend","placeId":"kto-1945647","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-21T05:23:44.384+09:00","source":"naver_trend","placeId":"kto-2555010","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-21T05:23:44.384+09:00","source":"naver_trend","placeId":"kto-264375","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-21T05:23:44.384+09:00","source":"naver_trend","placeId":"kto-2662684","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-21T05:23:44.384+09:00","source":"naver_trend","placeId":"kto-2673478","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-21T05:23:44.384+09:00","source":"naver_trend","placeId":"kto-2680234","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-21T05:23:44.384+09:00","source":"naver_trend","placeId":"kto-2718059","code":"EMPTY","message":"요청 실패"}

@@ -1,7 +1,7 @@
 {
-  "calls": 22283,
-  "inputTokens": 26479055,
+  "calls": 23791,
+  "inputTokens": 28186027,
   "cachedTokens": 5305,
-  "outputTokens": 1118161,
-  "costUsd": 3.2065085500000015
+  "outputTokens": 1192842,
+  "costUsd": 3.4145462500000012
 }

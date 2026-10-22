@@ -1877,3 +1877,13 @@
 {"at":"2026-10-22T06:17:40.564+09:00","source":"seoul_citydata","areaCd":"POI011","code":"TimeoutError","message":"요청 실패 또는 시간 초과"}
 {"at":"2026-10-22T06:17:40.564+09:00","source":"seoul_citydata","areaCd":"POI012","code":"TimeoutError","message":"요청 실패 또는 시간 초과"}
 {"at":"2026-10-22T06:17:40.564+09:00","source":"seoul_citydata","areaCd":"POI013","code":"TimeoutError","message":"요청 실패 또는 시간 초과"}
+{"at":"2026-10-23T04:30:47.239+09:00","source":"cnctr","signguCd":"11110","code":"NET_UND_ERR_CONNECT_TIMEOUT","message":"요청 실패"}
+{"at":"2026-10-23T04:30:47.239+09:00","source":"cnctr","signguCd":"11140","code":"NET_UND_ERR_CONNECT_TIMEOUT","message":"요청 실패"}
+{"at":"2026-10-23T04:30:47.239+09:00","source":"cnctr","signguCd":"11170","code":"NET_UND_ERR_CONNECT_TIMEOUT","message":"요청 실패"}
+{"at":"2026-10-23T04:30:47.239+09:00","source":"cnctr","signguCd":"11200","code":"NET_UND_ERR_CONNECT_TIMEOUT","message":"요청 실패"}
+{"at":"2026-10-23T04:30:47.239+09:00","source":"cnctr","signguCd":"11215","code":"NET_UND_ERR_CONNECT_TIMEOUT","message":"요청 실패"}
+{"at":"2026-10-23T04:30:47.239+09:00","source":"cnctr","signguCd":"11230","code":"NET_UND_ERR_CONNECT_TIMEOUT","message":"요청 실패"}
+{"at":"2026-10-23T04:30:47.239+09:00","source":"cnctr","signguCd":"11260","code":"NET_UND_ERR_CONNECT_TIMEOUT","message":"요청 실패"}
+{"at":"2026-10-23T04:30:47.239+09:00","source":"cnctr","signguCd":"11290","code":"NET_UND_ERR_CONNECT_TIMEOUT","message":"요청 실패"}
+{"at":"2026-10-23T04:30:47.239+09:00","source":"cnctr","signguCd":"11305","code":"NET_UND_ERR_CONNECT_TIMEOUT","message":"요청 실패"}
+{"at":"2026-10-23T04:30:47.239+09:00","source":"cnctr","signguCd":"11320","code":"NET_UND_ERR_CONNECT_TIMEOUT","message":"요청 실패"}

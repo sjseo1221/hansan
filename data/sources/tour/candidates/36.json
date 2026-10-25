@@ -1,7 +1,105 @@
 {
-  "fetchedAt": "2026-10-19T04:50:56.426+09:00",
+  "fetchedAt": "2026-10-26T04:50:30.351+09:00",
   "source": "TourAPI areaBasedList2",
   "candidates": [
+    {
+      "contentid": "2756162",
+      "contenttypeid": "12",
+      "title": "무궁화테마공원",
+      "addr1": "세종특별자치시 세종동",
+      "mapx": 127.29,
+      "mapy": 36.5145,
+      "lDongRegnCd": "36",
+      "lDongSignguCd": "110",
+      "lclsSystm1": "VE",
+      "lclsSystm2": "VE03",
+      "lclsSystm3": "VE030100",
+      "modifiedtime": "20261023161955"
+    },
+    {
+      "contentid": "2758481",
+      "contenttypeid": "12",
+      "title": "달메뜰근린공원",
+      "addr1": "세종특별자치시 보듬4로 86 (도담동)",
+      "mapx": 127.2739,
+      "mapy": 36.515,
+      "lDongRegnCd": "36",
+      "lDongSignguCd": "110",
+      "lclsSystm1": "VE",
+      "lclsSystm2": "VE03",
+      "lclsSystm3": "VE030400",
+      "modifiedtime": "20261023161709"
+    },
+    {
+      "contentid": "2758472",
+      "contenttypeid": "12",
+      "title": "원수산습지생태원",
+      "addr1": "세종특별자치시 도담1길 3-4 (세종동)",
+      "mapx": 127.2684295421,
+      "mapy": 36.5140450999,
+      "lDongRegnCd": "36",
+      "lDongSignguCd": "110",
+      "lclsSystm1": "NA",
+      "lclsSystm2": "NA04",
+      "lclsSystm3": "NA040500",
+      "modifiedtime": "20261023161104"
+    },
+    {
+      "contentid": "2761431",
+      "contenttypeid": "12",
+      "title": "바람재쉼터",
+      "addr1": "세종특별자치시 금남면 영대리",
+      "mapx": 127.3247,
+      "mapy": 36.4476,
+      "lDongRegnCd": "36",
+      "lDongSignguCd": "110",
+      "lclsSystm1": "VE",
+      "lclsSystm2": "VE03",
+      "lclsSystm3": "VE030100",
+      "modifiedtime": "20261023154840"
+    },
+    {
+      "contentid": "2761645",
+      "contenttypeid": "12",
+      "title": "원수산MTB공원",
+      "addr1": "세종특별자치시 세종동",
+      "mapx": 127.2677,
+      "mapy": 36.5229,
+      "lDongRegnCd": "36",
+      "lDongSignguCd": "110",
+      "lclsSystm1": "NA",
+      "lclsSystm2": "NA04",
+      "lclsSystm3": "NA040500",
+      "modifiedtime": "20261022110813"
+    },
+    {
+      "contentid": "2758040",
+      "contenttypeid": "12",
+      "title": "숲뜰근린공원",
+      "addr1": "세종특별자치시 대평동 580-3",
+      "mapx": 127.2648966718,
+      "mapy": 36.4674018904,
+      "lDongRegnCd": "36",
+      "lDongSignguCd": "110",
+      "lclsSystm1": "VE",
+      "lclsSystm2": "VE03",
+      "lclsSystm3": "VE030400",
+      "modifiedtime": "20261019173601"
+    },
+    {
+      "contentid": "2758467",
+      "contenttypeid": "12",
+      "title": "고운뜰공원",
+      "addr1": "세종특별자치시 만남로 151 (고운동)",
+      "mapx": 127.2391150097,
+      "mapy": 36.5125043813,
+      "lDongRegnCd": "36",
+      "lDongSignguCd": "110",
+      "lclsSystm1": "VE",
+      "lclsSystm2": "VE03",
+      "lclsSystm3": "VE030100",
+      "modifiedtime": "20261019172946"
+    },
     {
       "contentid": "127821",
       "contenttypeid": "12",
@@ -141,20 +239,6 @@
       "lclsSystm2": "EX07",
       "lclsSystm3": "EX070200",
       "modifiedtime": "20260720171056"
-    },
-    {
-      "contentid": "2758467",
-      "contenttypeid": "12",
-      "title": "고운뜰공원",
-      "addr1": "세종특별자치시 만남로 151 (고운동)",
-      "mapx": 127.2391322492,
-      "mapy": 36.5125528023,
-      "lDongRegnCd": "36",
-      "lDongSignguCd": "110",
-      "lclsSystm1": "VE",
-      "lclsSystm2": "VE03",
-      "lclsSystm3": "VE030100",
-      "modifiedtime": "20260703102222"
     },
     {
       "contentid": "3337188",
@@ -437,20 +521,6 @@
       "modifiedtime": "20260305095851"
     },
     {
-      "contentid": "2758472",
-      "contenttypeid": "12",
-      "title": "원수산습지생태원",
-      "addr1": "세종특별자치시 연기면 세종리 734-4",
-      "mapx": 127.273697275807,
-      "mapy": 36.5158823229357,
-      "lDongRegnCd": "36",
-      "lDongSignguCd": "110",
-      "lclsSystm1": "NA",
-      "lclsSystm2": "NA04",
-      "lclsSystm3": "NA040500",
-      "modifiedtime": "20260224121340"
-    },
-    {
       "contentid": "2661528",
       "contenttypeid": "12",
       "title": "조천연꽃공원",
@@ -479,20 +549,6 @@
       "modifiedtime": "20260211162431"
     },
     {
-      "contentid": "2758481",
-      "contenttypeid": "12",
-      "title": "달메뜰근린공원",
-      "addr1": "세종특별자치시 보듬4로 86 (도담동)",
-      "mapx": 127.2739,
-      "mapy": 36.515,
-      "lDongRegnCd": "36",
-      "lDongSignguCd": "110",
-      "lclsSystm1": "VE",
-      "lclsSystm2": "VE03",
-      "lclsSystm3": "VE030400",
-      "modifiedtime": "20260211081009"
-    },
-    {
       "contentid": "2435243",
       "contenttypeid": "12",
       "title": "아람달 체험마을",
@@ -519,20 +575,6 @@
       "lclsSystm2": "NA04",
       "lclsSystm3": "NA040500",
       "modifiedtime": "20251105175735"
-    },
-    {
-      "contentid": "2758040",
-      "contenttypeid": "12",
-      "title": "숲뜰근린공원",
-      "addr1": "세종특별자치시 대평동 580-3",
-      "mapx": 127.2649144954,
-      "mapy": 36.4674500965,
-      "lDongRegnCd": "36",
-      "lDongSignguCd": "110",
-      "lclsSystm1": "VE",
-      "lclsSystm2": "VE03",
-      "lclsSystm3": "VE030400",
-      "modifiedtime": "20251103172003"
     },
     {
       "contentid": "125903",
@@ -575,20 +617,6 @@
       "lclsSystm2": "HS03",
       "lclsSystm3": "HS030100",
       "modifiedtime": "20251030131248"
-    },
-    {
-      "contentid": "2761645",
-      "contenttypeid": "12",
-      "title": "원수산MTB공원",
-      "addr1": "세종특별자치시 세종동",
-      "mapx": 127.2677155135,
-      "mapy": 36.522946561,
-      "lDongRegnCd": "36",
-      "lDongSignguCd": "110",
-      "lclsSystm1": "NA",
-      "lclsSystm2": "NA04",
-      "lclsSystm3": "NA040500",
-      "modifiedtime": "20251029181246"
     },
     {
       "contentid": "1951619",
@@ -717,34 +745,6 @@
       "modifiedtime": "20250520212738"
     },
     {
-      "contentid": "2761431",
-      "contenttypeid": "12",
-      "title": "바람재쉼터",
-      "addr1": "세종특별자치시 금남면 영대리",
-      "mapx": 127.3247180074,
-      "mapy": 36.4476478693,
-      "lDongRegnCd": "36",
-      "lDongSignguCd": "110",
-      "lclsSystm1": "VE",
-      "lclsSystm2": "VE03",
-      "lclsSystm3": "VE030100",
-      "modifiedtime": "20250520211055"
-    },
-    {
-      "contentid": "2756162",
-      "contenttypeid": "12",
-      "title": "무궁화테마공원",
-      "addr1": "세종특별자치시 세종동",
-      "mapx": 127.2900165196,
-      "mapy": 36.5145479201,
-      "lDongRegnCd": "36",
-      "lDongSignguCd": "110",
-      "lclsSystm1": "VE",
-      "lclsSystm2": "VE03",
-      "lclsSystm3": "VE030100",
-      "modifiedtime": "20250520211025"
-    },
-    {
       "contentid": "1954976",
       "contenttypeid": "12",
       "title": "연기향교",
@@ -757,6 +757,20 @@
       "lclsSystm2": "HS01",
       "lclsSystm3": "HS010900",
       "modifiedtime": "20250507190643"
+    },
+    {
+      "contentid": "2709995",
+      "contenttypeid": "14",
+      "title": "대통령기록전시관",
+      "addr1": "세종특별자치시 다솜로 250 (어진동)",
+      "mapx": 127.2732497867,
+      "mapy": 36.5016562017,
+      "lDongRegnCd": "36",
+      "lDongSignguCd": "110",
+      "lclsSystm1": "VE",
+      "lclsSystm2": "VE07",
+      "lclsSystm3": "VE070300",
+      "modifiedtime": "20261022134313"
     },
     {
       "contentid": "129968",
@@ -967,20 +981,6 @@
       "lclsSystm2": "VE07",
       "lclsSystm3": "VE070100",
       "modifiedtime": "20260313141114"
-    },
-    {
-      "contentid": "2709995",
-      "contenttypeid": "14",
-      "title": "대통령기록전시관",
-      "addr1": "세종특별자치시 다솜로 250 (어진동)",
-      "mapx": 127.27324978669455,
-      "mapy": 36.50165620168188,
-      "lDongRegnCd": "36",
-      "lDongSignguCd": "110",
-      "lclsSystm1": "VE",
-      "lclsSystm2": "VE07",
-      "lclsSystm3": "VE070300",
-      "modifiedtime": "20260311100340"
     },
     {
       "contentid": "2758549",

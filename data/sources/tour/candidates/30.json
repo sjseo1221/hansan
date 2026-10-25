@@ -1,7 +1,161 @@
 {
-  "fetchedAt": "2026-10-19T04:50:56.426+09:00",
+  "fetchedAt": "2026-10-26T04:50:30.351+09:00",
   "source": "TourAPI areaBasedList2",
   "candidates": [
+    {
+      "contentid": "3051657",
+      "contenttypeid": "12",
+      "title": "명상정원",
+      "addr1": "대전광역시 동구 추동",
+      "mapx": 127.486,
+      "mapy": 36.3795,
+      "lDongRegnCd": "30",
+      "lDongSignguCd": "110",
+      "lclsSystm1": "NA",
+      "lclsSystm2": "NA04",
+      "lclsSystm3": "NA040700",
+      "modifiedtime": "20261022154159"
+    },
+    {
+      "contentid": "128878",
+      "contenttypeid": "12",
+      "title": "자광사(대전)",
+      "addr1": "대전광역시 유성구 학하동로63번길 50-8 (학하동)",
+      "mapx": 127.312661438,
+      "mapy": 36.3378285635,
+      "lDongRegnCd": "30",
+      "lDongSignguCd": "200",
+      "lclsSystm1": "HS",
+      "lclsSystm2": "HS03",
+      "lclsSystm3": "HS030100",
+      "modifiedtime": "20261022133453"
+    },
+    {
+      "contentid": "2766959",
+      "contenttypeid": "12",
+      "title": "대전 신흥사",
+      "addr1": "대전광역시 유성구 동서대로735번길 24-9",
+      "mapx": 127.3453287146,
+      "mapy": 36.3341054652,
+      "lDongRegnCd": "30",
+      "lDongSignguCd": "200",
+      "lclsSystm1": "HS",
+      "lclsSystm2": "HS03",
+      "lclsSystm3": "HS030100",
+      "modifiedtime": "20261022105907"
+    },
+    {
+      "contentid": "1623995",
+      "contenttypeid": "12",
+      "title": "단재신채호선생생가지",
+      "addr1": "대전광역시 중구 단재로229번길 47",
+      "mapx": 127.4107974406,
+      "mapy": 36.2325688242,
+      "lDongRegnCd": "30",
+      "lDongSignguCd": "140",
+      "lclsSystm1": "HS",
+      "lclsSystm2": "HS01",
+      "lclsSystm3": "HS010500",
+      "modifiedtime": "20261022101823"
+    },
+    {
+      "contentid": "2775492",
+      "contenttypeid": "12",
+      "title": "보문산큰나무전망대",
+      "addr1": "대전광역시 중구 보문산공원로530번길 86",
+      "mapx": 127.4249383607,
+      "mapy": 36.3121400833,
+      "lDongRegnCd": "30",
+      "lDongSignguCd": "140",
+      "lclsSystm1": "VE",
+      "lclsSystm2": "VE01",
+      "lclsSystm3": "VE010200",
+      "modifiedtime": "20261022094158"
+    },
+    {
+      "contentid": "2913032",
+      "contenttypeid": "12",
+      "title": "금강로하스산호빛공원",
+      "addr1": "대전광역시 대덕구 석봉동",
+      "mapx": 127.4207931947,
+      "mapy": 36.4540757313,
+      "lDongRegnCd": "30",
+      "lDongSignguCd": "230",
+      "lclsSystm1": "VE",
+      "lclsSystm2": "VE03",
+      "lclsSystm3": "VE030400",
+      "modifiedtime": "20261022093003"
+    },
+    {
+      "contentid": "2913058",
+      "contenttypeid": "12",
+      "title": "을미기공원",
+      "addr1": "대전광역시 대덕구 대덕대로1448번길 120 (신일동)",
+      "mapx": 127.4113223484,
+      "mapy": 36.4427323965,
+      "lDongRegnCd": "30",
+      "lDongSignguCd": "230",
+      "lclsSystm1": "VE",
+      "lclsSystm2": "VE03",
+      "lclsSystm3": "VE030400",
+      "modifiedtime": "20261022092348"
+    },
+    {
+      "contentid": "2758282",
+      "contenttypeid": "12",
+      "title": "광수사",
+      "addr1": "대전광역시 유성구 학하서로63번길 26 (계산동)",
+      "mapx": 127.2985039871,
+      "mapy": 36.3423006918,
+      "lDongRegnCd": "30",
+      "lDongSignguCd": "200",
+      "lclsSystm1": "HS",
+      "lclsSystm2": "HS03",
+      "lclsSystm3": "HS030100",
+      "modifiedtime": "20261019172234"
+    },
+    {
+      "contentid": "2758655",
+      "contenttypeid": "12",
+      "title": "테미공원",
+      "addr1": "대전광역시 중구 보문로199번길 37-36 (대흥동)",
+      "mapx": 127.4218,
+      "mapy": 36.3192,
+      "lDongRegnCd": "30",
+      "lDongSignguCd": "140",
+      "lclsSystm1": "VE",
+      "lclsSystm2": "VE03",
+      "lclsSystm3": "VE030100",
+      "modifiedtime": "20261019172018"
+    },
+    {
+      "contentid": "2758252",
+      "contenttypeid": "12",
+      "title": "남선공원",
+      "addr1": "대전광역시 서구 남선로 66",
+      "mapx": 127.3983,
+      "mapy": 36.3454,
+      "lDongRegnCd": "30",
+      "lDongSignguCd": "170",
+      "lclsSystm1": "VE",
+      "lclsSystm2": "VE03",
+      "lclsSystm3": "VE030100",
+      "modifiedtime": "20261019142050"
+    },
+    {
+      "contentid": "2758246",
+      "contenttypeid": "12",
+      "title": "대청호자연수변공원",
+      "addr1": "대전광역시 동구 추동",
+      "mapx": 127.4747,
+      "mapy": 36.3726,
+      "lDongRegnCd": "30",
+      "lDongSignguCd": "110",
+      "lclsSystm1": "VE",
+      "lclsSystm2": "VE03",
+      "lclsSystm3": "VE030500",
+      "modifiedtime": "20261019141506"
+    },
     {
       "contentid": "2722927",
       "contenttypeid": "12",
@@ -57,20 +211,6 @@
       "lclsSystm2": "VE01",
       "lclsSystm3": "VE010700",
       "modifiedtime": "20261007102435"
-    },
-    {
-      "contentid": "3051657",
-      "contenttypeid": "12",
-      "title": "명상정원",
-      "addr1": "대전광역시 동구 추동",
-      "mapx": 127.486,
-      "mapy": 36.3795,
-      "lDongRegnCd": "30",
-      "lDongSignguCd": "110",
-      "lclsSystm1": "NA",
-      "lclsSystm2": "NA04",
-      "lclsSystm3": "NA040700",
-      "modifiedtime": "20260929143413"
     },
     {
       "contentid": "2661814",
@@ -365,20 +505,6 @@
       "lclsSystm2": "VE03",
       "lclsSystm3": "VE030100",
       "modifiedtime": "20260518160245"
-    },
-    {
-      "contentid": "2775492",
-      "contenttypeid": "12",
-      "title": "보문산큰나무전망대",
-      "addr1": "대전광역시 중구 보문산공원로530번길 86",
-      "mapx": 127.424938360672,
-      "mapy": 36.3121400832581,
-      "lDongRegnCd": "30",
-      "lDongSignguCd": "140",
-      "lclsSystm1": "VE",
-      "lclsSystm2": "VE01",
-      "lclsSystm3": "VE010200",
-      "modifiedtime": "20260506131729"
     },
     {
       "contentid": "3031451",
@@ -815,20 +941,6 @@
       "modifiedtime": "20260211110629"
     },
     {
-      "contentid": "1623995",
-      "contenttypeid": "12",
-      "title": "단재신채호선생생가지",
-      "addr1": "대전광역시 중구 단재로229번길 47",
-      "mapx": 127.410797440642,
-      "mapy": 36.2325688241863,
-      "lDongRegnCd": "30",
-      "lDongSignguCd": "140",
-      "lclsSystm1": "HS",
-      "lclsSystm2": "HS01",
-      "lclsSystm3": "HS010500",
-      "modifiedtime": "20260211081009"
-    },
-    {
       "contentid": "1865944",
       "contenttypeid": "12",
       "title": "한국핵융합에너지연구원",
@@ -925,34 +1037,6 @@
       "lclsSystm2": "NA02",
       "lclsSystm3": "NA020100",
       "modifiedtime": "20251117143540"
-    },
-    {
-      "contentid": "2758282",
-      "contenttypeid": "12",
-      "title": "광수사",
-      "addr1": "대전광역시 유성구 학하서로63번길 26 (계산동)",
-      "mapx": 127.2985204289,
-      "mapy": 36.3423455726,
-      "lDongRegnCd": "30",
-      "lDongSignguCd": "200",
-      "lclsSystm1": "HS",
-      "lclsSystm2": "HS03",
-      "lclsSystm3": "HS030100",
-      "modifiedtime": "20251117134207"
-    },
-    {
-      "contentid": "2758252",
-      "contenttypeid": "12",
-      "title": "남선공원",
-      "addr1": "대전광역시 서구 남선로 66",
-      "mapx": 127.3967004547,
-      "mapy": 36.34530253,
-      "lDongRegnCd": "30",
-      "lDongSignguCd": "170",
-      "lclsSystm1": "VE",
-      "lclsSystm2": "VE03",
-      "lclsSystm3": "VE030100",
-      "modifiedtime": "20251117100552"
     },
     {
       "contentid": "2743325",
@@ -1053,34 +1137,6 @@
       "modifiedtime": "20251031091205"
     },
     {
-      "contentid": "2913058",
-      "contenttypeid": "12",
-      "title": "을미기공원",
-      "addr1": "대전광역시 대덕구 대덕대로1448번길 120 (신일동)",
-      "mapx": 127.4113409377,
-      "mapy": 36.4427777451,
-      "lDongRegnCd": "30",
-      "lDongSignguCd": "230",
-      "lclsSystm1": "VE",
-      "lclsSystm2": "VE03",
-      "lclsSystm3": "VE030400",
-      "modifiedtime": "20251030161903"
-    },
-    {
-      "contentid": "2913032",
-      "contenttypeid": "12",
-      "title": "금강로하스산호빛공원",
-      "addr1": "대전광역시 대덕구 석봉동",
-      "mapx": 127.4208120024,
-      "mapy": 36.4541238369,
-      "lDongRegnCd": "30",
-      "lDongSignguCd": "230",
-      "lclsSystm1": "VE",
-      "lclsSystm2": "VE03",
-      "lclsSystm3": "VE030400",
-      "modifiedtime": "20251030155833"
-    },
-    {
       "contentid": "128413",
       "contenttypeid": "12",
       "title": "찬샘마을",
@@ -1165,20 +1221,6 @@
       "modifiedtime": "20251023143000"
     },
     {
-      "contentid": "2758246",
-      "contenttypeid": "12",
-      "title": "대청호자연수변공원",
-      "addr1": "대전광역시 동구 추동",
-      "mapx": 127.4747177362,
-      "mapy": 36.3726452347,
-      "lDongRegnCd": "30",
-      "lDongSignguCd": "110",
-      "lclsSystm1": "VE",
-      "lclsSystm2": "VE03",
-      "lclsSystm3": "VE030500",
-      "modifiedtime": "20251023143000"
-    },
-    {
       "contentid": "2758588",
       "contenttypeid": "12",
       "title": "흑석유원지",
@@ -1205,20 +1247,6 @@
       "lclsSystm2": "VE03",
       "lclsSystm3": "VE030500",
       "modifiedtime": "20251023143000"
-    },
-    {
-      "contentid": "2758655",
-      "contenttypeid": "12",
-      "title": "테미공원",
-      "addr1": "대전광역시 중구 보문로199번길 37-36 (대흥동)",
-      "mapx": 117.9925662504,
-      "mapy": 19.69442748,
-      "lDongRegnCd": "30",
-      "lDongSignguCd": "140",
-      "lclsSystm1": "VE",
-      "lclsSystm2": "VE03",
-      "lclsSystm3": "VE030100",
-      "modifiedtime": "20250903165828"
     },
     {
       "contentid": "1909639",
@@ -1739,34 +1767,6 @@
       "modifiedtime": "20250417135331"
     },
     {
-      "contentid": "128878",
-      "contenttypeid": "12",
-      "title": "자광사(대전)",
-      "addr1": "대전광역시 유성구 학하동로63번길 50-8 (학하동)",
-      "mapx": 127.3126776163,
-      "mapy": 36.3378741127,
-      "lDongRegnCd": "30",
-      "lDongSignguCd": "200",
-      "lclsSystm1": "HS",
-      "lclsSystm2": "HS03",
-      "lclsSystm3": "HS030100",
-      "modifiedtime": "20250326102444"
-    },
-    {
-      "contentid": "2766959",
-      "contenttypeid": "12",
-      "title": "대전 신흥사",
-      "addr1": "대전광역시 유성구 동서대로735번길 24-9",
-      "mapx": 127.3453470164,
-      "mapy": 36.3341528947,
-      "lDongRegnCd": "30",
-      "lDongSignguCd": "200",
-      "lclsSystm1": "HS",
-      "lclsSystm2": "HS03",
-      "lclsSystm3": "HS030100",
-      "modifiedtime": "20250325181120"
-    },
-    {
       "contentid": "2732202",
       "contenttypeid": "12",
       "title": "우리들공원",
@@ -1863,6 +1863,34 @@
       "lclsSystm2": "VE12",
       "lclsSystm3": "VE120300",
       "modifiedtime": "20241220105545"
+    },
+    {
+      "contentid": "130420",
+      "contenttypeid": "14",
+      "title": "한밭교육박물관",
+      "addr1": "대전광역시 동구 우암로 96 (삼성동)",
+      "mapx": 127.4290778566,
+      "mapy": 36.3376864804,
+      "lDongRegnCd": "30",
+      "lDongSignguCd": "110",
+      "lclsSystm1": "VE",
+      "lclsSystm2": "VE07",
+      "lclsSystm3": "VE070100",
+      "modifiedtime": "20261021164625"
+    },
+    {
+      "contentid": "2782788",
+      "contenttypeid": "14",
+      "title": "대전 엑스포 아쿠아리움",
+      "addr1": "대전광역시 유성구 엑스포로 1",
+      "mapx": 127.3820296339,
+      "mapy": 36.3751095285,
+      "lDongRegnCd": "30",
+      "lDongSignguCd": "200",
+      "lclsSystm1": "VE",
+      "lclsSystm2": "VE02",
+      "lclsSystm3": "VE020400",
+      "modifiedtime": "20261020114133"
     },
     {
       "contentid": "129723",
@@ -2157,20 +2185,6 @@
       "lclsSystm2": "VE07",
       "lclsSystm3": "VE070300",
       "modifiedtime": "20260916174136"
-    },
-    {
-      "contentid": "2782788",
-      "contenttypeid": "14",
-      "title": "대전 엑스포 아쿠아리움",
-      "addr1": "대전광역시 유성구 엑스포로 1",
-      "mapx": 127.3820296339,
-      "mapy": 36.3751095285,
-      "lDongRegnCd": "30",
-      "lDongSignguCd": "200",
-      "lclsSystm1": "VE",
-      "lclsSystm2": "VE02",
-      "lclsSystm3": "VE020400",
-      "modifiedtime": "20260915173738"
     },
     {
       "contentid": "2733533",
@@ -2523,20 +2537,6 @@
       "modifiedtime": "20251128145628"
     },
     {
-      "contentid": "130420",
-      "contenttypeid": "14",
-      "title": "한밭교육박물관",
-      "addr1": "대전광역시 동구 우암로 96 (삼성동)",
-      "mapx": 127.4290949864,
-      "mapy": 36.3377317492,
-      "lDongRegnCd": "30",
-      "lDongSignguCd": "110",
-      "lclsSystm1": "VE",
-      "lclsSystm2": "VE07",
-      "lclsSystm3": "VE070100",
-      "modifiedtime": "20251104151553"
-    },
-    {
       "contentid": "130802",
       "contenttypeid": "14",
       "title": "대전 가수원도서관",
@@ -2591,6 +2591,20 @@
       "lclsSystm2": "VE07",
       "lclsSystm3": "VE070100",
       "modifiedtime": "20250714113701"
+    },
+    {
+      "contentid": "2407314",
+      "contenttypeid": "28",
+      "title": "계룡산 수통골",
+      "addr1": "대전광역시 유성구 수통골로 47-3",
+      "mapx": 127.2885782901,
+      "mapy": 36.3453003296,
+      "lDongRegnCd": "30",
+      "lDongSignguCd": "200",
+      "lclsSystm1": "LS",
+      "lclsSystm2": "LS01",
+      "lclsSystm3": "LS011900",
+      "modifiedtime": "20261022100718"
     },
     {
       "contentid": "131149",
@@ -2859,20 +2873,6 @@
       "modifiedtime": "20251030154521"
     },
     {
-      "contentid": "2407314",
-      "contenttypeid": "28",
-      "title": "계룡산 수통골",
-      "addr1": "대전광역시 유성구 수통골로 47-3",
-      "mapx": 127.2885962357,
-      "mapy": 36.3453478312,
-      "lDongRegnCd": "30",
-      "lDongSignguCd": "200",
-      "lclsSystm1": "LS",
-      "lclsSystm2": "LS01",
-      "lclsSystm3": "LS011900",
-      "modifiedtime": "20250801135712"
-    },
-    {
       "contentid": "2727459",
       "contenttypeid": "28",
       "title": "산디마을생태공원캠핑장",
@@ -2929,6 +2929,34 @@
       "modifiedtime": "20250313221337"
     },
     {
+      "contentid": "4133567",
+      "contenttypeid": "15",
+      "title": "메이커 플레이",
+      "addr1": "대전광역시 유성구 대덕대로 481 (구성동)",
+      "mapx": 127.3749896603,
+      "mapy": 36.3771311957,
+      "lDongRegnCd": "30",
+      "lDongSignguCd": "200",
+      "lclsSystm1": "EV",
+      "lclsSystm2": "EV01",
+      "lclsSystm3": "EV010600",
+      "modifiedtime": "20261022173549"
+    },
+    {
+      "contentid": "4130910",
+      "contenttypeid": "15",
+      "title": "대전 서구 책축제",
+      "addr1": "대전광역시 서구 한밭대로 664 (갈마동)",
+      "mapx": 127.372170888,
+      "mapy": 36.3570872057,
+      "lDongRegnCd": "30",
+      "lDongSignguCd": "170",
+      "lclsSystm1": "EV",
+      "lclsSystm2": "EV01",
+      "lclsSystm3": "EV010600",
+      "modifiedtime": "20261020094520"
+    },
+    {
       "contentid": "2770434",
       "contenttypeid": "15",
       "title": "대전 빵 축제",
@@ -2941,20 +2969,6 @@
       "lclsSystm2": "EV01",
       "lclsSystm3": "EV010300",
       "modifiedtime": "20261016094046"
-    },
-    {
-      "contentid": "2952467",
-      "contenttypeid": "15",
-      "title": "대덕대청호물결축제",
-      "addr1": "대전광역시 대덕구 대청로 607 (미호동)",
-      "mapx": 127.4735661509,
-      "mapy": 36.4736257434,
-      "lDongRegnCd": "30",
-      "lDongSignguCd": "230",
-      "lclsSystm1": "EV",
-      "lclsSystm2": "EV01",
-      "lclsSystm3": "EV010600",
-      "modifiedtime": "20261013150731"
     },
     {
       "contentid": "2488086",
@@ -3153,18 +3167,74 @@
       "modifiedtime": "20251126095212"
     },
     {
-      "contentid": "3551562",
-      "contenttypeid": "15",
-      "title": "2025년 제20회 인문주간",
-      "addr1": "대전광역시 유성구 가정로 201 (가정동)",
-      "mapx": 127.3656327264,
-      "mapy": 36.3844891614,
+      "contentid": "1128853",
+      "contenttypeid": "38",
+      "title": "중리전통시장",
+      "addr1": "대전광역시 대덕구 중리북로37번길 26",
+      "mapx": 127.4263,
+      "mapy": 36.3665,
       "lDongRegnCd": "30",
-      "lDongSignguCd": "200",
-      "lclsSystm1": "EV",
-      "lclsSystm2": "EV03",
-      "lclsSystm3": "EV030400",
-      "modifiedtime": "20251023143000"
+      "lDongSignguCd": "230",
+      "lclsSystm1": "SH",
+      "lclsSystm2": "SH06",
+      "lclsSystm3": "SH060200",
+      "modifiedtime": "20261019175232"
+    },
+    {
+      "contentid": "1128720",
+      "contenttypeid": "38",
+      "title": "신탄진장 (3, 8일)",
+      "addr1": "대전 대덕구 석봉동 417-1",
+      "mapx": 127.4267670535,
+      "mapy": 36.4498498434,
+      "lDongRegnCd": "30",
+      "lDongSignguCd": "230",
+      "lclsSystm1": "SH",
+      "lclsSystm2": "SH06",
+      "lclsSystm3": "SH060100",
+      "modifiedtime": "20261019175012"
+    },
+    {
+      "contentid": "1309877",
+      "contenttypeid": "38",
+      "title": "태평전통시장",
+      "addr1": "대전광역시 중구 수침로55번길 56",
+      "mapx": 127.3976600399,
+      "mapy": 36.3258823889,
+      "lDongRegnCd": "30",
+      "lDongSignguCd": "140",
+      "lclsSystm1": "SH",
+      "lclsSystm2": "SH06",
+      "lclsSystm3": "SH060200",
+      "modifiedtime": "20261019172227"
+    },
+    {
+      "contentid": "1434477",
+      "contenttypeid": "38",
+      "title": "대전 중앙시장",
+      "addr1": "대전광역시 동구 대전로 783",
+      "mapx": 127.4331565435,
+      "mapy": 36.3294964799,
+      "lDongRegnCd": "30",
+      "lDongSignguCd": "110",
+      "lclsSystm1": "SH",
+      "lclsSystm2": "SH06",
+      "lclsSystm3": "SH060200",
+      "modifiedtime": "20261019165433"
+    },
+    {
+      "contentid": "1623651",
+      "contenttypeid": "38",
+      "title": "역전시장",
+      "addr1": "대전광역시 동구 역전시장길 26 (정동)",
+      "mapx": 127.4338179311,
+      "mapy": 36.3301352332,
+      "lDongRegnCd": "30",
+      "lDongSignguCd": "110",
+      "lclsSystm1": "SH",
+      "lclsSystm2": "SH06",
+      "lclsSystm3": "SH060200",
+      "modifiedtime": "20261019154009"
     },
     {
       "contentid": "2746192",
@@ -3265,20 +3335,6 @@
       "modifiedtime": "20251117103856"
     },
     {
-      "contentid": "1128853",
-      "contenttypeid": "38",
-      "title": "중리전통시장",
-      "addr1": "대전광역시 대덕구 중리북로37번길 26",
-      "mapx": 127.4257861986,
-      "mapy": 36.3653424205,
-      "lDongRegnCd": "30",
-      "lDongSignguCd": "230",
-      "lclsSystm1": "SH",
-      "lclsSystm2": "SH06",
-      "lclsSystm3": "SH060200",
-      "modifiedtime": "20251113150231"
-    },
-    {
       "contentid": "2758341",
       "contenttypeid": "38",
       "title": "둔산꽃시장",
@@ -3293,48 +3349,6 @@
       "modifiedtime": "20251030170726"
     },
     {
-      "contentid": "1309877",
-      "contenttypeid": "38",
-      "title": "태평전통시장",
-      "addr1": "대전광역시 중구 수침로55번길 56",
-      "mapx": 127.3976786705,
-      "mapy": 36.325929763,
-      "lDongRegnCd": "30",
-      "lDongSignguCd": "140",
-      "lclsSystm1": "SH",
-      "lclsSystm2": "SH06",
-      "lclsSystm3": "SH060200",
-      "modifiedtime": "20250903163637"
-    },
-    {
-      "contentid": "1434477",
-      "contenttypeid": "38",
-      "title": "대전 중앙시장",
-      "addr1": "대전광역시 동구 대전로 783",
-      "mapx": 127.4331753997,
-      "mapy": 36.3295438687,
-      "lDongRegnCd": "30",
-      "lDongSignguCd": "110",
-      "lclsSystm1": "SH",
-      "lclsSystm2": "SH06",
-      "lclsSystm3": "SH060200",
-      "modifiedtime": "20250902170046"
-    },
-    {
-      "contentid": "1128720",
-      "contenttypeid": "38",
-      "title": "신탄진장 (3, 8일)",
-      "addr1": "대전광역시 대덕구 석봉로37번길 52-11 (석봉동)",
-      "mapx": 127.4267838059,
-      "mapy": 36.4498966492,
-      "lDongRegnCd": "30",
-      "lDongSignguCd": "230",
-      "lclsSystm1": "SH",
-      "lclsSystm2": "SH06",
-      "lclsSystm3": "SH060100",
-      "modifiedtime": "20250806152223"
-    },
-    {
       "contentid": "132259",
       "contenttypeid": "38",
       "title": "유성장(4, 9일)",
@@ -3347,20 +3361,6 @@
       "lclsSystm2": "SH06",
       "lclsSystm3": "SH060100",
       "modifiedtime": "20250708094048"
-    },
-    {
-      "contentid": "1623651",
-      "contenttypeid": "38",
-      "title": "역전시장",
-      "addr1": "대전광역시 동구 역전시장길 34",
-      "mapx": 127.4338531035,
-      "mapy": 36.3300438245,
-      "lDongRegnCd": "30",
-      "lDongSignguCd": "110",
-      "lclsSystm1": "SH",
-      "lclsSystm2": "SH06",
-      "lclsSystm3": "SH060200",
-      "modifiedtime": "20250512163109"
     }
   ]
 }

@@ -1,0 +1,147 @@
+{
+  "week": "2026-W43",
+  "days": [
+    "2026-10-19",
+    "2026-10-25"
+  ],
+  "accuracy": {
+    "recommendedHigh": 1130,
+    "evaluable": 10,
+    "excluded": 1120,
+    "quiet": 4,
+    "rate": 40
+  },
+  "types": {
+    "moderate_hotspot": 1284,
+    "famous_spot": 1776,
+    "hidden_classic": 228,
+    "early_hotspot": 149,
+    "time_slot": 45
+  },
+  "recLogDays": 7,
+  "failures": {
+    "naver_trend EMPTY": 423,
+    "tour_hub EMPTY": 28,
+    "seoul_citydata INFO-000": 24,
+    "tour_operation EMPTY": 14,
+    "seoul_citydata TimeoutError": 36,
+    "seoul_citydata TypeError": 3,
+    "cnctr NET_UND_ERR_CONNECT_TIMEOUT": 10
+  },
+  "usage": [
+    {
+      "service": "tour",
+      "per": "day",
+      "used": 707,
+      "limit": 1000,
+      "pct": 70.7,
+      "warn": false,
+      "note": "TourAPI KorService2 개발계정 — 기능 합산으로 보임"
+    },
+    {
+      "service": "cnctr",
+      "per": "day",
+      "used": 150,
+      "limit": 1000,
+      "pct": 15,
+      "warn": false
+    },
+    {
+      "service": "datalab",
+      "per": "day",
+      "used": 1,
+      "limit": 1000,
+      "pct": 0.1,
+      "warn": false
+    },
+    {
+      "service": "kma",
+      "per": "day",
+      "used": 132,
+      "limit": 10000,
+      "pct": 1.3,
+      "warn": false
+    },
+    {
+      "service": "kasi",
+      "per": "day",
+      "used": 3,
+      "limit": 10000,
+      "pct": 0,
+      "warn": false
+    },
+    {
+      "service": "tour_hub",
+      "per": "day",
+      "used": 4,
+      "limit": 1000,
+      "pct": 0.4,
+      "warn": false,
+      "note": "관광공사 기초지자체 중심 관광지 개발계정"
+    },
+    {
+      "service": "seoul_citydata",
+      "per": "day",
+      "used": 2923,
+      "limit": 3000,
+      "pct": 97.4,
+      "warn": true,
+      "note": "미등록 키 한도 미확인 — 우리 상한을 한도로 본다"
+    },
+    {
+      "service": "naver_search",
+      "per": "day",
+      "used": 1535,
+      "limit": 25000,
+      "pct": 6.1,
+      "warn": false,
+      "note": "API HUB 정오표 25,000/일(월 775,000 과 상충 — 보수적으로)"
+    },
+    {
+      "service": "naver_trend",
+      "per": "month",
+      "used": 2551,
+      "limit": 50000,
+      "pct": 5.1,
+      "warn": false
+    }
+  ],
+  "openai": {
+    "generationWeekUsd": 1.0998,
+    "generationMonthUsd": 5.0006,
+    "chatMonthUsd": 0.0041,
+    "budgetUsd": 20
+  },
+  "visits": {
+    "visit": 3,
+    "detail": 3,
+    "chat": 0
+  },
+  "actionsMinutes": 431,
+  "coverage": {
+    "places": {
+      "total": 3736,
+      "visible": 3710,
+      "hidden": 2,
+      "stale": 26
+    },
+    "sources": {
+      "cnctrLinked": 3710,
+      "forecastToday": 3710,
+      "forecastStale": 0,
+      "forecastFlat": 13,
+      "trendWeekly": 2038,
+      "trendBackfill": 3653,
+      "blog": 3707,
+      "seoulLinked": 32,
+      "seoulPatterns": 121,
+      "ggLinked": 620,
+      "navRanked": 1811,
+      "ggLinkedDong": 602,
+      "operation": 3699,
+      "operationCautionToday": 379,
+      "closedToday": 555
+    }
+  },
+  "complete": true
+}

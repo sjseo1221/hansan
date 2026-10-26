@@ -6,8 +6,8 @@
       "congestLvl": "약간 붐빔",
       "ppltnMin": 22000,
       "ppltnMax": 24000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI002": {
@@ -16,8 +16,8 @@
       "congestLvl": "보통",
       "ppltnMin": 30000,
       "ppltnMax": 32000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI003": {
@@ -26,18 +26,18 @@
       "congestLvl": "약간 붐빔",
       "ppltnMin": 105000,
       "ppltnMax": 110000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI004": {
       "areaCd": "POI004",
       "areaNm": "이태원 관광특구",
-      "congestLvl": "여유",
+      "congestLvl": "약간 붐빔",
       "ppltnMin": 10000,
       "ppltnMax": 12000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI005": {
@@ -46,28 +46,28 @@
       "congestLvl": "보통",
       "ppltnMin": 64000,
       "ppltnMax": 66000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI006": {
       "areaCd": "POI006",
       "areaNm": "종로·청계 관광특구",
-      "congestLvl": "약간 붐빔",
-      "ppltnMin": 48000,
-      "ppltnMax": 50000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "congestLvl": "보통",
+      "ppltnMin": 46000,
+      "ppltnMax": 48000,
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI007": {
       "areaCd": "POI007",
       "areaNm": "홍대 관광특구",
       "congestLvl": "여유",
-      "ppltnMin": 70000,
-      "ppltnMax": 72000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnMin": 72000,
+      "ppltnMax": 74000,
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI008": {
@@ -76,28 +76,28 @@
       "congestLvl": "보통",
       "ppltnMin": 2500,
       "ppltnMax": 3000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI009": {
       "areaCd": "POI009",
       "areaNm": "광화문·덕수궁",
       "congestLvl": "약간 붐빔",
-      "ppltnMin": 52000,
-      "ppltnMax": 54000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnMin": 48000,
+      "ppltnMax": 50000,
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI010": {
       "areaCd": "POI010",
       "areaNm": "보신각",
-      "congestLvl": "보통",
-      "ppltnMin": 18000,
-      "ppltnMax": 20000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "congestLvl": "약간 붐빔",
+      "ppltnMin": 20000,
+      "ppltnMax": 22000,
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI011": {
@@ -106,8 +106,8 @@
       "congestLvl": "여유",
       "ppltnMin": 0,
       "ppltnMax": 100,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI012": {
@@ -116,78 +116,78 @@
       "congestLvl": "보통",
       "ppltnMin": 14000,
       "ppltnMax": 16000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI013": {
       "areaCd": "POI013",
       "areaNm": "가산디지털단지역",
-      "congestLvl": "붐빔",
-      "ppltnMin": 40000,
-      "ppltnMax": 42000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "congestLvl": "약간 붐빔",
+      "ppltnMin": 34000,
+      "ppltnMax": 36000,
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI014": {
       "areaCd": "POI014",
       "areaNm": "강남역",
       "congestLvl": "약간 붐빔",
-      "ppltnMin": 84000,
-      "ppltnMax": 86000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnMin": 82000,
+      "ppltnMax": 84000,
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI015": {
       "areaCd": "POI015",
       "areaNm": "건대입구역",
       "congestLvl": "여유",
-      "ppltnMin": 24000,
-      "ppltnMax": 26000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnMin": 26000,
+      "ppltnMax": 28000,
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI016": {
       "areaCd": "POI016",
       "areaNm": "고덕역",
       "congestLvl": "여유",
-      "ppltnMin": 3000,
-      "ppltnMax": 3500,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnMin": 2500,
+      "ppltnMax": 3000,
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI017": {
       "areaCd": "POI017",
       "areaNm": "고속터미널역",
-      "congestLvl": "약간 붐빔",
+      "congestLvl": "보통",
       "ppltnMin": 22000,
       "ppltnMax": 24000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI018": {
       "areaCd": "POI018",
       "areaNm": "교대역",
-      "congestLvl": "약간 붐빔",
+      "congestLvl": "붐빔",
       "ppltnMin": 22000,
       "ppltnMax": 24000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI019": {
       "areaCd": "POI019",
       "areaNm": "구로디지털단지역",
-      "congestLvl": "붐빔",
-      "ppltnMin": 40000,
-      "ppltnMax": 42000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "congestLvl": "약간 붐빔",
+      "ppltnMin": 36000,
+      "ppltnMax": 38000,
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI020": {
@@ -196,18 +196,18 @@
       "congestLvl": "여유",
       "ppltnMin": 2000,
       "ppltnMax": 2500,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI021": {
       "areaCd": "POI021",
       "areaNm": "군자역",
       "congestLvl": "여유",
-      "ppltnMin": 6500,
-      "ppltnMax": 7000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnMin": 6000,
+      "ppltnMax": 6500,
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI023": {
@@ -216,18 +216,18 @@
       "congestLvl": "여유",
       "ppltnMin": 14000,
       "ppltnMax": 16000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI024": {
       "areaCd": "POI024",
       "areaNm": "동대문역",
-      "congestLvl": "보통",
-      "ppltnMin": 9500,
-      "ppltnMax": 10000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "congestLvl": "약간 붐빔",
+      "ppltnMin": 10000,
+      "ppltnMax": 12000,
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI025": {
@@ -236,38 +236,38 @@
       "congestLvl": "보통",
       "ppltnMin": 12000,
       "ppltnMax": 14000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI026": {
       "areaCd": "POI026",
       "areaNm": "미아사거리역",
-      "congestLvl": "보통",
-      "ppltnMin": 9500,
-      "ppltnMax": 10000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "congestLvl": "여유",
+      "ppltnMin": 10000,
+      "ppltnMax": 12000,
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI027": {
       "areaCd": "POI027",
       "areaNm": "발산역",
-      "congestLvl": "보통",
-      "ppltnMin": 9500,
-      "ppltnMax": 10000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "congestLvl": "여유",
+      "ppltnMin": 8000,
+      "ppltnMax": 8500,
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI029": {
       "areaCd": "POI029",
       "areaNm": "사당역",
       "congestLvl": "여유",
-      "ppltnMin": 14000,
-      "ppltnMax": 16000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnMin": 12000,
+      "ppltnMax": 14000,
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI030": {
@@ -276,18 +276,18 @@
       "congestLvl": "여유",
       "ppltnMin": 2000,
       "ppltnMax": 2500,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI031": {
       "areaCd": "POI031",
       "areaNm": "서울대입구역",
       "congestLvl": "여유",
-      "ppltnMin": 10000,
-      "ppltnMax": 12000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnMin": 9500,
+      "ppltnMax": 10000,
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI032": {
@@ -296,18 +296,18 @@
       "congestLvl": "보통",
       "ppltnMin": 8000,
       "ppltnMax": 8500,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI033": {
       "areaCd": "POI033",
       "areaNm": "서울역",
-      "congestLvl": "약간 붐빔",
-      "ppltnMin": 26000,
-      "ppltnMax": 28000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "congestLvl": "붐빔",
+      "ppltnMin": 28000,
+      "ppltnMax": 30000,
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI034": {
@@ -316,18 +316,18 @@
       "congestLvl": "붐빔",
       "ppltnMin": 62000,
       "ppltnMax": 64000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI035": {
       "areaCd": "POI035",
       "areaNm": "성신여대입구역",
       "congestLvl": "여유",
-      "ppltnMin": 6000,
-      "ppltnMax": 6500,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnMin": 5500,
+      "ppltnMax": 6000,
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI036": {
@@ -336,18 +336,18 @@
       "congestLvl": "여유",
       "ppltnMin": 10000,
       "ppltnMax": 12000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI037": {
       "areaCd": "POI037",
       "areaNm": "신논현역·논현역",
       "congestLvl": "보통",
-      "ppltnMin": 14000,
-      "ppltnMax": 16000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnMin": 12000,
+      "ppltnMax": 14000,
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI038": {
@@ -356,8 +356,8 @@
       "congestLvl": "약간 붐빔",
       "ppltnMin": 8500,
       "ppltnMax": 9000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI039": {
@@ -366,8 +366,8 @@
       "congestLvl": "여유",
       "ppltnMin": 8000,
       "ppltnMax": 8500,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI040": {
@@ -376,8 +376,8 @@
       "congestLvl": "보통",
       "ppltnMin": 32000,
       "ppltnMax": 34000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI041": {
@@ -386,8 +386,8 @@
       "congestLvl": "약간 붐빔",
       "ppltnMin": 18000,
       "ppltnMax": 20000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI042": {
@@ -396,8 +396,8 @@
       "congestLvl": "약간 붐빔",
       "ppltnMin": 42000,
       "ppltnMax": 44000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI043": {
@@ -406,8 +406,8 @@
       "congestLvl": "여유",
       "ppltnMin": 6000,
       "ppltnMax": 6500,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI044": {
@@ -416,8 +416,8 @@
       "congestLvl": "여유",
       "ppltnMin": 60000,
       "ppltnMax": 62000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI045": {
@@ -426,18 +426,18 @@
       "congestLvl": "여유",
       "ppltnMin": 18000,
       "ppltnMax": 20000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI046": {
       "areaCd": "POI046",
       "areaNm": "용산역",
       "congestLvl": "보통",
-      "ppltnMin": 22000,
-      "ppltnMax": 24000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnMin": 20000,
+      "ppltnMax": 22000,
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI047": {
@@ -446,8 +446,8 @@
       "congestLvl": "여유",
       "ppltnMin": 3500,
       "ppltnMax": 4000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI048": {
@@ -456,28 +456,28 @@
       "congestLvl": "보통",
       "ppltnMin": 18000,
       "ppltnMax": 20000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI049": {
       "areaCd": "POI049",
       "areaNm": "장한평역",
-      "congestLvl": "약간 붐빔",
-      "ppltnMin": 12000,
-      "ppltnMax": 14000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "congestLvl": "여유",
+      "ppltnMin": 10000,
+      "ppltnMax": 12000,
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI050": {
       "areaCd": "POI050",
       "areaNm": "천호역",
       "congestLvl": "여유",
-      "ppltnMin": 8500,
-      "ppltnMax": 9000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnMin": 8000,
+      "ppltnMax": 8500,
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI051": {
@@ -486,8 +486,8 @@
       "congestLvl": "여유",
       "ppltnMin": 10000,
       "ppltnMax": 12000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI052": {
@@ -496,8 +496,8 @@
       "congestLvl": "보통",
       "ppltnMin": 7000,
       "ppltnMax": 7500,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI053": {
@@ -506,38 +506,38 @@
       "congestLvl": "보통",
       "ppltnMin": 10000,
       "ppltnMax": 12000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI054": {
       "areaCd": "POI054",
       "areaNm": "혜화역",
-      "congestLvl": "보통",
-      "ppltnMin": 16000,
-      "ppltnMax": 18000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "congestLvl": "약간 붐빔",
+      "ppltnMin": 18000,
+      "ppltnMax": 20000,
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI055": {
       "areaCd": "POI055",
       "areaNm": "홍대입구역(2호선)",
       "congestLvl": "보통",
-      "ppltnMin": 16000,
-      "ppltnMax": 18000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnMin": 18000,
+      "ppltnMax": 20000,
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI056": {
       "areaCd": "POI056",
       "areaNm": "회기역",
       "congestLvl": "여유",
-      "ppltnMin": 10000,
-      "ppltnMax": 12000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnMin": 8500,
+      "ppltnMax": 9000,
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI058": {
@@ -546,8 +546,8 @@
       "congestLvl": "여유",
       "ppltnMin": 8000,
       "ppltnMax": 8500,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI059": {
@@ -556,8 +556,8 @@
       "congestLvl": "보통",
       "ppltnMin": 30000,
       "ppltnMax": 32000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI060": {
@@ -566,38 +566,38 @@
       "congestLvl": "약간 붐빔",
       "ppltnMin": 5000,
       "ppltnMax": 5500,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI061": {
       "areaCd": "POI061",
       "areaNm": "김포공항",
       "congestLvl": "여유",
-      "ppltnMin": 6500,
-      "ppltnMax": 7000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnMin": 6000,
+      "ppltnMax": 6500,
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI063": {
       "areaCd": "POI063",
       "areaNm": "노량진",
-      "congestLvl": "여유",
-      "ppltnMin": 20000,
-      "ppltnMax": 22000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "congestLvl": "보통",
+      "ppltnMin": 22000,
+      "ppltnMax": 24000,
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI064": {
       "areaCd": "POI064",
       "areaNm": "덕수궁길·정동길",
-      "congestLvl": "약간 붐빔",
-      "ppltnMin": 7000,
-      "ppltnMax": 7500,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "congestLvl": "보통",
+      "ppltnMin": 5500,
+      "ppltnMax": 6000,
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI066": {
@@ -606,8 +606,8 @@
       "congestLvl": "보통",
       "ppltnMin": 18000,
       "ppltnMax": 20000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI067": {
@@ -616,8 +616,8 @@
       "congestLvl": "약간 붐빔",
       "ppltnMin": 16000,
       "ppltnMax": 18000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI068": {
@@ -626,8 +626,8 @@
       "congestLvl": "보통",
       "ppltnMin": 34000,
       "ppltnMax": 36000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI070": {
@@ -636,38 +636,38 @@
       "congestLvl": "보통",
       "ppltnMin": 6500,
       "ppltnMax": 7000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI071": {
       "areaCd": "POI071",
       "areaNm": "압구정로데오거리",
-      "congestLvl": "보통",
-      "ppltnMin": 30000,
-      "ppltnMax": 32000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "congestLvl": "약간 붐빔",
+      "ppltnMin": 32000,
+      "ppltnMax": 34000,
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI072": {
       "areaCd": "POI072",
       "areaNm": "여의도",
       "congestLvl": "약간 붐빔",
-      "ppltnMin": 165000,
-      "ppltnMax": 170000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnMin": 160000,
+      "ppltnMax": 165000,
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI073": {
       "areaCd": "POI073",
       "areaNm": "연남동",
       "congestLvl": "여유",
-      "ppltnMin": 9000,
-      "ppltnMax": 9500,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnMin": 9500,
+      "ppltnMax": 10000,
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI074": {
@@ -676,28 +676,28 @@
       "congestLvl": "보통",
       "ppltnMin": 16000,
       "ppltnMax": 18000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI076": {
       "areaCd": "POI076",
       "areaNm": "용리단길",
-      "congestLvl": "보통",
+      "congestLvl": "약간 붐빔",
       "ppltnMin": 6000,
       "ppltnMax": 6500,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI077": {
       "areaCd": "POI077",
       "areaNm": "이태원 앤틱가구거리",
       "congestLvl": "여유",
-      "ppltnMin": 4500,
-      "ppltnMax": 5000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnMin": 5000,
+      "ppltnMax": 5500,
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI078": {
@@ -706,8 +706,8 @@
       "congestLvl": "약간 붐빔",
       "ppltnMin": 24000,
       "ppltnMax": 26000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI079": {
@@ -716,18 +716,18 @@
       "congestLvl": "여유",
       "ppltnMin": 34000,
       "ppltnMax": 36000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI080": {
       "areaCd": "POI080",
       "areaNm": "청담동 명품거리",
-      "congestLvl": "보통",
+      "congestLvl": "여유",
       "ppltnMin": 7000,
       "ppltnMax": 7500,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI081": {
@@ -736,8 +736,8 @@
       "congestLvl": "보통",
       "ppltnMin": 14000,
       "ppltnMax": 16000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI082": {
@@ -746,28 +746,28 @@
       "congestLvl": "여유",
       "ppltnMin": 3000,
       "ppltnMax": 3500,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI083": {
       "areaCd": "POI083",
       "areaNm": "DDP(동대문디자인플라자)",
       "congestLvl": "보통",
-      "ppltnMin": 6500,
-      "ppltnMax": 7000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnMin": 6000,
+      "ppltnMax": 6500,
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI084": {
       "areaCd": "POI084",
       "areaNm": "DMC(디지털미디어시티)",
       "congestLvl": "약간 붐빔",
-      "ppltnMin": 40000,
-      "ppltnMax": 42000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnMin": 38000,
+      "ppltnMax": 40000,
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI085": {
@@ -776,18 +776,18 @@
       "congestLvl": "여유",
       "ppltnMin": 100,
       "ppltnMax": 200,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI086": {
       "areaCd": "POI086",
       "areaNm": "고척돔",
       "congestLvl": "여유",
-      "ppltnMin": 900,
-      "ppltnMax": 1000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnMin": 1000,
+      "ppltnMax": 1500,
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI087": {
@@ -796,18 +796,18 @@
       "congestLvl": "여유",
       "ppltnMin": 3000,
       "ppltnMax": 3500,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI088": {
       "areaCd": "POI088",
       "areaNm": "광화문광장",
-      "congestLvl": "약간 붐빔",
+      "congestLvl": "보통",
       "ppltnMin": 10000,
       "ppltnMax": 12000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI089": {
@@ -816,8 +816,8 @@
       "congestLvl": "보통",
       "ppltnMin": 2500,
       "ppltnMax": 3000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI090": {
@@ -826,8 +826,8 @@
       "congestLvl": "여유",
       "ppltnMin": 1500,
       "ppltnMax": 2000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI091": {
@@ -836,18 +836,18 @@
       "congestLvl": "보통",
       "ppltnMin": 16000,
       "ppltnMax": 18000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI092": {
       "areaCd": "POI092",
       "areaNm": "노들섬",
       "congestLvl": "여유",
-      "ppltnMin": 500,
-      "ppltnMax": 600,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnMin": 700,
+      "ppltnMax": 800,
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI093": {
@@ -856,8 +856,8 @@
       "congestLvl": "여유",
       "ppltnMin": 2000,
       "ppltnMax": 2500,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI094": {
@@ -866,8 +866,8 @@
       "congestLvl": "여유",
       "ppltnMin": 1500,
       "ppltnMax": 2000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI095": {
@@ -876,8 +876,8 @@
       "congestLvl": "여유",
       "ppltnMin": 2500,
       "ppltnMax": 3000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI096": {
@@ -886,28 +886,28 @@
       "congestLvl": "여유",
       "ppltnMin": 4000,
       "ppltnMax": 4500,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI098": {
       "areaCd": "POI098",
       "areaNm": "서리풀공원·몽마르뜨공원",
-      "congestLvl": "붐빔",
+      "congestLvl": "약간 붐빔",
       "ppltnMin": 6500,
       "ppltnMax": 7000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI100": {
       "areaCd": "POI100",
       "areaNm": "서울대공원",
       "congestLvl": "여유",
-      "ppltnMin": 8500,
-      "ppltnMax": 9000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnMin": 9000,
+      "ppltnMax": 9500,
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI101": {
@@ -916,28 +916,28 @@
       "congestLvl": "여유",
       "ppltnMin": 4000,
       "ppltnMax": 4500,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI102": {
       "areaCd": "POI102",
       "areaNm": "아차산",
       "congestLvl": "여유",
-      "ppltnMin": 4500,
-      "ppltnMax": 5000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnMin": 4000,
+      "ppltnMax": 4500,
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI103": {
       "areaCd": "POI103",
       "areaNm": "양화한강공원",
       "congestLvl": "여유",
-      "ppltnMin": 800,
-      "ppltnMax": 900,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnMin": 900,
+      "ppltnMax": 1000,
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI104": {
@@ -946,8 +946,8 @@
       "congestLvl": "여유",
       "ppltnMin": 6000,
       "ppltnMax": 6500,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI105": {
@@ -956,18 +956,18 @@
       "congestLvl": "여유",
       "ppltnMin": 4500,
       "ppltnMax": 5000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI106": {
       "areaCd": "POI106",
       "areaNm": "월드컵공원",
       "congestLvl": "보통",
-      "ppltnMin": 8000,
-      "ppltnMax": 8500,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnMin": 8500,
+      "ppltnMax": 9000,
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI107": {
@@ -976,18 +976,18 @@
       "congestLvl": "여유",
       "ppltnMin": 2000,
       "ppltnMax": 2500,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI108": {
       "areaCd": "POI108",
       "areaNm": "이촌한강공원",
-      "congestLvl": "여유",
-      "ppltnMin": 3000,
-      "ppltnMax": 3500,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "congestLvl": "보통",
+      "ppltnMin": 3500,
+      "ppltnMax": 4000,
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI109": {
@@ -996,8 +996,8 @@
       "congestLvl": "여유",
       "ppltnMin": 3000,
       "ppltnMax": 3500,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI110": {
@@ -1006,18 +1006,18 @@
       "congestLvl": "여유",
       "ppltnMin": 2000,
       "ppltnMax": 2500,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI111": {
       "areaCd": "POI111",
       "areaNm": "잠원한강공원",
       "congestLvl": "여유",
-      "ppltnMin": 1000,
-      "ppltnMax": 1500,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnMin": 1500,
+      "ppltnMax": 2000,
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI112": {
@@ -1026,28 +1026,28 @@
       "congestLvl": "여유",
       "ppltnMin": 2000,
       "ppltnMax": 2500,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI114": {
       "areaCd": "POI114",
       "areaNm": "북창동 먹자골목",
-      "congestLvl": "약간 붐빔",
-      "ppltnMin": 14000,
-      "ppltnMax": 16000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "congestLvl": "보통",
+      "ppltnMin": 12000,
+      "ppltnMax": 14000,
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI115": {
       "areaCd": "POI115",
       "areaNm": "남대문시장",
       "congestLvl": "붐빔",
-      "ppltnMin": 22000,
-      "ppltnMax": 24000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnMin": 20000,
+      "ppltnMax": 22000,
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI116": {
@@ -1056,8 +1056,8 @@
       "congestLvl": "보통",
       "ppltnMin": 12000,
       "ppltnMax": 14000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI117": {
@@ -1066,18 +1066,18 @@
       "congestLvl": "여유",
       "ppltnMin": 1500,
       "ppltnMax": 2000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI118": {
       "areaCd": "POI118",
       "areaNm": "잠실새내역",
       "congestLvl": "여유",
-      "ppltnMin": 10000,
-      "ppltnMax": 12000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnMin": 9500,
+      "ppltnMax": 10000,
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI119": {
@@ -1086,28 +1086,28 @@
       "congestLvl": "보통",
       "ppltnMin": 28000,
       "ppltnMax": 30000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI120": {
       "areaCd": "POI120",
       "areaNm": "잠실롯데타워·석촌호수",
       "congestLvl": "보통",
-      "ppltnMin": 56000,
-      "ppltnMax": 58000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnMin": 54000,
+      "ppltnMax": 56000,
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI121": {
       "areaCd": "POI121",
       "areaNm": "송리단길·호수단길",
       "congestLvl": "여유",
-      "ppltnMin": 6500,
-      "ppltnMax": 7000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnMin": 6000,
+      "ppltnMax": 6500,
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI122": {
@@ -1116,18 +1116,18 @@
       "congestLvl": "여유",
       "ppltnMin": 2500,
       "ppltnMax": 3000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI123": {
       "areaCd": "POI123",
       "areaNm": "보라매공원",
-      "congestLvl": "보통",
-      "ppltnMin": 4500,
-      "ppltnMax": 5000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "congestLvl": "여유",
+      "ppltnMin": 4000,
+      "ppltnMax": 4500,
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI124": {
@@ -1136,8 +1136,8 @@
       "congestLvl": "여유",
       "ppltnMin": 800,
       "ppltnMax": 900,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI125": {
@@ -1146,8 +1146,8 @@
       "congestLvl": "여유",
       "ppltnMin": 1000,
       "ppltnMax": 1500,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI126": {
@@ -1156,8 +1156,8 @@
       "congestLvl": "약간 붐빔",
       "ppltnMin": 1500,
       "ppltnMax": 2000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI127": {
@@ -1166,8 +1166,8 @@
       "congestLvl": "여유",
       "ppltnMin": 8500,
       "ppltnMax": 9000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI128": {
@@ -1176,28 +1176,28 @@
       "congestLvl": "여유",
       "ppltnMin": 300,
       "ppltnMax": 400,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI129": {
       "areaCd": "POI129",
       "areaNm": "송현녹지광장",
-      "congestLvl": "보통",
-      "ppltnMin": 7500,
-      "ppltnMax": 8000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "congestLvl": "여유",
+      "ppltnMin": 7000,
+      "ppltnMax": 7500,
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI130": {
       "areaCd": "POI130",
       "areaNm": "시의회 앞",
-      "congestLvl": "약간 붐빔",
+      "congestLvl": "보통",
       "ppltnMin": 12000,
       "ppltnMax": 14000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     },
     "POI131": {
@@ -1206,10 +1206,10 @@
       "congestLvl": "붐빔",
       "ppltnMin": 16000,
       "ppltnMax": 18000,
-      "ppltnTime": "2026-10-26 12:45",
-      "fetchedAt": "2026-10-26T13:17:31.000+09:00",
+      "ppltnTime": "2026-10-26 13:45",
+      "fetchedAt": "2026-10-26T14:17:26.812+09:00",
       "source": "seoul_citydata"
     }
   },
-  "updatedAt": "2026-10-26T13:17:31.000+09:00"
+  "updatedAt": "2026-10-26T14:17:26.812+09:00"
 }

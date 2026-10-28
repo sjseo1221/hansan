@@ -2539,3 +2539,124 @@
 {"areaCd":"POI129","areaNm":"송현녹지광장","congestLvl":"여유","ppltnMin":4000,"ppltnMax":4500,"ppltnTime":"2026-10-28 19:45","fetchedAt":"2026-10-28T20:17:25.068+09:00","source":"seoul_citydata"}
 {"areaCd":"POI130","areaNm":"시의회 앞","congestLvl":"여유","ppltnMin":6500,"ppltnMax":7000,"ppltnTime":"2026-10-28 19:45","fetchedAt":"2026-10-28T20:17:25.068+09:00","source":"seoul_citydata"}
 {"areaCd":"POI131","areaNm":"숭례문","congestLvl":"여유","ppltnMin":6000,"ppltnMax":6500,"ppltnTime":"2026-10-28 19:45","fetchedAt":"2026-10-28T20:17:25.068+09:00","source":"seoul_citydata"}
+{"areaCd":"POI001","areaNm":"강남 MICE 관광특구","congestLvl":"여유","ppltnMin":9000,"ppltnMax":9500,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI002","areaNm":"동대문 관광특구","congestLvl":"보통","ppltnMin":24000,"ppltnMax":26000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI003","areaNm":"명동 관광특구","congestLvl":"여유","ppltnMin":40000,"ppltnMax":42000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI004","areaNm":"이태원 관광특구","congestLvl":"여유","ppltnMin":8500,"ppltnMax":9000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI005","areaNm":"잠실 관광특구","congestLvl":"여유","ppltnMin":60000,"ppltnMax":62000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI006","areaNm":"종로·청계 관광특구","congestLvl":"여유","ppltnMin":26000,"ppltnMax":28000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI007","areaNm":"홍대 관광특구","congestLvl":"여유","ppltnMin":72000,"ppltnMax":74000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI008","areaNm":"경복궁","congestLvl":"여유","ppltnMin":1000,"ppltnMax":1500,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI009","areaNm":"광화문·덕수궁","congestLvl":"여유","ppltnMin":18000,"ppltnMax":20000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI010","areaNm":"보신각","congestLvl":"보통","ppltnMin":10000,"ppltnMax":12000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI011","areaNm":"서울 암사동 유적","congestLvl":"여유","ppltnMin":0,"ppltnMax":100,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI012","areaNm":"창덕궁·종묘","congestLvl":"여유","ppltnMin":7500,"ppltnMax":8000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI013","areaNm":"가산디지털단지역","congestLvl":"여유","ppltnMin":14000,"ppltnMax":16000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI014","areaNm":"강남역","congestLvl":"보통","ppltnMin":56000,"ppltnMax":58000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI015","areaNm":"건대입구역","congestLvl":"보통","ppltnMin":28000,"ppltnMax":30000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI016","areaNm":"고덕역","congestLvl":"보통","ppltnMin":4500,"ppltnMax":5000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI017","areaNm":"고속터미널역","congestLvl":"여유","ppltnMin":10000,"ppltnMax":12000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI018","areaNm":"교대역","congestLvl":"여유","ppltnMin":14000,"ppltnMax":16000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI019","areaNm":"구로디지털단지역","congestLvl":"여유","ppltnMin":12000,"ppltnMax":14000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI020","areaNm":"구로역","congestLvl":"여유","ppltnMin":2500,"ppltnMax":3000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI021","areaNm":"군자역","congestLvl":"보통","ppltnMin":7500,"ppltnMax":8000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI023","areaNm":"대림역","congestLvl":"여유","ppltnMin":16000,"ppltnMax":18000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI024","areaNm":"동대문역","congestLvl":"여유","ppltnMin":4500,"ppltnMax":5000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI025","areaNm":"뚝섬역","congestLvl":"여유","ppltnMin":8000,"ppltnMax":8500,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI026","areaNm":"미아사거리역","congestLvl":"여유","ppltnMin":9000,"ppltnMax":9500,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI027","areaNm":"발산역","congestLvl":"여유","ppltnMin":8500,"ppltnMax":9000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI029","areaNm":"사당역","congestLvl":"보통","ppltnMin":18000,"ppltnMax":20000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI030","areaNm":"삼각지역","congestLvl":"여유","ppltnMin":1500,"ppltnMax":2000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI031","areaNm":"서울대입구역","congestLvl":"보통","ppltnMin":12000,"ppltnMax":14000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI032","areaNm":"서울식물원·마곡나루역","congestLvl":"여유","ppltnMin":5500,"ppltnMax":6000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI033","areaNm":"서울역","congestLvl":"여유","ppltnMin":9000,"ppltnMax":9500,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI034","areaNm":"선릉역","congestLvl":"여유","ppltnMin":32000,"ppltnMax":34000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI035","areaNm":"성신여대입구역","congestLvl":"보통","ppltnMin":7500,"ppltnMax":8000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI036","areaNm":"수유역","congestLvl":"여유","ppltnMin":12000,"ppltnMax":14000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI037","areaNm":"신논현역·논현역","congestLvl":"여유","ppltnMin":10000,"ppltnMax":12000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI038","areaNm":"신도림역","congestLvl":"보통","ppltnMin":7000,"ppltnMax":7500,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI039","areaNm":"신림역","congestLvl":"보통","ppltnMin":12000,"ppltnMax":14000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI040","areaNm":"신촌·이대역","congestLvl":"보통","ppltnMin":32000,"ppltnMax":34000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI041","areaNm":"양재역","congestLvl":"여유","ppltnMin":12000,"ppltnMax":14000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI042","areaNm":"역삼역","congestLvl":"여유","ppltnMin":20000,"ppltnMax":22000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI043","areaNm":"연신내역","congestLvl":"보통","ppltnMin":7500,"ppltnMax":8000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI044","areaNm":"오목교역·목동운동장","congestLvl":"보통","ppltnMin":68000,"ppltnMax":70000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI045","areaNm":"왕십리역","congestLvl":"보통","ppltnMin":20000,"ppltnMax":22000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI046","areaNm":"용산역","congestLvl":"여유","ppltnMin":12000,"ppltnMax":14000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI047","areaNm":"이태원역","congestLvl":"여유","ppltnMin":4000,"ppltnMax":4500,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI048","areaNm":"장지역","congestLvl":"여유","ppltnMin":14000,"ppltnMax":16000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI049","areaNm":"장한평역","congestLvl":"여유","ppltnMin":8000,"ppltnMax":8500,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI050","areaNm":"천호역","congestLvl":"여유","ppltnMin":8000,"ppltnMax":8500,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI051","areaNm":"총신대입구(이수)역","congestLvl":"여유","ppltnMin":12000,"ppltnMax":14000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI052","areaNm":"충정로역","congestLvl":"여유","ppltnMin":6000,"ppltnMax":6500,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI053","areaNm":"합정역","congestLvl":"보통","ppltnMin":10000,"ppltnMax":12000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI054","areaNm":"혜화역","congestLvl":"보통","ppltnMin":18000,"ppltnMax":20000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI055","areaNm":"홍대입구역(2호선)","congestLvl":"보통","ppltnMin":18000,"ppltnMax":20000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI056","areaNm":"회기역","congestLvl":"보통","ppltnMin":12000,"ppltnMax":14000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI058","areaNm":"가락시장","congestLvl":"여유","ppltnMin":7000,"ppltnMax":7500,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI059","areaNm":"가로수길","congestLvl":"보통","ppltnMin":22000,"ppltnMax":24000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI060","areaNm":"광장(전통)시장","congestLvl":"여유","ppltnMin":2500,"ppltnMax":3000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI061","areaNm":"김포공항","congestLvl":"여유","ppltnMin":5000,"ppltnMax":5500,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI063","areaNm":"노량진","congestLvl":"보통","ppltnMin":22000,"ppltnMax":24000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI064","areaNm":"덕수궁길·정동길","congestLvl":"여유","ppltnMin":2000,"ppltnMax":2500,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI066","areaNm":"북촌한옥마을","congestLvl":"여유","ppltnMin":7500,"ppltnMax":8000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI067","areaNm":"서촌","congestLvl":"여유","ppltnMin":10000,"ppltnMax":12000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI068","areaNm":"성수카페거리","congestLvl":"보통","ppltnMin":20000,"ppltnMax":22000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI070","areaNm":"쌍문역","congestLvl":"보통","ppltnMin":6000,"ppltnMax":6500,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI071","areaNm":"압구정로데오거리","congestLvl":"여유","ppltnMin":20000,"ppltnMax":22000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI072","areaNm":"여의도","congestLvl":"여유","ppltnMin":70000,"ppltnMax":72000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI073","areaNm":"연남동","congestLvl":"여유","ppltnMin":10000,"ppltnMax":12000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI074","areaNm":"영등포 타임스퀘어","congestLvl":"보통","ppltnMin":14000,"ppltnMax":16000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI076","areaNm":"용리단길","congestLvl":"여유","ppltnMin":4500,"ppltnMax":5000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI077","areaNm":"이태원 앤틱가구거리","congestLvl":"여유","ppltnMin":4500,"ppltnMax":5000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI078","areaNm":"인사동","congestLvl":"여유","ppltnMin":12000,"ppltnMax":14000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI079","areaNm":"창동 신경제 중심지","congestLvl":"여유","ppltnMin":30000,"ppltnMax":32000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI080","areaNm":"청담동 명품거리","congestLvl":"여유","ppltnMin":5000,"ppltnMax":5500,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI081","areaNm":"청량리 제기동 일대 전통시장","congestLvl":"여유","ppltnMin":10000,"ppltnMax":12000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI082","areaNm":"해방촌·경리단길","congestLvl":"여유","ppltnMin":4000,"ppltnMax":4500,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI083","areaNm":"DDP(동대문디자인플라자)","congestLvl":"여유","ppltnMin":4000,"ppltnMax":4500,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI084","areaNm":"DMC(디지털미디어시티)","congestLvl":"여유","ppltnMin":24000,"ppltnMax":26000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI085","areaNm":"강서한강공원","congestLvl":"여유","ppltnMin":0,"ppltnMax":100,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI086","areaNm":"고척돔","congestLvl":"여유","ppltnMin":1000,"ppltnMax":1500,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI087","areaNm":"광나루한강공원","congestLvl":"여유","ppltnMin":3000,"ppltnMax":3500,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI088","areaNm":"광화문광장","congestLvl":"여유","ppltnMin":4000,"ppltnMax":4500,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI089","areaNm":"국립중앙박물관·용산가족공원","congestLvl":"여유","ppltnMin":1000,"ppltnMax":1500,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI090","areaNm":"난지한강공원","congestLvl":"여유","ppltnMin":1000,"ppltnMax":1500,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI091","areaNm":"남산공원","congestLvl":"여유","ppltnMin":10000,"ppltnMax":12000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI092","areaNm":"노들섬","congestLvl":"여유","ppltnMin":500,"ppltnMax":600,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI093","areaNm":"뚝섬한강공원","congestLvl":"여유","ppltnMin":2500,"ppltnMax":3000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI094","areaNm":"망원한강공원","congestLvl":"여유","ppltnMin":1500,"ppltnMax":2000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI095","areaNm":"반포한강공원","congestLvl":"여유","ppltnMin":2500,"ppltnMax":3000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI096","areaNm":"북서울꿈의숲","congestLvl":"여유","ppltnMin":5000,"ppltnMax":5500,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI098","areaNm":"서리풀공원·몽마르뜨공원","congestLvl":"여유","ppltnMin":3500,"ppltnMax":4000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI100","areaNm":"서울대공원","congestLvl":"여유","ppltnMin":2500,"ppltnMax":3000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI101","areaNm":"서울숲공원","congestLvl":"여유","ppltnMin":3000,"ppltnMax":3500,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI102","areaNm":"아차산","congestLvl":"여유","ppltnMin":4000,"ppltnMax":4500,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI103","areaNm":"양화한강공원","congestLvl":"여유","ppltnMin":700,"ppltnMax":800,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI104","areaNm":"어린이대공원","congestLvl":"여유","ppltnMin":4500,"ppltnMax":5000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI105","areaNm":"여의도한강공원","congestLvl":"여유","ppltnMin":2500,"ppltnMax":3000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI106","areaNm":"월드컵공원","congestLvl":"여유","ppltnMin":5000,"ppltnMax":5500,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI107","areaNm":"응봉산","congestLvl":"여유","ppltnMin":2000,"ppltnMax":2500,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI108","areaNm":"이촌한강공원","congestLvl":"여유","ppltnMin":3000,"ppltnMax":3500,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI109","areaNm":"잠실종합운동장","congestLvl":"여유","ppltnMin":1500,"ppltnMax":2000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI110","areaNm":"잠실한강공원","congestLvl":"여유","ppltnMin":2000,"ppltnMax":2500,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI111","areaNm":"잠원한강공원","congestLvl":"여유","ppltnMin":1500,"ppltnMax":2000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI112","areaNm":"청계산","congestLvl":"여유","ppltnMin":1500,"ppltnMax":2000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI114","areaNm":"북창동 먹자골목","congestLvl":"여유","ppltnMin":6000,"ppltnMax":6500,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI115","areaNm":"남대문시장","congestLvl":"여유","ppltnMin":6000,"ppltnMax":6500,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI116","areaNm":"익선동","congestLvl":"여유","ppltnMin":9500,"ppltnMax":10000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI117","areaNm":"신정네거리역","congestLvl":"여유","ppltnMin":1500,"ppltnMax":2000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI118","areaNm":"잠실새내역","congestLvl":"여유","ppltnMin":12000,"ppltnMax":14000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI119","areaNm":"잠실역","congestLvl":"보통","ppltnMin":22000,"ppltnMax":24000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI120","areaNm":"잠실롯데타워·석촌호수","congestLvl":"보통","ppltnMin":48000,"ppltnMax":50000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI121","areaNm":"송리단길·호수단길","congestLvl":"여유","ppltnMin":7000,"ppltnMax":7500,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI122","areaNm":"신촌 스타광장","congestLvl":"보통","ppltnMin":3000,"ppltnMax":3500,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI123","areaNm":"보라매공원","congestLvl":"여유","ppltnMin":2500,"ppltnMax":3000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI124","areaNm":"서대문독립공원","congestLvl":"여유","ppltnMin":900,"ppltnMax":1000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI125","areaNm":"안양천","congestLvl":"보통","ppltnMin":1500,"ppltnMax":2000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI126","areaNm":"여의서로","congestLvl":"여유","ppltnMin":600,"ppltnMax":700,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI127","areaNm":"올림픽공원","congestLvl":"여유","ppltnMin":10000,"ppltnMax":12000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI128","areaNm":"홍제폭포","congestLvl":"여유","ppltnMin":300,"ppltnMax":400,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI129","areaNm":"송현녹지광장","congestLvl":"여유","ppltnMin":3000,"ppltnMax":3500,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI130","areaNm":"시의회 앞","congestLvl":"여유","ppltnMin":5000,"ppltnMax":5500,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}
+{"areaCd":"POI131","areaNm":"숭례문","congestLvl":"여유","ppltnMin":4500,"ppltnMax":5000,"ppltnTime":"2026-10-28 20:45","fetchedAt":"2026-10-28T21:17:22.830+09:00","source":"seoul_citydata"}

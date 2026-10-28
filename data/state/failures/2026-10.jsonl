@@ -2385,3 +2385,11 @@
 {"at":"2026-10-29T05:23:19.882+09:00","source":"naver_trend","placeId":"kto-2680234","code":"EMPTY","message":"요청 실패"}
 {"at":"2026-10-29T05:23:19.882+09:00","source":"naver_trend","placeId":"kto-2718059","code":"EMPTY","message":"요청 실패"}
 {"at":"2026-10-29T05:23:19.882+09:00","source":"naver_trend","placeId":"kto-2731193","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-29T05:40:16.741+09:00","source":"tour_operation","placeId":"kto-131821","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-29T05:40:16.741+09:00","source":"tour_operation","placeId":"kto-646762","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-29T05:40:16.741+09:00","source":"tour_operation","placeId":"kto-128517","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-29T05:40:16.741+09:00","source":"tour_operation","placeId":"kto-577623","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-29T05:40:16.741+09:00","source":"tour_hub","signguCd":"28110","code":"EMPTY","message":"빈 응답"}
+{"at":"2026-10-29T05:40:16.741+09:00","source":"tour_hub","signguCd":"28140","code":"EMPTY","message":"빈 응답"}
+{"at":"2026-10-29T05:40:16.741+09:00","source":"tour_hub","signguCd":"28260","code":"EMPTY","message":"빈 응답"}
+{"at":"2026-10-29T05:40:16.741+09:00","source":"tour_hub","signguCd":"41590","code":"EMPTY","message":"빈 응답"}

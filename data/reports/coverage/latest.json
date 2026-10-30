@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-10-30",
+  "asOf": "2026-10-31",
   "places": {
     "total": 3736,
     "visible": 3710,
@@ -10,8 +10,8 @@
     "cnctrLinked": 3710,
     "forecastToday": 3710,
     "forecastStale": 0,
-    "forecastFlat": 15,
-    "trendWeekly": 2202,
+    "forecastFlat": 16,
+    "trendWeekly": 2201,
     "trendBackfill": 3654,
     "blog": 3710,
     "seoulLinked": 32,
@@ -21,7 +21,7 @@
     "ggLinkedDong": 602,
     "operation": 3699,
     "operationCautionToday": 379,
-    "closedToday": 6
+    "closedToday": 58
   },
   "scores": {
     "popularity": 3654,
@@ -30,7 +30,8 @@
     "trendMedianAdjusted": 0,
     "longTerm": 1611,
     "usualToday": {
-      "none": 3710
+      "history": 3594,
+      "history_provisional": 116
     },
     "patternBasisToday": {
       "category": 2140,
@@ -45,17 +46,6 @@
     "street_market"
   ],
   "typesByDate": {
-    "2026-10-30": {
-      "famous_spot": 287,
-      "moderate_hotspot": 363,
-      "timing_game": 0,
-      "early_hotspot": 14,
-      "time_slot": 7,
-      "hidden_classic": 44,
-      "hidden_classic_candidates": 1,
-      "insufficient_any": 3704,
-      "recommended": 583
-    },
     "2026-10-31": {
       "famous_spot": 67,
       "moderate_hotspot": 102,
@@ -125,13 +115,13 @@
     "2026-11-06": {
       "famous_spot": 329,
       "moderate_hotspot": 341,
-      "timing_game": 0,
+      "timing_game": 206,
       "early_hotspot": 18,
       "time_slot": 7,
       "hidden_classic": 66,
       "hidden_classic_candidates": 1,
-      "insufficient_any": 3705,
-      "recommended": 637
+      "insufficient_any": 2612,
+      "recommended": 793
     },
     "2026-11-07": {
       "famous_spot": 134,
@@ -198,6 +188,17 @@
       "hidden_classic_candidates": 2,
       "insufficient_any": 2609,
       "recommended": 701
+    },
+    "2026-11-13": {
+      "famous_spot": 326,
+      "moderate_hotspot": 354,
+      "timing_game": 136,
+      "early_hotspot": 19,
+      "time_slot": 7,
+      "hidden_classic": 65,
+      "hidden_classic_candidates": 1,
+      "insufficient_any": 2612,
+      "recommended": 741
     }
   }
 }

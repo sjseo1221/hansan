@@ -2774,3 +2774,16 @@
 {"at":"2026-10-30T05:23:27.194+09:00","source":"naver_trend","placeId":"kto-250326","code":"EMPTY","message":"요청 실패"}
 {"at":"2026-10-30T05:23:27.194+09:00","source":"naver_trend","placeId":"kto-250358","code":"EMPTY","message":"요청 실패"}
 {"at":"2026-10-30T05:23:27.194+09:00","source":"naver_trend","placeId":"kto-250469","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-10-30T18:17:26.916+09:00","source":"seoul_citydata","areaCd":"POI001","code":"TimeoutError","message":"요청 실패 또는 시간 초과"}
+{"at":"2026-10-30T18:17:26.916+09:00","source":"seoul_citydata","areaCd":"POI002","code":"TimeoutError","message":"요청 실패 또는 시간 초과"}
+{"at":"2026-10-30T18:17:26.916+09:00","source":"seoul_citydata","areaCd":"POI003","code":"TimeoutError","message":"요청 실패 또는 시간 초과"}
+{"at":"2026-10-30T18:17:26.916+09:00","source":"seoul_citydata","areaCd":"POI004","code":"TimeoutError","message":"요청 실패 또는 시간 초과"}
+{"at":"2026-10-30T18:17:26.916+09:00","source":"seoul_citydata","areaCd":"POI005","code":"TypeError","message":"요청 실패 또는 시간 초과"}
+{"at":"2026-10-30T18:17:26.916+09:00","source":"seoul_citydata","areaCd":"POI006","code":"TimeoutError","message":"요청 실패 또는 시간 초과"}
+{"at":"2026-10-30T18:17:26.916+09:00","source":"seoul_citydata","areaCd":"POI007","code":"TimeoutError","message":"요청 실패 또는 시간 초과"}
+{"at":"2026-10-30T18:17:26.916+09:00","source":"seoul_citydata","areaCd":"POI008","code":"TimeoutError","message":"요청 실패 또는 시간 초과"}
+{"at":"2026-10-30T18:17:26.916+09:00","source":"seoul_citydata","areaCd":"POI009","code":"TimeoutError","message":"요청 실패 또는 시간 초과"}
+{"at":"2026-10-30T18:17:26.916+09:00","source":"seoul_citydata","areaCd":"POI010","code":"TimeoutError","message":"요청 실패 또는 시간 초과"}
+{"at":"2026-10-30T18:17:26.916+09:00","source":"seoul_citydata","areaCd":"POI011","code":"TimeoutError","message":"요청 실패 또는 시간 초과"}
+{"at":"2026-10-30T18:17:26.916+09:00","source":"seoul_citydata","areaCd":"POI012","code":"TimeoutError","message":"요청 실패 또는 시간 초과"}
+{"at":"2026-10-30T18:17:26.916+09:00","source":"seoul_citydata","areaCd":"POI013","code":"TimeoutError","message":"요청 실패 또는 시간 초과"}

@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-10-26",
+  "generatedAt": "2026-11-02",
   "attractions": 4315,
   "matched": {
-    "exact": 3382,
-    "normalized": 248,
-    "partial": 119,
-    "total": 3749,
+    "exact": 3368,
+    "normalized": 252,
+    "partial": 124,
+    "total": 3744,
     "ambiguous": 1,
-    "duplicates": 18
+    "duplicates": 19
   },
-  "matchRate": 0.869,
+  "matchRate": 0.868,
   "unmatched": {
-    "count": 566,
+    "count": 571,
     "list": [
       {
         "signguCd": "11110",
@@ -761,6 +761,11 @@
       {
         "signguCd": "30170",
         "signguNm": "서구",
+        "tAtsNm": "바구스스파"
+      },
+      {
+        "signguCd": "30170",
+        "signguNm": "서구",
         "tAtsNm": "엑스포시민광장"
       },
       {
@@ -817,6 +822,11 @@
         "signguCd": "36110",
         "signguNm": "세종특별자치시",
         "tAtsNm": "리틀파머스"
+      },
+      {
+        "signguCd": "36110",
+        "signguNm": "세종특별자치시",
+        "tAtsNm": "밀마루전망대"
       },
       {
         "signguCd": "36110",
@@ -902,6 +912,11 @@
         "signguCd": "41150",
         "signguNm": "의정부시",
         "tAtsNm": "서계박세당 사랑채"
+      },
+      {
+        "signguCd": "41192",
+        "signguNm": "부천시 원미구",
+        "tAtsNm": "석왕사(경기)"
       },
       {
         "signguCd": "41192",
@@ -1376,6 +1391,11 @@
       {
         "signguCd": "41550",
         "signguNm": "안성시",
+        "tAtsNm": "안성 서일농원"
+      },
+      {
+        "signguCd": "41550",
+        "signguNm": "안성시",
         "tAtsNm": "안성맞춤 먹거리타운"
       },
       {
@@ -1791,6 +1811,11 @@
       {
         "signguCd": "43113",
         "signguNm": "청주시 흥덕구",
+        "tAtsNm": "청원 연꽃마을"
+      },
+      {
+        "signguCd": "43113",
+        "signguNm": "청주시 흥덕구",
         "tAtsNm": "평동전통떡마을"
       },
       {
@@ -1832,11 +1857,6 @@
         "signguCd": "43150",
         "signguNm": "제천시",
         "tAtsNm": "명암산채건강마을"
-      },
-      {
-        "signguCd": "43150",
-        "signguNm": "제천시",
-        "tAtsNm": "박달재목각공원"
       },
       {
         "signguCd": "43150",
@@ -2131,6 +2151,11 @@
       {
         "signguCd": "44770",
         "signguNm": "서천군",
+        "tAtsNm": "유부도"
+      },
+      {
+        "signguCd": "44770",
+        "signguNm": "서천군",
         "tAtsNm": "이상재선생 생가지"
       },
       {
@@ -2202,6 +2227,11 @@
         "signguCd": "44825",
         "signguNm": "태안군",
         "tAtsNm": "안흥성"
+      },
+      {
+        "signguCd": "44825",
+        "signguNm": "태안군",
+        "tAtsNm": "옹도 등대"
       },
       {
         "signguCd": "44825",
@@ -2806,11 +2836,6 @@
       {
         "signguCd": "51830",
         "signguNm": "양양군",
-        "tAtsNm": "양양국제공항"
-      },
-      {
-        "signguCd": "51830",
-        "signguNm": "양양군",
         "tAtsNm": "양양시장"
       },
       {
@@ -2854,12 +2879,12 @@
     "맹방비치캠핑장(AC05)",
     "보령 청소역(VE11)",
     "신탄리역(VE11)",
+    "양양국제공항(VE11)",
     "영월별마로캠핑장(AC05)",
     "장호비치캠핑장(AC05)",
     "전곡역(VE11)",
     "진동리 국민여가캠핑장(AC05)",
     "진천명품 휴미락캠핑장(AC05)",
-    "춘천숲자연휴양림(AC05)",
     "회동솔향캠핑장(AC05)",
     "금은모래캠핑장(AC05)",
     "박사마을 어린이 글램핑장(AC05)",
@@ -2869,10 +2894,10 @@
     "인천국제공항(VE11)"
   ],
   "excludedByCoord": [
+    "성촌공원(2760249)",
     "방배배수지체육공원(2763871)",
     "계남근린공원(2611568)",
     "호국지장사(서울)(486625)",
-    "성촌공원(2760249)",
     "대치유수지체육공원(2733970)",
     "서울책보고(2606740)",
     "부평 굴포누리 기후변화체험관(3456754)",
@@ -3023,12 +3048,6 @@
       "addr": "인천광역시 영종구 대무의로 310-11"
     },
     {
-      "tAtsNm": "박달재",
-      "signguNm": "제천시",
-      "title": "박달재",
-      "addr": "충청북도 제천시봉양읍 원박리"
-    },
-    {
       "tAtsNm": "백마산",
       "signguNm": "음성군",
       "title": "백마산",
@@ -3069,12 +3088,6 @@
       "signguNm": "서산시",
       "title": "서산A지구방조제",
       "addr": "충청남도 홍성군 서부면 남당항로"
-    },
-    {
-      "tAtsNm": "석왕사(경기)",
-      "signguNm": "부천시 원미구",
-      "title": "석왕사(경기)",
-      "addr": "경기도 부천시 소사로 367"
     },
     {
       "tAtsNm": "선녀바위",
@@ -3135,6 +3148,12 @@
       "signguNm": "수원시 팔달구",
       "title": "수원 화성 [유네스코 세계유산]",
       "addr": "경기도 수원시 장안구 영화동"
+    },
+    {
+      "tAtsNm": "수원시립만석전시관",
+      "signguNm": "수원시 장안구",
+      "title": "수원시립만석전시관",
+      "addr": "경기도 수원시 팔달구 정조로 833 (신풍동)"
     },
     {
       "tAtsNm": "신해철거리(성남)",
@@ -3589,9 +3608,24 @@
       "staleSince": "2026-10-19"
     },
     {
+      "placeId": "kto-128517",
+      "name": "안성 서일농원",
+      "staleSince": "2026-11-02"
+    },
+    {
+      "placeId": "kto-129131",
+      "name": "옹도 등대",
+      "staleSince": "2026-11-02"
+    },
+    {
       "placeId": "kto-1626554",
       "name": "은진향교 대성전",
       "staleSince": "2026-10-19"
+    },
+    {
+      "placeId": "kto-1951612",
+      "name": "밀마루전망대",
+      "staleSince": "2026-11-02"
     },
     {
       "placeId": "kto-1956032",
@@ -3617,6 +3651,16 @@
       "placeId": "kto-2662470",
       "name": "북단양리조트",
       "staleSince": "2026-10-26"
+    },
+    {
+      "placeId": "kto-2664752",
+      "name": "소야도 떼뿌리 해변",
+      "staleSince": "2026-11-02"
+    },
+    {
+      "placeId": "kto-2713438",
+      "name": "K-26",
+      "staleSince": "2026-11-02"
     },
     {
       "placeId": "kto-2733970",
@@ -3654,6 +3698,11 @@
       "staleSince": "2026-10-12"
     },
     {
+      "placeId": "kto-2808100",
+      "name": "바구스스파",
+      "staleSince": "2026-11-02"
+    },
+    {
       "placeId": "kto-2820721",
       "name": "삼척항 대게거리",
       "staleSince": "2026-10-12"
@@ -3669,6 +3718,11 @@
       "staleSince": "2026-10-12"
     },
     {
+      "placeId": "kto-318207",
+      "name": "석왕사(경기)",
+      "staleSince": "2026-11-02"
+    },
+    {
       "placeId": "kto-346685",
       "name": "운용사(충북)",
       "staleSince": "2026-10-19"
@@ -3679,33 +3733,43 @@
       "staleSince": "2026-10-12"
     },
     {
+      "placeId": "kto-577623",
+      "name": "유부도",
+      "staleSince": "2026-11-02"
+    },
+    {
+      "placeId": "kto-605173",
+      "name": "청원 연꽃마을",
+      "staleSince": "2026-11-02"
+    },
+    {
       "placeId": "kto-920339",
       "name": "성령대군묘",
       "staleSince": "2026-10-12"
     }
   ],
   "places": {
-    "total": 3736,
-    "visible": 3710,
-    "hidden": 26,
+    "total": 3739,
+    "visible": 3704,
+    "hidden": 35,
     "byProvince": {
       "11": 563,
       "28": 257,
       "30": 99,
       "36": 31,
-      "41": 1061,
+      "41": 1062,
       "43": 401,
-      "44": 604,
-      "51": 720
+      "44": 605,
+      "51": 721
     },
     "byCategory": {
-      "nature_park": 1186,
+      "nature_park": 1187,
       "street_market": 390,
       "theme_park": 360,
       "exhibition": 460,
       "heritage": 1051,
-      "walking_trail": 255,
-      "leisure_sports": 34
+      "walking_trail": 256,
+      "leisure_sports": 35
     },
     "seoulLinked": 32
   },
@@ -3715,19 +3779,20 @@
     "operation": 0
   },
   "keywordChanged": [
-    "kto-127793",
-    "kto-129417",
-    "kto-2662397"
+    "kto-125617",
+    "kto-127171",
+    "kto-132554",
+    "kto-2994661"
   ],
   "shrinkBlocked": false,
   "warnings": [],
-  "operationFilled": 3710,
+  "operationFilled": 3713,
   "tour": {
     "sigungu": 147,
     "sigunguFailed": false,
     "provincesOk": 8,
     "provincesFailed": 0,
     "provincesKept": 0,
-    "candidates": 10938
+    "candidates": 10940
   }
 }

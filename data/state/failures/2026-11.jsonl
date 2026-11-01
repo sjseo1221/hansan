@@ -607,3 +607,6 @@
 {"at":"2026-11-02T05:23:31.541+09:00","source":"naver_trend","placeId":"kto-2662217","code":"EMPTY","message":"요청 실패"}
 {"at":"2026-11-02T05:23:31.541+09:00","source":"naver_trend","placeId":"kto-2664745","code":"EMPTY","message":"요청 실패"}
 {"at":"2026-11-02T05:23:31.541+09:00","source":"naver_trend","placeId":"kto-2666750","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-11-02T05:40:33.239+09:00","source":"aux_visitors","code":"NET_UND_ERR_CONNECT_TIMEOUT","message":"요청 실패"}
+{"at":"2026-11-02T05:40:33.239+09:00","source":"aux_events","code":"NET_UND_ERR_CONNECT_TIMEOUT","message":"요청 실패"}
+{"at":"2026-11-02T05:40:33.239+09:00","source":"aux_holidays","code":"NET_UND_ERR_CONNECT_TIMEOUT","message":"요청 실패"}

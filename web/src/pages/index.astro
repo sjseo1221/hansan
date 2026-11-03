@@ -5,6 +5,7 @@ import Base from "../layouts/Base.astro";
 
 <Base title="한산 — 덜 붐비는 나들이 추천">
   <h1 id="heading">이번 주말, 덜 붐빌 나들이 장소</h1>
+  <nav class="crumb" aria-label="현재 위치"><span>한산</span><span>추천 피드</span></nav>
   <form id="filters" class="filters" aria-label="추천 조건">
     <fieldset class="days">
       <legend>날짜</legend>
@@ -47,34 +48,43 @@ import Base from "../layouts/Base.astro";
   .filters {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
-    gap: 12px;
-    padding: 12px;
-    background: var(--card);
-    border: 1px solid var(--line);
+    gap: 16px;
+    margin-bottom: var(--gap);
+    padding: var(--gap);
+    background: var(--surface);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
   }
   .filters label {
     display: flex;
     flex-direction: column;
     gap: 4px;
+    color: var(--fg);
   }
-  .more {
+  .more,
+  .days {
     grid-column: 1 / -1;
   }
   .more summary {
     min-height: 44px;
     padding-top: 10px;
-    font-weight: 700;
+    color: var(--fg);
+    font-weight: 500;
   }
   .more-body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
-    gap: 12px;
+    gap: 16px;
     margin-top: 8px;
   }
   .filters fieldset {
     border: 0;
     margin: 0;
     padding: 0;
+  }
+  .filters legend {
+    color: var(--fg);
+    font-weight: 500;
   }
   .filters .indoor label {
     flex-direction: row;
@@ -91,50 +101,52 @@ import Base from "../layouts/Base.astro";
   #feed {
     min-height: 100vh; /* 추천이 그려질 자리를 미리 잡아 하단이 밀려 내려가지 않게(CLS) */
   }
-  .weekend button {
+  .weekend :global(button) {
     flex: 1;
-    border: 1px solid var(--line);
-    background: var(--bg);
+    border: 1px solid #dfe6ef;
+    background: var(--surface);
+    color: var(--fg);
   }
-  .weekend button[aria-pressed="true"] {
-    background: var(--fg);
-    color: var(--bg);
-    font-weight: 700;
+  .weekend :global(button[aria-pressed="true"]) {
+    background: var(--grad);
+    border-color: transparent;
+    color: #fff;
+    font-weight: 500;
   }
   .hint {
-    color: var(--muted);
+    margin: 0 0 var(--gap);
+    font-size: 0.875rem;
   }
   :global(.type) {
-    margin-top: 28px;
+    margin: var(--section-gap) 0 0;
   }
   :global(.type-desc) {
     margin-top: 0;
-    color: var(--muted);
   }
   :global(.cards) {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 12px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--gap);
     list-style: none;
     padding: 0;
   }
   :global(.card) {
-    padding: 12px 14px;
-    background: var(--card);
-    border: 1px solid var(--line);
+    padding: var(--gap);
+    background: var(--surface);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+  :global(.card[hidden]) {
+    display: none;
   }
   :global(.card h3) {
-    margin: 0;
+    margin: 0 0 4px;
+    color: var(--fg);
     font-size: 1.125rem;
+    font-weight: 500;
   }
   :global(.card p) {
     margin: 4px 0;
-  }
-  :global(.card .where) {
-    color: var(--muted);
-  }
-  :global(.card .basis) {
-    color: var(--muted);
   }
   :global(.card details) {
     display: inline;

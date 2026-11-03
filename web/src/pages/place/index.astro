@@ -4,7 +4,7 @@ import Base from "../../layouts/Base.astro";
 ---
 
 <Base title="장소 상세 — 한산">
-  <p><a href="/" id="back">← 추천 목록으로</a></p>
+  <p class="back"><a href="/" id="back">← 추천 목록으로</a></p>
   <div id="place" aria-live="polite"><p>장소 정보를 불러오는 중입니다.</p></div>
 </Base>
 
@@ -12,63 +12,165 @@ import Base from "../../layouts/Base.astro";
   #place {
     min-height: 100vh; /* 내용이 그려질 자리를 미리 잡는다(CLS) */
   }
+  .back {
+    margin: 0 0 8px;
+    font-size: 0.875rem;
+  }
+  /* 요약 카드 4개: 데스크톱 가로 4칸, 모바일 2x2 */
+  :global(.stats) {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--gap);
+    margin-bottom: var(--gap);
+  }
+  :global(.stat) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    padding: var(--gap);
+    background: var(--surface);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+  :global(.stat-v) {
+    color: var(--fg);
+    font-size: 1.75rem;
+    font-weight: 600;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+  }
+  :global(.stat-l) {
+    margin-top: 4px;
+    font-size: 0.875rem;
+  }
+  :global(.stat-i) {
+    display: grid;
+    place-items: center;
+    flex: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--primary-soft);
+    color: var(--primary);
+  }
+  :global(.stat-v.tone-high) {
+    color: var(--high);
+  }
+  :global(.stat-v.tone-medium) {
+    color: var(--medium);
+  }
+  :global(.stat-v.tone-low) {
+    color: var(--low);
+  }
+  :global(.stat-i.tone-high) {
+    background: #dff7ec;
+    color: var(--green);
+  }
+  :global(.stat-i.tone-medium) {
+    background: #fff1d6;
+    color: #e0a000;
+  }
+  :global(.stat-i.tone-low) {
+    background: #ffe3e8;
+    color: var(--red);
+  }
+  :global(.stat-i.tone-p) {
+    background: #d9f6fc;
+    color: #00a5c4;
+  }
+  @media (max-width: 991px) {
+    :global(.stats) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+    :global(.stat) {
+      padding: 16px;
+    }
+    :global(.stat-v) {
+      font-size: 1.375rem;
+    }
+    :global(.stat-i) {
+      display: none;
+    }
+  }
   :global(.facts) {
     display: grid;
-    grid-template-columns: max-content 1fr;
-    gap: 4px 16px;
+    grid-template-columns: max-content minmax(0, 1fr);
+    gap: 12px 24px;
+    margin: 0;
   }
   :global(.facts dt) {
-    color: var(--muted);
+    color: var(--body);
   }
   :global(.facts dd) {
     margin: 0;
+    color: var(--fg);
+    font-weight: 500;
   }
-  :global(.check) {
-    padding: 12px 16px;
-    background: #fff4d6;
-    border: 1px solid #c9a227;
+  :global(.maps) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 var(--gap);
   }
   :global(table) {
     border-collapse: collapse;
     width: 100%;
+    min-width: 560px; /* 좁은 화면에서는 표를 가로로 밀어 본다 */
   }
   :global(th),
   :global(td) {
     border-bottom: 1px solid var(--line);
-    padding: 6px 4px;
+    padding: 10px 8px;
     text-align: left;
     vertical-align: top;
   }
+  :global(thead th) {
+    color: var(--fg);
+    font-weight: 500;
+  }
   :global(tr[aria-current="date"]) {
-    background: var(--card);
-    font-weight: 700;
+    background: var(--primary-soft);
+    font-weight: 500;
   }
   :global(.bar) {
     display: inline-block;
     height: 10px;
-    background: var(--muted);
+    border-radius: 4px;
+    background: var(--primary);
     vertical-align: middle;
   }
+  /* 시간대별 붐빔 차트: 점선 연회색 격자, 메인색 막대, 추천 시간대는 초록 */
   :global(.hours) {
     display: grid;
     grid-template-columns: repeat(24, 1fr);
     align-items: end;
-    gap: 2px;
-    height: 120px;
+    gap: 3px;
+    height: 160px;
     margin-top: 8px;
+    border-bottom: 1px solid #dfe6ef;
+    background:
+      linear-gradient(to right, #dfe6ef 50%, transparent 50%) 0 0 / 8px 1px repeat-x,
+      linear-gradient(to right, #dfe6ef 50%, transparent 50%) 0 33.3% / 8px 1px repeat-x,
+      linear-gradient(to right, #dfe6ef 50%, transparent 50%) 0 66.6% / 8px 1px repeat-x;
   }
   :global(.hours span) {
-    background: var(--muted);
+    background: var(--primary);
+    border-radius: 4px 4px 0 0;
     min-height: 2px;
   }
   :global(.hours span.quiet) {
-    background: var(--high);
+    background: var(--green);
     outline: 2px dashed var(--high);
+    outline-offset: -1px;
   }
   :global(.hour-axis) {
     display: flex;
     justify-content: space-between;
-    color: var(--muted);
+    margin-top: 4px;
+    font-size: 0.875rem;
   }
   :global(.sources li) {
     margin-bottom: 8px;

@@ -74,7 +74,7 @@ function festivalSection(list: FestivalItem[], f: Filters, origin: Region | null
     .map(({ x, mins }) => `<li class="card">
       <h3>${esc(x.title)}</h3>
       <p class="where">${esc(x.place)}${mins !== null ? ` · 약 ${mins < 60 ? `${mins}분` : `${Math.floor(mins / 60)}시간 ${mins % 60}분`}` : ""}</p>
-      <div><span class="badge">축제</span> ${md(x.start)}~${md(x.end)}${x.time ? ` · ${esc(x.time)}` : ""}</div>
+      <div><span class="badge info">축제</span> ${md(x.start)}~${md(x.end)}${x.time ? ` · ${esc(x.time)}` : ""}</div>
       <p>축제라 붐빌 수 있어요.${x.near.length ? ` 근처에서 덜 붐빌 곳: ${x.near.map(([id, name, km]) => `<a href="/place/?id=${encodeURIComponent(id)}&date=${f.date}">${esc(name)}</a>(약 ${km}km)`).join(", ")}` : ""}</p>
       <p class="basis">출처: ${FEST_SRC[x.src]}${x.note ? ` — ${esc(x.note)}` : ""}${x.link ? ` · <a href="${esc(x.link)}" rel="noopener" target="_blank">축제 안내 보기</a>` : ""}</p>
     </li>`)
@@ -94,14 +94,14 @@ function card(it: FeedItem, f: Filters, cfg: Config, origin: Region | null, basi
   const slot =
     it.rep === "time_slot" && it.slot
       ? `<div>추천 시간대 <strong>${it.slot.start}~${it.slot.end}</strong> ${
-          it.label === "추정" ? `<details><summary class="badge">추정</summary>서울 실시간 인구 자료가 없는 곳이라, 비슷한 장소와 지역 유동인구로 어림한 시간대예요.</details>` : `<span class="badge">실측</span>`
+          it.label === "추정" ? `<details><summary class="badge warn">추정</summary>서울 실시간 인구 자료가 없는 곳이라, 비슷한 장소와 지역 유동인구로 어림한 시간대예요.</details>` : `<span class="badge ok">실측</span>`
         }</div>`
       : "";
   return `<li class="card">
     <h3><a href="/place/?id=${encodeURIComponent(it.id)}&date=${f.date}">${esc(it.name)}</a></h3>
     <p class="where">${esc(it.area)}${mins !== null ? ` · 약 ${mins < 60 ? `${mins}분` : `${Math.floor(mins / 60)}시간 ${mins % 60}분`}` : ""}</p>
     <div><span class="badge">${esc(type.label)}</span>${
-      it.beta ? ` <details><summary class="badge">베타</summary>판정 기준을 아직 검증하고 있는 유형이에요. 결과가 덜 정확할 수 있어요.</details>` : ""
+      it.beta ? ` <details><summary class="badge warn">베타</summary>판정 기준을 아직 검증하고 있는 유형이에요. 결과가 덜 정확할 수 있어요.</details>` : ""
     } <span class="lh-${it.lh}"><span aria-hidden="true">${lh.mark}</span> ${lh.text}</span></div>
     ${slot}
     <p>${esc(it.reason ?? ruleReason(it, it.rep))}${it.prov ? " <small>(평소 자료가 아직 적어 임시로 판단했어요)</small>" : ""}</p>
@@ -191,7 +191,7 @@ export async function initFeed() {
         const list = groups[t];
         return `<section class="type" aria-labelledby="h-${t}">
           <h2 id="h-${t}">${esc(type.label)}</h2>
-          ${t === "early_hotspot" ? `<details><summary class="badge">베타</summary>판정 기준을 아직 검증하고 있는 유형이에요. 결과가 덜 정확할 수 있어요.</details>` : ""}
+          ${t === "early_hotspot" ? `<details><summary class="badge warn">베타</summary>판정 기준을 아직 검증하고 있는 유형이에요. 결과가 덜 정확할 수 있어요.</details>` : ""}
           <p class="type-desc">${esc(type.desc)}</p>
           ${list.length ? `<ul class="cards">${list.map((it) => card(it, f, cfg, origin, basis)).join("")}</ul>` : `<p>${dateLabel(f.date)}에는 해당 장소가 없습니다.</p>`}
         </section>`;

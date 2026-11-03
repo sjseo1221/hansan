@@ -42,6 +42,16 @@ interface Place {
   alt: Record<string, [string, string, number][]>;
 }
 
+// 요약 카드 아이콘(lucide)
+const ICON = {
+  smile: '<circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9h.01"/><path d="M15 9h.01"/>',
+  rank: '<polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>',
+  tag: '<path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><path d="M7 7h.01"/>',
+  sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>',
+};
+const stat = (label: string, value: string, icon: keyof typeof ICON, tone: string) =>
+  `<div class="stat"><div><div class="stat-v ${tone}">${value}</div><div class="stat-l">${label}</div></div><span class="stat-i ${tone}"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true">${ICON[icon]}</svg></span></div>`;
+
 const INDOOR = { indoor: "실내", outdoor: "실외", mixed: "실내·실외" };
 
 // 평소와 비교 — 숫자 차이를 쉬운 말로
@@ -168,8 +178,8 @@ export async function initPlace() {
       const e = day.slot ? Number(day.slot.end.slice(0, 2)) : -1;
       const label =
         p.pat.label === "실측"
-          ? `<span class="badge">실측</span> 서울 실시간 인구 자료로 만든 패턴이에요.`
-          : `<details><summary class="badge">추정</summary>이 장소의 시간대별 실측 자료가 없어, 비슷한 장소와 지역 유동인구 자료로 어림했어요.</details>`;
+          ? `<span class="badge ok">실측</span> 서울 실시간 인구 자료로 만든 패턴이에요.`
+          : `<details><summary class="badge warn">추정</summary>이 장소의 시간대별 실측 자료가 없어, 비슷한 장소와 지역 유동인구 자료로 어림했어요.</details>`;
       patternHtml = `<p>${label}</p>
         <div class="hours" role="img" aria-label="시간대별 혼잡 정도 (${holiday ? "주말·휴일" : "평일"})">
           ${pat.map((v, h) => `<span class="${h >= s && h < e ? "quiet" : ""}" style="height:${Math.round((v ?? 0) * 100)}%"></span>`).join("")}
@@ -188,40 +198,55 @@ export async function initPlace() {
     const name = encodeURIComponent(p.name);
     el.innerHTML = `
       <h1>${esc(p.name)}</h1>
-      <dl class="facts">
+      <nav class="crumb" aria-label="현재 위치"><span>한산</span><span>장소 상세</span><span>${esc(p.name)}</span></nav>
+      <div class="stats">
+        ${stat("한산 가능성", day.closed || !day.lh ? "-" : lh!.text.replace("한산할 가능성 ", ""), "smile", day.closed || !day.lh ? "tone-n" : `tone-${day.lh}`)}
+        ${stat("내비 인기 순위", p.nav ? `${p.nav.rank}위` : "-", "rank", "tone-p")}
+        ${stat("분류", esc(cat), "tag", "tone-s")}
+        ${stat("실내·실외", INDOOR[p.indoor], "sun", "tone-s")}
+      </div>
+      <section class="panel"><dl class="facts">
         <dt>주소</dt><dd>${esc(p.addr || p.area)}</dd>
 ${p.dong ? `<dt>행정동</dt><dd>${esc(p.dong)}</dd>` : ""}
         ${p.nav ? `<dt>내비 인기</dt><dd>${esc(p.area)} 중심 관광지 ${p.nav.rank}위 <small>(티맵 내비게이션 기준, ${Number(p.nav.ym.slice(0, 4))}년 ${Number(p.nav.ym.slice(4, 6))}월)</small></dd>` : ""}
-        <dt>분류</dt><dd>${esc(cat)}</dd>
-        <dt>실내·실외</dt><dd>${INDOOR[p.indoor]}</dd>
         <dt>쉬는 날</dt><dd>${p.op?.rest ? esc(p.op.rest) : "정보 없음"}</dd>
         <dt>이용 시간</dt><dd>${p.op?.hours ? esc(p.op.hours) : "정보 없음"}</dd>
-      </dl>
+      </dl></section>
       <p class="check">방문 전에 운영 여부와 시간을 꼭 확인하세요. 운영 정보는 바뀔 수 있어요.${day.caution ? " 이 장소는 쉬는 날 안내가 조건에 따라 달라요." : ""}</p>
-      <p>지도 앱에서 보기: <a href="https://map.naver.com/p/search/${name}" rel="noopener" target="_blank">네이버 지도</a> · <a href="https://map.kakao.com/link/map/${name},${p.lat},${p.lng}" rel="noopener" target="_blank">카카오맵</a></p>
+      <p class="maps">지도 앱에서 보기: <a class="btn-outline" href="https://map.naver.com/p/search/${name}" rel="noopener" target="_blank">네이버 지도</a> <a class="btn-outline" href="https://map.kakao.com/link/map/${name},${p.lat},${p.lng}" rel="noopener" target="_blank">카카오맵</a></p>
 
+      <section class="panel">
       <h2>${dateLabel(date)}</h2>
       ${lh && !day.closed ? `<p class="lh-${day.lh}"><span aria-hidden="true">${lh.mark}</span> ${lh.text}</p>` : ""}
       ${day.fs ? `<p class="notice">이 지역의 혼잡 예측이 며칠째 갱신되지 않았어요.</p>` : ""}
       ${typesHtml}
       ${whyHtml}
+      </section>
 
+      <section class="panel">
       <h2>시간대별 붐빔</h2>
       ${patternHtml}
       ${quietMention}
+      </section>
 
+      <section class="panel">
       <h2>앞으로 2주 혼잡 예측</h2>
       <p>숫자가 클수록 붐빈다는 뜻이에요(0~100). 이 장소의 평소 수준과 비교해 보세요.</p>
       <div class="table-wrap"><table>
         <thead><tr><th scope="col">날짜</th><th scope="col">혼잡 예측</th><th scope="col">평소</th><th scope="col">비교</th><th scope="col">한산 가능성</th></tr></thead>
         <tbody>${rows}</tbody>
       </table></div>
+      </section>
 
+      <section class="panel">
       <h2>근처의 한산한 곳</h2>
       ${altHtml}
+      </section>
 
+      <section class="panel">
       <h2>이 정보의 근거와 출처</h2>
-      ${sourcesHtml(p, day, m, cfg)}`;
+      ${sourcesHtml(p, day, m, cfg)}
+      </section>`;
   } catch {
     el.innerHTML = "<p>장소 정보를 불러오지 못했습니다. 주소를 확인하거나 <a href='/'>추천 목록</a>으로 돌아가 주세요.</p>";
   }

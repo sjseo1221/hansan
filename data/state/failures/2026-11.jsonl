@@ -994,3 +994,5 @@
 {"at":"2026-11-04T05:41:19.621+09:00","source":"tour_hub","signguCd":"51830","code":"EMPTY","message":"빈 응답"}
 {"at":"2026-11-04T15:15:58.027+09:00","source":"seoul_citydata","areaCd":"POI036","code":"INFO-000","message":"정상 처리되었습니다."}
 {"at":"2026-11-04T15:15:58.027+09:00","source":"seoul_citydata","areaCd":"POI070","code":"INFO-000","message":"정상 처리되었습니다."}
+{"at":"2026-11-04T16:17:31.263+09:00","source":"seoul_citydata","areaCd":"POI036","code":"INFO-000","message":"정상 처리되었습니다."}
+{"at":"2026-11-04T16:17:31.263+09:00","source":"seoul_citydata","areaCd":"POI070","code":"INFO-000","message":"정상 처리되었습니다."}

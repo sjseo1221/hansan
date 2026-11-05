@@ -3,25 +3,25 @@
   "model": "gpt-6-luna",
   "run": {
     "calls": 1504,
-    "inputTokens": 1703089,
+    "inputTokens": 1702977,
     "cachedTokens": 0,
-    "outputTokens": 77260,
-    "costUsd": 0.2089
+    "outputTokens": 73321,
+    "costUsd": 0.207
   },
   "month": {
-    "calls": 14632,
-    "inputTokens": 18004556,
+    "calls": 16140,
+    "inputTokens": 19709835,
     "cachedTokens": 5433,
-    "outputTokens": 736852,
-    "costUsd": 2.1684
+    "outputTokens": 810326,
+    "costUsd": 2.3757
   },
   "reasons": {
     "needed": 8713,
-    "reused": 2168,
-    "generated": 1503,
-    "invalid": 1,
+    "reused": 3672,
+    "generated": 1504,
+    "invalid": 0,
     "failed": 0,
-    "skippedBudget": 5041
+    "skippedBudget": 3537
   },
   "reviews": {
     "needed": 0,

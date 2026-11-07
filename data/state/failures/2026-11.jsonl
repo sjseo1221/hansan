@@ -1547,3 +1547,6 @@
 {"at":"2026-11-07T05:40:34.940+09:00","source":"tour_hub","signguCd":"51810","code":"EMPTY","message":"빈 응답"}
 {"at":"2026-11-07T05:40:34.940+09:00","source":"tour_hub","signguCd":"51820","code":"EMPTY","message":"빈 응답"}
 {"at":"2026-11-07T05:40:34.940+09:00","source":"tour_hub","signguCd":"51830","code":"EMPTY","message":"빈 응답"}
+{"at":"2026-11-07T12:17:59.949+09:00","source":"seoul_citydata","areaCd":"POI108","code":"INFO-000","message":"정상 처리되었습니다."}
+{"at":"2026-11-07T12:17:59.949+09:00","source":"seoul_citydata","areaCd":"POI109","code":"INFO-000","message":"정상 처리되었습니다."}
+{"at":"2026-11-07T12:17:59.949+09:00","source":"seoul_citydata","areaCd":"POI110","code":"INFO-000","message":"정상 처리되었습니다."}

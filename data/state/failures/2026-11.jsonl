@@ -1725,3 +1725,4 @@
 {"at":"2026-11-08T05:40:52.137+09:00","source":"tour_hub","signguCd":"51810","code":"EMPTY","message":"빈 응답"}
 {"at":"2026-11-08T05:40:52.137+09:00","source":"tour_hub","signguCd":"51820","code":"EMPTY","message":"빈 응답"}
 {"at":"2026-11-08T05:40:52.137+09:00","source":"tour_hub","signguCd":"51830","code":"EMPTY","message":"빈 응답"}
+{"at":"2026-11-08T14:18:00.582+09:00","source":"seoul_citydata","areaCd":"POI086","code":"INFO-000","message":"정상 처리되었습니다."}

@@ -2,18 +2,18 @@
   "asOf": "2026-11-08",
   "model": "gpt-6-luna",
   "run": {
-    "calls": 25,
-    "inputTokens": 46847,
+    "calls": 4,
+    "inputTokens": 2302,
     "cachedTokens": 0,
-    "outputTokens": 1228,
-    "costUsd": 0.0053
+    "outputTokens": 160,
+    "costUsd": 0.0003
   },
   "month": {
-    "calls": 22210,
-    "inputTokens": 26603983,
+    "calls": 23718,
+    "inputTokens": 28309659,
     "cachedTokens": 7965,
-    "outputTokens": 1108854,
-    "costUsd": 3.2141
+    "outputTokens": 1183798,
+    "costUsd": 3.4221
   },
   "reasons": {
     "needed": 0,
@@ -25,17 +25,17 @@
   },
   "reviews": {
     "needed": 953,
-    "reused": 938,
+    "reused": 953,
     "fewPosts": 0,
-    "judged": 15,
+    "judged": 0,
     "failed": 0,
     "skipped": 0
   },
   "known": {
     "needed": 953,
-    "reused": 946,
+    "reused": 951,
     "noOverview": 0,
-    "generated": 5,
+    "generated": 0,
     "empty": 0,
     "failed": 2,
     "skippedBudget": 0

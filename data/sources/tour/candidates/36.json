@@ -1,7 +1,21 @@
 {
-  "fetchedAt": "2026-11-02T04:50:36.638+09:00",
+  "fetchedAt": "2026-11-09T04:50:55.161+09:00",
   "source": "TourAPI areaBasedList2",
   "candidates": [
+    {
+      "contentid": "2717493",
+      "contenttypeid": "12",
+      "title": "삼버들협동조합",
+      "addr1": "세종특별자치시 부강면 시장1길 6",
+      "mapx": 127.3700700718,
+      "mapy": 36.5276610606,
+      "lDongRegnCd": "36",
+      "lDongSignguCd": "110",
+      "lclsSystm1": "EX",
+      "lclsSystm2": "EX07",
+      "lclsSystm3": "EX070200",
+      "modifiedtime": "20261103164110"
+    },
     {
       "contentid": "125999",
       "contenttypeid": "12",
@@ -675,20 +689,6 @@
       "modifiedtime": "20260211162431"
     },
     {
-      "contentid": "2717493",
-      "contenttypeid": "12",
-      "title": "삼버들협동조합",
-      "addr1": "세종특별자치시 부강면 시장1길 6",
-      "mapx": 127.3700867581,
-      "mapy": 36.5277089457,
-      "lDongRegnCd": "36",
-      "lDongSignguCd": "110",
-      "lclsSystm1": "EX",
-      "lclsSystm2": "EX07",
-      "lclsSystm3": "EX070200",
-      "modifiedtime": "20250812102710"
-    },
-    {
       "contentid": "2717492",
       "contenttypeid": "12",
       "title": "비녀랑 한복이랑",
@@ -745,6 +745,20 @@
       "modifiedtime": "20250520212738"
     },
     {
+      "contentid": "129968",
+      "contenttypeid": "14",
+      "title": "세종문화원",
+      "addr1": "세종특별자치시 조치원읍 문화로 17",
+      "mapx": 127.3007447472,
+      "mapy": 36.6031529402,
+      "lDongRegnCd": "36",
+      "lDongSignguCd": "110",
+      "lclsSystm1": "VE",
+      "lclsSystm2": "VE09",
+      "lclsSystm3": "VE090100",
+      "modifiedtime": "20261103133927"
+    },
+    {
       "contentid": "2709995",
       "contenttypeid": "14",
       "title": "대통령기록전시관",
@@ -757,20 +771,6 @@
       "lclsSystm2": "VE07",
       "lclsSystm3": "VE070300",
       "modifiedtime": "20261022134313"
-    },
-    {
-      "contentid": "129968",
-      "contenttypeid": "14",
-      "title": "세종문화원",
-      "addr1": "세종특별자치시 조치원읍 문화로 17",
-      "mapx": 127.3007447472,
-      "mapy": 36.6031529402,
-      "lDongRegnCd": "36",
-      "lDongSignguCd": "110",
-      "lclsSystm1": "VE",
-      "lclsSystm2": "VE09",
-      "lclsSystm3": "VE090100",
-      "modifiedtime": "20261012142706"
     },
     {
       "contentid": "2758601",

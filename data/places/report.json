@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-11-02",
+  "generatedAt": "2026-11-09",
   "attractions": 4315,
   "matched": {
-    "exact": 3368,
-    "normalized": 252,
-    "partial": 124,
-    "total": 3744,
-    "ambiguous": 1,
+    "exact": 3366,
+    "normalized": 253,
+    "partial": 128,
+    "total": 3747,
+    "ambiguous": 0,
     "duplicates": 19
   },
   "matchRate": 0.868,
   "unmatched": {
-    "count": 571,
+    "count": 568,
     "list": [
       {
         "signguCd": "11110",
@@ -994,6 +994,11 @@
         "tAtsNm": "평택역광장"
       },
       {
+        "signguCd": "41250",
+        "signguNm": "동두천시",
+        "tAtsNm": "동두천 관광특구"
+      },
+      {
         "signguCd": "41271",
         "signguNm": "안산시 상록구",
         "tAtsNm": "별빛마을포토랜드"
@@ -1179,11 +1184,6 @@
         "tAtsNm": "수리산 상상마을"
       },
       {
-        "signguCd": "41410",
-        "signguNm": "군포시",
-        "tAtsNm": "중앙공원"
-      },
-      {
         "signguCd": "41430",
         "signguNm": "의왕시",
         "tAtsNm": "오봉정사"
@@ -1192,11 +1192,6 @@
         "signguCd": "41461",
         "signguNm": "용인시 처인구",
         "tAtsNm": "마가미술관"
-      },
-      {
-        "signguCd": "41461",
-        "signguNm": "용인시 처인구",
-        "tAtsNm": "사암리선돌"
       },
       {
         "signguCd": "41461",
@@ -1794,19 +1789,9 @@
         "tAtsNm": "공군박물관"
       },
       {
-        "signguCd": "43111",
-        "signguNm": "청주시 상당구",
-        "tAtsNm": "운용사(충북)"
-      },
-      {
         "signguCd": "43112",
         "signguNm": "청주시 서원구",
         "tAtsNm": "노산리 솔밭 자연유원지"
-      },
-      {
-        "signguCd": "43113",
-        "signguNm": "청주시 흥덕구",
-        "tAtsNm": "백록서원"
       },
       {
         "signguCd": "43113",
@@ -1897,11 +1882,6 @@
         "signguCd": "43740",
         "signguNm": "영동군",
         "tAtsNm": "난계국악기체험전수관"
-      },
-      {
-        "signguCd": "43740",
-        "signguNm": "영동군",
-        "tAtsNm": "심천역(영동)"
       },
       {
         "signguCd": "43745",
@@ -2142,6 +2122,11 @@
         "signguCd": "44770",
         "signguNm": "서천군",
         "tAtsNm": "무형문화재복합전수관(서천)"
+      },
+      {
+        "signguCd": "44770",
+        "signguNm": "서천군",
+        "tAtsNm": "봉선저수지"
       },
       {
         "signguCd": "44770",
@@ -2879,6 +2864,7 @@
     "맹방비치캠핑장(AC05)",
     "보령 청소역(VE11)",
     "신탄리역(VE11)",
+    "심천역(영동)(VE11)",
     "양양국제공항(VE11)",
     "영월별마로캠핑장(AC05)",
     "장호비치캠핑장(AC05)",
@@ -2891,21 +2877,21 @@
     "성동힐링센터 휴영월캠프(AC05)",
     "팔랑골캠핑장(AC05)",
     "화암약수 야영장(AC05)",
-    "인천국제공항(VE11)"
+    "인천국제공항(VE11)",
+    "연곡해변솔향기캠핑장(AC05)"
   ],
   "excludedByCoord": [
+    "대치유수지체육공원(2733970)",
     "성촌공원(2760249)",
     "방배배수지체육공원(2763871)",
     "계남근린공원(2611568)",
     "호국지장사(서울)(486625)",
-    "대치유수지체육공원(2733970)",
     "서울책보고(2606740)",
     "부평 굴포누리 기후변화체험관(3456754)",
     "한국가스공사 가스과학관(2767868)",
     "서해수호관(2649844)",
     "시화조력문화관(2463284)",
     "오산반려동물테마파크(2930689)",
-    "제3땅굴(127000)",
     "성령대군묘(920339)",
     "조산공원(1688386)",
     "보령목재문화체험장(3453008)",
@@ -3564,13 +3550,7 @@
       "addr": "인천광역시 제물포구 연안부두로 36 (항동7가)"
     }
   ],
-  "ambiguousList": [
-    {
-      "tAtsNm": "춘천꿈자람어린이공원",
-      "signguNm": "춘천시",
-      "title": "춘천꿈자람어린이공원"
-    }
-  ],
+  "ambiguousList": [],
   "stale": [
     {
       "placeId": "kto-125613",
@@ -3581,6 +3561,11 @@
       "placeId": "kto-125688",
       "name": "한재밑해변",
       "staleSince": "2026-10-19"
+    },
+    {
+      "placeId": "kto-125698",
+      "name": "연곡해변(연곡해수욕장)",
+      "staleSince": "2026-11-09"
     },
     {
       "placeId": "kto-125792",
@@ -3628,14 +3613,19 @@
       "staleSince": "2026-11-02"
     },
     {
-      "placeId": "kto-1956032",
-      "name": "백록서원",
-      "staleSince": "2026-10-19"
+      "placeId": "kto-1957487",
+      "name": "동두천 관광특구",
+      "staleSince": "2026-11-09"
     },
     {
       "placeId": "kto-2456640",
       "name": "고양관광특구",
       "staleSince": "2026-10-12"
+    },
+    {
+      "placeId": "kto-2539574",
+      "name": "봉선저수지",
+      "staleSince": "2026-11-09"
     },
     {
       "placeId": "kto-2606740",
@@ -3723,11 +3713,6 @@
       "staleSince": "2026-11-02"
     },
     {
-      "placeId": "kto-346685",
-      "name": "운용사(충북)",
-      "staleSince": "2026-10-19"
-    },
-    {
       "placeId": "kto-3545967",
       "name": "정동진",
       "staleSince": "2026-10-12"
@@ -3749,25 +3734,25 @@
     }
   ],
   "places": {
-    "total": 3739,
-    "visible": 3704,
-    "hidden": 35,
+    "total": 3741,
+    "visible": 3705,
+    "hidden": 36,
     "byProvince": {
       "11": 563,
       "28": 257,
       "30": 99,
       "36": 31,
-      "41": 1062,
+      "41": 1064,
       "43": 401,
       "44": 605,
       "51": 721
     },
     "byCategory": {
-      "nature_park": 1187,
+      "nature_park": 1188,
       "street_market": 390,
       "theme_park": 360,
       "exhibition": 460,
-      "heritage": 1051,
+      "heritage": 1052,
       "walking_trail": 256,
       "leisure_sports": 35
     },
@@ -3779,20 +3764,17 @@
     "operation": 0
   },
   "keywordChanged": [
-    "kto-125617",
-    "kto-127171",
-    "kto-132554",
-    "kto-2994661"
+    "kto-1682800"
   ],
   "shrinkBlocked": false,
   "warnings": [],
-  "operationFilled": 3713,
+  "operationFilled": 3717,
   "tour": {
     "sigungu": 147,
     "sigunguFailed": false,
     "provincesOk": 8,
     "provincesFailed": 0,
     "provincesKept": 0,
-    "candidates": 10940
+    "candidates": 10932
   }
 }

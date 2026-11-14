@@ -1,22 +1,15 @@
 {
-  "updatedAt": "2026-11-14T05:40:37.975+09:00",
+  "updatedAt": "2026-11-15T05:40:58.194+09:00",
   "source": "기상청 단기예보·중기육상예보",
-  "baseDate": "20261114",
+  "baseDate": "20261115",
   "short": {
     "11110": {
       "nx": 60,
       "ny": 127,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 10,
+          "popMax": 20,
           "sky12": "1",
           "tmx": 18
         },
@@ -30,31 +23,31 @@
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 9,
+          "tmn": 10,
           "sky12": "4",
-          "tmx": 15
+          "tmx": 14
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 5,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "11140": {
       "nx": 60,
       "ny": 127,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 10,
+          "popMax": 20,
           "sky12": "1",
           "tmx": 18
         },
@@ -68,38 +61,38 @@
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 9,
+          "tmn": 10,
           "sky12": "4",
-          "tmx": 15
+          "tmx": 14
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 5,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "11170": {
       "nx": 60,
       "ny": 126,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 10,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 19
+          "tmx": 18
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
-          "tmn": 8,
+          "tmn": 7,
           "sky12": "4",
           "tmx": 17
         },
@@ -112,34 +105,34 @@
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 6,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "11200": {
       "nx": 61,
       "ny": 126,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 10,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 19
+          "tmx": 18
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
           "tmn": 8,
           "sky12": "4",
-          "tmx": 18
+          "tmx": 17
         },
         "20261117": {
           "rain": true,
@@ -150,34 +143,34 @@
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 6,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "11215": {
       "nx": 62,
       "ny": 126,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 10,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 20
+          "tmx": 18
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
           "tmn": 8,
           "sky12": "4",
-          "tmx": 18
+          "tmx": 17
         },
         "20261117": {
           "rain": true,
@@ -188,27 +181,27 @@
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 6,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "11230": {
       "nx": 61,
       "ny": 127,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 10,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 19
+          "tmx": 18
         },
         "20261116": {
           "rain": false,
@@ -226,27 +219,27 @@
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 6,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "11260": {
       "nx": 62,
       "ny": 127,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 10,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 19
+          "tmx": 18
         },
         "20261116": {
           "rain": false,
@@ -264,25 +257,25 @@
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 6,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "11290": {
       "nx": 60,
       "ny": 127,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 10,
+          "popMax": 20,
           "sky12": "1",
           "tmx": 18
         },
@@ -296,33 +289,33 @@
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 9,
+          "tmn": 10,
           "sky12": "4",
-          "tmx": 15
+          "tmx": 14
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 5,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "11305": {
       "nx": 60,
       "ny": 128,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 13
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 9,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 18
+          "tmx": 17
         },
         "20261116": {
           "rain": false,
@@ -340,34 +333,34 @@
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 4,
+          "sky12": "4",
+          "tmx": 9
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "11320": {
       "nx": 61,
       "ny": 129,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 9,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 20
+          "tmx": 19
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
           "tmn": 7,
           "sky12": "4",
-          "tmx": 18
+          "tmx": 17
         },
         "20261117": {
           "rain": true,
@@ -378,27 +371,27 @@
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 5,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "11350": {
       "nx": 62,
       "ny": 129,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 8,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 19
+          "tmx": 18
         },
         "20261116": {
           "rain": false,
@@ -412,29 +405,29 @@
           "popMax": 60,
           "tmn": 9,
           "sky12": "4",
-          "tmx": 15
+          "tmx": 14
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 4,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "11380": {
       "nx": 59,
       "ny": 128,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 8,
+          "popMax": 20,
           "sky12": "1",
           "tmx": 18
         },
@@ -450,29 +443,29 @@
           "popMax": 60,
           "tmn": 9,
           "sky12": "4",
-          "tmx": 15
+          "tmx": 14
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 4,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "11410": {
       "nx": 59,
       "ny": 127,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 9,
+          "popMax": 20,
           "sky12": "1",
           "tmx": 18
         },
@@ -486,31 +479,31 @@
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 9,
+          "tmn": 10,
           "sky12": "4",
-          "tmx": 15
+          "tmx": 14
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 5,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "11440": {
       "nx": 59,
       "ny": 127,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 9,
+          "popMax": 20,
           "sky12": "1",
           "tmx": 18
         },
@@ -524,31 +517,31 @@
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 9,
+          "tmn": 10,
           "sky12": "4",
-          "tmx": 15
+          "tmx": 14
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 5,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "11470": {
       "nx": 58,
       "ny": 126,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 10,
+          "popMax": 20,
           "sky12": "1",
           "tmx": 18
         },
@@ -557,7 +550,7 @@
           "popMax": 30,
           "tmn": 7,
           "sky12": "4",
-          "tmx": 18
+          "tmx": 17
         },
         "20261117": {
           "rain": true,
@@ -568,34 +561,34 @@
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 6,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "11500": {
       "nx": 57,
       "ny": 127,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 9,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 19
+          "tmx": 18
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
           "tmn": 7,
           "sky12": "4",
-          "tmx": 18
+          "tmx": 17
         },
         "20261117": {
           "rain": true,
@@ -606,108 +599,108 @@
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 5,
+          "sky12": "4",
+          "tmx": 11
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "11530": {
       "nx": 58,
       "ny": 125,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 10,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 19
+          "tmx": 18
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
-          "tmn": 8,
+          "tmn": 7,
           "sky12": "4",
-          "tmx": 18
+          "tmx": 17
         },
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 10,
+          "tmn": 11,
           "sky12": "4",
           "tmx": 15
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 6,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "11545": {
       "nx": 59,
       "ny": 124,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 13
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 9,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 18
+          "tmx": 17
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
           "tmn": 6,
           "sky12": "4",
-          "tmx": 17
+          "tmx": 16
         },
         "20261117": {
           "rain": true,
           "popMax": 60,
           "tmn": 9,
           "sky12": "4",
-          "tmx": 14
+          "tmx": 15
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 5,
+          "sky12": "4",
+          "tmx": 9
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "11560": {
       "nx": 59,
       "ny": 126,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 10,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 18
+          "tmx": 17
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
-          "tmn": 8,
+          "tmn": 7,
           "sky12": "4",
           "tmx": 17
         },
@@ -720,32 +713,32 @@
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 6,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "11590": {
       "nx": 59,
       "ny": 125,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 10,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 19
+          "tmx": 18
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
-          "tmn": 8,
+          "tmn": 7,
           "sky12": "4",
           "tmx": 17
         },
@@ -758,32 +751,32 @@
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 6,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "11620": {
       "nx": 59,
       "ny": 125,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 10,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 19
+          "tmx": 18
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
-          "tmn": 8,
+          "tmn": 7,
           "sky12": "4",
           "tmx": 17
         },
@@ -796,34 +789,34 @@
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 6,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "11650": {
       "nx": 61,
       "ny": 125,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 10,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 19
+          "tmx": 18
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
-          "tmn": 8,
+          "tmn": 7,
           "sky12": "4",
-          "tmx": 18
+          "tmx": 17
         },
         "20261117": {
           "rain": true,
@@ -834,34 +827,34 @@
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 6,
+          "sky12": "4",
+          "tmx": 11
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "11680": {
       "nx": 61,
       "ny": 125,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 10,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 19
+          "tmx": 18
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
-          "tmn": 8,
+          "tmn": 7,
           "sky12": "4",
-          "tmx": 18
+          "tmx": 17
         },
         "20261117": {
           "rain": true,
@@ -872,32 +865,32 @@
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 6,
+          "sky12": "4",
+          "tmx": 11
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "11710": {
       "nx": 62,
       "ny": 125,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 10,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 19
+          "tmx": 18
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
-          "tmn": 8,
+          "tmn": 7,
           "sky12": "4",
           "tmx": 18
         },
@@ -910,34 +903,34 @@
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 6,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "11740": {
       "nx": 62,
       "ny": 126,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 10,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 20
+          "tmx": 18
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
           "tmn": 8,
           "sky12": "4",
-          "tmx": 18
+          "tmx": 17
         },
         "20261117": {
           "rain": true,
@@ -948,25 +941,25 @@
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 6,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "28125": {
       "nx": 54,
       "ny": 125,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 9,
+          "popMax": 20,
           "sky12": "1",
           "tmx": 17
         },
@@ -982,31 +975,31 @@
           "popMax": 60,
           "tmn": 10,
           "sky12": "4",
-          "tmx": 15
+          "tmx": 14
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 6,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "28155": {
       "nx": 50,
       "ny": 124,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 13
-        },
         "20261115": {
           "rain": false,
           "popMax": 30,
-          "tmn": 9,
           "sky12": "1",
-          "tmx": 16
+          "tmx": 15
         },
         "20261116": {
           "rain": false,
@@ -1020,31 +1013,31 @@
           "popMax": 60,
           "tmn": 10,
           "sky12": "4",
-          "tmx": 14
+          "tmx": 13
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 6,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "28177": {
       "nx": 55,
       "ny": 124,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 13
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 9,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 18
+          "tmx": 17
         },
         "20261116": {
           "rain": false,
@@ -1058,31 +1051,31 @@
           "popMax": 60,
           "tmn": 10,
           "sky12": "4",
-          "tmx": 15
+          "tmx": 14
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 5,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "28185": {
       "nx": 54,
       "ny": 123,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": false,
           "popMax": 30,
-          "tmn": 9,
           "sky12": "1",
-          "tmx": 18
+          "tmx": 17
         },
         "20261116": {
           "rain": false,
@@ -1100,32 +1093,32 @@
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 6,
+          "sky12": "3",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "28200": {
       "nx": 56,
       "ny": 123,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 8,
+          "popMax": 20,
           "sky12": "1",
           "tmx": 18
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
-          "tmn": 5,
+          "tmn": 6,
           "sky12": "4",
           "tmx": 17
         },
@@ -1138,27 +1131,27 @@
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 4,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "28237": {
       "nx": 55,
       "ny": 125,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 13
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 9,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 18
+          "tmx": 17
         },
         "20261116": {
           "rain": false,
@@ -1170,31 +1163,31 @@
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 9,
+          "tmn": 10,
           "sky12": "4",
-          "tmx": 15
+          "tmx": 14
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 5,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "28245": {
       "nx": 56,
       "ny": 126,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 9,
+          "popMax": 20,
           "sky12": "1",
           "tmx": 18
         },
@@ -1208,38 +1201,38 @@
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 9,
+          "tmn": 10,
           "sky12": "4",
           "tmx": 15
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 5,
+          "sky12": "4",
+          "tmx": 11
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "28275": {
       "nx": 58,
       "ny": 123,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 13
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 9,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 18
+          "tmx": 17
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
-          "tmn": 7,
+          "tmn": 6,
           "sky12": "4",
           "tmx": 17
         },
@@ -1252,27 +1245,27 @@
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 5,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "28290": {
       "nx": 54,
       "ny": 127,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 13
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 8,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 18
+          "tmx": 17
         },
         "20261116": {
           "rain": false,
@@ -1284,69 +1277,69 @@
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 9,
+          "tmn": 10,
           "sky12": "4",
-          "tmx": 15
+          "tmx": 14
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 4,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "28710": {
       "nx": 50,
       "ny": 130,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 13
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 7,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 17
+          "tmx": 16
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
-          "tmn": 6,
+          "tmn": 5,
           "sky12": "4",
-          "tmx": 17
+          "tmx": 16
         },
         "20261117": {
           "rain": true,
           "popMax": 60,
           "tmn": 8,
           "sky12": "4",
-          "tmx": 13
+          "tmx": 14
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 4,
+          "sky12": "4",
+          "tmx": 9
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "28720": {
       "nx": 44,
       "ny": 123,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": false,
           "popMax": 20,
-          "tmn": 11,
           "sky12": "1",
           "tmx": 16
         },
@@ -1366,65 +1359,65 @@
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 7,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "30110": {
       "nx": 69,
       "ny": 100,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": false,
           "popMax": 30,
-          "tmn": 10,
           "sky12": "1",
-          "tmx": 18
+          "tmx": 17
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
           "tmn": 4,
           "sky12": "3",
-          "tmx": 17
+          "tmx": 16
         },
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 9,
+          "tmn": 8,
           "sky12": "4",
           "tmx": 16
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 7,
+          "sky12": "3",
+          "tmx": 11
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 10
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "30140": {
       "nx": 68,
       "ny": 99,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": false,
           "popMax": 30,
-          "tmn": 11,
           "sky12": "1",
-          "tmx": 18
+          "tmx": 17
         },
         "20261116": {
           "rain": false,
@@ -1442,27 +1435,27 @@
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 7,
+          "sky12": "3",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 10
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "30170": {
       "nx": 67,
       "ny": 100,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 15
-        },
         "20261115": {
           "rain": false,
           "popMax": 30,
-          "tmn": 11,
           "sky12": "1",
-          "tmx": 19
+          "tmx": 18
         },
         "20261116": {
           "rain": false,
@@ -1474,71 +1467,71 @@
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 10,
+          "tmn": 9,
           "sky12": "4",
           "tmx": 17
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 7,
+          "sky12": "3",
+          "tmx": 11
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 10
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "30200": {
       "nx": 67,
       "ny": 101,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 11,
+          "rain": false,
+          "popMax": 30,
           "sky12": "1",
-          "tmx": 19
+          "tmx": 18
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
-          "tmn": 6,
+          "tmn": 5,
           "sky12": "3",
           "tmx": 17
         },
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 10,
+          "tmn": 9,
           "sky12": "4",
           "tmx": 17
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 7,
+          "sky12": "3",
+          "tmx": 12
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 10
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "30230": {
       "nx": 68,
       "ny": 102,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 10,
+          "rain": false,
+          "popMax": 30,
           "sky12": "1",
-          "tmx": 19
+          "tmx": 18
         },
         "20261116": {
           "rain": false,
@@ -1550,114 +1543,114 @@
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 10,
+          "tmn": 9,
           "sky12": "4",
           "tmx": 17
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 7,
+          "sky12": "3",
+          "tmx": 12
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 10
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "36110": {
       "nx": 65,
       "ny": 105,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 11,
+          "rain": false,
+          "popMax": 30,
           "sky12": "1",
-          "tmx": 20
+          "tmx": 18
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
-          "tmn": 5,
+          "tmn": 4,
           "sky12": "3",
-          "tmx": 18
+          "tmx": 17
         },
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 9,
+          "tmn": 8,
           "sky12": "4",
-          "tmx": 17
+          "tmx": 16
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 6,
+          "sky12": "3",
+          "tmx": 12
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 20
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "41111": {
       "nx": 60,
       "ny": 121,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 13
-        },
         "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 10,
+          "rain": false,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 18
+          "tmx": 17
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
-          "tmn": 7,
+          "tmn": 6,
           "sky12": "4",
-          "tmx": 17
+          "tmx": 16
         },
         "20261117": {
           "rain": true,
           "popMax": 60,
           "tmn": 10,
           "sky12": "4",
-          "tmx": 16
+          "tmx": 15
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 6,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "41113": {
       "nx": 60,
       "ny": 120,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 13
-        },
         "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 10,
+          "rain": false,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 18
+          "tmx": 17
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
-          "tmn": 7,
+          "tmn": 6,
           "sky12": "4",
           "tmx": 17
         },
@@ -1666,31 +1659,31 @@
           "popMax": 60,
           "tmn": 10,
           "sky12": "4",
-          "tmx": 16
+          "tmx": 15
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 6,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "41115": {
       "nx": 61,
       "ny": 120,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 10,
+          "rain": false,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 19
+          "tmx": 18
         },
         "20261116": {
           "rain": false,
@@ -1708,27 +1701,27 @@
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 6,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "41117": {
       "nx": 61,
       "ny": 120,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 10,
+          "rain": false,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 19
+          "tmx": 18
         },
         "20261116": {
           "rain": false,
@@ -1746,65 +1739,65 @@
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 6,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "41131": {
       "nx": 62,
       "ny": 124,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 13
-        },
         "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 10,
+          "rain": false,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 19
+          "tmx": 18
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
-          "tmn": 7,
+          "tmn": 6,
           "sky12": "4",
-          "tmx": 18
+          "tmx": 17
         },
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 9,
+          "tmn": 10,
           "sky12": "4",
           "tmx": 15
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 5,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "41133": {
       "nx": 63,
       "ny": 124,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 13
-        },
         "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 9,
+          "rain": false,
+          "popMax": 0,
           "sky12": "1",
-          "tmx": 19
+          "tmx": 18
         },
         "20261116": {
           "rain": false,
@@ -1822,65 +1815,65 @@
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 5,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "41135": {
       "nx": 62,
       "ny": 123,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 13
-        },
         "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 10,
+          "rain": false,
+          "popMax": 0,
           "sky12": "1",
-          "tmx": 19
+          "tmx": 18
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
-          "tmn": 7,
+          "tmn": 6,
           "sky12": "4",
           "tmx": 17
         },
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 9,
+          "tmn": 10,
           "sky12": "4",
           "tmx": 15
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 6,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "41150": {
       "nx": 61,
       "ny": 130,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 8,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 19
+          "tmx": 18
         },
         "20261116": {
           "rain": false,
@@ -1892,76 +1885,76 @@
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 8,
+          "tmn": 9,
           "sky12": "4",
           "tmx": 14
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 4,
+          "sky12": "4",
+          "tmx": 9
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "41171": {
       "nx": 59,
       "ny": 123,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 13
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 10,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 17
+          "tmx": 16
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
           "tmn": 6,
           "sky12": "4",
-          "tmx": 17
+          "tmx": 16
         },
         "20261117": {
           "rain": true,
           "popMax": 60,
           "tmn": 10,
           "sky12": "4",
-          "tmx": 15
+          "tmx": 14
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 5,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "41173": {
       "nx": 60,
       "ny": 123,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 13
-        },
         "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 10,
+          "rain": false,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 18
+          "tmx": 17
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
-          "tmn": 7,
+          "tmn": 6,
           "sky12": "4",
           "tmx": 17
         },
@@ -1974,27 +1967,27 @@
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 6,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "41192": {
       "nx": 56,
       "ny": 125,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 13
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 9,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 18
+          "tmx": 17
         },
         "20261116": {
           "rain": false,
@@ -2006,40 +1999,40 @@
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 9,
+          "tmn": 10,
           "sky12": "4",
-          "tmx": 15
+          "tmx": 14
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 5,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "41194": {
       "nx": 57,
       "ny": 125,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 10,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 19
+          "tmx": 18
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
           "tmn": 7,
           "sky12": "4",
-          "tmx": 18
+          "tmx": 17
         },
         "20261117": {
           "rain": true,
@@ -2050,63 +2043,63 @@
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 5,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "41196": {
       "nx": 57,
       "ny": 126,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 9,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 19
+          "tmx": 18
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
           "tmn": 6,
           "sky12": "4",
-          "tmx": 18
+          "tmx": 17
         },
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 9,
+          "tmn": 10,
           "sky12": "4",
           "tmx": 15
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 5,
+          "sky12": "4",
+          "tmx": 11
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "41210": {
       "nx": 58,
       "ny": 124,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 10,
+          "popMax": 20,
           "sky12": "1",
           "tmx": 18
         },
@@ -2126,63 +2119,63 @@
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 6,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "41220": {
       "nx": 60,
       "ny": 115,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": false,
           "popMax": 30,
-          "tmn": 10,
           "sky12": "1",
-          "tmx": 19
+          "tmx": 18
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
-          "tmn": 6,
+          "tmn": 5,
           "sky12": "4",
           "tmx": 17
         },
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 9,
+          "tmn": 10,
           "sky12": "4",
           "tmx": 16
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 6,
+          "sky12": "3",
+          "tmx": 11
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "41250": {
       "nx": 62,
       "ny": 134,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 13
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 7,
+          "popMax": 20,
           "sky12": "1",
           "tmx": 17
         },
@@ -2196,38 +2189,38 @@
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 6,
+          "tmn": 7,
           "sky12": "4",
-          "tmx": 14
+          "tmx": 13
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 3,
+          "sky12": "4",
+          "tmx": 9
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "41271": {
       "nx": 58,
       "ny": 121,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 13
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 9,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 18
+          "tmx": 17
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
-          "tmn": 6,
+          "tmn": 5,
           "sky12": "4",
           "tmx": 17
         },
@@ -2236,29 +2229,29 @@
           "popMax": 60,
           "tmn": 10,
           "sky12": "4",
-          "tmx": 16
+          "tmx": 15
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 5,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "41273": {
       "nx": 55,
       "ny": 120,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": false,
           "popMax": 30,
-          "tmn": 8,
           "sky12": "1",
           "tmx": 17
         },
@@ -2274,29 +2267,29 @@
           "popMax": 60,
           "tmn": 9,
           "sky12": "4",
-          "tmx": 15
+          "tmx": 14
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 5,
+          "sky12": "3",
+          "tmx": 11
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 10
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "41281": {
       "nx": 58,
       "ny": 129,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 8,
+          "popMax": 20,
           "sky12": "1",
           "tmx": 18
         },
@@ -2316,34 +2309,34 @@
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 4,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "41285": {
       "nx": 56,
       "ny": 129,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 8,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 18
+          "tmx": 17
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
           "tmn": 6,
           "sky12": "4",
-          "tmx": 18
+          "tmx": 17
         },
         "20261117": {
           "rain": true,
@@ -2354,34 +2347,34 @@
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 5,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "41287": {
       "nx": 56,
       "ny": 129,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 8,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 18
+          "tmx": 17
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
           "tmn": 6,
           "sky12": "4",
-          "tmx": 18
+          "tmx": 17
         },
         "20261117": {
           "rain": true,
@@ -2392,34 +2385,34 @@
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 5,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "41290": {
       "nx": 60,
       "ny": 124,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 13
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 9,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 19
+          "tmx": 18
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
           "tmn": 6,
           "sky12": "4",
-          "tmx": 17
+          "tmx": 16
         },
         "20261117": {
           "rain": true,
@@ -2430,27 +2423,27 @@
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 5,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "41310": {
       "nx": 63,
       "ny": 127,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 10,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 19
+          "tmx": 18
         },
         "20261116": {
           "rain": false,
@@ -2462,33 +2455,33 @@
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 10,
+          "tmn": 9,
           "sky12": "4",
           "tmx": 15
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 6,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "41360": {
       "nx": 64,
       "ny": 128,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 8,
+          "rain": false,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 19
+          "tmx": 18
         },
         "20261116": {
           "rain": false,
@@ -2506,70 +2499,70 @@
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 5,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "41370": {
       "nx": 61,
       "ny": 118,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 9,
+          "rain": false,
+          "popMax": 30,
           "sky12": "1",
-          "tmx": 19
+          "tmx": 18
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
-          "tmn": 6,
+          "tmn": 5,
           "sky12": "4",
           "tmx": 17
         },
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 9,
+          "tmn": 10,
           "sky12": "4",
-          "tmx": 16
+          "tmx": 15
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 5,
+          "sky12": "4",
+          "tmx": 11
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "41390": {
       "nx": 56,
       "ny": 123,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 8,
+          "popMax": 20,
           "sky12": "1",
           "tmx": 18
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
-          "tmn": 5,
+          "tmn": 6,
           "sky12": "4",
           "tmx": 17
         },
@@ -2582,65 +2575,65 @@
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 4,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "41410": {
       "nx": 59,
       "ny": 122,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 13
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 10,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 18
+          "tmx": 17
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
           "tmn": 6,
           "sky12": "4",
-          "tmx": 17
+          "tmx": 16
         },
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 9,
+          "tmn": 10,
           "sky12": "4",
           "tmx": 15
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 5,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "41430": {
       "nx": 60,
       "ny": 122,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 13
-        },
         "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 10,
+          "rain": false,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 19
+          "tmx": 18
         },
         "20261116": {
           "rain": false,
@@ -2652,33 +2645,33 @@
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 9,
+          "tmn": 10,
           "sky12": "4",
           "tmx": 15
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 5,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "41450": {
       "nx": 64,
       "ny": 126,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 9,
+          "rain": false,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 20
+          "tmx": 19
         },
         "20261116": {
           "rain": false,
@@ -2696,27 +2689,27 @@
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 5,
+          "sky12": "4",
+          "tmx": 11
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "41461": {
       "nx": 64,
       "ny": 119,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 13
-        },
         "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 9,
+          "rain": false,
+          "popMax": 0,
           "sky12": "1",
-          "tmx": 19
+          "tmx": 18
         },
         "20261116": {
           "rain": false,
@@ -2728,71 +2721,71 @@
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 8,
+          "tmn": 9,
           "sky12": "4",
           "tmx": 15
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 5,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "41463": {
       "nx": 62,
       "ny": 120,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 13
-        },
         "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 10,
+          "rain": false,
+          "popMax": 0,
           "sky12": "1",
-          "tmx": 19
+          "tmx": 18
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
-          "tmn": 7,
+          "tmn": 6,
           "sky12": "4",
           "tmx": 17
         },
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 9,
+          "tmn": 10,
           "sky12": "4",
-          "tmx": 16
+          "tmx": 15
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 5,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "41465": {
       "nx": 61,
       "ny": 122,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 12
-        },
         "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 9,
+          "rain": false,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 18
+          "tmx": 17
         },
         "20261116": {
           "rain": false,
@@ -2806,31 +2799,31 @@
           "popMax": 60,
           "tmn": 9,
           "sky12": "4",
-          "tmx": 15
+          "tmx": 14
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 5,
+          "sky12": "4",
+          "tmx": 9
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "41480": {
       "nx": 56,
       "ny": 132,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 7,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 18
+          "tmx": 17
         },
         "20261116": {
           "rain": false,
@@ -2848,25 +2841,25 @@
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 3,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "41500": {
       "nx": 68,
       "ny": 120,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 13
-        },
         "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 9,
+          "rain": false,
+          "popMax": 20,
           "sky12": "1",
           "tmx": 19
         },
@@ -2880,152 +2873,152 @@
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 7,
+          "tmn": 8,
           "sky12": "4",
           "tmx": 15
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 5,
+          "sky12": "3",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "41550": {
       "nx": 66,
       "ny": 115,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 13
-        },
         "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 10,
+          "rain": false,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 19
+          "tmx": 18
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
           "tmn": 5,
           "sky12": "4",
-          "tmx": 18
+          "tmx": 17
         },
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 8,
+          "tmn": 9,
           "sky12": "4",
           "tmx": 16
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 5,
+          "sky12": "3",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "41570": {
       "nx": 54,
       "ny": 129,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 13
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 8,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 18
+          "tmx": 17
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
           "tmn": 5,
           "sky12": "4",
-          "tmx": 18
+          "tmx": 17
         },
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 8,
+          "tmn": 9,
           "sky12": "4",
-          "tmx": 14
+          "tmx": 15
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 4,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "41590": {
       "nx": 58,
       "ny": 118,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 9,
+          "rain": false,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 18
+          "tmx": 17
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
-          "tmn": 6,
+          "tmn": 5,
           "sky12": "4",
           "tmx": 17
         },
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 9,
+          "tmn": 10,
           "sky12": "4",
           "tmx": 15
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 5,
+          "sky12": "4",
+          "tmx": 11
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "41591": {
       "nx": 56,
       "ny": 118,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 9,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 18
+          "tmx": 17
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
-          "tmn": 6,
+          "tmn": 5,
           "sky12": "4",
           "tmx": 17
         },
@@ -3038,27 +3031,27 @@
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 5,
+          "sky12": "3",
+          "tmx": 11
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "41593": {
       "nx": 57,
       "ny": 120,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 8,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 19
+          "tmx": 18
         },
         "20261116": {
           "rain": false,
@@ -3070,107 +3063,107 @@
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 9,
+          "tmn": 8,
           "sky12": "4",
-          "tmx": 15
+          "tmx": 16
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 4,
+          "sky12": "4",
+          "tmx": 11
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "41597": {
       "nx": 62,
       "ny": 119,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 13
-        },
         "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 10,
+          "rain": false,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 19
+          "tmx": 18
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
-          "tmn": 7,
+          "tmn": 6,
           "sky12": "4",
           "tmx": 17
         },
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 9,
+          "tmn": 10,
           "sky12": "4",
           "tmx": 16
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 6,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "41610": {
       "nx": 65,
       "ny": 124,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 13
-        },
         "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 9,
+          "rain": false,
+          "popMax": 0,
           "sky12": "1",
-          "tmx": 19
+          "tmx": 18
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
-          "tmn": 6,
+          "tmn": 5,
           "sky12": "3",
           "tmx": 17
         },
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 8,
+          "tmn": 9,
           "sky12": "4",
           "tmx": 15
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 5,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "41630": {
       "nx": 60,
       "ny": 131,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 13
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 8,
+          "popMax": 20,
           "sky12": "1",
           "tmx": 17
         },
@@ -3190,32 +3183,32 @@
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 3,
+          "sky12": "4",
+          "tmx": 9
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "41650": {
       "nx": 64,
       "ny": 135,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 7,
+          "popMax": 20,
           "sky12": "1",
           "tmx": 18
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
-          "tmn": 5,
+          "tmn": 4,
           "sky12": "4",
           "tmx": 16
         },
@@ -3228,65 +3221,65 @@
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 4,
+          "sky12": "4",
+          "tmx": 9
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "41670": {
       "nx": 71,
       "ny": 121,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 13
-        },
         "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 9,
+          "rain": false,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 19
+          "tmx": 18
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
-          "tmn": 5,
+          "tmn": 4,
           "sky12": "3",
-          "tmx": 18
+          "tmx": 17
         },
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 6,
+          "tmn": 7,
           "sky12": "4",
           "tmx": 16
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 5,
+          "sky12": "3",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "41800": {
       "nx": 61,
       "ny": 138,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 7,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 18
+          "tmx": 17
         },
         "20261116": {
           "rain": false,
@@ -3300,29 +3293,29 @@
           "popMax": 60,
           "tmn": 7,
           "sky12": "4",
-          "tmx": 14
+          "tmx": 13
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 2,
+          "sky12": "4",
+          "tmx": 9
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "41820": {
       "nx": 68,
       "ny": 132,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 12
-        },
         "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 7,
+          "rain": false,
+          "popMax": 20,
           "sky12": "1",
           "tmx": 17
         },
@@ -3338,29 +3331,29 @@
           "popMax": 60,
           "tmn": 6,
           "sky12": "4",
-          "tmx": 14
+          "tmx": 13
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 3,
+          "sky12": "4",
+          "tmx": 8
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "41830": {
       "nx": 69,
       "ny": 126,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 11
-        },
         "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 8,
+          "rain": false,
+          "popMax": 20,
           "sky12": "3",
           "tmx": 17
         },
@@ -3369,7 +3362,7 @@
           "popMax": 30,
           "tmn": 5,
           "sky12": "3",
-          "tmx": 16
+          "tmx": 15
         },
         "20261117": {
           "rain": true,
@@ -3380,32 +3373,32 @@
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 3,
+          "sky12": "4",
+          "tmx": 8
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "43111": {
       "nx": 70,
       "ny": 106,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 13
-        },
         "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 10,
+          "rain": false,
+          "popMax": 30,
           "sky12": "1",
-          "tmx": 18
+          "tmx": 17
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
-          "tmn": 5,
+          "tmn": 4,
           "sky12": "4",
           "tmx": 16
         },
@@ -3418,27 +3411,27 @@
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 5,
+          "sky12": "3",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 10
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "43112": {
       "nx": 69,
       "ny": 106,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 11,
+          "rain": false,
+          "popMax": 30,
           "sky12": "1",
-          "tmx": 19
+          "tmx": 18
         },
         "20261116": {
           "rain": false,
@@ -3450,107 +3443,107 @@
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 10,
+          "tmn": 9,
           "sky12": "4",
-          "tmx": 17
+          "tmx": 16
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 6,
+          "sky12": "3",
+          "tmx": 11
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 10
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "43113": {
       "nx": 68,
       "ny": 107,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 11,
+          "rain": false,
+          "popMax": 30,
           "sky12": "1",
-          "tmx": 20
+          "tmx": 19
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
           "tmn": 6,
           "sky12": "4",
-          "tmx": 18
+          "tmx": 17
         },
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 10,
+          "tmn": 9,
           "sky12": "4",
           "tmx": 17
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 7,
+          "sky12": "3",
+          "tmx": 12
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 10
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "43114": {
       "nx": 69,
       "ny": 108,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 10,
+          "rain": false,
+          "popMax": 30,
           "sky12": "1",
-          "tmx": 19
+          "tmx": 18
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
           "tmn": 5,
           "sky12": "4",
-          "tmx": 18
+          "tmx": 17
         },
         "20261117": {
           "rain": true,
           "popMax": 60,
           "tmn": 9,
           "sky12": "4",
-          "tmx": 17
+          "tmx": 16
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 6,
+          "sky12": "3",
+          "tmx": 11
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "43130": {
       "nx": 76,
       "ny": 115,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 12
-        },
         "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 9,
+          "rain": false,
+          "popMax": 30,
           "sky12": "1",
           "tmx": 18
         },
@@ -3559,76 +3552,76 @@
           "popMax": 30,
           "tmn": 5,
           "sky12": "3",
-          "tmx": 18
+          "tmx": 17
         },
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 7,
+          "tmn": 8,
           "sky12": "4",
-          "tmx": 16
+          "tmx": 17
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 6,
+          "sky12": "1",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "43150": {
       "nx": 80,
       "ny": 116,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 10
-        },
         "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 9,
+          "rain": false,
+          "popMax": 30,
           "sky12": "1",
-          "tmx": 17
+          "tmx": 16
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
           "tmn": 5,
           "sky12": "3",
-          "tmx": 16
+          "tmx": 15
         },
         "20261117": {
           "rain": true,
           "popMax": 60,
           "tmn": 6,
           "sky12": "4",
-          "tmx": 14
+          "tmx": 15
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 5,
+          "sky12": "1",
+          "tmx": 9
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "43720": {
       "nx": 74,
       "ny": 104,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 12
-        },
         "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 10,
+          "rain": false,
+          "popMax": 30,
           "sky12": "3",
-          "tmx": 18
+          "tmx": 17
         },
         "20261116": {
           "rain": false,
@@ -3646,27 +3639,27 @@
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 5,
+          "sky12": "1",
+          "tmx": 9
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 10
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "43730": {
       "nx": 71,
       "ny": 100,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 12
-        },
         "20261115": {
           "rain": false,
           "popMax": 30,
-          "tmn": 10,
           "sky12": "1",
-          "tmx": 18
+          "tmx": 17
         },
         "20261116": {
           "rain": false,
@@ -3678,31 +3671,31 @@
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 9,
+          "tmn": 8,
           "sky12": "4",
           "tmx": 16
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 7,
+          "sky12": "3",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 10
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "43740": {
       "nx": 75,
       "ny": 97,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 10,
+          "rain": false,
+          "popMax": 30,
           "sky12": "4",
           "tmx": 17
         },
@@ -3712,158 +3705,6 @@
           "tmn": 4,
           "sky12": "4",
           "tmx": 16
-        },
-        "20261117": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 8,
-          "sky12": "4",
-          "tmx": 15
-        },
-        "20261118": {
-          "rain": true,
-          "popMax": 60
-        }
-      },
-      "baseDate": "20261114"
-    },
-    "43745": {
-      "nx": 71,
-      "ny": 110,
-      "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 13
-        },
-        "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 10,
-          "sky12": "1",
-          "tmx": 19
-        },
-        "20261116": {
-          "rain": false,
-          "popMax": 30,
-          "tmn": 5,
-          "sky12": "3",
-          "tmx": 17
-        },
-        "20261117": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 9,
-          "sky12": "4",
-          "tmx": 16
-        },
-        "20261118": {
-          "rain": true,
-          "popMax": 60
-        }
-      },
-      "baseDate": "20261114"
-    },
-    "43750": {
-      "nx": 68,
-      "ny": 111,
-      "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 12
-        },
-        "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 10,
-          "sky12": "1",
-          "tmx": 19
-        },
-        "20261116": {
-          "rain": false,
-          "popMax": 30,
-          "tmn": 5,
-          "sky12": "4",
-          "tmx": 17
-        },
-        "20261117": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 8,
-          "sky12": "4",
-          "tmx": 17
-        },
-        "20261118": {
-          "rain": true,
-          "popMax": 60
-        }
-      },
-      "baseDate": "20261114"
-    },
-    "43760": {
-      "nx": 75,
-      "ny": 110,
-      "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 12
-        },
-        "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 9,
-          "sky12": "1",
-          "tmx": 18
-        },
-        "20261116": {
-          "rain": false,
-          "popMax": 30,
-          "tmn": 4,
-          "sky12": "3",
-          "tmx": 16
-        },
-        "20261117": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 8,
-          "sky12": "4",
-          "tmx": 15
-        },
-        "20261118": {
-          "rain": true,
-          "popMax": 60
-        }
-      },
-      "baseDate": "20261114"
-    },
-    "43770": {
-      "nx": 71,
-      "ny": 114,
-      "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 12
-        },
-        "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 9,
-          "sky12": "1",
-          "tmx": 18
-        },
-        "20261116": {
-          "rain": false,
-          "popMax": 30,
-          "tmn": 5,
-          "sky12": "4",
-          "tmx": 17
         },
         "20261117": {
           "rain": true,
@@ -3874,26 +3715,64 @@
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 6,
+          "sky12": "3",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 10
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
-    "43800": {
-      "nx": 84,
-      "ny": 114,
+    "43745": {
+      "nx": 71,
+      "ny": 110,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 11
-        },
         "20261115": {
+          "rain": false,
+          "popMax": 30,
+          "sky12": "1",
+          "tmx": 18
+        },
+        "20261116": {
+          "rain": false,
+          "popMax": 30,
+          "tmn": 5,
+          "sky12": "3",
+          "tmx": 17
+        },
+        "20261117": {
           "rain": true,
           "popMax": 60,
           "tmn": 9,
-          "sky12": "3",
+          "sky12": "4",
+          "tmx": 16
+        },
+        "20261118": {
+          "rain": true,
+          "popMax": 60,
+          "tmn": 6,
+          "sky12": "1",
+          "tmx": 11
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
+        }
+      },
+      "baseDate": "20261115"
+    },
+    "43750": {
+      "nx": 68,
+      "ny": 111,
+      "days": {
+        "20261115": {
+          "rain": false,
+          "popMax": 20,
+          "sky12": "1",
           "tmx": 17
         },
         "20261116": {
@@ -3901,38 +3780,152 @@
           "popMax": 30,
           "tmn": 5,
           "sky12": "4",
-          "tmx": 15
+          "tmx": 17
         },
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 6,
+          "tmn": 8,
           "sky12": "4",
-          "tmx": 13
+          "tmx": 17
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 6,
+          "sky12": "3",
+          "tmx": 11
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
+    },
+    "43760": {
+      "nx": 75,
+      "ny": 110,
+      "days": {
+        "20261115": {
+          "rain": false,
+          "popMax": 30,
+          "sky12": "1",
+          "tmx": 17
+        },
+        "20261116": {
+          "rain": false,
+          "popMax": 30,
+          "tmn": 3,
+          "sky12": "3",
+          "tmx": 16
+        },
+        "20261117": {
+          "rain": true,
+          "popMax": 60,
+          "tmn": 8,
+          "sky12": "4",
+          "tmx": 16
+        },
+        "20261118": {
+          "rain": true,
+          "popMax": 60,
+          "tmn": 5,
+          "sky12": "3",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
+        }
+      },
+      "baseDate": "20261115"
+    },
+    "43770": {
+      "nx": 71,
+      "ny": 114,
+      "days": {
+        "20261115": {
+          "rain": false,
+          "popMax": 30,
+          "sky12": "1",
+          "tmx": 18
+        },
+        "20261116": {
+          "rain": false,
+          "popMax": 30,
+          "tmn": 5,
+          "sky12": "4",
+          "tmx": 16
+        },
+        "20261117": {
+          "rain": true,
+          "popMax": 60,
+          "tmn": 8,
+          "sky12": "4",
+          "tmx": 16
+        },
+        "20261118": {
+          "rain": true,
+          "popMax": 60,
+          "tmn": 5,
+          "sky12": "3",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
+        }
+      },
+      "baseDate": "20261115"
+    },
+    "43800": {
+      "nx": 84,
+      "ny": 114,
+      "days": {
+        "20261115": {
+          "rain": false,
+          "popMax": 30,
+          "sky12": "3",
+          "tmx": 16
+        },
+        "20261116": {
+          "rain": false,
+          "popMax": 30,
+          "tmn": 5,
+          "sky12": "4",
+          "tmx": 14
+        },
+        "20261117": {
+          "rain": true,
+          "popMax": 60,
+          "tmn": 7,
+          "sky12": "4",
+          "tmx": 14
+        },
+        "20261118": {
+          "rain": true,
+          "popMax": 60,
+          "tmn": 4,
+          "sky12": "3",
+          "tmx": 8
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
+        }
+      },
+      "baseDate": "20261115"
     },
     "44131": {
       "nx": 64,
       "ny": 110,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 13
-        },
         "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 10,
+          "rain": false,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 18
+          "tmx": 17
         },
         "20261116": {
           "rain": false,
@@ -3946,107 +3939,107 @@
           "popMax": 60,
           "tmn": 9,
           "sky12": "4",
-          "tmx": 17
+          "tmx": 16
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 5,
+          "sky12": "3",
+          "tmx": 11
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "44133": {
       "nx": 63,
       "ny": 111,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 10,
+          "rain": false,
+          "popMax": 30,
           "sky12": "1",
-          "tmx": 19
+          "tmx": 18
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
           "tmn": 4,
           "sky12": "4",
-          "tmx": 18
+          "tmx": 17
         },
         "20261117": {
           "rain": true,
           "popMax": 60,
           "tmn": 9,
           "sky12": "4",
-          "tmx": 17
+          "tmx": 16
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 6,
+          "sky12": "3",
+          "tmx": 11
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "44150": {
       "nx": 63,
       "ny": 103,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 11,
+          "rain": false,
+          "popMax": 30,
           "sky12": "1",
-          "tmx": 19
+          "tmx": 18
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
           "tmn": 4,
           "sky12": "3",
-          "tmx": 18
+          "tmx": 17
         },
         "20261117": {
           "rain": true,
           "popMax": 60,
           "tmn": 9,
           "sky12": "4",
-          "tmx": 17
+          "tmx": 16
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 6,
+          "sky12": "3",
+          "tmx": 11
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 20
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "44180": {
       "nx": 52,
       "ny": 100,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 17
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 12,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 18
+          "tmx": 17
         },
         "20261116": {
           "rain": false,
@@ -4058,40 +4051,40 @@
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 11,
+          "tmn": 10,
           "sky12": "4",
           "tmx": 16
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 9,
+          "sky12": "4",
+          "tmx": 12
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 10
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "44200": {
       "nx": 60,
       "ny": 110,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 15
-        },
         "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 10,
+          "rain": false,
+          "popMax": 30,
           "sky12": "1",
-          "tmx": 18
+          "tmx": 17
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
-          "tmn": 5,
+          "tmn": 4,
           "sky12": "4",
-          "tmx": 18
+          "tmx": 17
         },
         "20261117": {
           "rain": true,
@@ -4102,27 +4095,27 @@
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 6,
+          "sky12": "4",
+          "tmx": 11
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 10
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "44210": {
       "nx": 51,
       "ny": 110,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": false,
           "popMax": 30,
-          "tmn": 9,
           "sky12": "1",
-          "tmx": 17
+          "tmx": 16
         },
         "20261116": {
           "rain": false,
@@ -4134,71 +4127,71 @@
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 10,
+          "tmn": 8,
           "sky12": "4",
-          "tmx": 16
+          "tmx": 15
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 6,
+          "sky12": "4",
+          "tmx": 11
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 20
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "44230": {
       "nx": 63,
       "ny": 97,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 16
-        },
         "20261115": {
           "rain": false,
           "popMax": 30,
-          "tmn": 11,
           "sky12": "1",
-          "tmx": 20
+          "tmx": 19
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
-          "tmn": 5,
+          "tmn": 4,
           "sky12": "3",
-          "tmx": 19
+          "tmx": 18
         },
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 10,
+          "tmn": 9,
           "sky12": "4",
-          "tmx": 18
+          "tmx": 17
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 6,
+          "sky12": "4",
+          "tmx": 12
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 10
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "44250": {
       "nx": 65,
       "ny": 99,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": false,
           "popMax": 30,
-          "tmn": 11,
           "sky12": "1",
-          "tmx": 18
+          "tmx": 17
         },
         "20261116": {
           "rain": false,
@@ -4210,33 +4203,33 @@
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 10,
+          "tmn": 8,
           "sky12": "4",
           "tmx": 17
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 6,
+          "sky12": "3",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 10
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "44270": {
       "nx": 55,
       "ny": 113,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 10,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 17
+          "tmx": 16
         },
         "20261116": {
           "rain": false,
@@ -4248,31 +4241,31 @@
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 10,
+          "tmn": 9,
           "sky12": "4",
           "tmx": 15
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 7,
+          "sky12": "3",
+          "tmx": 11
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 10
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "44710": {
       "nx": 69,
       "ny": 96,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": false,
           "popMax": 30,
-          "tmn": 10,
           "sky12": "3",
           "tmx": 17
         },
@@ -4286,33 +4279,33 @@
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 8,
+          "tmn": 7,
           "sky12": "4",
-          "tmx": 17
+          "tmx": 16
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 6,
+          "sky12": "3",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 10
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "44760": {
       "nx": 58,
       "ny": 98,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 16
-        },
         "20261115": {
           "rain": false,
           "popMax": 30,
-          "tmn": 11,
           "sky12": "1",
-          "tmx": 20
+          "tmx": 19
         },
         "20261116": {
           "rain": false,
@@ -4324,71 +4317,71 @@
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 9,
+          "tmn": 8,
           "sky12": "4",
-          "tmx": 17
+          "tmx": 16
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 6,
+          "sky12": "3",
+          "tmx": 12
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 20
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "44770": {
       "nx": 55,
       "ny": 94,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 16
-        },
         "20261115": {
           "rain": false,
           "popMax": 30,
-          "tmn": 10,
           "sky12": "1",
-          "tmx": 19
+          "tmx": 16
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
-          "tmn": 5,
+          "tmn": 4,
           "sky12": "3",
           "tmx": 17
         },
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 9,
+          "tmn": 8,
           "sky12": "4",
-          "tmx": 17
+          "tmx": 16
         },
         "20261118": {
+          "rain": true,
+          "popMax": 60,
+          "tmn": 7,
+          "sky12": "3",
+          "tmx": 12
+        },
+        "20261119": {
           "rain": true,
           "popMax": 60
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "44790": {
       "nx": 58,
       "ny": 102,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 11,
+          "rain": false,
+          "popMax": 30,
           "sky12": "1",
-          "tmx": 18
+          "tmx": 17
         },
         "20261116": {
           "rain": false,
@@ -4400,268 +4393,116 @@
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 9,
+          "tmn": 8,
           "sky12": "4",
           "tmx": 17
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 5,
+          "sky12": "4",
+          "tmx": 10
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 20
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "44800": {
       "nx": 53,
       "ny": 105,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 16
-        },
         "20261115": {
           "rain": false,
-          "popMax": 30,
-          "tmn": 10,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 19
-        },
-        "20261116": {
-          "rain": false,
-          "popMax": 30,
-          "tmn": 5,
-          "sky12": "4",
           "tmx": 18
         },
-        "20261117": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 10,
-          "sky12": "4",
-          "tmx": 16
-        },
-        "20261118": {
-          "rain": true,
-          "popMax": 60
-        }
-      },
-      "baseDate": "20261114"
-    },
-    "44810": {
-      "nx": 56,
-      "ny": 107,
-      "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 16
-        },
-        "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 10,
-          "sky12": "1",
-          "tmx": 19
-        },
         "20261116": {
           "rain": false,
           "popMax": 30,
-          "tmn": 5,
+          "tmn": 4,
           "sky12": "4",
-          "tmx": 18
-        },
-        "20261117": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 10,
-          "sky12": "4",
-          "tmx": 16
-        },
-        "20261118": {
-          "rain": true,
-          "popMax": 60
-        }
-      },
-      "baseDate": "20261114"
-    },
-    "44825": {
-      "nx": 48,
-      "ny": 107,
-      "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 16
-        },
-        "20261115": {
-          "rain": false,
-          "popMax": 30,
-          "tmn": 11,
-          "sky12": "1",
           "tmx": 17
-        },
-        "20261116": {
-          "rain": false,
-          "popMax": 30,
-          "tmn": 7,
-          "sky12": "4",
-          "tmx": 16
-        },
-        "20261117": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 11,
-          "sky12": "4",
-          "tmx": 15
-        },
-        "20261118": {
-          "rain": true,
-          "popMax": 60
-        }
-      },
-      "baseDate": "20261114"
-    },
-    "51110": {
-      "nx": 72,
-      "ny": 134,
-      "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 11
-        },
-        "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 7,
-          "sky12": "1",
-          "tmx": 17
-        },
-        "20261116": {
-          "rain": false,
-          "popMax": 30,
-          "tmn": 5,
-          "sky12": "4",
-          "tmx": 14
-        },
-        "20261117": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 6,
-          "sky12": "4",
-          "tmx": 13
-        },
-        "20261118": {
-          "rain": true,
-          "popMax": 60
-        }
-      },
-      "baseDate": "20261114"
-    },
-    "51130": {
-      "nx": 77,
-      "ny": 122,
-      "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 13
-        },
-        "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 10,
-          "sky12": "3",
-          "tmx": 19
-        },
-        "20261116": {
-          "rain": false,
-          "popMax": 30,
-          "tmn": 6,
-          "sky12": "3",
-          "tmx": 17
-        },
-        "20261117": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 7,
-          "sky12": "4",
-          "tmx": 16
-        },
-        "20261118": {
-          "rain": true,
-          "popMax": 60
-        }
-      },
-      "baseDate": "20261114"
-    },
-    "51150": {
-      "nx": 92,
-      "ny": 132,
-      "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 13
-        },
-        "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 11,
-          "sky12": "3",
-          "tmx": 17
-        },
-        "20261116": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 10,
-          "sky12": "4",
-          "tmx": 11
         },
         "20261117": {
           "rain": true,
           "popMax": 60,
           "tmn": 9,
           "sky12": "4",
-          "tmx": 15
+          "tmx": 16
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 6,
+          "sky12": "4",
+          "tmx": 12
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 20
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
-    "51170": {
-      "nx": 96,
-      "ny": 127,
+    "44810": {
+      "nx": 56,
+      "ny": 107,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 11,
+          "rain": false,
+          "popMax": 30,
+          "sky12": "1",
+          "tmx": 18
+        },
+        "20261116": {
+          "rain": false,
+          "popMax": 30,
+          "tmn": 4,
           "sky12": "4",
           "tmx": 17
         },
-        "20261116": {
+        "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 11,
+          "tmn": 9,
+          "sky12": "4",
+          "tmx": 16
+        },
+        "20261118": {
+          "rain": true,
+          "popMax": 60,
+          "tmn": 6,
           "sky12": "4",
           "tmx": 12
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 20
+        }
+      },
+      "baseDate": "20261115"
+    },
+    "44825": {
+      "nx": 48,
+      "ny": 107,
+      "days": {
+        "20261115": {
+          "rain": false,
+          "popMax": 30,
+          "sky12": "1",
+          "tmx": 17
+        },
+        "20261116": {
+          "rain": false,
+          "popMax": 30,
+          "tmn": 7,
+          "sky12": "4",
+          "tmx": 16
         },
         "20261117": {
           "rain": true,
@@ -4672,27 +4513,179 @@
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 8,
+          "sky12": "4",
+          "tmx": 12
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 20
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
-    "51190": {
-      "nx": 95,
-      "ny": 119,
+    "51110": {
+      "nx": 72,
+      "ny": 134,
       "days": {
-        "20261114": {
+        "20261115": {
+          "rain": false,
+          "popMax": 30,
+          "sky12": "1",
+          "tmx": 17
+        },
+        "20261116": {
+          "rain": false,
+          "popMax": 30,
+          "tmn": 5,
+          "sky12": "4",
+          "tmx": 14
+        },
+        "20261117": {
           "rain": true,
           "popMax": 60,
+          "tmn": 6,
           "sky12": "4",
-          "tmx": 10
+          "tmx": 13
         },
+        "20261118": {
+          "rain": true,
+          "popMax": 60,
+          "tmn": 3,
+          "sky12": "3",
+          "tmx": 8
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
+        }
+      },
+      "baseDate": "20261115"
+    },
+    "51130": {
+      "nx": 77,
+      "ny": 122,
+      "days": {
         "20261115": {
+          "rain": false,
+          "popMax": 20,
+          "sky12": "3",
+          "tmx": 18
+        },
+        "20261116": {
+          "rain": false,
+          "popMax": 30,
+          "tmn": 7,
+          "sky12": "3",
+          "tmx": 17
+        },
+        "20261117": {
           "rain": true,
           "popMax": 60,
           "tmn": 7,
           "sky12": "4",
           "tmx": 15
+        },
+        "20261118": {
+          "rain": true,
+          "popMax": 60,
+          "tmn": 5,
+          "sky12": "1",
+          "tmx": 9
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
+        }
+      },
+      "baseDate": "20261115"
+    },
+    "51150": {
+      "nx": 92,
+      "ny": 132,
+      "days": {
+        "20261115": {
+          "rain": true,
+          "popMax": 60,
+          "sky12": "3",
+          "tmx": 16
+        },
+        "20261116": {
+          "rain": true,
+          "popMax": 60,
+          "tmn": 9,
+          "sky12": "4",
+          "tmx": 11
+        },
+        "20261117": {
+          "rain": true,
+          "popMax": 60,
+          "tmn": 8,
+          "sky12": "4",
+          "tmx": 15
+        },
+        "20261118": {
+          "rain": true,
+          "popMax": 60,
+          "tmn": 8,
+          "sky12": "1",
+          "tmx": 12
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
+        }
+      },
+      "baseDate": "20261115"
+    },
+    "51170": {
+      "nx": 96,
+      "ny": 127,
+      "days": {
+        "20261115": {
+          "rain": true,
+          "popMax": 60,
+          "sky12": "4",
+          "tmx": 16
+        },
+        "20261116": {
+          "rain": true,
+          "popMax": 60,
+          "tmn": 10,
+          "sky12": "4",
+          "tmx": 13
+        },
+        "20261117": {
+          "rain": true,
+          "popMax": 60,
+          "tmn": 10,
+          "sky12": "4",
+          "tmx": 16
+        },
+        "20261118": {
+          "rain": true,
+          "popMax": 60,
+          "tmn": 9,
+          "sky12": "1",
+          "tmx": 13
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
+        }
+      },
+      "baseDate": "20261115"
+    },
+    "51190": {
+      "nx": 95,
+      "ny": 119,
+      "days": {
+        "20261115": {
+          "rain": false,
+          "popMax": 30,
+          "sky12": "4",
+          "tmx": 14
         },
         "20261116": {
           "rain": true,
@@ -4706,29 +4699,29 @@
           "popMax": 60,
           "tmn": 5,
           "sky12": "4",
-          "tmx": 10
+          "tmx": 11
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 3,
+          "sky12": "1",
+          "tmx": 7
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "51210": {
       "nx": 87,
       "ny": 141,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 15
-        },
         "20261115": {
           "rain": true,
           "popMax": 60,
-          "tmn": 11,
           "sky12": "3",
           "tmx": 16
         },
@@ -4748,65 +4741,65 @@
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 9,
+          "sky12": "3",
+          "tmx": 13
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "51230": {
       "nx": 98,
       "ny": 123,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 12
-        },
         "20261115": {
           "rain": true,
           "popMax": 60,
-          "tmn": 10,
           "sky12": "4",
           "tmx": 16
         },
         "20261116": {
           "rain": true,
           "popMax": 60,
-          "tmn": 10,
+          "tmn": 9,
           "sky12": "4",
           "tmx": 11
         },
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 9,
+          "tmn": 8,
           "sky12": "4",
           "tmx": 14
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 8,
+          "sky12": "1",
+          "tmx": 12
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "51720": {
       "nx": 76,
       "ny": 130,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 11
-        },
         "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 8,
+          "rain": false,
+          "popMax": 20,
           "sky12": "3",
-          "tmx": 18
+          "tmx": 17
         },
         "20261116": {
           "rain": false,
@@ -4820,29 +4813,29 @@
           "popMax": 60,
           "tmn": 6,
           "sky12": "4",
-          "tmx": 15
+          "tmx": 14
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 4,
+          "sky12": "3",
+          "tmx": 8
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "51730": {
       "nx": 80,
       "ny": 126,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 11
-        },
         "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 7,
+          "rain": false,
+          "popMax": 30,
           "sky12": "1",
           "tmx": 16
         },
@@ -4856,38 +4849,38 @@
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 5,
+          "tmn": 6,
           "sky12": "4",
           "tmx": 14
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 3,
+          "sky12": "3",
+          "tmx": 7
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "51750": {
       "nx": 86,
       "ny": 119,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 11
-        },
         "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 8,
+          "rain": false,
+          "popMax": 30,
           "sky12": "3",
           "tmx": 18
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
-          "tmn": 6,
+          "tmn": 7,
           "sky12": "3",
           "tmx": 15
         },
@@ -4900,63 +4893,63 @@
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 5,
+          "sky12": "3",
+          "tmx": 8
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "51760": {
       "nx": 86,
       "ny": 128,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 8
-        },
         "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 7,
+          "rain": false,
+          "popMax": 30,
           "sky12": "3",
-          "tmx": 15
+          "tmx": 14
         },
         "20261116": {
           "rain": true,
           "popMax": 60,
-          "tmn": 6,
+          "tmn": 5,
           "sky12": "4",
           "tmx": 9
         },
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 5,
+          "tmn": 4,
           "sky12": "4",
           "tmx": 11
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 2,
+          "sky12": "1",
+          "tmx": 5
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "51770": {
       "nx": 90,
       "ny": 123,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 10
-        },
         "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 8,
+          "rain": false,
+          "popMax": 30,
           "sky12": "4",
           "tmx": 16
         },
@@ -4965,38 +4958,38 @@
           "popMax": 60,
           "tmn": 6,
           "sky12": "4",
-          "tmx": 10
+          "tmx": 11
         },
         "20261117": {
           "rain": true,
           "popMax": 60,
           "tmn": 5,
           "sky12": "4",
-          "tmx": 12
+          "tmx": 13
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 4,
+          "sky12": "3",
+          "tmx": 7
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "51780": {
       "nx": 65,
       "ny": 141,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 13
-        },
         "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 7,
+          "rain": false,
+          "popMax": 20,
           "sky12": "1",
-          "tmx": 17
+          "tmx": 16
         },
         "20261116": {
           "rain": false,
@@ -5008,31 +5001,31 @@
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 6,
+          "tmn": 7,
           "sky12": "4",
-          "tmx": 13
+          "tmx": 12
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 3,
+          "sky12": "4",
+          "tmx": 8
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "51790": {
       "nx": 72,
       "ny": 139,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 11
-        },
         "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 6,
+          "rain": false,
+          "popMax": 30,
           "sky12": "1",
           "tmx": 16
         },
@@ -5041,7 +5034,7 @@
           "popMax": 30,
           "tmn": 4,
           "sky12": "4",
-          "tmx": 12
+          "tmx": 13
         },
         "20261117": {
           "rain": true,
@@ -5052,32 +5045,32 @@
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 2,
+          "sky12": "3",
+          "tmx": 7
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "51800": {
       "nx": 77,
       "ny": 139,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 13
-        },
         "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 8,
+          "rain": false,
+          "popMax": 30,
           "sky12": "3",
-          "tmx": 18
+          "tmx": 17
         },
         "20261116": {
           "rain": false,
           "popMax": 30,
-          "tmn": 7,
+          "tmn": 6,
           "sky12": "4",
           "tmx": 13
         },
@@ -5090,25 +5083,25 @@
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 4,
+          "sky12": "4",
+          "tmx": 9
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "51810": {
       "nx": 82,
       "ny": 138,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 10
-        },
         "20261115": {
-          "rain": true,
-          "popMax": 60,
-          "tmn": 7,
+          "rain": false,
+          "popMax": 30,
           "sky12": "3",
           "tmx": 14
         },
@@ -5122,69 +5115,69 @@
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 5,
+          "tmn": 4,
           "sky12": "4",
           "tmx": 11
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 2,
+          "sky12": "4",
+          "tmx": 5
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "51820": {
       "nx": 85,
       "ny": 145,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": true,
           "popMax": 60,
-          "tmn": 11,
           "sky12": "4",
-          "tmx": 16
+          "tmx": 15
         },
         "20261116": {
           "rain": true,
           "popMax": 60,
-          "tmn": 10,
+          "tmn": 8,
           "sky12": "4",
-          "tmx": 11
+          "tmx": 10
         },
         "20261117": {
           "rain": true,
           "popMax": 60,
-          "tmn": 8,
+          "tmn": 9,
           "sky12": "4",
-          "tmx": 13
+          "tmx": 14
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 8,
+          "sky12": "3",
+          "tmx": 12
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     },
     "51830": {
       "nx": 88,
       "ny": 138,
       "days": {
-        "20261114": {
-          "rain": true,
-          "popMax": 60,
-          "sky12": "4",
-          "tmx": 14
-        },
         "20261115": {
           "rain": true,
           "popMax": 60,
-          "tmn": 11,
           "sky12": "4",
           "tmx": 17
         },
@@ -5200,126 +5193,133 @@
           "popMax": 60,
           "tmn": 9,
           "sky12": "4",
-          "tmx": 14
+          "tmx": 15
         },
         "20261118": {
           "rain": true,
-          "popMax": 60
+          "popMax": 60,
+          "tmn": 9,
+          "sky12": "3",
+          "tmx": 12
+        },
+        "20261119": {
+          "rain": false,
+          "popMax": 0
         }
       },
-      "baseDate": "20261114"
+      "baseDate": "20261115"
     }
   },
   "mid": {
     "11B00000": {
       "regId": "11B00000",
-      "rnSt5Am": 60,
-      "rnSt5Pm": 30,
-      "rnSt6Am": 10,
-      "rnSt6Pm": 10,
+      "rnSt5Am": 10,
+      "rnSt5Pm": 10,
+      "rnSt6Am": 20,
+      "rnSt6Pm": 20,
       "rnSt7Am": 20,
       "rnSt7Pm": 20,
-      "rnSt8": 20,
-      "rnSt9": 10,
-      "rnSt10": 20,
-      "wf5Am": "흐리고 비",
-      "wf5Pm": "흐림",
-      "wf6Am": "맑음",
-      "wf6Pm": "맑음",
+      "rnSt8": 10,
+      "rnSt9": 20,
+      "rnSt10": 10,
+      "wf5Am": "맑음",
+      "wf5Pm": "맑음",
+      "wf6Am": "구름많음",
+      "wf6Pm": "구름많음",
       "wf7Am": "구름많음",
       "wf7Pm": "구름많음",
-      "wf8": "구름많음",
-      "wf9": "맑음",
-      "wf10": "구름많음",
-      "tmFc": "202611131800"
+      "wf8": "맑음",
+      "wf9": "구름많음",
+      "wf10": "맑음",
+      "tmFc": "202611141800"
     },
     "11C20000": {
       "regId": "11C20000",
       "rnSt5Am": 60,
-      "rnSt5Pm": 60,
-      "rnSt6Am": 30,
-      "rnSt6Pm": 20,
-      "rnSt7Am": 20,
+      "rnSt5Pm": 30,
+      "rnSt6Am": 60,
+      "rnSt6Pm": 60,
+      "rnSt7Am": 30,
       "rnSt7Pm": 20,
-      "rnSt8": 20,
-      "rnSt9": 10,
-      "rnSt10": 20,
+      "rnSt8": 10,
+      "rnSt9": 20,
+      "rnSt10": 10,
       "wf5Am": "흐리고 비",
-      "wf5Pm": "흐리고 비",
-      "wf6Am": "흐림",
-      "wf6Pm": "구름많음",
-      "wf7Am": "구름많음",
+      "wf5Pm": "흐림",
+      "wf6Am": "흐리고 비",
+      "wf6Pm": "흐리고 비",
+      "wf7Am": "흐림",
       "wf7Pm": "구름많음",
-      "wf8": "구름많음",
-      "wf9": "맑음",
-      "wf10": "구름많음",
-      "tmFc": "202611131800"
+      "wf8": "맑음",
+      "wf9": "구름많음",
+      "wf10": "맑음",
+      "tmFc": "202611141800"
     },
     "11C10000": {
       "regId": "11C10000",
-      "rnSt5Am": 60,
-      "rnSt5Pm": 30,
-      "rnSt6Am": 10,
-      "rnSt6Pm": 10,
+      "rnSt5Am": 20,
+      "rnSt5Pm": 20,
+      "rnSt6Am": 20,
+      "rnSt6Pm": 20,
       "rnSt7Am": 20,
       "rnSt7Pm": 20,
-      "rnSt8": 20,
-      "rnSt9": 10,
-      "rnSt10": 20,
-      "wf5Am": "흐리고 비",
-      "wf5Pm": "흐림",
-      "wf6Am": "맑음",
-      "wf6Pm": "맑음",
+      "rnSt8": 10,
+      "rnSt9": 20,
+      "rnSt10": 10,
+      "wf5Am": "구름많음",
+      "wf5Pm": "구름많음",
+      "wf6Am": "구름많음",
+      "wf6Pm": "구름많음",
       "wf7Am": "구름많음",
       "wf7Pm": "구름많음",
-      "wf8": "구름많음",
-      "wf9": "맑음",
-      "wf10": "구름많음",
-      "tmFc": "202611131800"
+      "wf8": "맑음",
+      "wf9": "구름많음",
+      "wf10": "맑음",
+      "tmFc": "202611141800"
     },
     "11D10000": {
       "regId": "11D10000",
-      "rnSt5Am": 60,
-      "rnSt5Pm": 30,
-      "rnSt6Am": 10,
-      "rnSt6Pm": 10,
+      "rnSt5Am": 10,
+      "rnSt5Pm": 10,
+      "rnSt6Am": 20,
+      "rnSt6Pm": 20,
       "rnSt7Am": 20,
       "rnSt7Pm": 20,
-      "rnSt8": 20,
-      "rnSt9": 10,
-      "rnSt10": 20,
-      "wf5Am": "흐리고 비",
-      "wf5Pm": "흐림",
-      "wf6Am": "맑음",
-      "wf6Pm": "맑음",
+      "rnSt8": 10,
+      "rnSt9": 20,
+      "rnSt10": 10,
+      "wf5Am": "맑음",
+      "wf5Pm": "맑음",
+      "wf6Am": "구름많음",
+      "wf6Pm": "구름많음",
       "wf7Am": "구름많음",
       "wf7Pm": "구름많음",
-      "wf8": "구름많음",
-      "wf9": "맑음",
-      "wf10": "구름많음",
-      "tmFc": "202611131800"
+      "wf8": "맑음",
+      "wf9": "구름많음",
+      "wf10": "맑음",
+      "tmFc": "202611141800"
     },
     "11D20000": {
       "regId": "11D20000",
-      "rnSt5Am": 60,
-      "rnSt5Pm": 30,
+      "rnSt5Am": 10,
+      "rnSt5Pm": 10,
       "rnSt6Am": 10,
       "rnSt6Pm": 10,
       "rnSt7Am": 10,
       "rnSt7Pm": 10,
       "rnSt8": 10,
-      "rnSt9": 10,
-      "rnSt10": 20,
-      "wf5Am": "흐리고 비",
-      "wf5Pm": "흐림",
+      "rnSt9": 20,
+      "rnSt10": 10,
+      "wf5Am": "맑음",
+      "wf5Pm": "맑음",
       "wf6Am": "맑음",
       "wf6Pm": "맑음",
       "wf7Am": "맑음",
       "wf7Pm": "맑음",
       "wf8": "맑음",
-      "wf9": "맑음",
-      "wf10": "구름많음",
-      "tmFc": "202611131800"
+      "wf9": "구름많음",
+      "wf10": "맑음",
+      "tmFc": "202611141800"
     }
   }
 }

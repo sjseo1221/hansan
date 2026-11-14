@@ -24,21 +24,21 @@
     "skippedBudget": 0
   },
   "reviews": {
-    "needed": 938,
-    "reused": 833,
+    "needed": 937,
+    "reused": 829,
     "fewPosts": 0,
     "judged": 0,
     "failed": 0,
-    "skipped": 105
+    "skipped": 108
   },
   "known": {
-    "needed": 937,
-    "reused": 917,
+    "needed": 936,
+    "reused": 912,
     "noOverview": 0,
     "generated": 0,
     "empty": 0,
     "failed": 0,
-    "skippedBudget": 20
+    "skippedBudget": 24
   },
   "failures": {}
 }

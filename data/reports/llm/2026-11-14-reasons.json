@@ -16,12 +16,12 @@
     "costUsd": 5.0007
   },
   "reasons": {
-    "needed": 7712,
-    "reused": 150,
+    "needed": 7739,
+    "reused": 127,
     "generated": 0,
     "invalid": 0,
     "failed": 0,
-    "skippedBudget": 7562
+    "skippedBudget": 7612
   },
   "reviews": {
     "needed": 0,

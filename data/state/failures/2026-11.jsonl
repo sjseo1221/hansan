@@ -2453,3 +2453,6 @@
 {"at":"2026-11-14T05:23:49.340+09:00","source":"naver_trend","placeId":"kto-1690248","code":"EMPTY","message":"요청 실패"}
 {"at":"2026-11-14T05:23:49.340+09:00","source":"naver_trend","placeId":"kto-1809589","code":"EMPTY","message":"요청 실패"}
 {"at":"2026-11-14T05:23:49.340+09:00","source":"naver_trend","placeId":"kto-1874105","code":"EMPTY","message":"요청 실패"}
+{"at":"2026-11-15T05:17:59.627+09:00","source":"seoul_citydata","areaCd":"POI129","code":"INFO-000","message":"정상 처리되었습니다."}
+{"at":"2026-11-15T05:17:59.627+09:00","source":"seoul_citydata","areaCd":"POI130","code":"INFO-000","message":"정상 처리되었습니다."}
+{"at":"2026-11-15T05:17:59.627+09:00","source":"seoul_citydata","areaCd":"POI131","code":"INFO-000","message":"정상 처리되었습니다."}

@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-11-09",
+  "generatedAt": "2026-11-16",
   "attractions": 4315,
   "matched": {
-    "exact": 3366,
+    "exact": 3361,
     "normalized": 253,
-    "partial": 128,
-    "total": 3747,
-    "ambiguous": 0,
+    "partial": 127,
+    "total": 3741,
+    "ambiguous": 1,
     "duplicates": 19
   },
-  "matchRate": 0.868,
+  "matchRate": 0.867,
   "unmatched": {
-    "count": 568,
+    "count": 574,
     "list": [
       {
         "signguCd": "11110",
@@ -327,6 +327,11 @@
         "signguCd": "11470",
         "signguNm": "양천구",
         "tAtsNm": "무중력지대 양천"
+      },
+      {
+        "signguCd": "11470",
+        "signguNm": "양천구",
+        "tAtsNm": "양천구 로데오거리"
       },
       {
         "signguCd": "11470",
@@ -1184,9 +1189,19 @@
         "tAtsNm": "수리산 상상마을"
       },
       {
+        "signguCd": "41410",
+        "signguNm": "군포시",
+        "tAtsNm": "중앙공원"
+      },
+      {
         "signguCd": "41430",
         "signguNm": "의왕시",
         "tAtsNm": "오봉정사"
+      },
+      {
+        "signguCd": "41450",
+        "signguNm": "하남시",
+        "tAtsNm": "스몹 하남"
       },
       {
         "signguCd": "41461",
@@ -2246,11 +2261,6 @@
       {
         "signguCd": "51110",
         "signguNm": "춘천시",
-        "tAtsNm": "백양리역 폐역"
-      },
-      {
-        "signguCd": "51110",
-        "signguNm": "춘천시",
         "tAtsNm": "엘리시안 강촌"
       },
       {
@@ -2491,6 +2501,11 @@
       {
         "signguCd": "51720",
         "signguNm": "홍천군",
+        "tAtsNm": "노동서원"
+      },
+      {
+        "signguCd": "51720",
+        "signguNm": "홍천군",
         "tAtsNm": "홍천한우 늘푸름"
       },
       {
@@ -2612,6 +2627,16 @@
         "signguCd": "51770",
         "signguNm": "정선군",
         "tAtsNm": "동강생태체험학습장"
+      },
+      {
+        "signguCd": "51770",
+        "signguNm": "정선군",
+        "tAtsNm": "메이힐스리조트"
+      },
+      {
+        "signguCd": "51770",
+        "signguNm": "정선군",
+        "tAtsNm": "서운재(瑞雲齋)"
       },
       {
         "signguCd": "51770",
@@ -2826,6 +2851,11 @@
       {
         "signguCd": "51830",
         "signguNm": "양양군",
+        "tAtsNm": "오색약수골전통장"
+      },
+      {
+        "signguCd": "51830",
+        "signguNm": "양양군",
         "tAtsNm": "원포해변"
       },
       {
@@ -2862,6 +2892,7 @@
     "덕산국민여가캠핑장(AC05)",
     "동강오토캠핑장(AC05)",
     "맹방비치캠핑장(AC05)",
+    "백양리역 폐역(VE11)",
     "보령 청소역(VE11)",
     "신탄리역(VE11)",
     "심천역(영동)(VE11)",
@@ -2884,16 +2915,14 @@
     "대치유수지체육공원(2733970)",
     "성촌공원(2760249)",
     "방배배수지체육공원(2763871)",
-    "계남근린공원(2611568)",
     "호국지장사(서울)(486625)",
     "서울책보고(2606740)",
     "부평 굴포누리 기후변화체험관(3456754)",
     "한국가스공사 가스과학관(2767868)",
-    "서해수호관(2649844)",
     "시화조력문화관(2463284)",
+    "서해수호관(2649844)",
     "오산반려동물테마파크(2930689)",
     "성령대군묘(920339)",
-    "조산공원(1688386)",
     "보령목재문화체험장(3453008)",
     "현충사 달빛야행(2865122)",
     "의암수력발전소(2465230)",
@@ -3073,7 +3102,7 @@
       "tAtsNm": "서산A지구방조제",
       "signguNm": "서산시",
       "title": "서산A지구방조제",
-      "addr": "충청남도 홍성군 서부면 남당항로"
+      "addr": "충청남도 홍성군 서부면 궁리"
     },
     {
       "tAtsNm": "선녀바위",
@@ -3550,7 +3579,13 @@
       "addr": "인천광역시 제물포구 연안부두로 36 (항동7가)"
     }
   ],
-  "ambiguousList": [],
+  "ambiguousList": [
+    {
+      "tAtsNm": "춘천꿈자람어린이공원",
+      "signguNm": "춘천시",
+      "title": "춘천꿈자람어린이공원"
+    }
+  ],
   "stale": [
     {
       "placeId": "kto-125613",
@@ -3603,6 +3638,11 @@
       "staleSince": "2026-11-02"
     },
     {
+      "placeId": "kto-129182",
+      "name": "오색약수골전통장",
+      "staleSince": "2026-11-16"
+    },
+    {
       "placeId": "kto-1626554",
       "name": "은진향교 대성전",
       "staleSince": "2026-10-19"
@@ -3613,9 +3653,19 @@
       "staleSince": "2026-11-02"
     },
     {
+      "placeId": "kto-1955959",
+      "name": "노동서원",
+      "staleSince": "2026-11-16"
+    },
+    {
       "placeId": "kto-1957487",
       "name": "동두천 관광특구",
       "staleSince": "2026-11-09"
+    },
+    {
+      "placeId": "kto-2432831",
+      "name": "스몹 하남",
+      "staleSince": "2026-11-16"
     },
     {
       "placeId": "kto-2456640",
@@ -3631,6 +3681,11 @@
       "placeId": "kto-2606740",
       "name": "서울책보고",
       "staleSince": "2026-10-12"
+    },
+    {
+      "placeId": "kto-2612107",
+      "name": "양천구 로데오거리",
+      "staleSince": "2026-11-16"
     },
     {
       "placeId": "kto-2649844",
@@ -3653,6 +3708,11 @@
       "staleSince": "2026-11-02"
     },
     {
+      "placeId": "kto-2715384",
+      "name": "서운재(瑞雲齋)",
+      "staleSince": "2026-11-16"
+    },
+    {
       "placeId": "kto-2733970",
       "name": "대치유수지체육공원",
       "staleSince": "2026-10-12"
@@ -3661,6 +3721,11 @@
       "placeId": "kto-2734948",
       "name": "기흥레스피아호수공원 반려동물놀이터",
       "staleSince": "2026-10-19"
+    },
+    {
+      "placeId": "kto-2751261",
+      "name": "산본중앙공원",
+      "staleSince": "2026-11-16"
     },
     {
       "placeId": "kto-2757155",
@@ -3686,6 +3751,11 @@
       "placeId": "kto-2767868",
       "name": "한국가스공사 가스과학관",
       "staleSince": "2026-10-12"
+    },
+    {
+      "placeId": "kto-2774564",
+      "name": "춘천꿈자람어린이공원",
+      "staleSince": "2026-11-16"
     },
     {
       "placeId": "kto-2808100",
@@ -3723,6 +3793,11 @@
       "staleSince": "2026-11-02"
     },
     {
+      "placeId": "kto-580519",
+      "name": "메이힐스리조트",
+      "staleSince": "2026-11-16"
+    },
+    {
       "placeId": "kto-605173",
       "name": "청원 연꽃마을",
       "staleSince": "2026-11-02"
@@ -3734,9 +3809,9 @@
     }
   ],
   "places": {
-    "total": 3741,
-    "visible": 3705,
-    "hidden": 36,
+    "total": 3742,
+    "visible": 3698,
+    "hidden": 44,
     "byProvince": {
       "11": 563,
       "28": 257,
@@ -3745,10 +3820,10 @@
       "41": 1064,
       "43": 401,
       "44": 605,
-      "51": 721
+      "51": 722
     },
     "byCategory": {
-      "nature_park": 1188,
+      "nature_park": 1189,
       "street_market": 390,
       "theme_park": 360,
       "exhibition": 460,
@@ -3763,18 +3838,16 @@
     "adminDong": 0,
     "operation": 0
   },
-  "keywordChanged": [
-    "kto-1682800"
-  ],
+  "keywordChanged": [],
   "shrinkBlocked": false,
   "warnings": [],
-  "operationFilled": 3717,
+  "operationFilled": 3722,
   "tour": {
     "sigungu": 147,
     "sigunguFailed": false,
     "provincesOk": 8,
     "provincesFailed": 0,
     "provincesKept": 0,
-    "candidates": 10932
+    "candidates": 10918
   }
 }

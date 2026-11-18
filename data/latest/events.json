@@ -1,8 +1,8 @@
 {
-  "updatedAt": "2026-11-18T05:40:28.573+09:00",
+  "updatedAt": "2026-11-19T05:40:47.045+09:00",
   "source": "TourAPI searchFestival2",
-  "from": "20261118",
-  "until": "20261202",
+  "from": "20261119",
+  "until": "20261203",
   "events": [
     {
       "contentId": "4163259",

@@ -2709,3 +2709,4 @@
 {"at":"2026-11-19T05:40:47.045+09:00","source":"tour_hub","signguCd":"28140","code":"EMPTY","message":"빈 응답"}
 {"at":"2026-11-19T05:40:47.045+09:00","source":"tour_hub","signguCd":"28260","code":"EMPTY","message":"빈 응답"}
 {"at":"2026-11-19T05:40:47.045+09:00","source":"tour_hub","signguCd":"41590","code":"EMPTY","message":"빈 응답"}
+{"at":"2026-11-19T14:17:38.407+09:00","source":"seoul_citydata","areaCd":"POI068","code":"UNPARSEABLE","message":""}

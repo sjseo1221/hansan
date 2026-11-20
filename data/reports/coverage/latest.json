@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-11-20",
+  "asOf": "2026-11-21",
   "places": {
     "total": 3742,
     "visible": 3698,
@@ -10,7 +10,7 @@
     "cnctrLinked": 3698,
     "forecastToday": 3698,
     "forecastStale": 0,
-    "forecastFlat": 22,
+    "forecastFlat": 21,
     "trendWeekly": 1623,
     "trendBackfill": 3643,
     "blog": 3698,
@@ -21,7 +21,7 @@
     "ggLinkedDong": 601,
     "operation": 3694,
     "operationCautionToday": 389,
-    "closedToday": 6
+    "closedToday": 55
   },
   "scores": {
     "popularity": 3643,
@@ -30,8 +30,8 @@
     "trendMedianAdjusted": 0,
     "longTerm": 1606,
     "usualToday": {
-      "history": 3662,
-      "history_provisional": 36
+      "history": 3491,
+      "history_provisional": 207
     },
     "patternBasisToday": {
       "category": 2134,
@@ -46,17 +46,6 @@
     "street_market"
   ],
   "typesByDate": {
-    "2026-11-20": {
-      "famous_spot": 327,
-      "moderate_hotspot": 327,
-      "timing_game": 30,
-      "early_hotspot": 11,
-      "time_slot": 7,
-      "hidden_classic": 61,
-      "hidden_classic_candidates": 0,
-      "insufficient_any": 2898,
-      "recommended": 642
-    },
     "2026-11-21": {
       "famous_spot": 142,
       "moderate_hotspot": 179,
@@ -126,13 +115,13 @@
     "2026-11-27": {
       "famous_spot": 314,
       "moderate_hotspot": 305,
-      "timing_game": 33,
+      "timing_game": 18,
       "early_hotspot": 10,
       "time_slot": 7,
       "hidden_classic": 61,
       "hidden_classic_candidates": 0,
       "insufficient_any": 2899,
-      "recommended": 619
+      "recommended": 606
     },
     "2026-11-28": {
       "famous_spot": 141,
@@ -199,6 +188,17 @@
       "hidden_classic_candidates": 3,
       "insufficient_any": 2896,
       "recommended": 629
+    },
+    "2026-12-04": {
+      "famous_spot": 347,
+      "moderate_hotspot": 219,
+      "timing_game": 113,
+      "early_hotspot": 11,
+      "time_slot": 7,
+      "hidden_classic": 80,
+      "hidden_classic_candidates": 1,
+      "insufficient_any": 2899,
+      "recommended": 652
     }
   }
 }

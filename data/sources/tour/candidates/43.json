@@ -1,7 +1,161 @@
 {
-  "fetchedAt": "2026-11-16T04:50:56.118+09:00",
+  "fetchedAt": "2026-11-23T04:51:03.611+09:00",
   "source": "TourAPI areaBasedList2",
   "candidates": [
+    {
+      "contentid": "2718685",
+      "contenttypeid": "12",
+      "title": "국립제천치유의숲",
+      "addr1": "충청북도 제천시 청풍면 학현소야로 590",
+      "mapx": 128.2447704727,
+      "mapy": 37.0128263847,
+      "lDongRegnCd": "43",
+      "lDongSignguCd": "150",
+      "lclsSystm1": "EX",
+      "lclsSystm2": "EX05",
+      "lclsSystm3": "EX050600",
+      "modifiedtime": "20261120013001"
+    },
+    {
+      "contentid": "2530632",
+      "contenttypeid": "12",
+      "title": "보련마을",
+      "addr1": "충청북도 진천군 진천읍 보련골길 40-4",
+      "mapx": 127.3530199766,
+      "mapy": 36.8456646547,
+      "lDongRegnCd": "43",
+      "lDongSignguCd": "750",
+      "lclsSystm1": "EX",
+      "lclsSystm2": "EX03",
+      "lclsSystm3": "EX030100",
+      "modifiedtime": "20261119151331"
+    },
+    {
+      "contentid": "125983",
+      "contenttypeid": "12",
+      "title": "충주 탑평리 칠층석탑",
+      "addr1": "충청북도 충주시 중앙탑면 탑평리 11",
+      "mapx": 127.8665734128,
+      "mapy": 37.0157883884,
+      "lDongRegnCd": "43",
+      "lDongSignguCd": "130",
+      "lclsSystm1": "HS",
+      "lclsSystm2": "HS02",
+      "lclsSystm3": "HS020100",
+      "modifiedtime": "20261119145534"
+    },
+    {
+      "contentid": "2769599",
+      "contenttypeid": "12",
+      "title": "대청댐 전망대",
+      "addr1": "충청북도 청주시 상당구 문의면 대청호반로 206",
+      "mapx": 127.4851,
+      "mapy": 36.479,
+      "lDongRegnCd": "43",
+      "lDongSignguCd": "111",
+      "lclsSystm1": "VE",
+      "lclsSystm2": "VE01",
+      "lclsSystm3": "VE010200",
+      "modifiedtime": "20261119141435"
+    },
+    {
+      "contentid": "4154990",
+      "contenttypeid": "12",
+      "title": "포석조명희문학관",
+      "addr1": "충청북도 진천군 진천읍 포석길 37-14",
+      "mapx": 127.4386503623,
+      "mapy": 36.8572104634,
+      "lDongRegnCd": "43",
+      "lDongSignguCd": "750",
+      "lclsSystm1": "HS",
+      "lclsSystm2": "HS01",
+      "lclsSystm3": "HS011200",
+      "modifiedtime": "20261118165852"
+    },
+    {
+      "contentid": "4154962",
+      "contenttypeid": "12",
+      "title": "약초허브식물원",
+      "addr1": "충청북도 제천시 한방엑스포로 19 (왕암동)",
+      "mapx": 128.1597626847,
+      "mapy": 37.143733927,
+      "lDongRegnCd": "43",
+      "lDongSignguCd": "150",
+      "lclsSystm1": "NA",
+      "lclsSystm2": "NA04",
+      "lclsSystm3": "NA040700",
+      "modifiedtime": "20261118165139"
+    },
+    {
+      "contentid": "2610560",
+      "contenttypeid": "12",
+      "title": "악어봉",
+      "addr1": "충청북도 충주시 살미면 신당리",
+      "mapx": 128.044527,
+      "mapy": 36.917961,
+      "lDongRegnCd": "43",
+      "lDongSignguCd": "130",
+      "lclsSystm1": "NA",
+      "lclsSystm2": "NA01",
+      "lclsSystm3": "NA010100",
+      "modifiedtime": "20261118133004"
+    },
+    {
+      "contentid": "127904",
+      "contenttypeid": "12",
+      "title": "탁사정",
+      "addr1": "충청북도 제천시 봉양읍 제원로 478",
+      "mapx": 128.1062015,
+      "mapy": 37.16662186,
+      "lDongRegnCd": "43",
+      "lDongSignguCd": "150",
+      "lclsSystm1": "NA",
+      "lclsSystm2": "NA01",
+      "lclsSystm3": "NA010400",
+      "modifiedtime": "20261118105142"
+    },
+    {
+      "contentid": "337518",
+      "contenttypeid": "12",
+      "title": "영국사(영동)",
+      "addr1": "충청북도 영동군 양산면 영국동길 225-35",
+      "mapx": 127.6104637417,
+      "mapy": 36.1580841124,
+      "lDongRegnCd": "43",
+      "lDongSignguCd": "740",
+      "lclsSystm1": "HS",
+      "lclsSystm2": "HS03",
+      "lclsSystm3": "HS030100",
+      "modifiedtime": "20261117151731"
+    },
+    {
+      "contentid": "770346",
+      "contenttypeid": "12",
+      "title": "명암산채건강마을",
+      "addr1": "충청북도 제천시 봉양읍 명암로 574",
+      "mapx": 128.1437385198,
+      "mapy": 37.1906558396,
+      "lDongRegnCd": "43",
+      "lDongSignguCd": "150",
+      "lclsSystm1": "EX",
+      "lclsSystm2": "EX03",
+      "lclsSystm3": "EX030100",
+      "modifiedtime": "20261117102910"
+    },
+    {
+      "contentid": "3464160",
+      "contenttypeid": "12",
+      "title": "대운선박",
+      "addr1": "충청북도 괴산군 칠성면 산막이옛길 80-4",
+      "mapx": 127.8393569439,
+      "mapy": 36.761071455,
+      "lDongRegnCd": "43",
+      "lDongSignguCd": "760",
+      "lclsSystm1": "EX",
+      "lclsSystm2": "EX07",
+      "lclsSystm3": "EX070100",
+      "modifiedtime": "20261116101624"
+    },
     {
       "contentid": "125826",
       "contenttypeid": "12",
@@ -379,20 +533,6 @@
       "lclsSystm2": "EX03",
       "lclsSystm3": "EX030100",
       "modifiedtime": "20261113154203"
-    },
-    {
-      "contentid": "2530632",
-      "contenttypeid": "12",
-      "title": "보련마을",
-      "addr1": "충청북도 진천군 진천읍 보련골길 40-4",
-      "mapx": 127.3530199766,
-      "mapy": 36.8456646547,
-      "lDongRegnCd": "43",
-      "lDongSignguCd": "750",
-      "lclsSystm1": "EX",
-      "lclsSystm2": "EX03",
-      "lclsSystm3": "EX030100",
-      "modifiedtime": "20261113153527"
     },
     {
       "contentid": "2615397",
@@ -855,20 +995,6 @@
       "lclsSystm2": "NA01",
       "lclsSystm3": "NA010100",
       "modifiedtime": "20261113105013"
-    },
-    {
-      "contentid": "337518",
-      "contenttypeid": "12",
-      "title": "영국사(영동)",
-      "addr1": "충청북도 영동군 양산면 영국동길 225-35",
-      "mapx": 127.6104637417,
-      "mapy": 36.1580841124,
-      "lDongRegnCd": "43",
-      "lDongSignguCd": "740",
-      "lclsSystm1": "HS",
-      "lclsSystm2": "HS03",
-      "lclsSystm3": "HS030100",
-      "modifiedtime": "20261113104220"
     },
     {
       "contentid": "128338",
@@ -2492,20 +2618,6 @@
       "lclsSystm1": "VE",
       "lclsSystm2": "VE11",
       "lclsSystm3": "VE110500",
-      "modifiedtime": "20261111084802"
-    },
-    {
-      "contentid": "2718685",
-      "contenttypeid": "12",
-      "title": "국립제천치유의숲",
-      "addr1": "충청북도 제천시 청풍면 학현소야로 590",
-      "mapx": 128.2447704727,
-      "mapy": 37.0128263847,
-      "lDongRegnCd": "43",
-      "lDongSignguCd": "150",
-      "lclsSystm1": "EX",
-      "lclsSystm2": "EX05",
-      "lclsSystm3": "EX050600",
       "modifiedtime": "20261111084802"
     },
     {
@@ -6807,20 +6919,6 @@
       "modifiedtime": "20261016153836"
     },
     {
-      "contentid": "2769599",
-      "contenttypeid": "12",
-      "title": "대청댐 전망대",
-      "addr1": "충청북도 청주시 상당구 문의면 대청호반로 206",
-      "mapx": 127.4851,
-      "mapy": 36.479,
-      "lDongRegnCd": "43",
-      "lDongSignguCd": "111",
-      "lclsSystm1": "VE",
-      "lclsSystm2": "VE01",
-      "lclsSystm3": "VE010200",
-      "modifiedtime": "20261016145043"
-    },
-    {
       "contentid": "2769810",
       "contenttypeid": "12",
       "title": "오창 미래지 한옥마을",
@@ -8235,20 +8333,6 @@
       "modifiedtime": "20260713165451"
     },
     {
-      "contentid": "125983",
-      "contenttypeid": "12",
-      "title": "충주 탑평리 칠층석탑",
-      "addr1": "충청북도 충주시 중앙탑면 탑평리 11",
-      "mapx": 127.8665734128,
-      "mapy": 37.0157883884,
-      "lDongRegnCd": "43",
-      "lDongSignguCd": "130",
-      "lclsSystm1": "HS",
-      "lclsSystm2": "HS02",
-      "lclsSystm3": "HS020100",
-      "modifiedtime": "20260713112954"
-    },
-    {
       "contentid": "125985",
       "contenttypeid": "12",
       "title": "영동 난계사",
@@ -9453,20 +9537,6 @@
       "modifiedtime": "20260319162051"
     },
     {
-      "contentid": "3464160",
-      "contenttypeid": "12",
-      "title": "대운선박",
-      "addr1": "충청북도 괴산군 칠성면 산막이옛길 80-4",
-      "mapx": 127.83935694392557,
-      "mapy": 36.761071455044416,
-      "lDongRegnCd": "43",
-      "lDongSignguCd": "760",
-      "lclsSystm1": "EX",
-      "lclsSystm2": "EX07",
-      "lclsSystm3": "EX070100",
-      "modifiedtime": "20260319094959"
-    },
-    {
       "contentid": "129466",
       "contenttypeid": "12",
       "title": "금월봉",
@@ -9755,20 +9825,6 @@
       "mapy": 36.944305,
       "lDongRegnCd": "43",
       "lDongSignguCd": "150",
-      "lclsSystm1": "NA",
-      "lclsSystm2": "NA01",
-      "lclsSystm3": "NA010100",
-      "modifiedtime": "20260305095851"
-    },
-    {
-      "contentid": "2610560",
-      "contenttypeid": "12",
-      "title": "악어봉",
-      "addr1": "충청북도 충주시 살미면 신당리",
-      "mapx": 128.044527,
-      "mapy": 36.917961,
-      "lDongRegnCd": "43",
-      "lDongSignguCd": "130",
       "lclsSystm1": "NA",
       "lclsSystm2": "NA01",
       "lclsSystm3": "NA010100",
@@ -10223,20 +10279,6 @@
       "modifiedtime": "20250502113624"
     },
     {
-      "contentid": "2990172",
-      "contenttypeid": "12",
-      "title": "팔봉제빵점",
-      "addr1": "충청북도 청주시 상당구 수암로 57-1",
-      "mapx": 127.4940723484,
-      "mapy": 36.6473863244,
-      "lDongRegnCd": "43",
-      "lDongSignguCd": "111",
-      "lclsSystm1": "EX",
-      "lclsSystm2": "EX07",
-      "lclsSystm3": "EX070200",
-      "modifiedtime": "20250425092355"
-    },
-    {
       "contentid": "2891306",
       "contenttypeid": "12",
       "title": "마치공작소",
@@ -10305,20 +10347,6 @@
       "lclsSystm2": "VE03",
       "lclsSystm3": "VE030500",
       "modifiedtime": "20250418165118"
-    },
-    {
-      "contentid": "127904",
-      "contenttypeid": "12",
-      "title": "탁사정",
-      "addr1": "충청북도 제천시 봉양읍 제원로 478",
-      "mapx": 128.1062248599,
-      "mapy": 37.1666739248,
-      "lDongRegnCd": "43",
-      "lDongSignguCd": "150",
-      "lclsSystm1": "NA",
-      "lclsSystm2": "NA01",
-      "lclsSystm3": "NA010400",
-      "modifiedtime": "20250410143155"
     },
     {
       "contentid": "2775016",
@@ -10475,20 +10503,6 @@
       "modifiedtime": "20250121134732"
     },
     {
-      "contentid": "2789653",
-      "contenttypeid": "12",
-      "title": "사담관광농원",
-      "addr1": "충청북도 괴산군 청천면 괴산로 197",
-      "mapx": 127.8071588888,
-      "mapy": 36.6221726511,
-      "lDongRegnCd": "43",
-      "lDongSignguCd": "760",
-      "lclsSystm1": "EX",
-      "lclsSystm2": "EX06",
-      "lclsSystm3": "EX061000",
-      "modifiedtime": "20250120104029"
-    },
-    {
       "contentid": "2770018",
       "contenttypeid": "12",
       "title": "용계저수지",
@@ -10501,6 +10515,34 @@
       "lclsSystm2": "NA02",
       "lclsSystm3": "NA020300",
       "modifiedtime": "20250110091624"
+    },
+    {
+      "contentid": "1689699",
+      "contenttypeid": "14",
+      "title": "충주고구려천문과학관",
+      "addr1": "충청북도 충주시 중앙탑면 묘곡내동길 100",
+      "mapx": 127.848385568,
+      "mapy": 37.040265648,
+      "lDongRegnCd": "43",
+      "lDongSignguCd": "130",
+      "lclsSystm1": "VE",
+      "lclsSystm2": "VE02",
+      "lclsSystm3": "VE020500",
+      "modifiedtime": "20261119150136"
+    },
+    {
+      "contentid": "1684395",
+      "contenttypeid": "14",
+      "title": "수몰역사관",
+      "addr1": "충청북도 제천시 청풍면 청풍호로 2048",
+      "mapx": 128.1725,
+      "mapy": 37.0045,
+      "lDongRegnCd": "43",
+      "lDongSignguCd": "150",
+      "lclsSystm1": "VE",
+      "lclsSystm2": "VE07",
+      "lclsSystm3": "VE070300",
+      "modifiedtime": "20261117150323"
     },
     {
       "contentid": "987769",
@@ -11497,20 +11539,6 @@
       "modifiedtime": "20260916180132"
     },
     {
-      "contentid": "1684395",
-      "contenttypeid": "14",
-      "title": "수몰역사관",
-      "addr1": "충청북도 제천시 청풍면 청풍호로 2048",
-      "mapx": 128.1725,
-      "mapy": 37.0045,
-      "lDongRegnCd": "43",
-      "lDongSignguCd": "150",
-      "lclsSystm1": "VE",
-      "lclsSystm2": "VE07",
-      "lclsSystm3": "VE070300",
-      "modifiedtime": "20260911174008"
-    },
-    {
       "contentid": "1687582",
       "contenttypeid": "14",
       "title": "수안보곤충박물관",
@@ -11537,20 +11565,6 @@
       "lclsSystm2": "VE07",
       "lclsSystm3": "VE070300",
       "modifiedtime": "20260911171425"
-    },
-    {
-      "contentid": "1689699",
-      "contenttypeid": "14",
-      "title": "충주고구려천문과학관",
-      "addr1": "충청북도 충주시 중앙탑면 묘곡내동길 100",
-      "mapx": 127.848385568,
-      "mapy": 37.040265648,
-      "lDongRegnCd": "43",
-      "lDongSignguCd": "130",
-      "lclsSystm1": "VE",
-      "lclsSystm2": "VE02",
-      "lclsSystm3": "VE020500",
-      "modifiedtime": "20260911170041"
     },
     {
       "contentid": "3398112",
@@ -11931,6 +11945,90 @@
       "modifiedtime": "20250115165551"
     },
     {
+      "contentid": "2748273",
+      "contenttypeid": "28",
+      "title": "맑은누리캠핑장",
+      "addr1": "충청북도 영동군 상촌면 물한계곡로 1212",
+      "mapx": 127.875165979,
+      "mapy": 36.0624193512,
+      "lDongRegnCd": "43",
+      "lDongSignguCd": "740",
+      "lclsSystm1": "AC",
+      "lclsSystm2": "AC05",
+      "lclsSystm3": "AC050100",
+      "modifiedtime": "20261120163610"
+    },
+    {
+      "contentid": "1755667",
+      "contenttypeid": "28",
+      "title": "천등산승마클럽",
+      "addr1": "충청북도 충주시 산척면 샛강영길 106",
+      "mapx": 127.9710744634,
+      "mapy": 37.1056505732,
+      "lDongRegnCd": "43",
+      "lDongSignguCd": "130",
+      "lclsSystm1": "LS",
+      "lclsSystm2": "LS01",
+      "lclsSystm3": "LS010700",
+      "modifiedtime": "20261120160648"
+    },
+    {
+      "contentid": "2743877",
+      "contenttypeid": "28",
+      "title": "아이뜰 관광 농원",
+      "addr1": "충청북도 괴산군 장연면 충민로 1183",
+      "mapx": 127.9023516676,
+      "mapy": 36.8438984782,
+      "lDongRegnCd": "43",
+      "lDongSignguCd": "760",
+      "lclsSystm1": "AC",
+      "lclsSystm2": "AC05",
+      "lclsSystm3": "AC050100",
+      "modifiedtime": "20261120134337"
+    },
+    {
+      "contentid": "2737978",
+      "contenttypeid": "28",
+      "title": "파인카라반캠핑장",
+      "addr1": "충청북도 단양군 가곡면 남한강로 1038",
+      "mapx": 128.4162943707,
+      "mapy": 37.0571020725,
+      "lDongRegnCd": "43",
+      "lDongSignguCd": "800",
+      "lclsSystm1": "AC",
+      "lclsSystm2": "AC05",
+      "lclsSystm3": "AC050300",
+      "modifiedtime": "20261120110102"
+    },
+    {
+      "contentid": "2728200",
+      "contenttypeid": "28",
+      "title": "선녀와나무꾼캠핑장",
+      "addr1": "충청북도 제천시 청풍면 청풍명월로 171",
+      "mapx": 128.152587163,
+      "mapy": 37.003989684,
+      "lDongRegnCd": "43",
+      "lDongSignguCd": "150",
+      "lclsSystm1": "AC",
+      "lclsSystm2": "AC05",
+      "lclsSystm3": "AC050100",
+      "modifiedtime": "20261120103936"
+    },
+    {
+      "contentid": "2743229",
+      "contenttypeid": "28",
+      "title": "숲속의하모니",
+      "addr1": "충청북도 괴산군 청천면 후평도원로 155",
+      "mapx": 127.757313025,
+      "mapy": 36.6577960541,
+      "lDongRegnCd": "43",
+      "lDongSignguCd": "760",
+      "lclsSystm1": "AC",
+      "lclsSystm2": "AC05",
+      "lclsSystm3": "AC050100",
+      "modifiedtime": "20261119171556"
+    },
+    {
       "contentid": "2734244",
       "contenttypeid": "28",
       "title": "제천옛날학교캠핑장",
@@ -11942,7 +12040,119 @@
       "lclsSystm1": "AC",
       "lclsSystm2": "AC05",
       "lclsSystm3": "AC050100",
-      "modifiedtime": "20261113110244"
+      "modifiedtime": "20261119144530"
+    },
+    {
+      "contentid": "2022070",
+      "contenttypeid": "28",
+      "title": "도담삼봉 모터보트",
+      "addr1": "충청북도 단양군 매포읍 삼봉로 644-13",
+      "mapx": 128.3417809619,
+      "mapy": 37.0007630086,
+      "lDongRegnCd": "43",
+      "lDongSignguCd": "800",
+      "lclsSystm1": "LS",
+      "lclsSystm2": "LS02",
+      "lclsSystm3": "LS021400",
+      "modifiedtime": "20261119013001"
+    },
+    {
+      "contentid": "2769593",
+      "contenttypeid": "28",
+      "title": "마부농원",
+      "addr1": "충청북도 청주시 서원구 남이면 대림로 390-41",
+      "mapx": 127.4417904135,
+      "mapy": 36.6039687826,
+      "lDongRegnCd": "43",
+      "lDongSignguCd": "112",
+      "lclsSystm1": "LS",
+      "lclsSystm2": "LS02",
+      "lclsSystm3": "LS020700",
+      "modifiedtime": "20261118115059"
+    },
+    {
+      "contentid": "2743257",
+      "contenttypeid": "28",
+      "title": "아빠캠핑가 오토캠핑장",
+      "addr1": "충청북도 진천군 백곡면 안구수길 34-28",
+      "mapx": 127.360680546,
+      "mapy": 36.8871010474,
+      "lDongRegnCd": "43",
+      "lDongSignguCd": "750",
+      "lclsSystm1": "AC",
+      "lclsSystm2": "AC05",
+      "lclsSystm3": "AC050200",
+      "modifiedtime": "20261118114711"
+    },
+    {
+      "contentid": "2729313",
+      "contenttypeid": "28",
+      "title": "도레미캠핑장",
+      "addr1": "충청북도 괴산군 불정면 관동로세평4길 24",
+      "mapx": 127.8201879835,
+      "mapy": 36.8573649896,
+      "lDongRegnCd": "43",
+      "lDongSignguCd": "760",
+      "lclsSystm1": "AC",
+      "lclsSystm2": "AC05",
+      "lclsSystm3": "AC050100",
+      "modifiedtime": "20261118102844"
+    },
+    {
+      "contentid": "2754980",
+      "contenttypeid": "28",
+      "title": "펫트리파크",
+      "addr1": "충청북도 충주시 앙성면 둔터로 625-31",
+      "mapx": 127.7102500642,
+      "mapy": 37.1028497023,
+      "lDongRegnCd": "43",
+      "lDongSignguCd": "130",
+      "lclsSystm1": "AC",
+      "lclsSystm2": "AC05",
+      "lclsSystm3": "AC050100",
+      "modifiedtime": "20261116171318"
+    },
+    {
+      "contentid": "2381740",
+      "contenttypeid": "28",
+      "title": "덕동골캠핑장",
+      "addr1": "충청북도 제천시 백운면 덕동로2길 23-26",
+      "mapx": 127.9569005163,
+      "mapy": 37.2172073791,
+      "lDongRegnCd": "43",
+      "lDongSignguCd": "150",
+      "lclsSystm1": "AC",
+      "lclsSystm2": "AC05",
+      "lclsSystm3": "AC050100",
+      "modifiedtime": "20261116141423"
+    },
+    {
+      "contentid": "2731157",
+      "contenttypeid": "28",
+      "title": "햇살아래캠핑장",
+      "addr1": "충청북도 충주시 대소원면 창현로 809",
+      "mapx": 127.8602072451,
+      "mapy": 36.9233272146,
+      "lDongRegnCd": "43",
+      "lDongSignguCd": "130",
+      "lclsSystm1": "AC",
+      "lclsSystm2": "AC05",
+      "lclsSystm3": "AC050100",
+      "modifiedtime": "20261116140604"
+    },
+    {
+      "contentid": "2738789",
+      "contenttypeid": "28",
+      "title": "태라글램핑",
+      "addr1": "충청북도 제천시 봉양읍 제원로8길 21-26",
+      "mapx": 128.1092259658,
+      "mapy": 37.1748792517,
+      "lDongRegnCd": "43",
+      "lDongSignguCd": "150",
+      "lclsSystm1": "AC",
+      "lclsSystm2": "AC05",
+      "lclsSystm3": "AC050400",
+      "modifiedtime": "20261116100807"
     },
     {
       "contentid": "2729375",
@@ -12141,20 +12351,6 @@
       "modifiedtime": "20261104092651"
     },
     {
-      "contentid": "2728200",
-      "contenttypeid": "28",
-      "title": "선녀와나무꾼캠핑장",
-      "addr1": "충청북도 제천시 청풍면 청풍명월로 171",
-      "mapx": 128.152587163,
-      "mapy": 37.003989684,
-      "lDongRegnCd": "43",
-      "lDongSignguCd": "150",
-      "lclsSystm1": "AC",
-      "lclsSystm2": "AC05",
-      "lclsSystm3": "AC050100",
-      "modifiedtime": "20261103153543"
-    },
-    {
       "contentid": "2675071",
       "contenttypeid": "28",
       "title": "좌구산 분젓치 산새길 테마로드",
@@ -12211,20 +12407,6 @@
       "modifiedtime": "20261029153201"
     },
     {
-      "contentid": "2737978",
-      "contenttypeid": "28",
-      "title": "파인카라반캠핑장",
-      "addr1": "충청북도 단양군 가곡면 남한강로 1038",
-      "mapx": 128.4162943707,
-      "mapy": 37.0571020725,
-      "lDongRegnCd": "43",
-      "lDongSignguCd": "800",
-      "lclsSystm1": "AC",
-      "lclsSystm2": "AC05",
-      "lclsSystm3": "AC050300",
-      "modifiedtime": "20261029132835"
-    },
-    {
       "contentid": "2907814",
       "contenttypeid": "28",
       "title": "봉황자연휴양림 숲속야영장",
@@ -12237,20 +12419,6 @@
       "lclsSystm2": "AC05",
       "lclsSystm3": "AC050100",
       "modifiedtime": "20261029102234"
-    },
-    {
-      "contentid": "2731157",
-      "contenttypeid": "28",
-      "title": "햇살아래캠핑장",
-      "addr1": "충청북도 충주시 대소원면 창현로 809",
-      "mapx": 127.8602072451,
-      "mapy": 36.9233272146,
-      "lDongRegnCd": "43",
-      "lDongSignguCd": "130",
-      "lclsSystm1": "AC",
-      "lclsSystm2": "AC05",
-      "lclsSystm3": "AC050100",
-      "modifiedtime": "20261027102946"
     },
     {
       "contentid": "2761268",
@@ -12351,20 +12519,6 @@
       "modifiedtime": "20261021154047"
     },
     {
-      "contentid": "2743877",
-      "contenttypeid": "28",
-      "title": "아이뜰 관광 농원",
-      "addr1": "충청북도 괴산군 장연면 충민로 1183",
-      "mapx": 127.9023516676,
-      "mapy": 36.8438984782,
-      "lDongRegnCd": "43",
-      "lDongSignguCd": "760",
-      "lclsSystm1": "AC",
-      "lclsSystm2": "AC05",
-      "lclsSystm3": "AC050100",
-      "modifiedtime": "20261020191920"
-    },
-    {
       "contentid": "2761684",
       "contenttypeid": "28",
       "title": "충청도양반길 2코스",
@@ -12447,20 +12601,6 @@
       "lclsSystm2": "LS01",
       "lclsSystm3": "LS011900",
       "modifiedtime": "20261015105819"
-    },
-    {
-      "contentid": "2022070",
-      "contenttypeid": "28",
-      "title": "도담삼봉 모터보트",
-      "addr1": "충청북도 단양군 매포읍 삼봉로 644-13",
-      "mapx": 128.3417809619,
-      "mapy": 37.0007630086,
-      "lDongRegnCd": "43",
-      "lDongSignguCd": "800",
-      "lclsSystm1": "LS",
-      "lclsSystm2": "LS02",
-      "lclsSystm3": "LS021400",
-      "modifiedtime": "20261015013000"
     },
     {
       "contentid": "2560460",
@@ -12547,20 +12687,6 @@
       "modifiedtime": "20261007165411"
     },
     {
-      "contentid": "1755667",
-      "contenttypeid": "28",
-      "title": "천등산승마클럽",
-      "addr1": "충청북도 충주시 산척면 샛강영길 106",
-      "mapx": 127.9710744634,
-      "mapy": 37.1056505732,
-      "lDongRegnCd": "43",
-      "lDongSignguCd": "130",
-      "lclsSystm1": "LS",
-      "lclsSystm2": "LS01",
-      "lclsSystm3": "LS010700",
-      "modifiedtime": "20261007155702"
-    },
-    {
       "contentid": "1012493",
       "contenttypeid": "28",
       "title": "단양클레이사격장",
@@ -12573,20 +12699,6 @@
       "lclsSystm2": "LS01",
       "lclsSystm3": "LS011200",
       "modifiedtime": "20261007155208"
-    },
-    {
-      "contentid": "2748273",
-      "contenttypeid": "28",
-      "title": "맑은누리캠핑장",
-      "addr1": "충청북도 영동군 상촌면 물한계곡로 1212",
-      "mapx": 127.875165979,
-      "mapy": 36.0624193512,
-      "lDongRegnCd": "43",
-      "lDongSignguCd": "740",
-      "lclsSystm1": "AC",
-      "lclsSystm2": "AC05",
-      "lclsSystm3": "AC050100",
-      "modifiedtime": "20261006231641"
     },
     {
       "contentid": "2752720",
@@ -13709,20 +13821,6 @@
       "modifiedtime": "20260702172821"
     },
     {
-      "contentid": "2729313",
-      "contenttypeid": "28",
-      "title": "도레미캠핑장",
-      "addr1": "충청북도 괴산군 불정면 관동로세평4길 24",
-      "mapx": 127.8201879835,
-      "mapy": 36.8573649896,
-      "lDongRegnCd": "43",
-      "lDongSignguCd": "760",
-      "lclsSystm1": "AC",
-      "lclsSystm2": "AC05",
-      "lclsSystm3": "AC050100",
-      "modifiedtime": "20260702170528"
-    },
-    {
       "contentid": "2740054",
       "contenttypeid": "28",
       "title": "청천 화양동관광농원 초롱이캠핑장",
@@ -14241,20 +14339,6 @@
       "modifiedtime": "20260319163703"
     },
     {
-      "contentid": "2381740",
-      "contenttypeid": "28",
-      "title": "덕동골캠핑장",
-      "addr1": "충청북도 제천시 백운면 덕동로2길 23-26",
-      "mapx": 127.956900516254,
-      "mapy": 37.2172073790691,
-      "lDongRegnCd": "43",
-      "lDongSignguCd": "150",
-      "lclsSystm1": "AC",
-      "lclsSystm2": "AC05",
-      "lclsSystm3": "AC050100",
-      "modifiedtime": "20260313164801"
-    },
-    {
       "contentid": "131229",
       "contenttypeid": "28",
       "title": "용곡낚시터",
@@ -14381,20 +14465,6 @@
       "modifiedtime": "20251126180236"
     },
     {
-      "contentid": "2754980",
-      "contenttypeid": "28",
-      "title": "펫 트리파크",
-      "addr1": "충청북도 충주시 앙성면 둔터로 625-31",
-      "mapx": 127.7102706696,
-      "mapy": 37.1028989597,
-      "lDongRegnCd": "43",
-      "lDongSignguCd": "130",
-      "lclsSystm1": "AC",
-      "lclsSystm2": "AC05",
-      "lclsSystm3": "AC050100",
-      "modifiedtime": "20251126175938"
-    },
-    {
       "contentid": "2750125",
       "contenttypeid": "28",
       "title": "노동오토캠핑장",
@@ -14479,20 +14549,6 @@
       "modifiedtime": "20251126162525"
     },
     {
-      "contentid": "2747533",
-      "contenttypeid": "28",
-      "title": "좌구산오토캠핑장",
-      "addr1": "충청북도 증평군 증평읍 솟점말길 107",
-      "mapx": 127.6511371955,
-      "mapy": 36.7057352373,
-      "lDongRegnCd": "43",
-      "lDongSignguCd": "745",
-      "lclsSystm1": "AC",
-      "lclsSystm2": "AC05",
-      "lclsSystm3": "AC050200",
-      "modifiedtime": "20251126161801"
-    },
-    {
       "contentid": "2747459",
       "contenttypeid": "28",
       "title": "밤별생각 낮달이야기",
@@ -14505,20 +14561,6 @@
       "lclsSystm2": "AC05",
       "lclsSystm3": "AC050100",
       "modifiedtime": "20251126155416"
-    },
-    {
-      "contentid": "2743257",
-      "contenttypeid": "28",
-      "title": "아빠캠핑가 오토캠핑장",
-      "addr1": "충청북도 진천군 백곡면 안구수길 34-28",
-      "mapx": 127.3606971304,
-      "mapy": 36.8871508123,
-      "lDongRegnCd": "43",
-      "lDongSignguCd": "750",
-      "lclsSystm1": "AC",
-      "lclsSystm2": "AC05",
-      "lclsSystm3": "AC050200",
-      "modifiedtime": "20251126153722"
     },
     {
       "contentid": "2743254",
@@ -14547,20 +14589,6 @@
       "lclsSystm2": "AC05",
       "lclsSystm3": "AC050100",
       "modifiedtime": "20251126152900"
-    },
-    {
-      "contentid": "2743229",
-      "contenttypeid": "28",
-      "title": "숲속의하모니",
-      "addr1": "충청북도 괴산군 청천면 후평도원로 155",
-      "mapx": 127.7573317955,
-      "mapy": 36.657842657,
-      "lDongRegnCd": "43",
-      "lDongSignguCd": "760",
-      "lclsSystm1": "AC",
-      "lclsSystm2": "AC05",
-      "lclsSystm3": "AC050100",
-      "modifiedtime": "20251126151355"
     },
     {
       "contentid": "2743222",
@@ -14617,20 +14645,6 @@
       "lclsSystm2": "LS01",
       "lclsSystm3": "LS010400",
       "modifiedtime": "20251105131135"
-    },
-    {
-      "contentid": "2769593",
-      "contenttypeid": "28",
-      "title": "마부농원",
-      "addr1": "충청북도 청주시 서원구 남이면 대림로 390-41",
-      "mapx": 127.4418087882,
-      "mapy": 36.604015364,
-      "lDongRegnCd": "43",
-      "lDongSignguCd": "112",
-      "lclsSystm1": "LS",
-      "lclsSystm2": "LS02",
-      "lclsSystm3": "LS020700",
-      "modifiedtime": "20251103145025"
     },
     {
       "contentid": "2734847",
@@ -15375,20 +15389,6 @@
       "modifiedtime": "20250107144213"
     },
     {
-      "contentid": "2738789",
-      "contenttypeid": "28",
-      "title": "태라글램핑",
-      "addr1": "충청북도 제천시 봉양읍 제원로8길 21-26",
-      "mapx": 128.1092493474,
-      "mapy": 37.174931363,
-      "lDongRegnCd": "43",
-      "lDongSignguCd": "150",
-      "lclsSystm1": "AC",
-      "lclsSystm2": "AC05",
-      "lclsSystm3": "AC050400",
-      "modifiedtime": "20250106102431"
-    },
-    {
       "contentid": "2769563",
       "contenttypeid": "28",
       "title": "센테리움CC",
@@ -15443,6 +15443,20 @@
       "lclsSystm2": "LS01",
       "lclsSystm3": "LS010400",
       "modifiedtime": "20250102110150"
+    },
+    {
+      "contentid": "4080078",
+      "contenttypeid": "15",
+      "title": "2026 대한민국 도시·지역혁신 산업박람회",
+      "addr1": "충청북도 청주시 흥덕구 오송읍 오송생명로 250",
+      "mapx": 127.3354600053,
+      "mapy": 36.6265266149,
+      "lDongRegnCd": "43",
+      "lDongSignguCd": "113",
+      "lclsSystm1": "EV",
+      "lclsSystm2": "EV03",
+      "lclsSystm3": "EV030200",
+      "modifiedtime": "20261116144355"
     },
     {
       "contentid": "4001390",
@@ -15653,20 +15667,6 @@
       "lclsSystm2": "EV01",
       "lclsSystm3": "EV010200",
       "modifiedtime": "20260803112525"
-    },
-    {
-      "contentid": "4080078",
-      "contenttypeid": "15",
-      "title": "2026 대한민국 도시·지역혁신 산업박람회",
-      "addr1": "충청북도 청주시 흥덕구 오송읍 오송생명로 250",
-      "mapx": 127.3354600053,
-      "mapy": 36.6265266149,
-      "lDongRegnCd": "43",
-      "lDongSignguCd": "113",
-      "lclsSystm1": "EV",
-      "lclsSystm2": "EV03",
-      "lclsSystm3": "EV030200",
-      "modifiedtime": "20260630154303"
     },
     {
       "contentid": "4070513",

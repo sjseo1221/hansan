@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-16",
+  "generatedAt": "2026-11-23",
   "attractions": 4315,
   "matched": {
-    "exact": 3361,
-    "normalized": 253,
+    "exact": 3360,
+    "normalized": 254,
     "partial": 127,
     "total": 3741,
     "ambiguous": 1,
@@ -1856,11 +1856,6 @@
       {
         "signguCd": "43150",
         "signguNm": "제천시",
-        "tAtsNm": "명암산채건강마을"
-      },
-      {
-        "signguCd": "43150",
-        "signguNm": "제천시",
         "tAtsNm": "우드트레인"
       },
       {
@@ -1922,6 +1917,11 @@
         "signguCd": "43760",
         "signguNm": "괴산군",
         "tAtsNm": "뭐하농 하우스(농업회사법인 ㈜뭐하농)"
+      },
+      {
+        "signguCd": "43760",
+        "signguNm": "괴산군",
+        "tAtsNm": "사담관광농원"
       },
       {
         "signguCd": "43760",
@@ -2919,10 +2919,10 @@
     "서울책보고(2606740)",
     "부평 굴포누리 기후변화체험관(3456754)",
     "한국가스공사 가스과학관(2767868)",
+    "성령대군묘(920339)",
     "시화조력문화관(2463284)",
     "서해수호관(2649844)",
     "오산반려동물테마파크(2930689)",
-    "성령대군묘(920339)",
     "보령목재문화체험장(3453008)",
     "현충사 달빛야행(2865122)",
     "의암수력발전소(2465230)",
@@ -3758,6 +3758,11 @@
       "staleSince": "2026-11-16"
     },
     {
+      "placeId": "kto-2789653",
+      "name": "사담관광농원",
+      "staleSince": "2026-11-23"
+    },
+    {
       "placeId": "kto-2808100",
       "name": "바구스스파",
       "staleSince": "2026-11-02"
@@ -3809,23 +3814,23 @@
     }
   ],
   "places": {
-    "total": 3742,
+    "total": 3743,
     "visible": 3698,
-    "hidden": 44,
+    "hidden": 45,
     "byProvince": {
       "11": 563,
       "28": 257,
       "30": 99,
       "36": 31,
       "41": 1064,
-      "43": 401,
+      "43": 402,
       "44": 605,
       "51": 722
     },
     "byCategory": {
       "nature_park": 1189,
       "street_market": 390,
-      "theme_park": 360,
+      "theme_park": 361,
       "exhibition": 460,
       "heritage": 1052,
       "walking_trail": 256,
@@ -3841,13 +3846,13 @@
   "keywordChanged": [],
   "shrinkBlocked": false,
   "warnings": [],
-  "operationFilled": 3722,
+  "operationFilled": 3725,
   "tour": {
     "sigungu": 147,
     "sigunguFailed": false,
     "provincesOk": 8,
     "provincesFailed": 0,
     "provincesKept": 0,
-    "candidates": 10918
+    "candidates": 10924
   }
 }

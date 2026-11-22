@@ -1,7 +1,35 @@
 {
-  "fetchedAt": "2026-11-16T04:50:56.118+09:00",
+  "fetchedAt": "2026-11-23T04:51:03.611+09:00",
   "source": "TourAPI areaBasedList2",
   "candidates": [
+    {
+      "contentid": "4160692",
+      "contenttypeid": "12",
+      "title": "소제중앙문화공원",
+      "addr1": "대전광역시 동구 진수2길 13 (소제동)",
+      "mapx": 127.4402583673,
+      "mapy": 36.3355363999,
+      "lDongRegnCd": "30",
+      "lDongSignguCd": "110",
+      "lclsSystm1": "VE",
+      "lclsSystm2": "VE03",
+      "lclsSystm3": "VE030100",
+      "modifiedtime": "20261117171003"
+    },
+    {
+      "contentid": "1622646",
+      "contenttypeid": "12",
+      "title": "길치문화공원",
+      "addr1": "대전광역시 대덕구 신상로 65-100 (비래동)",
+      "mapx": 127.4594,
+      "mapy": 36.3577,
+      "lDongRegnCd": "30",
+      "lDongSignguCd": "230",
+      "lclsSystm1": "VE",
+      "lclsSystm2": "VE03",
+      "lclsSystm3": "VE030400",
+      "modifiedtime": "20261116114932"
+    },
     {
       "contentid": "741957",
       "contenttypeid": "12",
@@ -238,20 +266,6 @@
       "lclsSystm1": "NA",
       "lclsSystm2": "NA03",
       "lclsSystm3": "NA030400",
-      "modifiedtime": "20261111084802"
-    },
-    {
-      "contentid": "1622646",
-      "contenttypeid": "12",
-      "title": "길치문화공원",
-      "addr1": "대전광역시 대덕구 신상로 65-100 (비래동)",
-      "mapx": 127.4594,
-      "mapy": 36.3577,
-      "lDongRegnCd": "30",
-      "lDongSignguCd": "230",
-      "lclsSystm1": "VE",
-      "lclsSystm2": "VE03",
-      "lclsSystm3": "VE030400",
       "modifiedtime": "20261111084802"
     },
     {
@@ -2590,7 +2604,7 @@
       "lclsSystm1": "AC",
       "lclsSystm2": "AC05",
       "lclsSystm3": "AC050100",
-      "modifiedtime": "20261113174926"
+      "modifiedtime": "20261119151301"
     },
     {
       "contentid": "3377139",
@@ -2913,6 +2927,20 @@
       "lclsSystm2": "VE10",
       "lclsSystm3": "VE100100",
       "modifiedtime": "20250313221337"
+    },
+    {
+      "contentid": "3420072",
+      "contenttypeid": "15",
+      "title": "2027 선양 맨몸마라톤",
+      "addr1": "대전광역시 유성구 대덕대로 480 (도룡동)",
+      "mapx": 127.3797537407,
+      "mapy": 36.3760605845,
+      "lDongRegnCd": "30",
+      "lDongSignguCd": "200",
+      "lclsSystm1": "EV",
+      "lclsSystm2": "EV03",
+      "lclsSystm3": "EV030300",
+      "modifiedtime": "20261120174254"
     },
     {
       "contentid": "2488086",

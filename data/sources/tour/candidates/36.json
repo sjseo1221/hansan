@@ -1,7 +1,63 @@
 {
-  "fetchedAt": "2026-11-16T04:50:56.118+09:00",
+  "fetchedAt": "2026-11-23T04:51:03.611+09:00",
   "source": "TourAPI areaBasedList2",
   "candidates": [
+    {
+      "contentid": "3337188",
+      "contenttypeid": "12",
+      "title": "세종전통문화체험관",
+      "addr1": "세종특별자치시 모롱지로 94 (세종동)",
+      "mapx": 127.2918594382,
+      "mapy": 36.5068710236,
+      "lDongRegnCd": "36",
+      "lDongSignguCd": "110",
+      "lclsSystm1": "EX",
+      "lclsSystm2": "EX01",
+      "lclsSystm3": "EX010100",
+      "modifiedtime": "20261120093537"
+    },
+    {
+      "contentid": "2717492",
+      "contenttypeid": "12",
+      "title": "비녀랑 한복이랑",
+      "addr1": "세종특별자치시 조치원읍 안터길 107",
+      "mapx": 127.2872595047,
+      "mapy": 36.6297188509,
+      "lDongRegnCd": "36",
+      "lDongSignguCd": "110",
+      "lclsSystm1": "EX",
+      "lclsSystm2": "EX07",
+      "lclsSystm3": "EX070200",
+      "modifiedtime": "20261119160342"
+    },
+    {
+      "contentid": "125981",
+      "contenttypeid": "12",
+      "title": "운주산성",
+      "addr1": "세종특별자치시 전동면 청송리",
+      "mapx": 127.241549,
+      "mapy": 36.681964,
+      "lDongRegnCd": "36",
+      "lDongSignguCd": "110",
+      "lclsSystm1": "HS",
+      "lclsSystm2": "HS01",
+      "lclsSystm3": "HS010200",
+      "modifiedtime": "20261117091915"
+    },
+    {
+      "contentid": "1928731",
+      "contenttypeid": "12",
+      "title": "뒤웅박고을",
+      "addr1": "세종특별자치시 전동면 배일길 90-43",
+      "mapx": 127.2591553772,
+      "mapy": 36.675887779,
+      "lDongRegnCd": "36",
+      "lDongSignguCd": "110",
+      "lclsSystm1": "HS",
+      "lclsSystm2": "HS01",
+      "lclsSystm3": "HS010600",
+      "modifiedtime": "20261117085856"
+    },
     {
       "contentid": "3407434",
       "contenttypeid": "12",
@@ -56,20 +112,6 @@
       "lclsSystm1": "HS",
       "lclsSystm2": "HS03",
       "lclsSystm3": "HS030100",
-      "modifiedtime": "20261111084802"
-    },
-    {
-      "contentid": "1928731",
-      "contenttypeid": "12",
-      "title": "뒤웅박고을",
-      "addr1": "세종특별자치시 전동면 배일길 90-43",
-      "mapx": 127.2591553772,
-      "mapy": 36.675887779,
-      "lDongRegnCd": "36",
-      "lDongSignguCd": "110",
-      "lclsSystm1": "HS",
-      "lclsSystm2": "HS01",
-      "lclsSystm3": "HS010600",
       "modifiedtime": "20261111084802"
     },
     {
@@ -157,20 +199,6 @@
       "modifiedtime": "20261111084802"
     },
     {
-      "contentid": "2717492",
-      "contenttypeid": "12",
-      "title": "비녀랑 한복이랑",
-      "addr1": "세종특별자치시 조치원읍 안터길 107",
-      "mapx": 127.2872595047,
-      "mapy": 36.6297188509,
-      "lDongRegnCd": "36",
-      "lDongSignguCd": "110",
-      "lclsSystm1": "EX",
-      "lclsSystm2": "EX07",
-      "lclsSystm3": "EX070200",
-      "modifiedtime": "20261111084802"
-    },
-    {
       "contentid": "2717493",
       "contenttypeid": "12",
       "title": "삼버들협동조합",
@@ -252,20 +280,6 @@
       "lclsSystm1": "EX",
       "lclsSystm2": "EX07",
       "lclsSystm3": "EX070200",
-      "modifiedtime": "20261111084802"
-    },
-    {
-      "contentid": "3337188",
-      "contenttypeid": "12",
-      "title": "세종전통문화체험관",
-      "addr1": "세종특별자치시 모롱지로 94 (세종동)",
-      "mapx": 127.2918594382,
-      "mapy": 36.5068710236,
-      "lDongRegnCd": "36",
-      "lDongSignguCd": "110",
-      "lclsSystm1": "EX",
-      "lclsSystm2": "EX01",
-      "lclsSystm3": "EX010100",
       "modifiedtime": "20261111084802"
     },
     {
@@ -675,20 +689,6 @@
       "modifiedtime": "20260312165530"
     },
     {
-      "contentid": "125981",
-      "contenttypeid": "12",
-      "title": "운주산성",
-      "addr1": "세종특별자치시 전동면 청송리",
-      "mapx": 127.241549,
-      "mapy": 36.681964,
-      "lDongRegnCd": "36",
-      "lDongSignguCd": "110",
-      "lclsSystm1": "HS",
-      "lclsSystm2": "HS01",
-      "lclsSystm3": "HS010200",
-      "modifiedtime": "20260312090840"
-    },
-    {
       "contentid": "1951648",
       "contenttypeid": "12",
       "title": "금강대도",
@@ -745,6 +745,20 @@
       "modifiedtime": "20250626113310"
     },
     {
+      "contentid": "130952",
+      "contenttypeid": "14",
+      "title": "국립조세박물관",
+      "addr1": "세종특별자치시 국세청로 8-14 (나성동)",
+      "mapx": 127.2603063115,
+      "mapy": 36.4850798094,
+      "lDongRegnCd": "36",
+      "lDongSignguCd": "110",
+      "lclsSystm1": "VE",
+      "lclsSystm2": "VE07",
+      "lclsSystm3": "VE070100",
+      "modifiedtime": "20261121203638"
+    },
+    {
       "contentid": "590237",
       "contenttypeid": "14",
       "title": "교과서박물관",
@@ -770,20 +784,6 @@
       "lclsSystm1": "VE",
       "lclsSystm2": "VE09",
       "lclsSystm3": "VE090100",
-      "modifiedtime": "20261111084802"
-    },
-    {
-      "contentid": "130952",
-      "contenttypeid": "14",
-      "title": "국립조세박물관",
-      "addr1": "세종특별자치시 국세청로 8-14 (나성동)",
-      "mapx": 127.2603063115,
-      "mapy": 36.4850798094,
-      "lDongRegnCd": "36",
-      "lDongSignguCd": "110",
-      "lclsSystm1": "VE",
-      "lclsSystm2": "VE07",
-      "lclsSystm3": "VE070100",
       "modifiedtime": "20261111084802"
     },
     {
@@ -983,6 +983,34 @@
       "modifiedtime": "20250520213645"
     },
     {
+      "contentid": "2734266",
+      "contenttypeid": "28",
+      "title": "풍성채 캠핑장",
+      "addr1": "세종특별자치시 전동면 송성길 116",
+      "mapx": 127.2128164131,
+      "mapy": 36.6388914111,
+      "lDongRegnCd": "36",
+      "lDongSignguCd": "110",
+      "lclsSystm1": "AC",
+      "lclsSystm2": "AC05",
+      "lclsSystm3": "AC050100",
+      "modifiedtime": "20261117110123"
+    },
+    {
+      "contentid": "2770237",
+      "contenttypeid": "28",
+      "title": "레이캐슬CC",
+      "addr1": "세종특별자치시 전의면 의당전의로 252",
+      "mapx": 127.1910001329,
+      "mapy": 36.6182261393,
+      "lDongRegnCd": "36",
+      "lDongSignguCd": "110",
+      "lclsSystm1": "LS",
+      "lclsSystm2": "LS01",
+      "lclsSystm3": "LS010400",
+      "modifiedtime": "20261116164446"
+    },
+    {
       "contentid": "1951633",
       "contenttypeid": "28",
       "title": "세종합강캠핑장",
@@ -1065,34 +1093,6 @@
       "lclsSystm2": "LS01",
       "lclsSystm3": "LS010400",
       "modifiedtime": "20251126180317"
-    },
-    {
-      "contentid": "2770237",
-      "contenttypeid": "28",
-      "title": "레이캐슬CC",
-      "addr1": "세종특별자치시 전의면 의당전의로 252",
-      "mapx": 127.191017025,
-      "mapy": 36.6182731503,
-      "lDongRegnCd": "36",
-      "lDongSignguCd": "110",
-      "lclsSystm1": "LS",
-      "lclsSystm2": "LS01",
-      "lclsSystm3": "LS010400",
-      "modifiedtime": "20251103171106"
-    },
-    {
-      "contentid": "2734266",
-      "contenttypeid": "28",
-      "title": "풍성채캠핑장",
-      "addr1": "세종특별자치시 전동면 송성길 116",
-      "mapx": 127.2128339455,
-      "mapy": 36.6389406076,
-      "lDongRegnCd": "36",
-      "lDongSignguCd": "110",
-      "lclsSystm1": "AC",
-      "lclsSystm2": "AC05",
-      "lclsSystm3": "AC050100",
-      "modifiedtime": "20250923163016"
     },
     {
       "contentid": "4137577",

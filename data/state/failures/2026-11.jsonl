@@ -2918,3 +2918,6 @@
 {"at":"2026-11-23T11:17:59.399+09:00","source":"seoul_citydata","areaCd":"POI119","code":"INFO-000","message":"정상 처리되었습니다."}
 {"at":"2026-11-23T11:17:59.399+09:00","source":"seoul_citydata","areaCd":"POI121","code":"INFO-000","message":"정상 처리되었습니다."}
 {"at":"2026-11-23T11:17:59.399+09:00","source":"seoul_citydata","areaCd":"POI122","code":"INFO-000","message":"정상 처리되었습니다."}
+{"at":"2026-11-23T12:18:00.040+09:00","source":"seoul_citydata","areaCd":"POI095","code":"INFO-000","message":"정상 처리되었습니다."}
+{"at":"2026-11-23T12:18:00.040+09:00","source":"seoul_citydata","areaCd":"POI096","code":"INFO-000","message":"정상 처리되었습니다."}
+{"at":"2026-11-23T12:18:00.040+09:00","source":"seoul_citydata","areaCd":"POI098","code":"INFO-000","message":"정상 처리되었습니다."}

@@ -1,5 +1,5 @@
 {
-  "asOf": "2026-11-24",
+  "asOf": "2026-11-25",
   "places": {
     "total": 3743,
     "visible": 3698,
@@ -21,7 +21,7 @@
     "ggLinkedDong": 601,
     "operation": 3696,
     "operationCautionToday": 390,
-    "closedToday": 103
+    "closedToday": 23
   },
   "scores": {
     "popularity": 3642,
@@ -30,8 +30,8 @@
     "trendMedianAdjusted": 0,
     "longTerm": 1606,
     "usualToday": {
-      "history": 3590,
-      "history_provisional": 108
+      "history": 3661,
+      "history_provisional": 37
     },
     "patternBasisToday": {
       "category": 2134,
@@ -46,17 +46,6 @@
     "street_market"
   ],
   "typesByDate": {
-    "2026-11-24": {
-      "famous_spot": 334,
-      "moderate_hotspot": 297,
-      "timing_game": 5,
-      "early_hotspot": 10,
-      "time_slot": 7,
-      "hidden_classic": 62,
-      "hidden_classic_candidates": 0,
-      "insufficient_any": 2619,
-      "recommended": 596
-    },
     "2026-11-25": {
       "famous_spot": 332,
       "moderate_hotspot": 282,
@@ -126,13 +115,13 @@
     "2026-12-01": {
       "famous_spot": 346,
       "moderate_hotspot": 188,
-      "timing_game": 67,
+      "timing_game": 68,
       "early_hotspot": 9,
       "time_slot": 7,
       "hidden_classic": 83,
       "hidden_classic_candidates": 4,
       "insufficient_any": 2618,
-      "recommended": 596
+      "recommended": 599
     },
     "2026-12-02": {
       "famous_spot": 351,
@@ -199,6 +188,17 @@
       "hidden_classic_candidates": 1,
       "insufficient_any": 2330,
       "recommended": 466
+    },
+    "2026-12-08": {
+      "famous_spot": 347,
+      "moderate_hotspot": 172,
+      "timing_game": 40,
+      "early_hotspot": 10,
+      "time_slot": 7,
+      "hidden_classic": 82,
+      "hidden_classic_candidates": 1,
+      "insufficient_any": 2620,
+      "recommended": 570
     }
   }
 }

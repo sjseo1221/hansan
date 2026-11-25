@@ -3408,3 +3408,4 @@
 {"at":"2026-11-25T05:41:00.361+09:00","source":"tour_hub","signguCd":"41590","code":"EMPTY","message":"빈 응답"}
 {"at":"2026-11-25T06:18:01.494+09:00","source":"seoul_citydata","areaCd":"POI079","code":"INFO-000","message":"정상 처리되었습니다."}
 {"at":"2026-11-25T06:18:01.494+09:00","source":"seoul_citydata","areaCd":"POI082","code":"INFO-000","message":"정상 처리되었습니다."}
+{"at":"2026-11-25T11:17:59.838+09:00","source":"seoul_citydata","areaCd":"POI114","code":"INFO-000","message":"정상 처리되었습니다."}
